@@ -1,0 +1,44 @@
+/* Site-specific styles */
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    max-width: 50em;
+
+}
+
+footer {
+	text-align: center;
+}
+
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	text-decoration: inherit;
+	color: red;
+}
+
+a:visited {
+	border:none;
+	text-decoration:inherit;
+	font-style:normal;
+	color: #a3211f;
+}
+
+a:hover {
+    text-decoration: none;
+    color: orange;
+}
+
+#wrap {
+	margin: 10px;
+}
