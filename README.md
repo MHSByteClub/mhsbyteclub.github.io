@@ -9,6 +9,8 @@ If you haven't yet, learn to write HTML/CSS/javascript at [Codecademy](http://ww
 
 #Documentation
 
+This is a description of the files in this project.
+
 ## HTML5 Boilerplate
 The license and readme .md files are left in the project because this site is based off of [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate). To better understand this site feel free to read [their documentation](https://github.com/h5bp/html5-boilerplate/blob/v4/doc/TOC.md).
 
