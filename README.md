@@ -17,6 +17,9 @@ The license and readme .md files are left in the project because this site is ba
 ### index.html
 This is the main page of the site. It describes who we are and what we do.
 
+### contacts.html
+This is a page to contact the people in club that are in charge of the club or the website.
+
 ### 404.html
 This page is where 404 "Not Found" errors lead, for example when somebody attempts to go to www.mhsbyte.org/asdfghjkl
 
