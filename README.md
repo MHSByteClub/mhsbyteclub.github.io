@@ -20,6 +20,9 @@ This is the main page of the site. It describes who we are and what we do.
 ### contacts.html
 This is a page to contact the people in club that are in charge of the club or the website.
 
+### member.html
+This is a page that shows every member's personal website in a small frame on the screen.
+
 ### 404.html
 This page is where 404 "Not Found" errors lead, for example when somebody attempts to go to www.mhsbyte.org/asdfghjkl
 
