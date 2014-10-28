@@ -61,5 +61,5 @@ a:hover {
 
 iframe {
 	text-align: none;
-	border: none;
+	border-color: red;
 }
