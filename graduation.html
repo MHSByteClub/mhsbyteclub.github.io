@@ -57,18 +57,18 @@ Lorant, Dan
       var endCol = startCol + columnSize ;
       for(var s = startCol; s < endCol; s++) {
         var student = nameString[s];
-        resultString.push("<td>" + student + "</td>");
+        resultString.push('<td style="border:1px solid black;">' + student + "</td>");
       }
 
       // aisle
-      resultString.push("<td></td>");
+      resultString.push("<td> </td><td> </td>");
 
       // print second half least to greatest
       var startCol = endCol;
       var endCol = startCol + columnSize;
       for(var s = endCol - 1; s >= startCol; s--) {
         var student = nameString[s];
-        resultString.push("<td>" + student + "</td>");
+        resultString.push('<td style="border:1px solid black;">' + student + "</td>");
       }
 
       resultString.push('</tr>');
@@ -82,5 +82,3 @@ Lorant, Dan
 
 </body>
 </html>
-
-
