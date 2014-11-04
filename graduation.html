@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<textarea id="names">
+</textarea>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="result"></p>
+
+<script>
+function myFunction() {
+/** Example names
+Balogh, Dan
+Rouvinov, Raphael
+Palacios, Chris
+Cisek, Martin
+Biesterfeld, Alec
+Cushing, Ricky
+Farmer, Matt
+Farmer, Wes
+Farmer, Wes
+Lorant, Dan
+*/
+
+    var textareaText = document.getElementById('names').value;
+    var resultString = textareaText.split("\n");
+    var columnSize = 2
+    resultString.sort();
+    for(var i = 0; i < resultString.length; i++) {
+      var splitName = resultString[i].split(', ');
+      var first = splitName[1];
+      var last = splitName[0];
+      resultString[i] = first + " " + last;
+    }
+    document.getElementById("result").innerHTML = resultString;
+}
+</script>
+
+</body>
+</html>
+
+
