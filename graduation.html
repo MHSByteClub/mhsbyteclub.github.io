@@ -40,7 +40,10 @@ Lorant, Dan
         var splitName = nameString [i].split(', ');
         var first = splitName[1];
         var last = splitName[0];
-        nameString [i] = first + " " + last;
+        nameString[i] = first + " " + last;
+        if(nameString[i][nameString[i].length - 1] === ',') {
+          nameString[i] = nameString[i].substring(0, nameString[i].length);
+        }
         i++;
       }
     }
