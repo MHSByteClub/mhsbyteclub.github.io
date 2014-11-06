@@ -1,93 +1,123 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html class="no-js" lang="">
+    <head>
+    	<!-- Meta tags. Specify text-encoding, site info, site size -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Mundelein High School Byte Club Website">
+        <meta name="keywords" content="Mundelein,High,School,Programming,Byte,Club,Farmer,Rouvinov,Cygnus,Palacios">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<h1>Graduation seating arranger</h1>
+        <!-- Site title. Shows up on tab. -->
+        <title>Graduation Seating Arranger</title>
 
-<p>Instructions: enter line-separated names (in lastname, firstname format) in the textbox.<br>Remove people who aren't walking or type NW next to them. Press Try it and the seating will be ready.<br>WARNING: There will be tons of commas and undefineds please ignore.</p>
-
-<textarea id="names">
-</textarea>
-
-<button onclick="myFunction()">Try it</button>
-
-<p id="result"></p>
-
-<script>
-function myFunction() {
-/** Example names
-Balogh, Dan
-Rouvinov, Raphael
-Palacios, Chris
-Cisek, Martin NW
-Biesterfeld, Alec
-Cushing, Ricky
-Farmer, Matt
-Farmer, Wes
-Farmer, Wes
-Lorant, Dan
-*/
-    var textareaText = document.getElementById('names').value;
-    var nameString = textareaText.split("\n");
+        <!-- Stylesheets. Specify how the content of the site should look and feel, e.g. { color: red; font-family: Comic Sans MS; } -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/style.css">
+    <!-- Add a sign in when we can use javascript -->
+        <script src="js/vendor/modernizr-2.8.0.min.js"></script>
+    </head>
+		<!-- Javascript. -->
+		<!-- Modernizr.js is supposed to make development better by reducing cross-browser compatibility issues-->
+    <body>
     
-    nameString .sort();
+    	<!-- The following comment only runs if your on less than (lt) Internet Explorer (IE) 8 -->
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
 
-    var i = 0;
-    while(i < nameString .length) {
-      if(nameString [i].indexOf('NW') !== -1) {
-        nameString .splice(i, 1);
-      } else {
-        var splitName = nameString [i].split(','); //remove commas
-        var first = splitName[1];
-        var last = splitName[0];
-        nameString[i] = first + " " + last; //flip so it is first name last name
-        if(nameString[i][nameString[i].length - 1] === ',') {
-          nameString[i] = nameString[i].substring(0, nameString[i].length);
-        }
-        i++;
-      }
-    }
+        <!-- content goes in here -->
+        <div id="wrap" class="container">
 
-    var columnSize = 10; //number of seats per side
-    var rowAmount = Math.ceil(nameString .length / columnSize);
-    var resultString = ['<table>']; //make table
+        	<!-- Banner -->
+        	<h1><img src="img/byteclub-banner-teal-low.jpg" alt="Byte Club: Start Right"></h1>
 
-    for(var i = 0; i < columnSize; i++) { // padding
-      nameString.push(" ");
-    }
+        	<h1>Graduation seating arranger</h1>
 
-    for(var r = 0; r < rowAmount; r++) {
-      resultString.push('<tr>');
-
-      // print first half greatest to least
-      var startCol = r*columnSize *2;
-      var endCol = startCol + columnSize ;
-      for(var s = startCol; s < endCol; s++) {
-        var student = nameString[s];
-        resultString.push('<td style="border:1px solid black;">' + student + "</td>");
-      }
-
-      // aisle
-      resultString.push("<td> </td><td> </td>");
-
-      // print second half least to greatest
-      var startCol = endCol;
-      var endCol = startCol + columnSize;
-      for(var s = endCol - 1; s >= startCol; s--) {
-        var student = nameString[s];
-        resultString.push('<td style="border:1px solid black;">' + student + "</td>");
-      }
-
-      resultString.push('</tr>');
-    }
-
-    resultString.push('</table>');
-
-    document.getElementById("result").innerHTML = resultString ;
-}
-</script>
-
-</body>
+            <p>Instructions: enter line-separated names (in lastname, firstname format) in the textbox.<br>Remove people who aren't walking or type NW next to them. Press Try it and the seating will be ready.<br>WARNING: There will be tons of commas and undefineds please ignore.</p>
+            
+            <textarea id="names">
+            </textarea>
+            
+            <button onclick="myFunction()">Try it</button>
+            
+            <p id="result"></p>
+            
+            <script>
+            function myFunction() {
+            /** Example names
+            Balogh, Dan
+            Rouvinov, Raphael
+            Palacios, Chris
+            Cisek, Martin NW
+            Biesterfeld, Alec
+            Cushing, Ricky
+            Farmer, Matt
+            Farmer, Wes
+            Farmer, Wes
+            Lorant, Dan
+            */
+                var textareaText = document.getElementById('names').value;
+                var nameString = textareaText.split("\n");
+                
+                nameString .sort();
+            
+                var i = 0;
+                while(i < nameString .length) {
+                  if(nameString [i].indexOf('NW') !== -1) {
+                    nameString .splice(i, 1);
+                  } else {
+                    var splitName = nameString [i].split(','); //remove commas
+                    var first = splitName[1];
+                    var last = splitName[0];
+                    nameString[i] = first + " " + last; //flip so it is first name last name
+                    if(nameString[i][nameString[i].length - 1] === ',') {
+                      nameString[i] = nameString[i].substring(0, nameString[i].length);
+                    }
+                    i++;
+                  }
+                }
+            
+                var columnSize = 10; //number of seats per side
+                var rowAmount = Math.ceil(nameString .length / columnSize);
+                var resultString = ['<table>']; //make table
+            
+                for(var i = 0; i < columnSize; i++) { // padding
+                  nameString.push(" ");
+                }
+            
+                for(var r = 0; r < rowAmount; r++) {
+                  resultString.push('<tr>');
+            
+                  // print first half greatest to least
+                  var startCol = r*columnSize *2;
+                  var endCol = startCol + columnSize ;
+                  for(var s = startCol; s < endCol; s++) {
+                    var student = nameString[s];
+                    resultString.push('<td style="border:1px solid black;">' + student + "</td>");
+                  }
+            
+                  // aisle
+                  resultString.push("<td> </td><td> </td>");
+            
+                  // print second half least to greatest
+                  var startCol = endCol;
+                  var endCol = startCol + columnSize;
+                  for(var s = endCol - 1; s >= startCol; s--) {
+                    var student = nameString[s];
+                    resultString.push('<td style="border:1px solid black;">' + student + "</td>");
+                  }
+            
+                  resultString.push('</tr>');
+                }
+            
+                resultString.push('</table>');
+            
+                document.getElementById("result").innerHTML = resultString ;
+            }
+            </script>
+        </div>
+    </body>
 </html>
-
 
