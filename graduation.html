@@ -49,13 +49,34 @@
             
             <textarea id="names"></textarea>
             
-            <button onclick="myFunction()">Try it</button>
+            <button onclick="createTable()">Try it</button>
+            <button onclick="addSampleText()">Fill with sample text</button>
         </div>
         
 	    <p id="result"></p>
 	    
 	    <script>
-	    function myFunction() {
+	    function addSampleText() {
+	    	var txt = document.getElementById('names').value;
+	    	var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	    	var lower = "abcdefghijklmnopqrstuvwxyz";
+	    	
+	    	txt = "";
+	    	for(var i = 0; i < 500; i++) {
+	    		txt += upper.charAt(Math.floor(Math.random() * upper.length));
+				for( var i=0; i < 4; i++ ) {
+					txt += lower.charAt(Math.floor(Math.random() * lower.length));
+				}
+				txt =+ ', ';
+				txt += upper.charAt(Math.floor(Math.random() * upper.length));
+				for( var i=0; i < 4; i++ ) {
+					txt += lower.charAt(Math.floor(Math.random() * lower.length));
+				}
+				txt += '\n';
+	    	}
+	    }
+	    
+	    function createTable() {
 /** Example names
 Balogh, Dan
 Rouvinov, Raphael
@@ -71,7 +92,7 @@ Lorant, Dan
 	        var textareaText = document.getElementById('names').value;
 	        var nameString = textareaText.split("\n");
 	        
-	        nameString .sort();
+	        nameString.sort();
 	    
 	        var i = 0;
 	        while(i < nameString .length) {
@@ -90,14 +111,14 @@ Lorant, Dan
 	        }
 	    
 	        var columnSize = 10; //number of seats per side
-	        var rowAmount = Math.ceil(nameString .length / (columnSize*2));
+	        var rowAmount = Math.ceil(nameString.length / (columnSize*2));
 	        var resultString = '<table>'; //make table
 	    
-	        for(var i = 0; i < columnSize; i++) { // padding
-	          nameString.push(" ");
+	        for(var i = 0; i < nameString.length % (columnSize * 2); i++) { // padding
+	          nameString.push("&nbsp;&nbsp;");
 	        }
 
-			console.log(nameString);
+		console.log(nameString);
 	    
 	        for(var r = 0; r < rowAmount; r++) {
 	          resultString += '<tr>';
