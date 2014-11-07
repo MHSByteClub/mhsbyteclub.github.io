@@ -100,13 +100,13 @@ Lorant, Dan
 	        while(i < nameString.length) {
 	          if(nameString [i].indexOf('NW') !== -1) {
 	            nameString .splice(i, 1);
-	          } else {
+	          } else {na
 	            var splitName = nameString [i].split(','); //remove commas
 	            var first = splitName[1];
 	            var last = splitName[0];
 	            nameString[i] = first + " " + last; //flip so it is first name last name
-	            if(namesString[i] === 'undefined') {
-	            	namesString[i] === "&nbsp;&nbsp;"
+	            if(nameString[i] === 'undefined') {
+	            	nameString[i] === "&nbsp;&nbsp;"
 	            }
 	            if(nameString[i][nameString[i].length - 1] === ',') {
 	              nameString[i] = nameString[i].substring(0, nameString[i].length);
