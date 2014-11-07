@@ -35,10 +35,9 @@
 
         	<h1>Graduation seating arranger</h1>
 
-            <p>Instructions: enter line-separated names (in lastname, firstname format) in the textbox.<br>Remove people who aren't walking or type NW next to them. Press Try it and the seating will be ready.<br>WARNING: There will be tons of commas and undefineds please ignore.</p>
+            <p>Instructions: enter line-separated names (in lastname, firstname format) in the textbox.<br>Remove people who aren't walking or type NW next to them. Press Try it and the seating will be ready.<br>Ignore the tons of 'undefined'.</p>
             
-            <textarea id="names">
-            </textarea>
+            <textarea id="names"></textarea>
             
             <button onclick="myFunction()">Try it</button>
         </div>
@@ -47,18 +46,18 @@
 	    
 	    <script>
 	    function myFunction() {
-	    /** Example names
-	    Balogh, Dan
-	    Rouvinov, Raphael
-	    Palacios, Chris
-	    Cisek, Martin NW
-	    Biesterfeld, Alec
-	    Cushing, Ricky
-	    Farmer, Matt
-	    Farmer, Wes
-	    Farmer, Wes
-	    Lorant, Dan
-	    */
+/** Example names
+Balogh, Dan
+Rouvinov, Raphael
+Palacios, Chris
+Cisek, Martin NW
+Biesterfeld, Alec
+Cushing, Ricky
+Farmer, Matt
+Farmer, Wes
+Farmer, Wes
+Lorant, Dan
+*/
 	        var textareaText = document.getElementById('names').value;
 	        var nameString = textareaText.split("\n");
 	        
@@ -82,38 +81,40 @@
 	    
 	        var columnSize = 10; //number of seats per side
 	        var rowAmount = Math.ceil(nameString .length / columnSize);
-	        var resultString = ['<table>']; //make table
+	        var resultString = '<table>'; //make table
 	    
 	        for(var i = 0; i < columnSize; i++) { // padding
 	          nameString.push(" ");
 	        }
+
+			console.log(nameString);
 	    
 	        for(var r = 0; r < rowAmount; r++) {
-	          resultString.push('<tr>');
+	          resultString += '<tr>';
 	    
 	          // print first half greatest to least
 	          var startCol = r*columnSize *2;
 	          var endCol = startCol + columnSize ;
 	          for(var s = startCol; s < endCol; s++) {
 	            var student = nameString[s];
-	            resultString.push('<td style="border:1px solid black;">' + student + "</td>");
+	            resultString += '<td style="border:1px solid black;">' + student + "</td>";
 	          }
 	    
 	          // aisle
-	          resultString.push("<td> </td><td> </td>");
+	          resultString += "<td> </td><td> </td>";
 	    
 	          // print second half least to greatest
 	          var startCol = endCol;
 	          var endCol = startCol + columnSize;
 	          for(var s = endCol - 1; s >= startCol; s--) {
 	            var student = nameString[s];
-	            resultString.push('<td style="border:1px solid black;">' + student + "</td>");
+	            resultString += '<td style="border:1px solid black;">' + student + "</td>";
 	          }
 	    
-	          resultString.push('</tr>');
+	          resultString += '</tr>';
 	        }
 	    
-	        resultString.push('</table>');
+	        resultString += '</table>';
 	    
 	        document.getElementById("result").innerHTML = resultString ;
 	    }
