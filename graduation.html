@@ -35,7 +35,7 @@
 
         	<h1>Graduation seating arranger</h1>
 
-            <p>Instructions: enter line-separated names (in lastname, firstname format) in the textbox.<br>Remove people who aren't walking or type NW next to them. Press Try it and the seating will be ready.<br>Ignore the tons of 'undefined'.</p>
+            <p>Instructions: enter line-separated names (in lastname, firstname format) in the textbox.<br>Remove people who aren't walking or type NW next to them. Press Try it and the seating will be ready.</p>
             
             <textarea id="names"></textarea>
             
@@ -80,7 +80,7 @@ Lorant, Dan
 	        }
 	    
 	        var columnSize = 10; //number of seats per side
-	        var rowAmount = Math.ceil(nameString .length / columnSize);
+	        var rowAmount = Math.ceil(nameString .length / (columnSize*2));
 	        var resultString = '<table>'; //make table
 	    
 	        for(var i = 0; i < columnSize; i++) { // padding
