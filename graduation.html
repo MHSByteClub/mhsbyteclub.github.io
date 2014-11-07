@@ -57,25 +57,26 @@
 	    <p id="result"></p>
 	    
 	    <script>
-	    function addSampleText() {
-	    	var txt = document.getElementById('names').value;
-	    	var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	    	var lower = "abcdefghijklmnopqrstuvwxyz";
-	    	
-	    	txt = "";
-	    	for(var n = 0; n < 500; n++) {
-	    		txt += upper.charAt(Math.floor(Math.random() * upper.length));
-				for( var i=0; i < 4; i++ ) {
+		function addSampleText() {
+			var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			var lower = "abcdefghijklmnopqrstuvwxyz";
+			
+			var txt = "";
+			for(var n = 0; n < Math.random()*200+400; n++) {
+				txt += upper.charAt(Math.floor(Math.random() * upper.length));
+				for(var i=0; i < Math.random()*3+3; i++ ) {
 					txt += lower.charAt(Math.floor(Math.random() * lower.length));
 				}
-				txt =+ ', ';
+				txt += ', ';
 				txt += upper.charAt(Math.floor(Math.random() * upper.length));
-				for( var i=0; i < 4; i++ ) {
+				for(var i=0; i < Math.random()*3+3; i++ ) {
 					txt += lower.charAt(Math.floor(Math.random() * lower.length));
 				}
 				txt += '\n';
-	    	}
-	    }
+			}
+		
+		  document.getElementById('names').value = txt;
+		}
 	    
 	    function createTable() {
 /** Example names
@@ -96,7 +97,7 @@ Lorant, Dan
 	        nameString.sort();
 	    
 	        var i = 0;
-	        while(i < nameString .length) {
+	        while(i < nameString.length) {
 	          if(nameString [i].indexOf('NW') !== -1) {
 	            nameString .splice(i, 1);
 	          } else {
@@ -104,6 +105,9 @@ Lorant, Dan
 	            var first = splitName[1];
 	            var last = splitName[0];
 	            nameString[i] = first + " " + last; //flip so it is first name last name
+	            if(namesString[i] === 'undefined') {
+	            	namesString[i] === "&nbsp;&nbsp;"
+	            }
 	            if(nameString[i][nameString[i].length - 1] === ',') {
 	              nameString[i] = nameString[i].substring(0, nameString[i].length);
 	            }
