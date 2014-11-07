@@ -78,7 +78,7 @@
 		  document.getElementById('names').value = txt;
 		}
 	    
-	    function createTable() {
+		function createTable() {
 /** Example names
 Balogh, Dan
 Rouvinov, Raphael
@@ -98,16 +98,13 @@ Lorant, Dan
 	    
 	        var i = 0;
 	        while(i < nameString.length) {
-	          if(nameString [i].indexOf('NW') !== -1) {
-	            nameString .splice(i, 1);
+	          if(!nameString[i] || nameString[i].indexOf('NW') !== -1) {
+	            nameString.splice(i, 1);
 	          } else {
 	            var splitName = nameString [i].split(','); //remove commas
 	            var first = splitName[1];
 	            var last = splitName[0];
 	            nameString[i] = first + " " + last; //flip so it is first name last name
-	            if(nameString[i] === 'undefined') {
-	            	nameString[i] === "&nbsp;&nbsp;"
-	            }
 	            if(nameString[i][nameString[i].length - 1] === ',') {
 	              nameString[i] = nameString[i].substring(0, nameString[i].length);
 	            }
@@ -153,7 +150,7 @@ Lorant, Dan
 	        resultString += '</table>';
 	    
 	        document.getElementById("result").innerHTML = resultString ;
-	    }
+	    } 
 	    </script>
     </body>
 </html>
