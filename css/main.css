@@ -264,24 +264,3 @@ textarea {
         page-break-after: avoid;
     }
 }
-
-/* for the bar under the banner */
-
-div.navbar-inner-container {
-max-width: 940px;
-margin: 0px auto;
-}
-.container-fluid {
-margin-right: auto;
-margin-left: auto;
-padding-left: 15px;
-padding-right: 15px;
-}
-nav.navbar-default {
-background: url('../img/pixel-95.png') repeat;
-z-index: 100;
-border-radius: 0;
-border: none;
-margin-bottom: 0px;
-transition: height 0.5s ease;
-}
