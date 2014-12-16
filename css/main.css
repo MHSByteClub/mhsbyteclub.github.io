@@ -265,5 +265,5 @@ textarea {
     }
 }
 .navigation-bar {
-   border: 5px solid black;
+   display: block;
 }
