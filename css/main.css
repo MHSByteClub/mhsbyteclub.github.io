@@ -264,8 +264,6 @@ textarea {
         page-break-after: avoid;
     }
 }
-a class {
+.navigation-bar {
    display: block;
-   height: 100px;
-   width: 100px;
 }
