@@ -266,7 +266,6 @@ textarea {
 }
 .navigation-bar {
    display: block;
-   content: "|";
    padding-right: 5px;
    padding-left: 5px;
 }
