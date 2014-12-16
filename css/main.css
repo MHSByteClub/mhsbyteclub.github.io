@@ -264,6 +264,9 @@ textarea {
         page-break-after: avoid;
     }
 }
-.navigation-bar {
+#nav {
    display: block;
+   content: "|";
+   padding-right: 5px;
+   padding-left: 5px;
 }
