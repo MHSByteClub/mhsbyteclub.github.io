@@ -264,3 +264,6 @@ textarea {
         page-break-after: avoid;
     }
 }
+.navigation-bar {
+   border: 5px solid black;
+}
