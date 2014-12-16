@@ -285,17 +285,3 @@ border: none;
 margin-bottom: 0px;
 transition: height 0.5s ease;
 }
-.navbar-default {
-background-color: #f8f8f8;
-border-color: #e7e7e7;
-}
-.navbar-fixed-top, .navbar-fixed-bottom {
-border-radius: 0;
-}
-.navbar-fixed-top, .navbar-fixed-bottom {
-position: fixed;
-right: 0;
-left: 0;
-z-index: 1030;
-}
-
