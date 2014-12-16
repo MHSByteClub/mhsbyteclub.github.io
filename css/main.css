@@ -264,7 +264,7 @@ textarea {
         page-break-after: avoid;
     }
 }
-#nav {
+.navigation-bar {
    display: block;
    content: "|";
    padding-right: 5px;
