@@ -271,7 +271,7 @@ textarea {
 }
 .navigation ul {
    margin: 0px;
-   padding: 0px;
+   padding: 10px;
    list-style-type: none;
 }
 .navigation li {
