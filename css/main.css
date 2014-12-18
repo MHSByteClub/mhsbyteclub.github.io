@@ -264,24 +264,28 @@ textarea {
         page-break-after: avoid;
     }
 }
-nav {
-  width: 100%;
-  margin: 20px 0;
+.navigation {
+   float: left;
+   font-family: Geneva, Arial;
+   border: 1px solid #000000;
 }
-/* Make the list of links take up the whole width of the nav */
-nav ul {
-  width: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.navigation ul {
+   margin: 0px;
+   padding: 0px;
+   list-style-type: none;
 }
-nav ul li {
-  width: 20%;
-  float: left;
+.navigation li {
+   display: inline;
 }
- 
-nav ul li a {
-  display: block;
-  width: 100%;
+.navigation li a {
+   float: left;
+   border-right: 2px solid #00DBF0;
+   padding: 0px 10px;
+   color: red;
+   text-decoration: none;
 }
+.navigation li a:hover {
+   background-color: #00DBF0;
+}
+
 
