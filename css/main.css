@@ -279,7 +279,7 @@ textarea {
 }
 .navigation li a {
    float: left;
-   border-right: 2px solid #00DBF0;
+   border-right: 2px solid gray;
    padding: 0px 10px;
    color: red;
    text-decoration: none;
