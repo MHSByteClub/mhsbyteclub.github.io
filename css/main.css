@@ -266,7 +266,7 @@ textarea {
 }
 .navigation {
    float: left;
-   font-family: Geneva, Arial;
+   font-family: Arial;
    border: 1px solid #000000;
 }
 .navigation ul {
@@ -285,7 +285,5 @@ textarea {
    text-decoration: none;
 }
 .navigation li a:hover {
-   background-color: #00DBF0;
+   background-color: red;
 }
-
-
