@@ -264,6 +264,20 @@ textarea {
         page-break-after: avoid;
     }
 }
-.navigation-bar {
-   display: block;  
+nav {
+  width: 100%;
+  margin: 20px 0;
 }
+/* Make the list of links take up the whole width of the nav */
+nav ul {
+  width: 100%;
+}
+nav ul li {
+  width: 20%;
+}
+ 
+nav ul li a {
+  display: block;
+  width: 100%;
+}
+
