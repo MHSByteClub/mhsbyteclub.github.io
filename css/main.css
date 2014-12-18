@@ -271,9 +271,13 @@ nav {
 /* Make the list of links take up the whole width of the nav */
 nav ul {
   width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 nav ul li {
   width: 20%;
+  float: left;
 }
  
 nav ul li a {
