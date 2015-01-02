@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>MUSTANG MATCH</title>
+
+		<link href='http://fonts.googleapis.com/css?family=Qwigley' rel='stylesheet' type='text/css'>
+
+		<style>
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+   background: #ddd url('http://subtlepatterns.com/patterns/symphony.png') center top;
+}
+
+.center_horizontally {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0%);
+}
+
+.center_vertically {
+	position: absolute;
+	top: 50%;
+	transform: translate(0%, -50%);
+}
+
+.stitched {
+   padding: 20px;
+   margin: 10px;
+   /*background: #ff0030;*/
+   color: #fff;
+   font-size: 21px;
+   font-weight: bold;
+   line-height: 1.3em;
+   border: 2px dashed #fff;
+   border-radius: 10px;
+   box-shadow: 0 0 0 4px #b00030, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+   text-shadow: -1px -1px #aa3030;
+   font-weight: normal;
+   background-color: red;
+   background: url(http://responsivedesign.is/__data/assets/image/0006/3768/background-dark-texture.jpg?v=1.0.0) repeat;
+}
+
+h1 {
+  padding: 10px;
+  text-align: center;
+  line-height: 1em;
+  font-family: 'Qwigley', cursive;
+  font-size: 3em;
+}
+
+/** Let it snow! **/
+#xmas {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+}
+
+.match_gif {
+	width: 25%;
+}
+		</style>
+	</head>
+	
+	<body>
+		<div class="stitched" style="height:5em;">
+			<h1> Mustang Match </h1>
+		</div>
+		<div class="stitched" style="margin: 20px;">
+			Mustang Match
+		</div>
+
+		<canvas id="xmas"></canvas>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type="text/javascript">
+$(document).ready(function(){
+
+  initLetItSnow();
+});
+
+// Init Christmas! \o/
+var initLetItSnow = function(){
+
+	(function() {
+	    var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame ||
+	    function(callback) {
+	        window.setTimeout(callback, 1000 / 60);
+	    };
+	    window.requestAnimationFrame = requestAnimationFrame;
+	})();
+
+	var flakes = [],
+	    canvas = document.getElementById("xmas"),
+	    ctx = canvas.getContext("2d"),
+	    mX = -100,
+	    mY = -100;
+
+	    if( $(window).width() < 999 ){
+	    	var flakeCount = 125;
+	    } else {
+	    	var flakeCount = 450;
+	    }
+
+	    canvas.width = window.innerWidth;
+	    canvas.height = window.innerHeight;
+
+	function snow() {
+	    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	    for (var i = 0; i < flakeCount; i++) {
+	        var flake = flakes[i],
+	            x = mX,
+	            y = mY,
+	            minDist = 250,
+	            x2 = flake.x,
+	            y2 = flake.y;
+
+	        var dist = Math.sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y)),
+	            dx = x2 - x,
+	            dy = y2 - y;
+
+	        if (dist < minDist) {
+	            var force = minDist / (dist * dist),
+	                xcomp = (x - x2) / dist,
+	                ycomp = (y - y2) / dist,
+	                // deltaV = force / 2;
+	                deltaV = force;
+
+	            flake.velX -= deltaV * xcomp;
+	            flake.velY -= deltaV * ycomp;
+
+	        } else {
+	            flake.velX *= .98;
+	            if (flake.velY <= flake.speed) {
+	                flake.velY = flake.speed
+	            }
+	            flake.velX += Math.cos(flake.step += .05) * flake.stepSize;
+	        }
+
+	        ctx.fillStyle = "rgba(255,255,255," + flake.opacity + ")";
+	        flake.y += flake.velY;
+	        flake.x += flake.velX;
+	            
+	        if (flake.y >= canvas.height || flake.y <= 0) {
+	            reset(flake);
+	        }
+
+	        if (flake.x >= canvas.width || flake.x <= 0) {
+	            reset(flake);
+	        }
+
+	        // ♥
+          	ctx.font="20px Tahoma"; 
+          	ctx.fillText("♥",flake.x,flake.y);
+	    }
+	    requestAnimationFrame(snow);
+	};
+
+	function reset(flake) {
+	    flake.x = Math.floor(Math.random() * canvas.width);
+	    flake.y = 0;
+	    flake.size = (Math.random() * 3) + 2;
+	    flake.speed = (Math.random() * 1) + 0.5;
+	    flake.velY = flake.speed;
+	    flake.velX = 0;
+	    flake.opacity = (Math.random() * 0.5) + 0.3;
+	}
+
+	function init() {
+	    for (var i = 0; i < flakeCount; i++) {
+	        var x = Math.floor(Math.random() * canvas.width),
+	            y = Math.floor(Math.random() * canvas.height),
+	            size = (Math.random() * 3) + 4,
+	            speed = (Math.random() * 1) + 0.5,
+	            opacity = (Math.random() * 0.5) + 0.3;
+
+	        flakes.push({
+	            speed: speed,
+	            velY: speed,
+	            velX: 0,
+	            x: x,
+	            y: y,
+	            size: size,
+	            stepSize: (Math.random()) / 160,
+	            step: 0,
+	            opacity: opacity
+	        });
+	    }
+
+	    snow();
+	};
+
+	canvas.addEventListener("mousemove", function(e) {
+	    mX = e.clientX,
+	    mY = e.clientY;
+	});
+
+	window.addEventListener("resize",function(){
+	    canvas.width = window.innerWidth;
+	    canvas.height = window.innerHeight;
+	})
+
+	init();
+}; 
+		</script>
+	</body>
+</html>
