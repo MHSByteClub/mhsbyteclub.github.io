@@ -209,9 +209,11 @@ var initLetItSnow = function(){
 		</script>
 		
 		<script>
+		$(document).ready(function(){
 			$.get( "/matchresponses.csv", function( data ) {
 			  $( ".data" ).html( data );
 			});
+		});
 		</script>
 	</body>
 </html>
