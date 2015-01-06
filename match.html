@@ -70,7 +70,7 @@ h1 {
 		<div class="stitched" style="height:5em;">
 			<h1> Mustang Match </h1>
 		</div>
-		<div class="stitched" style="margin: 20px;">
+		<div class="stitched data" style="margin: 20px;">
 			Mustang Match
 		</div>
 
@@ -206,6 +206,12 @@ var initLetItSnow = function(){
 
 	init();
 }; 
+		</script>
+		
+		<script>
+			$.get( "/matchresponses.csv", function( data ) {
+			  $( ".data" ).html( data );
+			});
 		</script>
 	</body>
 </html>
