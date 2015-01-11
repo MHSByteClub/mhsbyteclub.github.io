@@ -34,19 +34,25 @@
 	        </div>
 	        <style>
 	        	.binary {
-	        		position: absolute;
-	        		top: 0;
-	        		left: 0;
+	        		position: fixed;
+	        		top: 0px;
+	        		left: 0px;
 	        		width: 10px;
-	        		text-size: 10px;
+	        		font-size: 10px;
+	        		
+					-webkit-transform: translateX(-50%) rotate(-90deg) translateY(50%);
+					-moz-transform: translateX(-50%) rotate(-90deg) translateY(50%);
+					-ms-transform: translateX(-50%) rotate(-90deg) translateY(50%);
+					-o-transform: translateX(-50%) rotate(-90deg) translateY(50%);
+					transform: translateX(-50%) rotate(-90deg) translateY(50%);
 	        	}
 	        </style>
 	        <script>
-	        	var binaryString = "0010110100101";
-	        	for var (i=0; i<window.innerHeight/10 && i<binaryString.length; I++) {
-	        	var div =
-	        		document.getElementsByClassName("binary")[0];
-	        		div.innerText += binaryString[i];
+				var binaryString = "0110100101100110001000000111100101101111011101010101110000100110001000110011000000110011001110010011101101110010011001010010000001110010011001010110000101100100011010010110111001100111001000000111010001101000011010010111001100100000011010100110111101101001011011100010000001100010011110010111010001100101001000000110001101101100011101010110001000100001";
+				for(var i=0; i<window.innerHeight/10*2 && i<binaryString.length; i++) {
+				    var div = document.getElementsByClassName("binary")[0];
+					div.innerText += binaryString[i];
+				}
 	        </script>
 	        
 	        <div id="wrap" class="container">
