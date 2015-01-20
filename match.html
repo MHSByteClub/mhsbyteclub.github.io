@@ -71,11 +71,11 @@ h1 {
 	<body>
 		
 		<script>
-		var linecount = 0;
+		var linecount = -2;
 		$(document).ready(function(){
 			$.get( "/matchresponses.csv", function( data ) {
 			linecount = data.split("\n").length;
-  			console.log(linecount - 2);
+  			console.log(linecount);
 			});
 		});
 		</script>
