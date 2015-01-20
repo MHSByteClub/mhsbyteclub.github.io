@@ -78,6 +78,11 @@ h1 {
   z-index: 3;
 }
 
+/** keeps coming up so made into a class **/
+.margin_twenty {
+	margin: 20px;
+}
+
 a .strikethough:link {
   color: #FFFFFF;text-decoration: line-through;
 }
