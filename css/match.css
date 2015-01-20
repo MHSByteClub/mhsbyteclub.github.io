@@ -95,3 +95,7 @@ a .strikethough:hover {
 a .strikethough:active {
   color: #FFFFFF;text-decoration: line-through;
 }
+
+.underline {
+	text-decoration: underline;
+}
