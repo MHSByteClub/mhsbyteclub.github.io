@@ -75,7 +75,7 @@ h1 {
 		$(document).ready(function(){
 			$.get( "/matchresponses.csv", function( data ) {
 			linecount = data.split("\n").length;
-  			console.log(linecount);
+  			console.log(linecount - 2);
 			});
 		});
 		</script>
