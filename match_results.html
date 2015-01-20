@@ -5,72 +5,14 @@
 		<title>MUSTANG MATCH</title>
 
 		<link href='http://fonts.googleapis.com/css?family=Qwigley' rel='stylesheet' type='text/css'>
-
-		<style>
-body {
-   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-   font-weight: 300;
-   background: #ddd url('http://subtlepatterns.com/patterns/symphony.png') center top;
-}
-
-.center_horizontally {
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%, 0%);
-}
-
-.center_vertically {
-	position: absolute;
-	top: 50%;
-	transform: translate(0%, -50%);
-}
-
-.stitched {
-   padding: 20px;
-   margin: 10px;
-   /*background: #ff0030;*/
-   color: #fff;
-   font-size: 21px;
-   font-weight: bold;
-   line-height: 1.3em;
-   border: 2px dashed #fff;
-   border-radius: 10px;
-   box-shadow: 0 0 0 4px #b00030, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
-   text-shadow: -1px -1px #aa3030;
-   font-weight: normal;
-   background-color: red;
-   background: url(http://responsivedesign.is/__data/assets/image/0006/3768/background-dark-texture.jpg?v=1.0.0) repeat;
-}
-
-h1 {
-  padding: 10px;
-  text-align: center;
-  line-height: 1em;
-  font-family: 'Qwigley', cursive;
-  font-size: 3em;
-}
-
-/** Let it snow! **/
-#xmas {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 2;
-}
-
-.match_gif {
-	width: 25%;
-}
-		</style>
+		<link href='css/match.css' rel='stylesheet' type='text/css'>
 	</head>
 	
 	<body>
-		<div class="stitched" style="height:5em;">
+		<div class="stitched h1_height">
 			<h1> Mustang Match </h1>
 		</div>
-		<div class="stitched" style="margin: 20px;">
+		<div class="stitched margin_twenty">
 			<p>Login to get your matches!</p>
 			<p>Student ID:</p>
 			<input id="username" type="number">
@@ -97,7 +39,7 @@ h1 {
 				}
 			</script>
 		</div>
-		<div class="stitched data" style="margin: 20px;">
+		<div class="stitched data">
 			*result data*
 		</div>
 
