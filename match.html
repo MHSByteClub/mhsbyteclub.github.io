@@ -70,7 +70,14 @@ h1 {
 	
 	<body>
 		
-		<script>
+		
+		
+		<div class="stitched" style="height:5em;">
+			<h1> Mustang Match </h1>
+		</div>
+		
+		<div class="stitched data" style="margin: 20px;">
+			<script>
 		var linecount = 0;
 		$(document).ready(function(){
 			$.get( "/matchresponses.csv", function( data ) {
@@ -79,18 +86,11 @@ h1 {
 			});
 		});
 		</script>
-		
-		<div class="stitched" style="height:5em;">
-			<h1> Mustang Match </h1>
-		</div>
-		
-		<div class="stitched data" style="margin: 20px;">
-			
 			<p>This is a matching service provided by the MHS Byte Club. It is a matching service that matches one MHS student to another.</p>
 			
-			
-			<script>document.getElementById("survey_takers").innerHTML = "Number of people who have taken the survery: " + linecount;</script>
 			<p id=survey_takers></p>
+			<script>document.getElementById("survey_takers").innerHTML = "Number of people who have taken the survery: " + linecount;</script>
+			
 			<br>
 			<div style="position: absolute; z-index: 3;">
 			
