@@ -84,16 +84,17 @@ h1 {
 			
 			<br>
 			<div style="position: absolute; z-index: 3;">
-						<script>
-		var linecount = 0;
-		$(document).ready(function(){
+		<script>
+			var linecount = 0;
+			$(document).ready(function(){
 			$.get( "/matchresponses.csv", function( data ) {
 			linecount = data.split("\n").length - 2;
   			console.log(linecount);
-  			<p id=survey_takers></p>
-			<script>document.getElementById("survey_takers").innerHTML = "Number of people who have taken the survery: " + linecount;</script>
+  			
 			});
-		});
+			});
+			<p id=survey_takers></p>
+			<script>document.getElementById("survey_takers").innerHTML = "Number of people who have taken the survery: " + linecount;</script>
 		</script>
 				<a href="http://goo.gl/forms/MCN73dVqvs" style="text-decoration: underline;">Take the survey here!!</a>
 			</div>
