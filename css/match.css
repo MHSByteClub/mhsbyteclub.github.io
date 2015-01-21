@@ -83,16 +83,16 @@ h1 {
 	margin: 20px;
 }
 
-a .strikethough:link {
+.strikethough:link {
   color: #FFFFFF;text-decoration: line-through;
 }
-a .strikethough:visited {
+.strikethough:visited {
   color: #FFFFFF;text-decoration: line-through;
 }
-a .strikethough:hover {
+.strikethough:hover {
   color: #FF66FF;text-decoration: line-through;
 }
-a .strikethough:active {
+.strikethough:active {
   color: #FFFFFF;text-decoration: line-through;
 }
 
