@@ -83,27 +83,21 @@ h1 {
 	margin: 20px;
 }
 
-.underline:visited {
+.underline:visited, .underline:link, .underline:active {
   color: #FFFFFF;
 }
+
 .underline:hover {
   color: #FF66FF;
 }
 
-.strikethrough:link {
+.strikethrough:link, .strikethrough:hover, .strikethrough:active {
   color: #FFFFFF;
   text-decoration: line-through;
 }
-.strikethrough:visited {
-  color: #FFFFFF;
-  text-decoration: line-through;
-}
+
 .strikethrough:hover {
   color: #FF66FF;
-  text-decoration: line-through;
-}
-.strikethrough:active {
-  color: #FFFFFF;
   text-decoration: line-through;
 }
 
