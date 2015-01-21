@@ -91,7 +91,7 @@ h1 {
   color: #FF66FF;
 }
 
-.strikethrough:link, .strikethrough:hover, .strikethrough:active {
+.strikethrough, .strikethrough:link, .strikethrough:hover, .strikethrough:active {
   color: #FFFFFF;
   text-decoration: line-through;
 }
