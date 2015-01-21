@@ -83,10 +83,10 @@ h1 {
 	margin: 20px;
 }
 
-a:visited {
+.underline:visited {
   color: #FFFFFF;
 }
-a:hover {
+.underline:hover {
   color: #FF66FF;
 }
 
