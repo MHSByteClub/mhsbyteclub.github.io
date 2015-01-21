@@ -83,24 +83,26 @@ h1 {
 	margin: 20px;
 }
 
-.strikethrough {
-	color: #FFFFFF;
-  	text-decoration: line-through;
+a:visited {
+  color: #FFFFFF;
+}
+a:hover {
+  color: #FF66FF;
 }
 
-.strikethough:link {
+.strikethrough:link {
   color: #FFFFFF;
   text-decoration: line-through;
 }
-.strikethough:visited {
+.strikethrough:visited {
   color: #FFFFFF;
   text-decoration: line-through;
 }
-.strikethough:hover {
+.strikethrough:hover {
   color: #FF66FF;
   text-decoration: line-through;
 }
-.strikethough:active {
+.strikethrough:active {
   color: #FFFFFF;
   text-decoration: line-through;
 }
