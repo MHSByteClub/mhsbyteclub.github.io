@@ -83,17 +83,26 @@ h1 {
 	margin: 20px;
 }
 
+.strikethrough {
+	color: #FFFFFF;
+  	text-decoration: line-through;
+}
+
 .strikethough:link {
-  color: #FFFFFF;text-decoration: line-through;
+  color: #FFFFFF;
+  text-decoration: line-through;
 }
 .strikethough:visited {
-  color: #FFFFFF;text-decoration: line-through;
+  color: #FFFFFF;
+  text-decoration: line-through;
 }
 .strikethough:hover {
-  color: #FF66FF;text-decoration: line-through;
+  color: #FF66FF;
+  text-decoration: line-through;
 }
 .strikethough:active {
-  color: #FFFFFF;text-decoration: line-through;
+  color: #FFFFFF;
+  text-decoration: line-through;
 }
 
 .underline {
