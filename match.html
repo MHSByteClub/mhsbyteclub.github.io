@@ -27,11 +27,10 @@
 			<br>
 			<script>
 			var linecount = 0;
-			$(document).ready(function(){
+			
 			$.get( "/matchresponses.csv", function( data ) {
 			linecount = data.split("\n").length - 2;
   			console.log(linecount);
-			});
 			});
 			
 			</script>
