@@ -22,21 +22,20 @@
 
 			<p>This is a matching service provided by the MHS Byte Club. It is a matching service that matches one MHS student to another.</p>
 			<script>
-			var linecount = 0;
-			
+			var linecount = 0, message;
+			message = "Number of people who have taken the survey: ";
 			$.get( "/matchresponses.csv", function( data ) {
 			linecount = data.split("\n").length - 2;
   			console.log(linecount);
+  			document.write (message);
+  			document.write (x);
 			});
 			
 			</script>
 			
-			<script>
-			$document.ready(function(){
 			<p id=survey_takers></p>
-				});
-			</script>
-							<script>document.getElementById("survey_takers").innerHTML = "Number of people who have taken the survery: " + linecount;</script>
+			<script>document.getElementById("survey_takers").innerHTML = "Number of people who have taken the survery: " + linecount;</script>
+			
 			<div class="above_xmas">
 		
 			<a class="underline" href="http://goo.gl/forms/MCN73dVqvs">Take the survey here!!</a>
