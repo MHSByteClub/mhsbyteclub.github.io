@@ -27,14 +27,12 @@
 			$.get( "/matchresponses.csv", function( data ) {
 			linecount = data.split("\n").length - 2;
   			console.log(linecount);
-  			//document.write (message);
-  			//document.write (linecount);
 			});
-			
+			document.getElementById("survey_takers").innerHTML = "Number of people who have taken the survery: 350";
 			</script>
 			
 			<p id=survey_takers></p>
-			<script>document.getElementById("survey_takers").innerHTML = "Number of people who have taken the survery: 350";</script>
+			
 			
 			<div class="above_xmas">
 		
