@@ -27,8 +27,9 @@
 			$.get( "/matchresponses.csv", function( data ) {
 			linecount = data.split("\n").length - 2;
   			console.log(linecount);
+			
+			document.getElementById("survey_takers").innerHTML = "Number of people who have taken the survery: " + linecount;
 			});
-			document.getElementById("survey_takers").innerHTML = "Number of people who have taken the survery: " + data.split("\n").length-2;
 			</script>
 			
 			
