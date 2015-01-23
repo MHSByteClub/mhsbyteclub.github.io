@@ -21,9 +21,9 @@
 		<div class="stitched margin_twenty">
 
 			<p>This is a matching service provided by the MHS Byte Club. It is a matching service that matches one MHS student to another.</p>
+			<p id=survey_takers></p>
 			<script>
-			var linecount = 0, message;
-			message = "Number of people who have taken the survey: ";
+			var linecount = 0;
 			$.get( "/matchresponses.csv", function( data ) {
 			linecount = data.split("\n").length - 2;
   			console.log(linecount);
@@ -31,7 +31,7 @@
 			document.getElementById("survey_takers").innerHTML = "Number of people who have taken the survery: 350";
 			</script>
 			
-			<p id=survey_takers></p>
+			
 			
 			
 			<div class="above_xmas">
