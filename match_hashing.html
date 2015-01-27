@@ -11,7 +11,7 @@
       <script>
         function createHash() {
           var textAreaText = document.getElementById('number').value;
-          var hash = CryptoJS.MD('textAreaText');
+          var hash = CryptoJS.MD5('textAreaText');
           console.log('hash');
           var resultString = "";
           resultString = hash;
