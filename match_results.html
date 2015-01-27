@@ -13,30 +13,32 @@
 			<h1> Mustang Match </h1>
 		</div>
 		<div class="stitched margin_twenty">
-			<p>Login to get your matches!</p>
-			<p>Student ID:</p>
-			<input id="username" class="above_xmas" type="number">
-			<p>Password:</p>
-			<input id="password" class="above_xmas" type="password">
-			<button type="button" class="above_xmas" onclick="myFunction()">Submit</button>
-			<br><br>
-			
-			<script>
-				function myFunction() {
-					var x, y, text;
-					// Get the value of the input field with id="password"
-					x = document.getElementById("username").value;
-					y = document.getElementById("password").value;
-					// If x is Not a Number or 170325 or the password is Mundele1n
-					//if ( x == 170325 && y == "Mundele1n" ) {
-					//	text = "Welcome!";
-					//} else {
-					//	text = "Invalid Input";
-					//} 
-					text = "Clicked!";
-					document.getElementById("demo").innerHTML = text;
-				}
-			</script>
+			<div class="above_xmas">
+				<p>Login to get your matches!</p>
+				<p>Student ID:</p>
+				<input id="username" type="number">
+				<p>Password:</p>
+				<input id="password" type="password">
+				<button type="button" onclick="myFunction()">Submit</button>
+				<br><br>
+				
+				<script>
+					function myFunction() {
+						var x, y, text;
+						// Get the value of the input field with id="password"
+						x = document.getElementById("username").value;
+						y = document.getElementById("password").value;
+						// If x is Not a Number or 170325 or the password is Mundele1n
+						//if ( x == 170325 && y == "Mundele1n" ) {
+						//	text = "Welcome!";
+						//} else {
+						//	text = "Invalid Input";
+						//} 
+						text = "Clicked!";
+						document.getElementById("demo").innerHTML = text;
+					}
+				</script>
+			</div>
 		</div>
 		<div class="stitched data">
 			*result data*
