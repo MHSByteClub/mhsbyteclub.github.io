@@ -183,12 +183,92 @@ var initLetItSnow = function(){
 		<!-- spreadsheet-detching code -->
 		<script>
 $(document).ready(function(){
+	var person = function(line) {
+		line = line.split('\n');
+		this.timestamp = line[0];
+		this.username = line[1];
+		this.name = line[2];
+		this.gender = line[3];
+		this.genderInterestedIn = line[4];
+		this.grade = line[5];
+		
+		this.hairColor = line[6];
+		this.eyeColor = line[7];
+		this.height = line[8];
+		
+		this.compassionQuality = line[9];
+		this.honestyQuality = line[10];
+		this.looksQuality = line[11];
+		this.humorQuality = line[12];
+		this.enthusiasmQuality = line[13];
+		this.intelligenceQuality = line[14];
+		
+		this.giftAffection = line[15];
+		this.timeAffection = line[16];
+		this.wordsAffection = line[17];
+		this.serviceAffection = line[18];
+		this.touchAffection = line[19];
+		
+		this.hairColorPreference = line[20];
+		this.eyeColorPreference = line[21];
+		this.heightColorPreference = line[22];
+		
+		this.outgoing = line[23];
+		this.outdoors = line[24];
+		this.booksOverMovies = line[25];
+		this.collegePlan = line[26];
+		
+		this.runningHobby = line[27];
+		this.artHobby = line[28];
+		this.gamingHobby = line[29];
+		this.readingHobby = line[30];
+		this.cookingHobby = line[31];
+		this.dancingHobby = line[32];
+		this.volunteeringHobby = line[33];
+		this.hangingOutHobby = line[34];
+		
+		this.altMusic = line[35];
+		this.electronicMusic = line[36];
+		this.classicalMusic = line[37];
+		this.rockMusic = line[38];
+		this.kpopMusic = line[39];
+		this.metalMusic = line[40];
+		this.popMusic = line[41];
+		this.spiritualMusic = line[42];
+		
+		this.mathSubject = line[43];
+		this.englishSubject = line[44];
+		this.musicSubject = line[45];
+		this.scienceSubject = line[46];
+		this.historySubject = line[47];
+		this.peSubject = line[48];
+		this.recessSubject = line[49];
+		this.homeroomSubject = line[50];
+		
+		this.fridayNight = line[51];
+		this.afterSchool = line[52];
+		this.cellPhoneUse = line[53];
+		this.cellPhoneOnDate = line[54];
+		
+		this.agreeToTerms = line[55];
+		
+		this.classTrait = line[56];
+		this.heightTrait = line[57];
+		this.hairColorTrait = line[58];
+		this.eyeColorTrait = line[59];
+		this.appearanceTrait = line[60];
+		this.personalityTrait = line[61];
+		
+		this.personalityVSAppearance = line[62];
+	}
+	
 	$.get( "/matchresponses.csv", function( data ) {
 		//$( ".data" ).html( data );
 		
 		lines = data.split("\n");
 		console.log(lines);
-	
+		
+		
 	});
 });
 		</script>
