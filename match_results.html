@@ -260,7 +260,11 @@ $(document).ready(function(){
 		this.personalityTrait = line[61];
 		
 		/* this.personalityVSAppearance = line[62]; // unused */
-	}
+	};
+	
+	Person.prototype.matchNumber = function(other) {
+		return 0;
+	};
 	
 	var people = [];
 	
