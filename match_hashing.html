@@ -11,7 +11,7 @@
       <script>
         fuction password() {
           var textareaText = document.getElementById('number').value;
-          var hash = CryptoJS.MD(number);
+          var hash = CryptoJS.MD('number');
           var resultString = "";
           resultString = hash;
           document.getElementById("result").innerHTML = resultString;
