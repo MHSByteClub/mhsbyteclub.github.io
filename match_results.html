@@ -183,7 +183,7 @@ var initLetItSnow = function(){
 		<!-- spreadsheet-detching code -->
 		<script>
 $(document).ready(function(){
-	var person = function(line) {
+	var Person = function(line) {
 		line = line.split('\n');
 		this.timestamp = line[0];
 		this.username = line[1];
@@ -262,13 +262,19 @@ $(document).ready(function(){
 		this.personalityVSAppearance = line[62];
 	}
 	
+	var people = [];
+	
 	$.get( "/matchresponses.csv", function( data ) {
 		//$( ".data" ).html( data );
 		
 		lines = data.split("\n");
 		console.log(lines);
 		
+		for(var i = 0; i < lines.length; i++) {
+			people.push(new Person(lines[i]));
+		}
 		
+		console.log(people);
 	});
 });
 		</script>
