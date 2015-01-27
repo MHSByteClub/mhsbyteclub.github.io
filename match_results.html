@@ -15,13 +15,12 @@
 		<div class="stitched margin_twenty">
 			<p>Login to get your matches!</p>
 			<p>Student ID:</p>
-			<input id="username" type="number">
+			<input id="username" class="above_xmas" type="number">
 			<p>Password:</p>
-			<input id="password" type="password">
-			<button type="button" onclick="myFunction()">Submit</button>
+			<input id="password" class="above_xmas" type="password">
+			<button type="button" class="above_xmas" onclick="myFunction()">Submit</button>
 			<br><br>
 			
-			<script src="http://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.js"></script>
 			<script>
 				function myFunction() {
 					var x, y, text;
@@ -45,9 +44,10 @@
 
 		<canvas id="xmas"></canvas>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		
+		<!-- heart snow code -->
 		<script type="text/javascript">
 $(document).ready(function(){
-
   initLetItSnow();
 });
 
@@ -177,12 +177,17 @@ var initLetItSnow = function(){
 }; 
 		</script>
 		
+		<!-- spreadsheet-detching code -->
 		<script>
-		$(document).ready(function(){
-			$.get( "/matchresponses.csv", function( data ) {
-			  $( ".data" ).html( data );
-			});
-		});
+$(document).ready(function(){
+	$.get( "/matchresponses.csv", function( data ) {
+		//$( ".data" ).html( data );
+		
+		lines = data.split("\n");
+		console.log(lines);
+	
+	});
+});
 		</script>
 	</body>
 </html>
