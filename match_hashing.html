@@ -7,6 +7,7 @@
       <textarea id="number"></textarea>
       <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
       <button onclick="password()">Create password</button>
+      <p id="result"></p>
       <script>
         fuction password() {
           var textareaText = document.getElementById('number').value;
@@ -16,7 +17,7 @@
           document.getElementById("result").innerHTML = resultString;
         }
       </script>
-      <p id="result"></p>
+      
     </body>
   
   </HTML>
