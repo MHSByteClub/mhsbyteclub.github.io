@@ -33,8 +33,8 @@
 						
 						var hash = CryptoJS.MD5(x);
 						console.log(hash);
-						var fund = hash.indexOf(y);
-						if (fund !== 0){
+						var fund = hash.indexOf(y.toString());
+						if (fund !== -1){
 						console.log("works");
 						}
 						// If x is Not a Number or 170325 or the password is Mundele1n
