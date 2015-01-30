@@ -32,8 +32,11 @@
 						y = document.getElementById("password").value;
 						
 						var hash = CryptoJS.MD5(x);
-						console.log(x);
-						$("hash:contains(y)").javascript(console.log("worked"));
+						console.log(hash);
+						var fund = hash.indexof(y);
+						if (fund !== 0){
+						console.log("works");
+						}
 						// If x is Not a Number or 170325 or the password is Mundele1n
 						//if ( x == 170325 && y == "Mundele1n" ) {
 						//	text = "Welcome!";
