@@ -6,6 +6,8 @@
 
 		<link href='http://fonts.googleapis.com/css?family=Qwigley' rel='stylesheet' type='text/css'>
 		<link href='css/match.css' rel='stylesheet' type='text/css'>
+		<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	</head>
 	
 	<body>
@@ -28,6 +30,10 @@
 						// Get the value of the input field with id="password"
 						x = document.getElementById("username").value;
 						y = document.getElementById("password").value;
+						
+						var hash = CryptoJS.MD5(x);
+						console.log(x);
+						$("hash:contains(y)").javascript(console.log("worked"));
 						// If x is Not a Number or 170325 or the password is Mundele1n
 						//if ( x == 170325 && y == "Mundele1n" ) {
 						//	text = "Welcome!";
@@ -46,7 +52,7 @@
 		</div>
 
 		<canvas id="xmas"></canvas>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		
 		
 		<!-- heart snow code -->
 		<script type="text/javascript">
