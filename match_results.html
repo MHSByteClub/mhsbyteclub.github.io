@@ -191,6 +191,7 @@ var initLetItSnow = function(){
 	init();
 }; 
 
+var people = [];
 
 <!-- spreadsheet-detching code -->
 var getPeople = function() {
@@ -280,8 +281,6 @@ var getPeople = function() {
 		}
 		return 0;
 	}
-	
-	var people = [];
 	
 	$.get( "/matchresponses.csv", function( data ) {
 		//$( ".data" ).html( data );
