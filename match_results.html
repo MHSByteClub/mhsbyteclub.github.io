@@ -31,11 +31,11 @@
 						x = document.getElementById("username").value;
 						y = document.getElementById("password").value;
 						
-						var hash = CryptoJS.MD5(x);
+						var hash = CryptoJS.MD5(x).toString();
 						console.log(hash);
 						var fund = hash.indexOf(y);
 						if (fund !== -1){
-						console.log("works");
+							console.log("works");
 						}
 						// If x is Not a Number or 170325 or the password is Mundele1n
 						//if ( x == 170325 && y == "Mundele1n" ) {
@@ -45,6 +45,19 @@
 						//} 
 						text = "Clicked!";
 						document.getElementById("demo").innerHTML = text;
+						
+						if(true) { // if the password is good
+							var p1; // the person looking up their matches
+							
+							// gets person's Person object
+							for(var i = 1; i < people.length - 1; i++) {
+							  console.log(people[i].username.split('@')[0] + '\t' + document.getElementById('username').value);
+							  if(people[i].username.split('@')[0] == document.getElementById('username').value) {
+							    console.log('found');
+							    break;
+							  }
+							}
+						}
 					}
 				</script>
 			</div>
