@@ -36,7 +36,7 @@
 						var fund = hash.indexOf(y);
 						if (fund !== -1){
 							console.log("works");
-						}
+						
 						// If x is Not a Number or 170325 or the password is Mundele1n
 						//if ( x == 170325 && y == "Mundele1n" ) {
 						//	text = "Welcome!";
@@ -45,18 +45,20 @@
 						//} 
 						
 						
-						if(true) { // if the password is good
-							var p1; // the person looking up their matches
+							if(true) { // if the password is good
+								var p1; // the person looking up their matches
 							
-							// gets person's Person object
-							for(var i = 1; i < people.length - 1; i++) {
-							  console.log(people[i].username.split('@')[0] + '\t' + document.getElementById('username').value);
-							  if(people[i].username.split('@')[0] == document.getElementById('username').value) {
-							    console.log('found');
-							    break;
-							  }
+								// gets person's Person object
+								for(var i = 1; i < people.length - 1; i++) {
+							  		console.log(people[i].username.split('@')[0] + '\t' + document.getElementById('username').value);
+							  	if(people[i].username.split('@')[0] == document.getElementById('username').value) {
+							    		console.log('found');
+							    	break;
+							  	}
+								}
 							}
 						}
+						alert("Check username and password!");
 					}
 				</script>
 			</div>
