@@ -61,6 +61,7 @@
 		<script type="text/javascript">
 $(document).ready(function(){
   initLetItSnow();
+  getPeople();
 });
 
 // Init Christmas! \o/
@@ -187,11 +188,10 @@ var initLetItSnow = function(){
 
 	init();
 }; 
-		</script>
-		
-		<!-- spreadsheet-detching code -->
-		<script>
-$(document).ready(function(){
+
+
+<!-- spreadsheet-detching code -->
+var getPeople = function() {
 	var Person = function(line) {
 		line = line.split(',');
 		this.timestamp = line[0];
@@ -292,7 +292,7 @@ $(document).ready(function(){
 		
 		console.log(people);
 	});
-});
+};
 		</script>
 	</body>
 </html>
