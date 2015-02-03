@@ -30,10 +30,11 @@
 						// Get the value of the input field with id="password"
 						x = document.getElementById("username").value;
 						y = document.getElementById("password").value;
-						
+						var passLength = y.length;
 						var hash = CryptoJS.MD5(x).toString();
 						console.log(hash);
 						var fund = hash.indexOf(y);
+						if (passLength == 5){
 						if (fund !== -1){
 							console.log("works");
 						
@@ -57,6 +58,10 @@
 							  	}
 								}
 							}
+						}
+						}
+						else if (passLength !== 5){
+							alert("Check username and password");
 						}
 						else if (fund == -1){
 						alert("Check username and password!");
