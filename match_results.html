@@ -60,8 +60,10 @@
 		<!-- heart snow code -->
 		<script type="text/javascript">
 $(document).ready(function(){
+  console.log('doc ready');
   initLetItSnow();
   getPeople();
+  console.log('executed letitsnow and getpeople');
 });
 
 // Init Christmas! \o/
@@ -291,6 +293,7 @@ var getPeople = function() {
 		}
 		
 		console.log(people);
+		console.log('got people');
 	});
 };
 		</script>
