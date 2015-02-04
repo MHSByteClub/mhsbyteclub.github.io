@@ -302,7 +302,7 @@ Person.prototype.matchNumber = function(other) {
 		if (other.agreeToTerms.indexOf("Yes") === -1 || this.agreeToTerms.indexOf("Yes") === -1) {
 			return TERMS_NOT_AGREED_TO;
 		}
-	catch (e) {
+	} catch (e) {
 		console.log('error in term agreement');
 		console.log(e);
 		return TERMS_NOT_AGREED_TO;
