@@ -407,7 +407,7 @@ Person.prototype.matchNumber = function(other) {
 	return compScore;
 };
 
-Person.getMatchList = function() {
+Person.prototype.getMatchList = function() {
 	var scoreArr = [];
 	for(var i = 0; i < people.length; i++) {
 	  // console.log('dan with ' + people[i].name + ': ' + people[2].matchNumber(people[i]));
