@@ -228,68 +228,69 @@ var Person = function(line) {
 	this.eyeColor = line[7];
 	this.height = line[8];
 	
-	this.compassionQuality = line[9];
-	this.honestyQuality = line[10];
-	this.looksQuality = line[11];
-	this.humorQuality = line[12];
-	this.enthusiasmQuality = line[13];
-	this.intelligenceQuality = line[14];
+	this.compassionQuality = parseInt(line[9]);
+	this.honestyQuality = parseInt(line[10]);
+	this.looksQuality = parseInt(line[11]);
+	this.humorQuality = parseInt(line[12]);
+	this.enthusiasmQuality = parseInt(line[13]);
+	this.intelligenceQuality = parseInt(line[14]);
 	
-	this.giftAffection = line[15];
-	this.timeAffection = line[16];
-	this.wordsAffection = line[17];
-	this.serviceAffection = line[18];
-	this.touchAffection = line[19];
+	this.giftAffection = parseInt(line[15]);
+	this.timeAffection = parseInt(line[16]);
+	this.wordsAffection = parseInt(line[17]);
+	this.serviceAffection = parseInt(line[18]);
+	this.touchAffection = parseInt(line[19]);
 	
 	this.hairColorPreference = line[20];
 	this.eyeColorPreference = line[21];
 	this.heightColorPreference = line[22];
 	
-	this.outgoing = line[23];
-	this.outdoors = line[24];
-	this.booksOverMovies = line[25];
-	this.collegePlan = line[26];
+	this.outgoing = parseInt(line[23]);
+	this.outdoors = parseInt(line[24]);
+	this.booksOverMovies = parseInt(line[25]);
+	this.collegePlan = parseInt(line[26]);
 	
-	this.runningHobby = line[27];
-	this.artHobby = line[28];
-	this.gamingHobby = line[29];
-	this.readingHobby = line[30];
-	this.cookingHobby = line[31];
-	this.dancingHobby = line[32];
-	this.volunteeringHobby = line[33];
-	this.hangingOutHobby = line[34];
+	this.runningHobby = parseInt(line[27]);
+	this.artHobby = parseInt(line[28]);
+	this.gamingHobby = parseInt(line[29]);
+	this.readingHobby = parseInt(line[30]);
+	this.cookingHobby = parseInt(line[31]);
+	this.dancingHobby = parseInt(line[32]);
+	this.volunteeringHobby = parseInt(line[33]);
+	this.hangingOutHobby = parseInt(line[34]);
 	
-	this.altMusic = line[35];
-	this.electronicMusic = line[36];
-	this.classicalMusic = line[37];
-	this.rockMusic = line[38];
-	this.kpopMusic = line[39];
-	this.metalMusic = line[40];
-	this.popMusic = line[41];
-	this.spiritualMusic = line[42];
+	this.altMusic = parseInt(line[35]);
+	this.electronicMusic = parseInt(line[36]);
+	this.classicalMusic = parseInt(line[37]);
+	this.rockMusic = parseInt(line[38]);
+	this.kpopMusic = parseInt(line[39]);
+	this.metalMusic = parseInt(line[40]);
+	this.popMusic = parseInt(line[41]);
+	this.spiritualMusic = parseInt(line[42]);
 	
-	this.mathSubject = line[43];
-	this.englishSubject = line[44];
-	this.musicSubject = line[45];
-	this.scienceSubject = line[46];
-	this.historySubject = line[47];
-	this.peSubject = line[48];
-	this.recessSubject = line[49];
-	this.homeroomSubject = line[50];
+	this.mathSubject = parseInt(line[43]);
+	this.englishSubject = parseInt(line[44]);
+	this.musicSubject = parseInt(line[45]);
+	this.scienceSubject = parseInt(line[46]);
+	this.historySubject = parseInt(line[47]);
+	this.peSubject = parseInt(line[48]);
+	this.recessSubject = parseInt(line[49]);
+	this.homeroomSubject = parseInt(line[50]);
 	
 	this.fridayNight = line[51];
 	this.afterSchool = line[52];
-	this.cellPhoneUse = line[53];
-	this.cellPhoneOnDate = line[54];
+	
+	this.cellPhoneUse = parseInt(line[53]);
+	this.cellPhoneOnDate = parseInt(line[54]);
 	
 	this.agreeToTerms = line[55];
 	
-	this.classTrait = line[56];
-	this.heightTrait = line[57];
-	this.hairColorTrait = line[58];
-	this.eyeColorTrait = line[59];
-	this.appearanceTrait = line[60];
-	this.personalityTrait = line[61];
+	this.classTrait = parseInt(line[56]);
+	this.heightTrait = parseInt(line[57]);
+	this.hairColorTrait = parseInt(line[58]);
+	this.eyeColorTrait = parseInt(line[59]);
+	this.appearanceTrait = parseInt(line[60]);
+	this.personalityTrait = parseInt(line[61]);
 	
 	/* this.personalityVSAppearance = line[62]; // unused */
 };
