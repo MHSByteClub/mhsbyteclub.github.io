@@ -407,6 +407,16 @@ Person.prototype.matchNumber = function(other) {
 	return compScore;
 };
 
+Person.getMatchList = function() {
+	var scoreArr = [];
+	for(var i = 0; i < people.length; i++) {
+	  // console.log('dan with ' + people[i].name + ': ' + people[2].matchNumber(people[i]));
+	  scoreArr.push([people[2].matchNumber(people[i]), people[i].name, people[i]]);
+	}
+	scoreArr.sort(function(a, b){return b[0]-a[0]});
+	console.log(scoreArr);
+}
+
 var getPeople = function() {
 	$.get( "/matchresponses.csv", function( data ) {
 		//$( ".data" ).html( data );
