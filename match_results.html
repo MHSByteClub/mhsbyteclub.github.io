@@ -214,95 +214,192 @@ var initLetItSnow = function(){
 
 var people = [];
 
-<!-- spreadsheet-detching code -->
-var getPeople = function() {
-	var Person = function(line) {
-		line = line.split(',');
-		this.timestamp = line[0];
-		this.username = line[1];
-		this.name = line[2];
-		this.gender = line[3];
-		this.genderInterestedIn = line[4];
-		this.grade = line[5];
-		
-		this.hairColor = line[6];
-		this.eyeColor = line[7];
-		this.height = line[8];
-		
-		this.compassionQuality = line[9];
-		this.honestyQuality = line[10];
-		this.looksQuality = line[11];
-		this.humorQuality = line[12];
-		this.enthusiasmQuality = line[13];
-		this.intelligenceQuality = line[14];
-		
-		this.giftAffection = line[15];
-		this.timeAffection = line[16];
-		this.wordsAffection = line[17];
-		this.serviceAffection = line[18];
-		this.touchAffection = line[19];
-		
-		this.hairColorPreference = line[20];
-		this.eyeColorPreference = line[21];
-		this.heightColorPreference = line[22];
-		
-		this.outgoing = line[23];
-		this.outdoors = line[24];
-		this.booksOverMovies = line[25];
-		this.collegePlan = line[26];
-		
-		this.runningHobby = line[27];
-		this.artHobby = line[28];
-		this.gamingHobby = line[29];
-		this.readingHobby = line[30];
-		this.cookingHobby = line[31];
-		this.dancingHobby = line[32];
-		this.volunteeringHobby = line[33];
-		this.hangingOutHobby = line[34];
-		
-		this.altMusic = line[35];
-		this.electronicMusic = line[36];
-		this.classicalMusic = line[37];
-		this.rockMusic = line[38];
-		this.kpopMusic = line[39];
-		this.metalMusic = line[40];
-		this.popMusic = line[41];
-		this.spiritualMusic = line[42];
-		
-		this.mathSubject = line[43];
-		this.englishSubject = line[44];
-		this.musicSubject = line[45];
-		this.scienceSubject = line[46];
-		this.historySubject = line[47];
-		this.peSubject = line[48];
-		this.recessSubject = line[49];
-		this.homeroomSubject = line[50];
-		
-		this.fridayNight = line[51];
-		this.afterSchool = line[52];
-		this.cellPhoneUse = line[53];
-		this.cellPhoneOnDate = line[54];
-		
-		this.agreeToTerms = line[55];
-		
-		this.classTrait = line[56];
-		this.heightTrait = line[57];
-		this.hairColorTrait = line[58];
-		this.eyeColorTrait = line[59];
-		this.appearanceTrait = line[60];
-		this.personalityTrait = line[61];
-		
-		/* this.personalityVSAppearance = line[62]; // unused */
-	};
+// spreadsheet-detching code 
+var Person = function(line) {
+	line = line.split(',');
+	this.timestamp = line[0];
+	this.username = line[1];
+	this.name = line[2];
+	this.gender = line[3];
+	this.genderInterestedIn = line[4];
+	this.grade = line[5];
 	
-	Person.prototype.matchNumber = function(other) {
-		
-		if (agreeToTerms.indexOf("YES") !== -1) {
-			return 1;
-		}
-		return 0;
+	this.hairColor = line[6];
+	this.eyeColor = line[7];
+	this.height = line[8];
+	
+	this.compassionQuality = line[9];
+	this.honestyQuality = line[10];
+	this.looksQuality = line[11];
+	this.humorQuality = line[12];
+	this.enthusiasmQuality = line[13];
+	this.intelligenceQuality = line[14];
+	
+	this.giftAffection = line[15];
+	this.timeAffection = line[16];
+	this.wordsAffection = line[17];
+	this.serviceAffection = line[18];
+	this.touchAffection = line[19];
+	
+	this.hairColorPreference = line[20];
+	this.eyeColorPreference = line[21];
+	this.heightColorPreference = line[22];
+	
+	this.outgoing = line[23];
+	this.outdoors = line[24];
+	this.booksOverMovies = line[25];
+	this.collegePlan = line[26];
+	
+	this.runningHobby = line[27];
+	this.artHobby = line[28];
+	this.gamingHobby = line[29];
+	this.readingHobby = line[30];
+	this.cookingHobby = line[31];
+	this.dancingHobby = line[32];
+	this.volunteeringHobby = line[33];
+	this.hangingOutHobby = line[34];
+	
+	this.altMusic = line[35];
+	this.electronicMusic = line[36];
+	this.classicalMusic = line[37];
+	this.rockMusic = line[38];
+	this.kpopMusic = line[39];
+	this.metalMusic = line[40];
+	this.popMusic = line[41];
+	this.spiritualMusic = line[42];
+	
+	this.mathSubject = line[43];
+	this.englishSubject = line[44];
+	this.musicSubject = line[45];
+	this.scienceSubject = line[46];
+	this.historySubject = line[47];
+	this.peSubject = line[48];
+	this.recessSubject = line[49];
+	this.homeroomSubject = line[50];
+	
+	this.fridayNight = line[51];
+	this.afterSchool = line[52];
+	this.cellPhoneUse = line[53];
+	this.cellPhoneOnDate = line[54];
+	
+	this.agreeToTerms = line[55];
+	
+	this.classTrait = line[56];
+	this.heightTrait = line[57];
+	this.hairColorTrait = line[58];
+	this.eyeColorTrait = line[59];
+	this.appearanceTrait = line[60];
+	this.personalityTrait = line[61];
+	
+	/* this.personalityVSAppearance = line[62]; // unused */
+};
+
+var TERMS_NOT_AGREED_TO = -666;
+
+Person.prototype.matchNumber = function(other) {
+	if (agreeToTerms.indexOf("YES") !== -1) {
+		return TERMS_NOT_AGREED_TO;
 	}
 	
+	if(this.grade === "Senior"){				//changing grade strings to numbers
+		this.grade = 4;
+	}
+	if(this.grade === "Junior"){
+		this.grade = 3;
+	}
+	if(this.grade === "Sophomore"){
+		this.grade = 2;
+	}
+	if(this.grade === "Freshman"){
+		this.grade = 1;
+	}
+	if(other.grade === "Senior"){
+		other.grade = 4;
+	}
+	if(other.grade === "Junior"){
+		other.grade = 3;
+	}
+	if(other.grade === "Sophomore"){
+		other.grade = 2;
+	}
+	if(other.grade === "Freshman"){
+		other.grade = 1;
+	}
+	
+
+	var classScore = 0;
+	var physicalScore = 0;
+	var hobbyScore = 0;
+	var compScore = 0;
+	
+	var genderCompatOther = this.gender === other.genderInterestedIn || other.genderInterestedIn === "Both";
+	var genderCompatSelf = this.genderInterestedIn === other.gender || this.genderInterestedIn === "Both";
+
+	if(genderCompatOther && genderCompatSelf){  		//checking for gender preferences		 
+		
+		// class score
+		classScore = 4-abs(this.grade-other.grade);
+		
+		/** physical Qs **/
+
+		// hair color
+		if (this.hairColorPreference === other.hairColor){
+			physicalScore += 2;
+		} else if (this.hairColorPreference === "I have no preference"){
+			physicalScore += 0.2;
+		}
+
+		// eye color
+		if (this.eyeColorPreference === other.eyeColor){
+			physicalScore += 2;
+		} else if (this.eyeColorPreference === "I have no preference"){
+			physicalScore += 0.2;
+		}
+
+		// height
+		if (this.heightColorPreference === other.height){
+			physicalScore += 2;
+		} else if (this.heightColorPreference === "I have no preference"){
+			physicalScore += 0.2;
+		}
+
+
+		// friday night
+		if (this.fridayNight === other.fridayNight) {
+			hobbyScore += 1;
+		}
+
+		// after school
+		if (this.afterSchool === other.afterSchool) {
+			hobbyScore += 1;
+		}
+
+
+		//All other hobby questions
+		hobbyScore += (4-abs(this.outgoing - other.outgoing))/4;
+		hobbyScore += (4-abs(this.outdoors - other.outdoors))/4;
+		hobbyScore += (4-abs(this.booksOverMovies - other.booksOverMovies))/4;
+		hobbyScore += (4-abs(this.collegePlan - other.collegePlan))/4;
+		hobbyScore += (56-abs(this.runningHobby - other.runningHobby)-abs(this.artHobby - other.artHobby) - abs(this.gamingHobby - other.gamingHobby)-abs(this.readingHobby - other.readingHobby)-abs(this.cookingHobby - other.cookingHobby)-abs(this.dancingHobby - other.dancingHobby)-abs(this.volunteeringHobby - other.volunteeringHobby)-abs(this.hangingOutHobby - other.hangingOutHobby))/56;
+		hobbyScore += (56-abs(this.altMusic - other.altMusic)-abs(this.electronicMusic - other.electronicMusic) - abs(this.classicalMusic - other.classicalMusic)-abs(this.rockMusic - other.rockMusic)-abs(this.kpopMusic - other.kpopMusic)-abs(this.metalMusic - other.metalMusic)-abs(this.popMusic - other.popMusic)-abs(this.spiritualMusic - other.spiritualMusic))/56;
+		hobbyScore += (56-abs(this.mathSubject - other.mathSubject)-abs(this.englishSubject - other.englishSubject) - abs(this.scienceSubject - other.scienceSubject)-abs(this.historySubject - other.historySubject)-abs(this.peSubject - other.peSubject)-abs(this.recessSubject - other.recessSubject)-abs(this.homeroomSubject - other.homeroomSubject)-abs(this.musicSubject - other.musicSubject))/56;
+		hobbyScore += (4-abs(this.cellPhoneUse - other.cellPhoneUse))/4;
+		hobbyScore += (4-abs(this.cellPhoneOnDate -other.cellPhoneOnDate))/4;
+		hobbyScore += (30-abs(this.compassionQuality-other.compassionQuality)-abs(this.honestyQuality-other.honestyQuality)-abs(this.looksQuality-other.looksQuality)-abs(this.humorQuality-other.humorQuality)-abs(this.enthusiasmQuality-other.enthusiasmQuality)-abs(this.intelligenceQuality-other.intelligenceQuality))/30;
+		hobbyScore += (20-abs(this.giftAffection - other.giftAffection)-abs(this.timeAffection-other.timeAffection)-abs(this.wordsAffection-other.wordsAffection)-abs(this.serviceAffection-other.serviceAffection)-abs(this.touchAffection-other.touchAffection))/20;
+		
+		hobbyScore *= this.personalityTrait;			//all multipliers!
+		physicalScore *= this.appearanceTrait;
+		classScore *= this.classTrait;
+
+		compScore = classScore + physicalScore + hobbyScore;	//total compatibility score
+	}
+
+
+	return compScore;
+};
+
+var getPeople = function() {
 	$.get( "/matchresponses.csv", function( data ) {
 		//$( ".data" ).html( data );
 		
