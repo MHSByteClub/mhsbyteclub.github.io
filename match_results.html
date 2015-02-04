@@ -338,6 +338,8 @@ Person.prototype.matchNumber = function(other) {
 
 	if(genderCompatOther && genderCompatSelf){  		//checking for gender preferences		 
 		
+		var abs = Math.abs;
+		
 		// class score
 		classScore = 4-abs(this.grade-other.grade);
 		
@@ -374,8 +376,6 @@ Person.prototype.matchNumber = function(other) {
 		if (this.afterSchool === other.afterSchool) {
 			hobbyScore += 1;
 		}
-
-		var abs = Math.abs;
 		
 		//All other hobby questions
 		hobbyScore += (4-abs(this.outgoing - other.outgoing))/4;
