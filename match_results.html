@@ -297,7 +297,7 @@ var Person = function(line) {
 var TERMS_NOT_AGREED_TO = -666;
 
 Person.prototype.matchNumber = function(other) {
-	if (agreeToTerms.indexOf("YES") !== -1) {
+	if (other.agreeToTerms.indexOf("Yes") === -1 || this.agreeToTerms.indexOf("Yes") === -1) {
 		return TERMS_NOT_AGREED_TO;
 	}
 	
