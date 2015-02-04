@@ -375,7 +375,8 @@ Person.prototype.matchNumber = function(other) {
 			hobbyScore += 1;
 		}
 
-
+		abs = Math.abs;
+		
 		//All other hobby questions
 		hobbyScore += (4-abs(this.outgoing - other.outgoing))/4;
 		hobbyScore += (4-abs(this.outdoors - other.outdoors))/4;
