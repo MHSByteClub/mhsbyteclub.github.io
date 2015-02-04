@@ -333,8 +333,8 @@ Person.prototype.matchNumber = function(other) {
 	var hobbyScore = 0;
 	var compScore = 0;
 	
-	var genderCompatOther = this.gender === other.genderInterestedIn || other.genderInterestedIn === "Both";
-	var genderCompatSelf = this.genderInterestedIn === other.gender || this.genderInterestedIn === "Both";
+	var genderCompatOther = this.gender === other.genderInterestedIn.split('s')[0] || other.genderInterestedIn === "Both";
+	var genderCompatSelf = this.genderInterestedIn.split('s')[0] === other.gender || this.genderInterestedIn === "Both";
 
 	if(genderCompatOther && genderCompatSelf){  		//checking for gender preferences		 
 		
