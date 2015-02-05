@@ -417,7 +417,7 @@ Person.prototype.matchNumber = function(other) {
 // returns an list with best matches at the front and worst at the back
 // TODO: lists of more than best match, e.g. best fiend, people who matched best with you
 Person.prototype.getMatchList = function() {
-	this.scoreArr = [];
+	var scoreArr = [];
 	for(var i = 0; i < people.length; i++) {
 	  // console.log('dan with ' + people[i].name + ': ' + people[2].matchNumber(people[i]));
 	  // TODO: remove matches <= 0
