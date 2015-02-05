@@ -71,7 +71,7 @@
 			*result data*
 			<!-- TODO: output results to here -->
 			<h2>Your match is...</h2>
-			<h1 id="resultString"></h1>
+			<h1 id="result"></h1>
 			<!-- TODO: maybe disclaimer that middle-of-the-road answers matched high with everyone -->
 		</div>
 
@@ -423,9 +423,9 @@ Person.prototype.getMatchList = function() {
 	}
 	scoreArr.sort(function(a, b){return b[0]-a[0]});
 	console.log(scoreArr);
-	var result = "";
+	var resultString = "";
 	console.log(scoreArr[0].name);
-	result = scoreArr[0].name;
+	resultString = scoreArr[0].name;
 	document.getElementById("result").innerHTML = resultString;
 }
 
