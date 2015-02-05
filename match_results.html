@@ -56,9 +56,10 @@
 								  	}	
 							}
 							//do the thing on button click
-							people[i].getMatchList(person[1]);
+							var scoreArr = people[i].getMatchList(people[1]);
 							var result = "";
-							result = scoreArr[0];
+							console.log(scoreArr[0].name);
+							result = scoreArr[0].name;
 							 document.getElementById("result").innerHTML = resultString;
 						}
 						else {
