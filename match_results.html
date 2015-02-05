@@ -56,8 +56,15 @@
 								  	}	
 							}
 							//do the thing on button click
+							if (funded = 1){
 							var scoreArr = people[i].getMatchList(people[1]);
-							
+							}
+							else if (funded = 2){
+							var scoreArr = people[i].getMatchList1(people[1]);	
+							}
+							else if (funded = 3){
+								
+							}
 						}
 						else {
 							alert("Check username and password");
@@ -68,10 +75,20 @@
 			<br><br><br><br><br><br><br><br><br>
 		</div>
 		<div class="stitched data">
-			*result data*
 			<!-- TODO: output results to here -->
 			<h2>Your match is...</h2>
 			<h1 id="result"></h1>
+			<ol type="1" id="List">
+				<li id="result1"></li>
+				<li id="result2"></li>
+				<li id="result3"></li>
+				<li id="result4"></li>
+				<li id="result5"></li>
+				<li id="result6"></li>
+				<li id="result7"></li>
+				<li id="result8"></li>
+				<li id="result9"></li>
+				<li id="result10"></li>
 			<!-- TODO: maybe disclaimer that middle-of-the-road answers matched high with everyone -->
 		</div>
 
@@ -98,7 +115,7 @@ var initLetItSnow = function(){
 	    window.requestAnimationFrame = requestAnimationFrame;
 	})();
 
-	var flakes = [],
+	var flakes = [];
 	    canvas = document.getElementById("xmas"),
 	    ctx = canvas.getContext("2d"),
 	    mX = -100,
@@ -427,6 +444,36 @@ Person.prototype.getMatchList = function() {
 	console.log(scoreArr[0][1]);
 	resultString = scoreArr[0][1];
 	document.getElementById("result").innerHTML = resultString;
+}
+
+Person.prototype.getMatchList1 = function() {
+	var scoreArr = [];
+	for(var r = 0; r < people.length; r++) {
+	  // TODO: remove matches <= 0
+	  scoreArr.push([this.matchNumber(people[r]), people[r].name, people[r]]);
+	}
+	scoreArr.sort(function(a, b){return b[0]-a[0]});
+	console.log(scoreArr);
+	var resultString = "";
+	console.log(scoreArr[0][1]);
+	resultString1 = scoreArr[0][1];
+	resultString2 = scoreArr[0][1];
+	resultString3 = scoreArr[0][1];
+	resultString4 = scoreArr[0][1];
+	resultString5 = scoreArr[0][1];
+	resultString6 = scoreArr[0][1];
+	resultString7 = scoreArr[0][1];
+	resultString8 = scoreArr[0][1];
+	resultString9 = scoreArr[0][1];
+	resultString10 = scoreArr[0][1];
+	document.getElementById("result1").innerHTML = resultString;
+	document.getElementById("result1").innerHTML = resultString;
+	document.getElementById("result1").innerHTML = resultString;
+	document.getElementById("result1").innerHTML = resultString;
+	document.getElementById("result1").innerHTML = resultString;
+	document.getElementById("result1").innerHTML = resultString;
+	document.getElementById("result1").innerHTML = resultString;
+	document.getElementById("result1").innerHTML = resultString;
 }
 
 // called when the document is loaded, downloads the match responses list
