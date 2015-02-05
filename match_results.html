@@ -57,10 +57,7 @@
 							}
 							//do the thing on button click
 							var scoreArr = people[i].getMatchList(people[1]);
-							var result = "";
-							console.log(scoreArr[0].name);
-							result = scoreArr[0].name;
-							 document.getElementById("result").innerHTML = resultString;
+							
 						}
 						else {
 							alert("Check username and password");
@@ -419,13 +416,17 @@ Person.prototype.matchNumber = function(other) {
 // TODO: lists of more than best match, e.g. best fiend, people who matched best with you
 Person.prototype.getMatchList = function() {
 	var scoreArr = [];
-	for(var i = 0; i < people.length; i++) {
+	for(var r = 0; r < people.length; r++) {
 	  // console.log('dan with ' + people[i].name + ': ' + people[2].matchNumber(people[i]));
 	  // TODO: remove matches <= 0
-	  scoreArr.push([this.matchNumber(people[i]), people[i].name, people[i]]);
+	  scoreArr.push([this.matchNumber(people[r]), people[r].name, people[r]]);
 	}
 	scoreArr.sort(function(a, b){return b[0]-a[0]});
 	console.log(scoreArr);
+	var result = "";
+	console.log(scoreArr[0].name);
+	result = scoreArr[0].name;
+	document.getElementById("result").innerHTML = resultString;
 }
 
 // called when the document is loaded, downloads the match responses list
