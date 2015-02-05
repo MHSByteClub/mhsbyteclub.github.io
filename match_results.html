@@ -77,7 +77,10 @@
 		<div class="stitched data">
 			<!-- TODO: output results to here -->
 			<h2>Your match is...</h2>
+			if (funded === 1){
 			<h1 id="result"></h1>
+			}
+			if (funded === 2){
 			<ol type="1" id="List">
 				<li id="result1"></li>
 				<li id="result2"></li>
@@ -89,6 +92,7 @@
 				<li id="result8"></li>
 				<li id="result9"></li>
 				<li id="result10"></li>
+				}
 			<!-- TODO: maybe disclaimer that middle-of-the-road answers matched high with everyone -->
 		</div>
 
@@ -466,16 +470,16 @@ Person.prototype.getMatchList1 = function() {
 	resultString8 = scoreArr[7][1];
 	resultString9 = scoreArr[8][1];
 	resultString10 = scoreArr[9][1];
-	document.getElementById("result1").innerHTML = resultString;
-	document.getElementById("result2").innerHTML = resultString;
-	document.getElementById("result3").innerHTML = resultString;
-	document.getElementById("result4").innerHTML = resultString;
-	document.getElementById("result5").innerHTML = resultString;
-	document.getElementById("result6").innerHTML = resultString;
-	document.getElementById("result7").innerHTML = resultString;
-	document.getElementById("result8").innerHTML = resultString;
-	document.getElementById("result9").innerHTML = resultString;
-	document.getElementById("result10").innerHTML = resultString;
+	document.getElementById("result1").innerHTML = resultString1;
+	document.getElementById("result2").innerHTML = resultString2;
+	document.getElementById("result3").innerHTML = resultString3;
+	document.getElementById("result4").innerHTML = resultString4;
+	document.getElementById("result5").innerHTML = resultString5;
+	document.getElementById("result6").innerHTML = resultString6;
+	document.getElementById("result7").innerHTML = resultString7;
+	document.getElementById("result8").innerHTML = resultString8;
+	document.getElementById("result9").innerHTML = resultString9;
+	document.getElementById("result10").innerHTML = resultString10;
 }
 
 // called when the document is loaded, downloads the match responses list
