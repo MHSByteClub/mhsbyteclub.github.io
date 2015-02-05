@@ -55,6 +55,11 @@
 								    		break;
 								  	}	
 							}
+							//do the thing on button click
+							people[i].getMatchResponse(person[1]);
+							var result = "";
+							result = scoreArr[0];
+							 document.getElementById("result").innerHTML = resultString;
 						}
 						else {
 							alert("Check username and password");
@@ -67,6 +72,8 @@
 		<div class="stitched data">
 			*result data*
 			<!-- TODO: output results to here -->
+			<h2>Your match is...</h2>
+			<h1 id="resultString"></h1>
 			<!-- TODO: maybe disclaimer that middle-of-the-road answers matched high with everyone -->
 		</div>
 
