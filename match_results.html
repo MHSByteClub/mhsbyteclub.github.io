@@ -424,8 +424,8 @@ Person.prototype.getMatchList = function() {
 	scoreArr.sort(function(a, b){return b[0]-a[0]});
 	console.log(scoreArr);
 	var resultString = "";
-	console.log(scoreArr[0].name);
-	resultString = scoreArr[0].name;
+	console.log(scoreArr[0][1]);
+	resultString = scoreArr[0][1];
 	document.getElementById("result").innerHTML = resultString;
 }
 
