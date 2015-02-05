@@ -26,67 +26,39 @@
 				
 				<script>
 					function myFunction() {
-						var x, y, text;
-						// Get the value of the input field with id="password"
-						x = document.getElementById("username").value;
-						y = document.getElementById("password").value;
-						var passLength = y.length;
-						var hash = CryptoJS.MD5(x).toString();
+						var user, pass, text, person;
+						
+						// Get the value of the input fields with id="username", id="password"
+						user = document.getElementById("username").value;
+						pass = document.getElementById("password").value;
+						
+						// get password length and username/pass hash
+						var passLength = pass.length;
+						var hash = CryptoJS.MD5(user).toString();
 						console.log(hash);
-						var fund = hash.indexOf(y);
-						if (passLength == 5){
-						if (fund == 0){
-							console.log("First level");
-							
-						if(true) { // if the password is good
-								var p1; // the person looking up their matches
-							
-								// gets person's Person object
-								for(var i = 1; i < people.length - 1; i++) {
-							  		console.log(people[i].username.split('@')[0] + '\t' + document.getElementById('username').value);
-							  	if(people[i].username.split('@')[0] == document.getElementById('username').value) {
-							    		console.log('found');
-							    	break;
-							  	}
+						
+						// if the pass is in the hash, they're funded for seeing matches
+						var fund = hash.indexOf(pass);
+						var funded = fund === 0 || fund === 5 || fund === 10;
+						
+						if (passLength === 5 && funded){
+							console.log("pay level: " + (fund/5 + 1)); // 0->1, 5->2, 10->3
+								
+							var p1; // the person looking up their matches
+						
+							// gets person's Person object
+							for(var i = 1; i < people.length - 1; i++) {
+							  		// console.log(people[i].username.split('@')[0] + '\t' + user);
+								  	if(people[i].username.split('@')[0] == user) {
+								    		console.log('found! response#' + i);
+								    		person = people[i];
+								    		break;
+								  	}
 								}
 							}
 						}
-						if (fund == 5){
-							console.log("second level");
-							if(true) { // if the password is good
-								var p1; // the person looking up their matches
-							
-								// gets person's Person object
-								for(var i = 1; i < people.length - 1; i++) {
-							  		console.log(people[i].username.split('@')[0] + '\t' + document.getElementById('username').value);
-							  	if(people[i].username.split('@')[0] == document.getElementById('username').value) {
-							    		console.log('found');
-							    	break;
-							  	}
-								}
-							}
-						}
-						if (fund == 10){
-							console.log("third level");
-							if(true) { // if the password is good
-								var p1; // the person looking up their matches
-							
-								// gets person's Person object
-								for(var i = 1; i < people.length - 1; i++) {
-							  		console.log(people[i].username.split('@')[0] + '\t' + document.getElementById('username').value);
-							  	if(people[i].username.split('@')[0] == document.getElementById('username').value) {
-							    		console.log('found');
-							    	break;
-							  	}
-								}
-							}
-						}
-						}
-						else if (passLength !== 5){
+						else {
 							alert("Check username and password");
-						}
-						else if (fund == -1){
-						alert("Check username and password!");
 						}
 					}
 				</script>
@@ -95,6 +67,8 @@
 		</div>
 		<div class="stitched data">
 			*result data*
+			<!-- TODO: output results to here -->
+			<!-- TODO: maybe disclaimer that middle-of-the-road answers matched high with everyone -->
 		</div>
 
 		<canvas id="xmas"></canvas>
@@ -109,7 +83,7 @@ $(document).ready(function(){
   console.log('executed letitsnow and getpeople');
 });
 
-// Init Christmas! \o/
+// Init Snow hearts! \o/
 var initLetItSnow = function(){
 
 	(function() {
@@ -234,9 +208,11 @@ var initLetItSnow = function(){
 	init();
 }; 
 
+// Person array, holds all survey responses
 var people = [];
 
-// spreadsheet-detching code 
+// a Person object holds the responses of a single object
+// and provides methods to go along with it (matchNumber and getMatchList)
 var Person = function(line) {
 	line = line.split(',');
 	this.timestamp = line[0];
@@ -317,8 +293,11 @@ var Person = function(line) {
 	/* this.personalityVSAppearance = line[62]; // unused */
 };
 
+// a constant signifiying that one asked for their responses to not be used
+// TODO: send emails asking if people want to change their agreeToTerms response
 var TERMS_NOT_AGREED_TO = -666;
 
+// returns a number signifying how well someone matches with someone else
 Person.prototype.matchNumber = function(other) {
 	try {
 		if (other.agreeToTerms.indexOf("Yes") === -1 || this.agreeToTerms.indexOf("Yes") === -1) {
@@ -429,16 +408,21 @@ Person.prototype.matchNumber = function(other) {
 	return compScore;
 };
 
+// returns an list with best matches at the front and worst at the back
+// TODO: lists of more than best match, e.g. best fiend, people who matched best with you
 Person.prototype.getMatchList = function() {
 	var scoreArr = [];
 	for(var i = 0; i < people.length; i++) {
 	  // console.log('dan with ' + people[i].name + ': ' + people[2].matchNumber(people[i]));
+	  // TODO: remove matches <= 0
 	  scoreArr.push([this.matchNumber(people[i]), people[i].name, people[i]]);
 	}
 	scoreArr.sort(function(a, b){return b[0]-a[0]});
 	console.log(scoreArr);
 }
 
+// called when the document is loaded, downloads the match responses list
+// and creates the people array from it
 var getPeople = function() {
 	$.get( "/matchresponses.csv", function( data ) {
 		//$( ".data" ).html( data );
