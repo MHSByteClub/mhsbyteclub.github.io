@@ -97,7 +97,7 @@
 		</div>
 		<div class="stitched data">
 			<!-- TODO: output results to here -->
-			<h2>Your matche(s) are...</h2>
+			<h2>Your match(es) are...</h2>
 			
 			<!-- Best matches -->
 			<h1 class="match_result"></h1>
@@ -490,10 +490,10 @@ Person.prototype.getMatchList = function() {
 	var resultString = "";
 	console.log(scoreArr[0][1]);
 	resultString = scoreArr[0][1];
-	document.getElementById("result").innerHTML = resultString;
+	//document.getElementById("result").innerHTML = resultString;
 }
 
-Person.prototype.getMatchList1 = function() {
+/*Person.prototype.getMatchList1 = function() {
 	var scoreArr = [];
 	for(var r = 0; r < people.length; r++) {
 	  // TODO: remove matches <= 0
@@ -524,7 +524,7 @@ Person.prototype.getMatchList1 = function() {
 	document.getElementById("result8").innerHTML = "8. " + resultString8;
 	document.getElementById("result9").innerHTML = "9. " + resultString9;
 	document.getElementById("result10").innerHTML = "10. " + resultString10;
-}
+}*/
 
 // called when the document is loaded, downloads the match responses list
 // and creates the people array from it
