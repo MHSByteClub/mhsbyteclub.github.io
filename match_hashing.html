@@ -4,7 +4,10 @@
     
   </head>
     <body>
-      <textarea id="number"></textarea>
+      <p>Student ID:</p>
+			<input id="username" type="number">
+			<p>Password:</p>
+			<input id="password" type="password">
       <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
       <br>
       <button onclick="createHash()">Create password</button>
@@ -13,8 +16,10 @@
       </div>
       <script>
         function createHash() {
-          var textAreaText = document.getElementById('number').value;
-          var hash = CryptoJS.MD5(textAreaText).toString();
+          user = document.getElementById("username").value;
+					pass = document.getElementById("password").value;
+					if (pass.indexOf("mrfarmer") === 0){	
+          var hash = CryptoJS.MD5(user).toString();
           console.log(hash);
           var resultString = "";
           resultString = hash;
@@ -25,6 +30,10 @@
           }
           
           document.getElementById("result").innerHTML = resultString;
+					}
+					else{
+					  alert("Check Password or join byte club");
+					}
         }
       </script>
       
