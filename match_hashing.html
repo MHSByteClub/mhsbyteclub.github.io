@@ -17,6 +17,12 @@
           console.log(hash);
           var resultString = "";
           resultString = hash;
+          
+          // insert spaces into hash
+          for(var i = 4; i < resultString.length; i+=5) {
+            resultString = resultString.substring(0, i) + " " + resultString.substring(i);
+          }
+          
           document.getElementById("result").innerHTML = resultString;
         }
       </script>
