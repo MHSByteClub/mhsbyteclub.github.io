@@ -78,17 +78,17 @@
 			<!-- TODO: output results to here -->
 			<h2>Your match is...</h2>
 			<h1 id="result"></h1>
-			<ol type="1" id="List">
-				<li id="result1"></li>
-				<li id="result2"></li>
-				<li id="result3"></li>
-				<li id="result4"></li>
-				<li id="result5"></li>
-				<li id="result6"></li>
-				<li id="result7"></li>
-				<li id="result8"></li>
-				<li id="result9"></li>
-				<li id="result10"></li>
+			
+				<h4 id="result1"></h4>
+				<h4 id="result2"></h4>
+				<h4 id="result3"></h4>
+				<h4 id="result4"></h4>
+				<h4 id="result5"></h4>
+				<h4 id="result6"></h4>
+				<h4 id="result7"></h4>
+				<h4 id="result8"></h4>
+				<h4 id="result9"></h4>
+				<h4 id="result10"></h4>
 			<!-- TODO: maybe disclaimer that middle-of-the-road answers matched high with everyone -->
 		</div>
 
@@ -216,7 +216,7 @@ var initLetItSnow = function(){
 	    snow();
 	};
 
-	canvas.addEventListener("mousemove", function(e) {
+	canvas.addEventh4stener("mousemove", function(e) {
 	    mX = e.clientX,
 	    mY = e.clientY;
 	});
@@ -466,16 +466,16 @@ Person.prototype.getMatchList1 = function() {
 	resultString8 = scoreArr[7][1];
 	resultString9 = scoreArr[8][1];
 	resultString10 = scoreArr[9][1];
-	document.getElementById("result1").innerHTML = resultString1;
-	document.getElementById("result2").innerHTML = resultString2;
-	document.getElementById("result3").innerHTML = resultString3;
-	document.getElementById("result4").innerHTML = resultString4;
-	document.getElementById("result5").innerHTML = resultString5;
-	document.getElementById("result6").innerHTML = resultString6;
-	document.getElementById("result7").innerHTML = resultString7;
-	document.getElementById("result8").innerHTML = resultString8;
-	document.getElementById("result9").innerHTML = resultString9;
-	document.getElementById("result10").innerHTML = resultString10;
+	document.getElementById("result1").innerHTML = "1. " + resultString1;
+	document.getElementById("result2").innerHTML = "2. " + resultString2;
+	document.getElementById("result3").innerHTML = "3. " + resultString3;
+	document.getElementById("result4").innerHTML = "4. " + resultString4;
+	document.getElementById("result5").innerHTML = "5. " + resultString5;
+	document.getElementById("result6").innerHTML = "6. " + resultString6;
+	document.getElementById("result7").innerHTML = "7. " + resultString7;
+	document.getElementById("result8").innerHTML = "8. " + resultString8;
+	document.getElementById("result9").innerHTML = "9. " + resultString9;
+	document.getElementById("result10").innerHTML = "10. " + resultString10;
 }
 
 // called when the document is loaded, downloads the match responses list
