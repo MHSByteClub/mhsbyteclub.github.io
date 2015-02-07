@@ -1,64 +1,49 @@
 <!DOCTYPE html>
-  <HTML>
-  <head>
-    <SCRIPT>
-	<!--
-	function submitenter(myfield,e){
-	var keycode;
-	if (window.event) keycode = window.event.keyCode;
-	else if (e) keycode = e.which;
-	else return true;
+<html>
+	<head>
+	
+	</head>
+	<body>
+		<form>
+			id: 		<input id="username" type="number"><br>
+			password:	<input id="password" type="password"><br>
+			<button type="button" onclick="createHash()">Create password</button>
+		</form>
+		
+		<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+		<br>
+		
+		<div class="stitched h1_height">
+			<p id="result"></p>
+		</div>
+		
+		<script>
+			function createHash(e) {
+				e.preventDefault();
+			}
+			
+			function createHash() {
+				user = document.getElementById("username").value;
+				pass = document.getElementById("password").value;
+				if (pass.indexOf("mrfarmer") === 0) {	
+					var hash = CryptoJS.MD5(user).toString();
+					console.log(hash);
+					var resultString = "";
+					resultString = hash;
+					
+					// insert spaces into hash
+					for(var i = 5; i < resultString.length; i+=5+1) {
+						resultString = resultString.substring(0, i) + " " + resultString.substring(i);
+					}
+					
+					document.getElementById("result").innerHTML = resultString;
+				}
+				else {
+					alert("Check Password or join byte club");
+				}
+			}
+		</script>
+		
+	</body>
 
-	if (keycode == 13){
-   		
-   		return false;
-   	}
-	else
-   		return true;
-}
-//-->
-	</SCRIPT>
-  </head>
-    <body>
-      <FORM>
-	id: 		<input id="username" type="number" onKeyPress="return submitenter(this,event)"><br>
-	password:	<input id="password" type="password" onKeyPress="return submitenter(this,event)"><br>
-	<button onclick="return createHash()">Create password</button>
-	</from>
-      <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
-      <br>
-      
-      <div class="stitched h1_height">
-      <p id="result"></p>
-      </div>
-      <script>
-      
-      	function createHash(e) {
-    		e.preventDefault();
-	}
-      
-        function createHash() {
-          user = document.getElementById("username").value;
-					pass = document.getElementById("password").value;
-					if (pass.indexOf("mrfarmer") === 0){	
-          var hash = CryptoJS.MD5(user).toString();
-          console.log(hash);
-          var resultString = "";
-          resultString = hash;
-          
-          // insert spaces into hash
-          for(var i = 5; i < resultString.length; i+=5+1) {
-            resultString = resultString.substring(0, i) + " " + resultString.substring(i);
-          }
-          
-          document.getElementById("result").innerHTML = resultString;
-					}
-					else{
-					  alert("Check Password or join byte club");
-					}
-        }
-      </script>
-      
-    </body>
-  
-  </HTML>
+</html>
