@@ -6,8 +6,17 @@
 	
 	<body>
 		<form>
-			id: 		<input id="username" type="number" onkeydown="if (event.keyCode == 13) document.getElementById('getpass').click()"><br>
-			password:	<input id="password" type="password"  onkeydown="if (event.keyCode == 13) document.getElementById('getpass').click()"><br>
+			<table>
+				<tr>
+					<td>ID</td>
+					<td><input id="username" type="number" onkeydown="if (event.keyCode == 13) document.getElementById('getpass').click()"></td>	
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input id="password" type="password"  onkeydown="if (event.keyCode == 13) document.getElementById('getpass').click()"></td>
+				</tr>
+			</table>
+			
 			<button id="getpass" type="button" onclick="createHash()">Create password</button>
 		</form>
 		
