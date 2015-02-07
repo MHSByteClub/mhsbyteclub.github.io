@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	
+		<title>Matchmaker hashing</title>
 	</head>
+	
 	<body>
 		<form>
 			id: 		<input id="username" type="number"><br>
 			password:	<input id="password" type="password"><br>
-			<button type="button" onclick="createHash()">Create password</button>
+			<button id="getpass" type="button" onclick="createHash()">Create password</button>
 		</form>
 		
 		<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
@@ -18,9 +19,19 @@
 		</div>
 		
 		<script>
-			function createHash(e) {
-				e.preventDefault();
-			}
+			// if enter is clicked in username box, press button
+			$("#username").keyup(function(event) {
+				if(event.keyCode == 13){
+					$("#getpass").click();
+				}
+			});
+			
+			// if enter is clicked in pass box, press button
+			$("#password").keyup(function(event) {
+				if(event.keyCode == 13){
+					$("#getpass").click();
+				}
+			});
 			
 			function createHash() {
 				user = document.getElementById("username").value;
@@ -43,7 +54,5 @@
 				}
 			}
 		</script>
-		
 	</body>
-
 </html>
