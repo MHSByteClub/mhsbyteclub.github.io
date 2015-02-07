@@ -66,23 +66,28 @@
 						
 						var scoreArr = person.getMatchList();
 						
-						var funded = fund === 0 || fund === 5 || fund === 10;
+						var came_by = fund === 0 || fund === 5 || fund === 10;
 						var funded_ten = fund === 5 || fund === 10;
 						var funded_all = fund === 10;
 						
+						console.log("fund: " + fund);
+						
 						var best_match_headers = $('.match_result');
 						for(var i = 0; i < best_match_headers.length; i++) {
+							var header_text = best_match_headers[i].innerText;
+							var name = scoreArr[i][1];
+							
 							if(i === 0) {
-								best_match_headers[i].innerText = scoreArr[i][1];
+								header_text = name; // set h element to match's name
 							}
-							else if(i <= 2 && funded) {
-								best_match_headers[i].innerText = scoreArr[i][1];
+							else if(i <= 2 && came_by) {
+								header_text = name;
 							}
 							else if(i <= 9 && funded_ten) {
-								best_match_headers[i].innerText = scoreArr[i][1];
+								header_text = name;
 							}
 							else if(i <= 19 && funded_all) {
-								best_match_headers[i].innerText = scoreArr[i][1];
+								header_text = name;
 							}
 						}
 					}
