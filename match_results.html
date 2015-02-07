@@ -424,8 +424,9 @@ Person.prototype.matchNumber = function(other) {
 	var compScore = 0;
 	
 	var genderCompatOther = this.gender === other.genderInterestedIn.split('s')[0] || other.genderInterestedIn === "Both";
+	console.log(genderCompatOther);
 	var genderCompatSelf = this.genderInterestedIn.split('s')[0] === other.gender || this.genderInterestedIn === "Both";
-
+	console.log(genderCompatSelf);
 	if(genderCompatOther && genderCompatSelf){  		//checking for gender preferences		 
 		
 		var abs = Math.abs;
@@ -497,7 +498,6 @@ Person.prototype.matchNumber = function(other) {
 Person.prototype.getMatchList = function() {
 	var scoreArr = [];
 	for(var r = 0; r < people.length; r++) {
-	  // console.log('dan with ' + people[i].name + ': ' + people[2].matchNumber(people[i]));
 	  // TODO: remove matches <= 0
 	  scoreArr.push([this.matchNumber(people[r]), people[r].name, people[r],  "person #" + r]);
 	}
