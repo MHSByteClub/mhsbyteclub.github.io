@@ -44,7 +44,7 @@
 						// get password length and username/pass hash
 						var passLength = pass.length;
 						var hash = CryptoJS.MD5(user).toString();
-						console.log(hash);
+						//console.log(hash);
 						
 						// if the pass is in the hash, they're funded for seeing extra matches
 						var fund = hash.indexOf(pass);
@@ -59,14 +59,7 @@
 						}
 						
 						// gets person's Person object
-						for(var i = 1; i < people.length - 1; i++) {
-					  		// console.log(people[i].username.split('@')[0] + '\t' + user);
-						  	if(people[i].username.split('@')[0] == user) {
-						    		console.log('found! response#' + i);
-						    		person = people[i];
-						    		break;
-						  	}
-						}
+						person = getPersonFromID(user);
 						
 						var scoreArr = person.getMatchList();
 						
@@ -152,7 +145,7 @@
 		<!-- heart snow code -->
 		<script type="text/javascript">
 $(document).ready(function(){
-  console.log('doc ready');
+  // console.log('doc ready');
   initLetItSnow();
   getPeople();
   console.log('executed letitsnow and getpeople');
@@ -371,16 +364,15 @@ var Person = function(line) {
 // a constant signifiying that one asked for their responses to not be used
 // TODO: send emails asking if people want to change their agreeToTerms response
 var TERMS_NOT_AGREED_TO = -666;
+var BUGGY_PERSON = -867;
 
 // returns a number signifying how well someone matches with someone else
 Person.prototype.matchNumber = function(other) {
-	try {
-		if (other.agreeToTerms.indexOf("Yes") === -1 || this.agreeToTerms.indexOf("Yes") === -1) {
-			return TERMS_NOT_AGREED_TO;
-		}
-	} catch (e) {
-		console.log('error in term agreement');
-		console.log(e);
+	if(other.name === undefined) {
+		return BUGGY_PERSON;
+	}
+	
+	if (other.agreeToTerms.indexOf("Yes") === -1 || this.agreeToTerms.indexOf("Yes") === -1) {
 		return TERMS_NOT_AGREED_TO;
 	}
 	
@@ -484,14 +476,14 @@ Person.prototype.matchNumber = function(other) {
 };
 
 // returns an list with best matches at the front and worst at the back
-// returns [match, name, person] array
+// returns [match, name, person, people[] index] array
 // TODO: lists of more than best match, e.g. best fiend, people who matched best with you
 Person.prototype.getMatchList = function() {
 	var scoreArr = [];
 	for(var r = 0; r < people.length; r++) {
 	  // console.log('dan with ' + people[i].name + ': ' + people[2].matchNumber(people[i]));
 	  // TODO: remove matches <= 0
-	  scoreArr.push([this.matchNumber(people[r]), people[r].name, people[r]]);
+	  scoreArr.push([this.matchNumber(people[r]), people[r].name, people[r],  "person #" + r]);
 	}
 	scoreArr.sort(function(a, b){return b[0]-a[0]});
 	console.log(scoreArr);
@@ -503,38 +495,16 @@ Person.prototype.getMatchList = function() {
 	return scoreArr;
 }
 
-/*Person.prototype.getMatchList1 = function() {
-	var scoreArr = [];
-	for(var r = 0; r < people.length; r++) {
-	  // TODO: remove matches <= 0
-	  scoreArr.push([this.matchNumber(people[r]), people[r].name, people[r]]);
+// gets an ID's Person object
+// assumes properly formatted ID
+var getPersonFromID = function(id) {
+	for(var i = 1; i < people.length - 1; i++) {
+	  	if(people[i].username.split('@')[0] == id) {
+	    		console.log('found! response#' + i);
+	    		return people[i];
+	  	}
 	}
-	scoreArr.sort(function(a, b){return b[0]-a[0]});
-	console.log(scoreArr);
-	var resultString = "";
-	console.log(scoreArr[0][1]);
-	resultString1 = scoreArr[0][1];
-	
-	resultString2 = scoreArr[1][1];
-	resultString3 = scoreArr[2][1];
-	resultString4 = scoreArr[3][1];
-	resultString5 = scoreArr[4][1];
-	resultString6 = scoreArr[5][1];
-	resultString7 = scoreArr[6][1];
-	resultString8 = scoreArr[7][1];
-	resultString9 = scoreArr[8][1];
-	resultString10 = scoreArr[9][1];
-	document.getElementById("result1").innerHTML = "1. " + resultString1;
-	document.getElementById("result2").innerHTML = "2. " + resultString2;
-	document.getElementById("result3").innerHTML = "3. " + resultString3;
-	document.getElementById("result4").innerHTML = "4. " + resultString4;
-	document.getElementById("result5").innerHTML = "5. " + resultString5;
-	document.getElementById("result6").innerHTML = "6. " + resultString6;
-	document.getElementById("result7").innerHTML = "7. " + resultString7;
-	document.getElementById("result8").innerHTML = "8. " + resultString8;
-	document.getElementById("result9").innerHTML = "9. " + resultString9;
-	document.getElementById("result10").innerHTML = "10. " + resultString10;
-}*/
+}
 
 // called when the document is loaded, downloads the match responses list
 // and creates the people array from it
@@ -543,14 +513,12 @@ var getPeople = function() {
 		//$( ".data" ).html( data );
 		
 		lines = data.split("\n");
-		console.log(lines);
 		
 		for(var i = 0; i < lines.length; i++) {
 			people.push(new Person(lines[i]));
 		}
 		
 		console.log(people);
-		console.log('got people');
 	});
 };
 		</script>
