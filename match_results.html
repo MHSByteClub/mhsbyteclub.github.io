@@ -87,6 +87,20 @@
 								header.innerText = name;
 							}
 						}
+						
+						if(came_by) {
+							$('.matches_heading').innerText = "Your matches are...";
+						} else {
+							$('.matches_heading').innerText = "Your #1 match is..."
+						}
+						
+						if(funded_ten) {
+							$('.friends_heading').show(100);
+						}
+						
+						if(funded_all) {
+							$('.worst_heading').show(100);
+						}
 					}
 					
 					function isNormalInteger(str) {
@@ -98,10 +112,8 @@
 			<br><br><br><br><br><br><br><br><br>
 		</div>
 		<div class="stitched data">
-			<!-- TODO: output results to here -->
-			<h2>Your match(es) are...</h2>
-			
 			<!-- Best matches -->
+			<h2 class="matches_heading">Your match(es) are...</h2>
 			<h1 class="match_result"></h1>
 			<h4 class="match_result"></h4>
 			<h4 class="match_result"></h4>
@@ -124,6 +136,7 @@
 			<h4 class="match_result"></h4>
 			
 			<!-- Best friends -->
+			<h2 class="friends_heading" style="visibility: hidden;">Your best friends are...</h2>
 			<h1 class="friend_result"></h1>
 			<h4 class="friend_result"></h4>
 			<h4 class="friend_result"></h4>
@@ -136,6 +149,7 @@
 			<h4 class="friend_result"></h4>
 			
 			<!-- worst match -->
+			<h2 class="worst_heading" style="visibility: hidden;">Your worst matches are...</h2>
 			<h1 class="worst_match"></h1>
 			
 			<!-- TODO: maybe disclaimer that middle-of-the-road answers matched high with everyone -->
