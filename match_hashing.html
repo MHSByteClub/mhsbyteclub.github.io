@@ -6,8 +6,8 @@
 	
 	<body>
 		<form>
-			id: 		<input id="username" type="number"><br>
-			password:	<input id="password" type="password"><br>
+			id: 		<input id="username" type="number" onkeydown="if (event.keyCode == 13) document.getElementById('getpass').click()"><br>
+			password:	<input id="password" type="password"  onkeydown="if (event.keyCode == 13) document.getElementById('getpass').click()"><br>
 			<button id="getpass" type="button" onclick="createHash()">Create password</button>
 		</form>
 		
@@ -19,20 +19,6 @@
 		</div>
 		
 		<script>
-			// if enter is clicked in username box, press button
-			$("#username").keyup(function(event) {
-				if(event.keyCode == 13){
-					$("#getpass").click();
-				}
-			});
-			
-			// if enter is clicked in pass box, press button
-			$("#password").keyup(function(event) {
-				if(event.keyCode == 13){
-					$("#getpass").click();
-				}
-			});
-			
 			function createHash() {
 				user = document.getElementById("username").value;
 				pass = document.getElementById("password").value;
