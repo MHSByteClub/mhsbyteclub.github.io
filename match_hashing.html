@@ -21,12 +21,14 @@
   </head>
     <body>
       <p>Student ID:</p>
-			<input id="username" type="number" onKeyPress="return submitenter(this,event)">
-			<p>Password:</p>
-			<input id="password" type="password" onKeyPress="return submitenter(this,event)">
+      <FORM ACTION="../cgi-bin/mycgi.pl">
+	id: 		<input id="username" type="number" onKeyPress="return submitenter(this,event)"><br>
+	password:	<input id="password" type="password" onKeyPress="return submitenter(this,event)"><br>
+	<button onclick="createHash()">Create password</button>
+	</from>
       <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
       <br>
-      <button onclick="createHash()">Create password</button>
+      
       <div class="stitched h1_height">
       <p id="result"></p>
       </div>
