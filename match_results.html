@@ -61,7 +61,8 @@
 						// gets person's Person object
 						person = getPersonFromID(user);
 						
-						var scoreArr = person.getMatchList();
+						var scoreArr = person.getMatchList(LOOKING_FOR_A_MATCH);
+						var friendArr = person.getMatchList(LOOKING_FOR_A_FRIEND);
 						
 						console.log("fund: " + fund);
 						
@@ -384,14 +385,6 @@ var BUGGY_PERSON = -867;
 
 // returns a number signifying how well someone matches with someone else
 Person.prototype.matchNumber = function(other, lookingForFriend) {
-	if(lookingForFriend === true){
-		var genderCompatOther = this.gender === other.gender;
-		var genderCompatSelf = this.genderInterestedIn.split('s')[0] === other.genderInterestedIn.split('s')[0] || this.genderInterestedIn === "Both" || other.genderInterestedIn === "Both";
-	}
-	else{
-		var genderCompatOther = this.gender === other.genderInterestedIn.split('s')[0] || other.genderInterestedIn === "Both";
-		var genderCompatSelf = this.genderInterestedIn.split('s')[0] === other.gender || this.genderInterestedIn === "Both";
-	}
 	if(other.name === undefined) {
 		return BUGGY_PERSON;
 	}
@@ -424,15 +417,17 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 	if(other.grade === "Freshman"){
 		other.grade = 1;
 	}
-	
 
 	var classScore = 0;
 	var physicalScore = 0;
 	var hobbyScore = 0;
 	var compScore = 0;
 	
+	var genderCompatOther = this.gender === other.genderInterestedIn.split('s')[0] || other.genderInterestedIn === "Both";
+	var genderCompatSelf = this.genderInterestedIn.split('s')[0] === other.gender || this.genderInterestedIn === "Both";
+	var interestedInEachOther = genderCompatOther && genderCompatSelf;
 	
-	if(genderCompatOther && genderCompatSelf){  		//checking for gender preferences		 
+	if((interestedInEachOther && !lookingForFriend) || (!interestedInEachOther && lookingForFriend)){ // checking for gender preferences		 
 		
 		var abs = Math.abs;
 		
@@ -489,6 +484,10 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		hobbyScore *= this.personalityTrait;			//all multipliers!
 		physicalScore *= this.appearanceTrait;
 		classScore *= this.classTrait;
+		
+		if(lookingForFriend) {
+			physicalScore = 0;
+		}
 
 		compScore = classScore + physicalScore + hobbyScore;	//total compatibility score
 	}
@@ -497,21 +496,33 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 	return compScore;
 };
 
+var LOOKING_FOR_A_FRIEND = true;
+var LOOKING_FOR_A_MATCH = false;
+
 // returns an list with best matches at the front and worst at the back
 // returns [match, name, person, people[] index] array
 // TODO: lists of more than best match, e.g. best fiend, people who matched best with you
-Person.prototype.getMatchList = function() {
+Person.prototype.getMatchList = function(lookingForFriend) {
 	var scoreArr = [];
+	
+	// get array of match numbers
 	for(var r = 0; r < people.length; r++) {
-	  // TODO: remove matches <= 0
-	  scoreArr.push([this.matchNumber(people[r]), people[r].name, people[r],  "person #" + r]);
+	  var other = people[r];
+	  var match_num = this.matchNumber(other, lookingForFriend);
+	  
+	  var arr = [match_num, other.name, other,  "person #" + r];
+	  
+	  if(match_num > 0) {
+	  	scoreArr.push(arr);
+	  }
 	}
+	
+	// sort the array
 	scoreArr.sort(function(a, b){return b[0]-a[0]});
+	
+	// log the array and best match
 	console.log(scoreArr);
-	var resultString = "";
-	console.log(scoreArr[0][1]);
-	resultString = scoreArr[0][1];
-	//document.getElementById("result").innerHTML = resultString;
+	console.log("best match: " + scoreArr[0][1]);
 	
 	return scoreArr;
 }
