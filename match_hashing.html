@@ -1,13 +1,29 @@
 <!DOCTYPE html>
   <HTML>
   <head>
-    
+    <SCRIPT>
+	<!--
+	function submitenter(myfield,e){
+	var keycode;
+	if (window.event) keycode = window.event.keyCode;
+	else if (e) keycode = e.which;
+	else return true;
+
+	if (keycode == 13){
+   		myfield.form.submit();
+   		return false;
+   	}
+	else
+   		return true;
+}
+//-->
+	</SCRIPT>
   </head>
     <body>
       <p>Student ID:</p>
-			<input id="username" type="number">
+			<input id="username" type="number" onKeyPress="return submitenter(this,event)">
 			<p>Password:</p>
-			<input id="password" type="password">
+			<input id="password" type="password" onKeyPress="return submitenter(this,event)">
       <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
       <br>
       <button onclick="createHash()">Create password</button>
