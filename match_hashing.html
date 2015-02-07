@@ -23,7 +23,7 @@
       <FORM>
 	id: 		<input id="username" type="number" onKeyPress="return submitenter(this,event)"><br>
 	password:	<input id="password" type="password" onKeyPress="return submitenter(this,event)"><br>
-	<button type="button" onclick="return createHash()">Create password</button>
+	<button onclick="return createHash()">Create password</button>
 	</from>
       <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
       <br>
@@ -32,6 +32,11 @@
       <p id="result"></p>
       </div>
       <script>
+      
+      	function createHash(e) {
+    		e.preventDefault();
+	}
+      
         function createHash() {
           user = document.getElementById("username").value;
 					pass = document.getElementById("password").value;
