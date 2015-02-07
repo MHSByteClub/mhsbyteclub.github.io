@@ -41,16 +41,16 @@
 						user = document.getElementById("username").value;
 						pass = document.getElementById("password").value;
 						
-						// get password length and username/pass hash
-						var passLength = pass.length;
+						// get username/pass hash
 						var hash = CryptoJS.MD5(user).toString();
 						//console.log(hash);
 						
 						// if the pass is in the hash, they're funded for seeing extra matches
 						var fund = hash.indexOf(pass);
 						
+						// but passes that aren't 5 chars long throw things off
 						if(pass.length !== 5) {
-							fund === -1;
+							fund = -1;
 						}
 						
 						// check if username is valid
