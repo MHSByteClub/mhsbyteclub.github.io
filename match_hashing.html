@@ -39,7 +39,7 @@
 					resultString = hash;
 					
 					// insert lines into hash
-					for(var i = 5; i < resultString.length; i+=5+4) { // 5 for pass, +7 for the newline, num, semicolon and space
+					for(var i = 5; i < resultString.length; i+=5+7) { // 5 for pass, +7 for the newline, num, semicolon and space
 						resultString = resultString.substring(0, i) + "<br>" + i + ": " + resultString.substring(i);
 					}
 					
