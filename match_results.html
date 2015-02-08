@@ -52,7 +52,7 @@
 		</div>
 		
 		<!-- info --> 
-		<div class="stitched">
+		<div class="stitched info">
 			Swing by our table during lunch for the <b>free </b> <i>Pachetto Amore</i> package: three matches
 			<br>$1 for the <i>Cupid's Quiver</i> package: ten matches and 5 best friends
 			<br>$5 or come to Byte Club this week (Tuesday afterschool in Mr. Sethna's room) for the <i>Venus Deluxe</i> package: twenty matches, ten best friends, your worst friend, and your worst match PLUS extra statistics.
@@ -142,12 +142,12 @@ var buttonClick = function() {
 	person = getPersonFromID(user);
 	
 	if(person === null) {
-		alert("ID invalid: Did you fill out the survey?\nIf you did, we may not have refreshed survey data since that time.\nYou can reach out to 150003" + "@students.d120.org");
+		$('.info')[0].innerText = "ID invalid: Did you fill out the survey? If you did, we may not have refreshed survey data since that time. You can reach out to 150003" + "@students.d120.org and/or 150001@students.d120.org<br><br>" + $('.info')[0].innerText;
 		return;
 	}
 	
 	if(person.agreeToTerms.indexOf("Yes") === -1) {
-		alert("Did not agree to terms. Email 150001" + "@students.d120.org and/or 150003@students.d120.org if you'd like to change that");
+		$('.info')[0].innerText = "Did not agree to terms. Email 150001" + "@students.d120.org and/or 150003@students.d120.org if you'd like to change that.<br><br>" + $('.info')[0].innerText);
 		return;
 	}
 	
