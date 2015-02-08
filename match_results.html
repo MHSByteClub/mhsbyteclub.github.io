@@ -183,16 +183,10 @@ var buttonClick = function() {
 		var header = best_friend_headers[i];
 		var name = friendArr[i][1];
 		
-		if(i === 0) {
-			header.innerText = name; // set h element to match's name
-		}
-		else if(i <= 2 && came_by) {
+		else if(i <= 4 && funded_ten) {
 			header.innerText = name;
 		}
-		else if(i <= 9 && funded_ten) {
-			header.innerText = name;
-		}
-		else if(i <= 19 && funded_all) {
+		else if(i <= 9 && funded_all) {
 			header.innerText = name;
 		}
 	}
