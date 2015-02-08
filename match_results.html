@@ -357,7 +357,7 @@ var SAME_PERSON = -11;
 
 // returns a number signifying how well someone matches with someone else
 Person.prototype.matchNumber = function(other, lookingForFriend) {
-	if(other.name === undefined) {
+	if(this.name === undefined || other.name === undefined) {
 		return BUGGY_PERSON;
 	}
 	
