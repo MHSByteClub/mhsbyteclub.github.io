@@ -152,9 +152,9 @@ var buttonClick = function() {
 	
 	// change headings based on funds
 	if(came_by) {
-		$('.matches_heading').innerText = "Your matches are...";
+		$('.matches_heading')[0].innerText = "Your matches are...";
 	} else {
-		$('.matches_heading').innerText = "Your #1 match is..."
+		$('.matches_heading')[0].innerText = "Your #1 match is...";
 	}
 	
 	if(funded_ten) {
