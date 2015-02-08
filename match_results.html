@@ -92,7 +92,8 @@
 			
 			<!-- worst match -->
 			<h2 class="worst_heading" style="display: none;">Your worst matches are...</h2>
-			<h1 class="worst_match"></h1>
+			<h4 class="worst_match"></h4>
+			<h4 class="worst_friend"></h4>
 			
 			<!-- TODO: maybe disclaimer that middle-of-the-road answers matched high with everyone -->
 		</div>
@@ -130,7 +131,7 @@ var buttonClick = function() {
 	// gets person's Person object
 	person = getPersonFromID(user);
 	
-	var scoreArr = person.getMatchList(LOOKING_FOR_A_MATCH);
+	var matchArr = person.getMatchList(LOOKING_FOR_A_MATCH);
 	var friendArr = person.getMatchList(LOOKING_FOR_A_FRIEND);
 	
 	console.log("fund: " + fund);
@@ -139,10 +140,28 @@ var buttonClick = function() {
 	var funded_ten = fund === 5 || fund === 10;
 	var funded_all = fund === 10;
 	
+	
+	// change headings based on funds
+	if(came_by) {
+		$('.matches_heading').innerText = "Your matches are...";
+	} else {
+		$('.matches_heading').innerText = "Your #1 match is..."
+	}
+	
+	if(funded_ten) {
+		$('.friends_heading').show(100);
+	}
+	
+	if(funded_all) {
+		$('.worst_heading').show(100);
+	}
+	
+	
+	// display best matches
 	var best_match_headers = $('.match_result');
 	for(var i = 0; i < best_match_headers.length; i++) {
 		var header = best_match_headers[i];
-		var name = scoreArr[i][1];
+		var name = matchArr[i][1]; // matchArr[i][1] is the i'ths person's name
 		
 		if(i === 0) {
 			header.innerText = name; // set h element to match's name
@@ -158,18 +177,36 @@ var buttonClick = function() {
 		}
 	}
 	
-	if(came_by) {
-		$('.matches_heading').innerText = "Your matches are...";
-	} else {
-		$('.matches_heading').innerText = "Your #1 match is..."
+	// display best friends
+	var best_friend_headers = $('.friend_result');
+	for(var i = 0; i < best_friend_headers.length; i++) {
+		var header = best_friend_headers[i];
+		var name = friendArr[i][1];
+		
+		if(i === 0) {
+			header.innerText = name; // set h element to match's name
+		}
+		else if(i <= 2 && came_by) {
+			header.innerText = name;
+		}
+		else if(i <= 9 && funded_ten) {
+			header.innerText = name;
+		}
+		else if(i <= 19 && funded_all) {
+			header.innerText = name;
+		}
 	}
 	
-	if(funded_ten) {
-		$('.friends_heading').show(100);
-	}
-	
+	// display worst friend/match
 	if(funded_all) {
-		$('.worst_heading').show(100);
+		var worst_match_header = $('.worst_match')[0];
+		var worst_friend_header = $('.worst_friend')[0];
+		
+		var worst_match_name = matchArr[matchArr.length - 1][1];
+		var worst_friend_name = friendArr[friendArr.length - 1][1];
+		
+		worst_match_header.innerText = worst_match_name;
+		worst_friend_header.innerText = worst_friend_name;
 	}
 }
 
