@@ -46,8 +46,10 @@
 					
 					<button id="btn_submit" type="button" onclick="buttonClick()">Submit</button>
 				</form>
+				<br>
 				
-				<br><br>
+				<p id="whats_next" style="display: none;">Got your matches? <a href="https://www.khanacademy.org/computer-programming/match-making/6693548083380224">Get a bae pen name</a> or <a href="http://www.randomlists.com/random-songs">find your song</a>!</p>
+				<br>
 			</div>
 			<br><br><br><br><br><br><br><br><br>
 		</div>
@@ -127,6 +129,9 @@ var buttonClick = function() {
 	if(user.length != 6 || !isNormalInteger(user)) {
 		return;
 	}
+	
+	// nothing's broken yet? display links to get a pen name and song
+	$('#whats_next').show(200);
 	
 	// gets person's Person object
 	person = getPersonFromID(user);
