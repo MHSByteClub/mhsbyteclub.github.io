@@ -39,16 +39,16 @@
 					resultString = hash;
 					
 					// insert lines into hash
-					for(var i = 5; i < resultString.length; i+=5+4) { // 5 for pass, +4 for the newline, num, semicolon and space
-						resultString = resultString.substring(0, i) + "\n" + i + ": " + resultString.substring(i);
+					for(var i = 5; i < resultString.length; i+=5+4) { // 5 for pass, +7 for the newline, num, semicolon and space
+						resultString = resultString.substring(0, i) + "<br>" + i + ": " + resultString.substring(i);
 					}
 					
 					resultString = "0: " + resultString;
 					
-					resultString += "\n\n0 is the free <i>Pachetto Amore</i> package for three matches";
-					resultString += "\n1 is the $1 <i>Cupid's Quiver</i> package for ten matches and 5 best friends";
-					resultString += "\n2 is the $5 <i>Venus Deluxe</i> package for twenty matches, 10 best friends, and worst friend and match PLUS extra statistics."
-					resultString += "\n3+ is unused."
+					resultString += "<br>0 is the free <i>Pachetto Amore</i> package for three matches";
+					resultString += "<br>1 is the $1 <i>Cupid's Quiver</i> package for ten matches and 5 best friends";
+					resultString += "<br>2 is the $5 <i>Venus Deluxe</i> package for twenty matches, 10 best friends, and worst friend and match PLUS extra statistics."
+					resultString += "<br>3+ is unused."
 					
 					document.getElementById("result").innerHTML = resultString;
 				}
