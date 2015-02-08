@@ -2,10 +2,12 @@
 <html>
 	<head>
 		<title>Matchmaker hashing</title>
+		
+		<link href='css/match.css' rel='stylesheet' type='text/css'>
 	</head>
 	
 	<body>
-		<form>
+		<form class="stitched margin_twenty">
 			<table>
 				<tr>
 					<td>ID</td>
@@ -21,7 +23,6 @@
 		</form>
 		
 		<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
-		<br>
 		
 		<div class="stitched h1_height">
 			<p id="result"></p>
@@ -37,10 +38,17 @@
 					var resultString = "";
 					resultString = hash;
 					
-					// insert spaces into hash
-					for(var i = 5; i < resultString.length; i+=5+1) {
-						resultString = resultString.substring(0, i) + " " + resultString.substring(i);
+					// insert lines into hash
+					for(var i = 5; i < resultString.length; i+=5+4) { // 5 for pass, +4 for the newline, num, semicolon and space
+						resultString = resultString.substring(0, i) + "\n" + i + ": " + resultString.substring(i);
 					}
+					
+					resultString = "0: " + resultString;
+					
+					resultString += "\n\n0 is the free <i>Pachetto Amore</i> package for three matches";
+					resultString += "\n1 is the $1 <i>Cupid's Quiver</i> package for ten matches and 5 best friends";
+					resultString += "\n2 is the $5 <i>Venus Deluxe</i> package for twenty matches, 10 best friends, and worst friend and match PLUS extra statistics."
+					resultString += "\n3+ is unused."
 					
 					document.getElementById("result").innerHTML = resultString;
 				}
