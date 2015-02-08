@@ -123,7 +123,6 @@ var buttonClick = function() {
 	
 	// get username/pass hash
 	var hash = CryptoJS.MD5(user).toString();
-	//console.log(hash);
 	
 	// if the pass is in the hash, they're funded for seeing extra matches
 	var fund = hash.indexOf(pass);
@@ -157,8 +156,6 @@ var buttonClick = function() {
 	
 	var matchArr = person.getMatchList(LOOKING_FOR_A_MATCH);
 	var friendArr = person.getMatchList(LOOKING_FOR_A_FRIEND);
-	
-	console.log("fund: " + fund);
 	
 	var came_by = fund === 0 || fund === 5 || fund === 10;
 	var funded_ten = fund === 5 || fund === 10;
@@ -484,6 +481,9 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 var LOOKING_FOR_A_FRIEND = true;
 var LOOKING_FOR_A_MATCH = false;
 
+/** Can disable logging if needed **/
+var logging = true;
+
 // returns an list with best matches at the front and worst at the back
 // returns [match, name, person, people[] index] array
 // TODO: lists of more than best match, e.g. best fiend, people who matched best with you
@@ -506,8 +506,10 @@ Person.prototype.getMatchList = function(lookingForFriend) {
 	scoreArr.sort(function(a, b){return b[0]-a[0]});
 	
 	// log the array and best match
-	console.log(scoreArr);
-	console.log("best match: " + scoreArr[0][1]);
+	if(logging) {
+		console.log(scoreArr);
+		console.log("best match: " + scoreArr[0][1]);
+	}
 	
 	return scoreArr;
 }
@@ -517,7 +519,9 @@ Person.prototype.getMatchList = function(lookingForFriend) {
 var getPersonFromID = function(id) {
 	for(var i = 1; i < people.length - 1; i++) {
 	  	if(people[i].username.split('@')[0] == id) {
-	    		console.log('found! response#' + i);
+	    		if(logging) {
+	    			console.log('found! response#' + i);
+	    		}
 	    		return people[i];
 	  	}
 	}
