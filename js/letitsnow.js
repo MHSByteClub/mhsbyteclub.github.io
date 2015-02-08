@@ -1,3 +1,10 @@
+// creates heart snow on whatever page it's imported on
+// page must have 
+// <canvas id="xmas"></canvas>
+// at the bottom of the body content
+// and non-white areas 
+// or it won't work
+
 $(document).ready(function(){
    initLetItSnow();
 });
