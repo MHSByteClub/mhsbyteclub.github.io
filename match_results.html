@@ -502,6 +502,11 @@ Person.prototype.getMatchList = function(lookingForFriend) {
 	  }
 	}
 	
+	// this person is buggy
+	if(scoreArr.length === 0) {
+		return [BUGGY_PERSON, "BUGGY PERSON", people[0], "person# " + 0];
+	}
+	
 	// sort the array
 	scoreArr.sort(function(a, b){return b[0]-a[0]});
 	
