@@ -19,9 +19,12 @@
 	</head>
 	
 	<body>
+		<!-- upper heading -->
 		<div class="stitched h1_height">
 			<h1> Mustang Match </h1>
 		</div>
+		
+		<!-- login area -->
 		<div class="stitched margin_twenty">
 			<div class="above_xmas">
 				<p>Login to get your matches!</p>
@@ -29,88 +32,13 @@
 				<input id="username" type="number">
 				<p>Password:</p>
 				<input id="password" type="password">
-				<button type="button" onclick="myFunction()">Submit</button>
+				<button type="button" onclick="buttonClick()">Submit</button>
 				<br><br>
-				
-				<script>
-					function myFunction() {
-						var user, pass, text, person;
-						
-						// Get the value of the input fields with id="username", id="password"
-						user = document.getElementById("username").value;
-						pass = document.getElementById("password").value;
-						
-						// get username/pass hash
-						var hash = CryptoJS.MD5(user).toString();
-						//console.log(hash);
-						
-						// if the pass is in the hash, they're funded for seeing extra matches
-						var fund = hash.indexOf(pass);
-						
-						// but passes that aren't 5 chars long throw things off
-						if(pass.length !== 5) {
-							fund = -1;
-						}
-						
-						// check if username is valid
-						if(user.length != 6 || !isNormalInteger(user)) {
-							return;
-						}
-						
-						// gets person's Person object
-						person = getPersonFromID(user);
-						
-						var scoreArr = person.getMatchList(LOOKING_FOR_A_MATCH);
-						var friendArr = person.getMatchList(LOOKING_FOR_A_FRIEND);
-						
-						console.log("fund: " + fund);
-						
-						var came_by = fund === 0 || fund === 5 || fund === 10;
-						var funded_ten = fund === 5 || fund === 10;
-						var funded_all = fund === 10;
-						
-						var best_match_headers = $('.match_result');
-						for(var i = 0; i < best_match_headers.length; i++) {
-							var header = best_match_headers[i];
-							var name = scoreArr[i][1];
-							
-							if(i === 0) {
-								header.innerText = name; // set h element to match's name
-							}
-							else if(i <= 2 && came_by) {
-								header.innerText = name;
-							}
-							else if(i <= 9 && funded_ten) {
-								header.innerText = name;
-							}
-							else if(i <= 19 && funded_all) {
-								header.innerText = name;
-							}
-						}
-						
-						if(came_by) {
-							$('.matches_heading').innerText = "Your matches are...";
-						} else {
-							$('.matches_heading').innerText = "Your #1 match is..."
-						}
-						
-						if(funded_ten) {
-							$('.friends_heading').show(100);
-						}
-						
-						if(funded_all) {
-							$('.worst_heading').show(100);
-						}
-					}
-					
-					function isNormalInteger(str) {
-					    var n = ~~Number(str);
-					    return String(n) === str && n >= 0;
-					}
-				</script>
 			</div>
 			<br><br><br><br><br><br><br><br><br>
 		</div>
+		
+		<!-- result area -->
 		<div class="stitched data">
 			<!-- Best matches -->
 			<h2 class="matches_heading">Your match(es) are...</h2>
@@ -157,12 +85,90 @@
 
 		<canvas id="xmas"></canvas>
 		
+		<!-- javascript for matchmaking -->
 		<script type="text/javascript">
 $(document).ready(function(){
   // console.log('doc ready');
   getPeople();
-  console.log('executed letitsnow and getpeople');
+  console.log('executed getpeople');
 });
+
+var buttonClick = function() {
+	var user, pass, text, person;
+	
+	// Get the value of the input fields with id="username", id="password"
+	user = document.getElementById("username").value;
+	pass = document.getElementById("password").value;
+	
+	// get username/pass hash
+	var hash = CryptoJS.MD5(user).toString();
+	//console.log(hash);
+	
+	// if the pass is in the hash, they're funded for seeing extra matches
+	var fund = hash.indexOf(pass);
+	
+	// but passes that aren't 5 chars long throw things off
+	if(pass.length !== 5) {
+		fund = -1;
+	}
+	
+	// check if username is valid
+	if(user.length != 6 || !isNormalInteger(user)) {
+		return;
+	}
+	
+	// gets person's Person object
+	person = getPersonFromID(user);
+	
+	var scoreArr = person.getMatchList(LOOKING_FOR_A_MATCH);
+	var friendArr = person.getMatchList(LOOKING_FOR_A_FRIEND);
+	
+	console.log("fund: " + fund);
+	
+	var came_by = fund === 0 || fund === 5 || fund === 10;
+	var funded_ten = fund === 5 || fund === 10;
+	var funded_all = fund === 10;
+	
+	var best_match_headers = $('.match_result');
+	for(var i = 0; i < best_match_headers.length; i++) {
+		var header = best_match_headers[i];
+		var name = scoreArr[i][1];
+		
+		if(i === 0) {
+			header.innerText = name; // set h element to match's name
+		}
+		else if(i <= 2 && came_by) {
+			header.innerText = name;
+		}
+		else if(i <= 9 && funded_ten) {
+			header.innerText = name;
+		}
+		else if(i <= 19 && funded_all) {
+			header.innerText = name;
+		}
+	}
+	
+	if(came_by) {
+		$('.matches_heading').innerText = "Your matches are...";
+	} else {
+		$('.matches_heading').innerText = "Your #1 match is..."
+	}
+	
+	if(funded_ten) {
+		$('.friends_heading').show(100);
+	}
+	
+	if(funded_all) {
+		$('.worst_heading').show(100);
+	}
+}
+
+// returns whether a string is an integer > 0
+// might not work with 0 or 1 index-long non-integer strings
+var isNormalInteger = function(str) {
+	var n = ~~Number(str);
+	return String(n) === str && n >= 0;
+}
 
 // Person array, holds all survey responses
 var people = [];
