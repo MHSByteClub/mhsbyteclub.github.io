@@ -355,6 +355,9 @@ var TERMS_NOT_AGREED_TO = -666;
 // tested for by seeing if name is undefined
 var BUGGY_PERSON = -867;
 
+// constant signifying the people being checked are the same
+var SAME_PERSON = -11;
+
 // returns a number signifying how well someone matches with someone else
 Person.prototype.matchNumber = function(other, lookingForFriend) {
 	if(other.name === undefined) {
@@ -363,6 +366,10 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 	
 	if (other.agreeToTerms.indexOf("Yes") === -1 || this.agreeToTerms.indexOf("Yes") === -1) {
 		return TERMS_NOT_AGREED_TO;
+	}
+	
+	if(other.username == this.username) {
+		return SAME_PERSON;
 	}
 	
 	if(this.grade === "Senior"){				//changing grade strings to numbers
