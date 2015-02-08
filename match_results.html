@@ -138,11 +138,22 @@ var buttonClick = function() {
 		return;
 	}
 	
+	// gets person's Person object
+	person = getPersonFromID(user);
+	
+	if(person === null) {
+		alert("ID invalid: Did you fill out the survey?\nIf you did, we may not have refreshed survey data since that time.\nYou can reach out to 150003" + "@students.d120.org");
+		return;
+	}
+	
+	if(person.agreeToTerms.indexOf("Yes") === -1) {
+		alert("Did not agree to terms. Email 150001" + "@students.d120.org and/or 150003@students.d120.org if you'd like to change that");
+		return;
+	}
+	
 	// nothing's broken yet? display links to get a pen name and song
 	$('#whats_next').show(200);
 	
-	// gets person's Person object
-	person = getPersonFromID(user);
 	
 	var matchArr = person.getMatchList(LOOKING_FOR_A_MATCH);
 	var friendArr = person.getMatchList(LOOKING_FOR_A_FRIEND);
@@ -500,6 +511,7 @@ var getPersonFromID = function(id) {
 	    		return people[i];
 	  	}
 	}
+	return null;
 }
 		</script>
 		
