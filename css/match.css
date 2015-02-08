@@ -46,7 +46,7 @@ h1 {
   font-size: 3em;
 }
 
-h1.math_result {
+h1.match_result, h1.friend_result {
 	text-align: left;
 	padding: 0px;
 	line-height: inherit;
