@@ -12,6 +12,9 @@
 <html>
 	<head>
 		<title>MUSTANG MATCH</title>
+		
+		<meta charset="utf-8">
+    		<meta name="Description" content="The Mundelein High School Valentine's Day Matchmaking Program">
 
 		<link href='http://fonts.googleapis.com/css?family=Qwigley' rel='stylesheet' type='text/css'>
 		<link href='css/match.css' rel='stylesheet' type='text/css'>
@@ -28,11 +31,22 @@
 		<div class="stitched margin_twenty">
 			<div class="above_xmas">
 				<p>Login to get your matches!</p>
-				<p>Student ID:</p>
-				<input id="username" type="number">
-				<p>Password:</p>
-				<input id="password" type="password">
-				<button type="button" onclick="buttonClick()">Submit</button>
+				
+				<form>
+					<table>
+						<tr>
+							<td>Student ID:</td>
+							<td><input id="username" type="number" onkeydown="if (event.keyCode == 13) document.getElementById('btn_submit').click()"></td>	
+						</tr>
+						<tr>
+							<td>Password:</td>
+							<td><input id="password" type="password"  onkeydown="if (event.keyCode == 13) document.getElementById('btn_submit').click()"></td>
+						</tr>
+					</table>
+					
+					<button id="btn_submit" type="button" onclick="buttonClick()">Submit</button>
+				</form>
+				
 				<br><br>
 			</div>
 			<br><br><br><br><br><br><br><br><br>
@@ -87,11 +101,7 @@
 		
 		<!-- javascript for matchmaking -->
 		<script type="text/javascript">
-$(document).ready(function(){
-  // console.log('doc ready');
-  getPeople();
-  console.log('executed getpeople');
-});
+/**** Called when button is clicked ****/
 
 var buttonClick = function() {
 	var user, pass, text, person;
@@ -169,6 +179,33 @@ var isNormalInteger = function(str) {
 	var n = ~~Number(str);
 	return String(n) === str && n >= 0;
 }
+
+
+/**** Called when document finishes loading ****/
+
+$(document).ready(function(){
+  getPeople();
+  console.log('executed getpeople');
+});
+
+// called when the document is loaded, downloads the match responses list
+// and creates the people array from it
+var getPeople = function() {
+	$.get( "/matchresponses.csv", function( data ) {
+		//$( ".data" ).html( data );
+		
+		lines = data.split("\n");
+		
+		for(var i = 0; i < lines.length; i++) {
+			people.push(new Person(lines[i]));
+		}
+		
+		console.log(people);
+	});
+};
+
+
+/**** Code for Person object/people array ****/
 
 // Person array, holds all survey responses
 var people = [];
@@ -255,9 +292,12 @@ var Person = function(line) {
 	/* this.personalityVSAppearance = line[62]; // unused */
 };
 
-// a constant signifiying that one asked for their responses to not be used
+// constant signifiying that one asked for their responses to not be used
 // TODO: send emails asking if people want to change their agreeToTerms response
 var TERMS_NOT_AGREED_TO = -666;
+
+// constant signifying the response isn't a real one or is really buggy
+// tested for by seeing if name is undefined
 var BUGGY_PERSON = -867;
 
 // returns a number signifying how well someone matches with someone else
@@ -373,6 +413,9 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 	return compScore;
 };
 
+// used with getMatchList and matchNumber
+// lets function know if looking for someone that fits your gender preferences (match)
+// or someone that doesn't (friend)
 var LOOKING_FOR_A_FRIEND = true;
 var LOOKING_FOR_A_MATCH = false;
 
@@ -414,22 +457,6 @@ var getPersonFromID = function(id) {
 	  	}
 	}
 }
-
-// called when the document is loaded, downloads the match responses list
-// and creates the people array from it
-var getPeople = function() {
-	$.get( "/matchresponses.csv", function( data ) {
-		//$( ".data" ).html( data );
-		
-		lines = data.split("\n");
-		
-		for(var i = 0; i < lines.length; i++) {
-			people.push(new Person(lines[i]));
-		}
-		
-		console.log(people);
-	});
-};
 		</script>
 		
 		<!-- for passwords -->
