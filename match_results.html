@@ -188,9 +188,15 @@ var buttonClick = function() {
 		stats = Math.floor(stats/120 * 100);
 		if(i === 0) {
 			header.innerText = name; // set h element to match's name
+			if(funded_ten){
+			header.innerText = name + " is a " + stats + "% match";	
+			}	
 		}
 		else if(i <= 2 && came_by) {
 			header.innerText = name;
+			if(funded_ten){
+			header.innerText = name + " is a " + stats + "% match";	
+			}
 		}
 		else if(i <= 9 && funded_ten) {
 			header.innerText = name + " is a " + stats + "% match";
