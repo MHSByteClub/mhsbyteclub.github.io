@@ -185,7 +185,7 @@ var buttonClick = function() {
 		var name = matchArr[i][1]; // matchArr[i][1] is the i'ths person's name
 		var stats = matchArr[i][0]; //matchArr[i][1] is the i'ths person's score
 		console.log(stats);
-		stats = (stats/120).toFixed(1);
+		stats = (stats/120).toFixed();
 		if(i === 0) {
 			header.innerText = name; // set h element to match's name
 		}
@@ -206,7 +206,7 @@ var buttonClick = function() {
 		var header = best_friend_headers[i];
 		var name = friendArr[i][1];
 		var stats = friendArr[i][0];
-		stats = (stats/120).toFixed(1);
+		stats = (stats/120).toFixed();
 		console.log(stats);
 		
 		if(i <= 4 && funded_ten) {
