@@ -212,7 +212,7 @@ var buttonClick = function() {
 		var header = best_friend_headers[i];
 		var name = friendArr[i][1];
 		var stats = friendArr[i][0];
-		stats = Math.floor(stats/120 * 100);
+		stats = Math.floor(stats/105 * 100); // best match at time of  comment = 102.9
 		console.log(Math.floor(stats));
 		
 		if(i <= 4 && funded_ten) {
@@ -231,8 +231,11 @@ var buttonClick = function() {
 		var worst_match_name = matchArr[matchArr.length - 1][1];
 		var worst_friend_name = friendArr[friendArr.length - 1][1];
 		
-		worst_match_header.innerText = worst_match_name;
-		worst_friend_header.innerText = worst_friend_name;
+		var worst_match_stats = Math.floor(matchArr[matchArr.length - 1][0]/105 * 100);
+		var worst_friend_stats = Math.floor(friendArr[friendArr.length - 1][0]/105 * 100);
+		
+		worst_match_header.innerText = worst_match_name + " is a " + worst_match_stats + "% match";
+		worst_friend_header.innerText = worst_friend_name + " is a " + worst_friend_stats + "% friend";
 	}
 }
 
