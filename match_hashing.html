@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+
+<!--
+Congratulations, you know how to inspect element! Next step? 
+
+     ██╗ ██████╗ ██╗███╗   ██╗    ██████╗ ██╗   ██╗████████╗███████╗     ██████╗██╗     ██╗   ██╗██████╗ ██╗
+     ██║██╔═══██╗██║████╗  ██║    ██╔══██╗╚██╗ ██╔╝╚══██╔══╝██╔════╝    ██╔════╝██║     ██║   ██║██╔══██╗██║
+     ██║██║   ██║██║██╔██╗ ██║    ██████╔╝ ╚████╔╝    ██║   █████╗      ██║     ██║     ██║   ██║██████╔╝██║
+██   ██║██║   ██║██║██║╚██╗██║    ██╔══██╗  ╚██╔╝     ██║   ██╔══╝      ██║     ██║     ██║   ██║██╔══██╗╚═╝
+╚█████╔╝╚██████╔╝██║██║ ╚████║    ██████╔╝   ██║      ██║   ███████╗    ╚██████╗███████╗╚██████╔╝██████╔╝██╗
+ ╚════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝    ╚═════╝    ╚═╝      ╚═╝   ╚══════╝     ╚═════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝
+-->
+
 <html>
 	<head>
 		<title>Matchmaker hashing</title>
@@ -32,7 +44,7 @@
 			function createHash() {
 				user = document.getElementById("username").value;
 				pass = document.getElementById("password").value;
-				if (pass.indexOf("mrfarmer") === 0) {	
+				if (rot13(pass).indexOf("zesnezre") === 0) {	
 					var hash = CryptoJS.MD5(user).toString();
 					console.log(hash);
 					var resultString = "";
@@ -52,6 +64,10 @@
 				else {
 					alert("Check Password or join byte club");
 				}
+			}
+			
+			function rot13(s) {
+				return s.replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
 			}
 		</script>
 	</body>
