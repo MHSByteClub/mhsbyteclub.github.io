@@ -167,10 +167,6 @@ var buttonClick = function() {
 		$('.matches_heading')[0].innerText = "Your matches are...";
 	} else {
 		$('.matches_heading')[0].innerText = "Your #1 match is...";
-		
-		if(funded_all) {
-			$('.matches_heading')[0].innerHTML = "Your #1 match is...<br>stats key: [other person's lowest %, median %, highest %]";
-		}
 	}
 	
 	if(funded_ten) {
@@ -178,6 +174,8 @@ var buttonClick = function() {
 	}
 	
 	if(funded_all) {
+		$('.matches_heading')[0].innerText = "Your matches are...  stats key: [other person's lowest %, median %, highest %]";
+		
 		$('.worst_heading').show(100);
 	}
 	
@@ -260,9 +258,9 @@ var buttonClick = function() {
 
 var getMatchStatsString = function(person, other, lookingForFriend) {
 	var max_score = lookingForFriend? 80 : 90;
-	var stat = person.matchNumber(other) / max_score * 100;
+	var stat = person.matchNumber(other, lookingForFriend) / max_score * 100;
 	    stat = Math.round(stat);
-	var other_stat = other.matchNumber(person) / max_score * 100;
+	var other_stat = other.matchNumber(person, lookingForFriend) / max_score * 100;
 	    other_stat = Math.round(other_stat);
 	var other_list = other.getMatchList(lookingForFriend);
 	
@@ -288,7 +286,7 @@ var getMatchStatsString = function(person, other, lookingForFriend) {
 	
 	var type = lookingForFriend ? "friend" : "match";
 	
-	return other.name + " is a " + stat + "% " + type + ", they matched you " + other_stat + "%. You're their #" + pos + "/" + other_list.length + " match. [" + other_lowest + ", " + other_med + ", " + other_highest + ".";
+	return other.name + " is a " + stat + "% " + type + ", they matched you " + other_stat + "%. You're their #" + pos + "/" + other_list.length + " match. [" + other_lowest + ", " + other_med + ", " + other_highest + "]";
 }
 
 // returns whether a string is an integer > 0
