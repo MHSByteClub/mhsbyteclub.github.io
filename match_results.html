@@ -189,29 +189,32 @@ var buttonClick = function() {
 		var name = matchArr[i][1]; // matchArr[i][1] is the i'ths person's name
 		var stats = matchArr[i][0]; //matchArr[i][1] is the i'ths person's score
 		console.log(Math.floor(stats));
-		stats = Math.floor(stats/90 * 100); // best match at time of  comment = 84.5
+		stats = Math.floor(stats/90 * 100); // best match at time of comment = 84.5
+		
 		if(i === 0) {
 			header.innerText = name; // set h element to match's name
 			if(funded_ten) {
 				header.innerText = name + " is a " + stats + "% match";
-				
-				if(funded_all) {
-					header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
-				}
+			}
+			if(funded_all) {
+				header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
 			}
 		}
 		else if(i <= 2 && came_by) {
 			header.innerText = name;
 			if(funded_ten){
 				header.innerText = name + " is a " + stats + "% match";
-				
-				if(funded_all) {
-					header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
-				}
+			}
+			if(funded_all) {
+				header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
 			}
 		}
 		else if(i <= 9 && funded_ten) {
-			header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
+			header.innerText = name + " is a " + stats + "% match";
+			
+			if(funded_all) {
+				header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
+			}
 		}
 		else if(i <= 19 && funded_all) {
 			header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
@@ -256,7 +259,8 @@ var buttonClick = function() {
 }
 
 var getMatchStatsString = function(person, other, lookingForFriend) {
-	var other_stat = other.matchNumber(person) / 90;
+	var stat = person.matchNumber(other) / (lookingForFriend? 80 : 90);
+	var other_stat = other.matchNumber(person) / (lookingForFriend? 80 : 90);
 	var other_list = other.getMatchList(lookingForFriend);
 	
 	// find this person's position in other person's list
@@ -278,7 +282,7 @@ var getMatchStatsString = function(person, other, lookingForFriend) {
 	
 	var type = lookingForFriend ? "friend" : "match";
 	
-	return name + " is a " + stats + "% " + type + ", they matched you " + other_stat + "%. You're their #" + pos + "/" + other_list.length + " match. [" + other_lowest + ", " + other_med + ", " + other_high + ".";
+	return name + " is a " + stat + "% " + type + ", they matched you " + other_stat + "%. You're their #" + pos + "/" + other_list.length + " match. [" + other_lowest + ", " + other_med + ", " + other_high + ".";
 }
 
 // returns whether a string is an integer > 0
