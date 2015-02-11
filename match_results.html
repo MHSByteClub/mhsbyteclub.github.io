@@ -272,16 +272,16 @@ var getMatchStatsString = function(person, other, lookingForFriend) {
 		}
 		
 		if(other_list[i][2].username === person.username) {
-			pos = i;
+			pos = i+1;
 			break;
 		}
 	}
 	
-	var other_highest = other_list[0][0] * 100;
+	var other_highest = other_list[0][0] / max_score * 100;
 	    other_highest = Math.round(other_highest);
-	var other_med = other_list[other_list.length/2][0] * 100;
+	var other_med = other_list[other_list.length/2][0] / max_score * 100;
 	    other_med = Math.round(other_med);
-	var other_lowest = other_list[other_list.length - 1][0] * 100;
+	var other_lowest = other_list[other_list.length - 1][0] / max_score * 100;
 	    other_lowest = Math.round(other_lowest);
 	
 	var type = lookingForFriend ? "friend" : "match";
