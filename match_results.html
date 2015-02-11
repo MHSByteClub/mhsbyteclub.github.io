@@ -274,7 +274,7 @@ var getMatchStatsString = function(person, other, lookingForFriend) {
 	
 	var other_highest = other_list[0][0];
 	var other_med = other_list[other_list.length/2][0];
-	var other_lowest = other_list[other_list.length][0];
+	var other_lowest = other_list[other_list.length - 1][0];
 	
 	var type = lookingForFriend ? "friend" : "match";
 	
