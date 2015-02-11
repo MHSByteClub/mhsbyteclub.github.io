@@ -186,8 +186,7 @@ var buttonClick = function() {
 		var header = best_match_headers[i];
 		var name = matchArr[i][1]; // matchArr[i][1] is the i'ths person's name
 		var stats = matchArr[i][0]; //matchArr[i][1] is the i'ths person's score
-		console.log(Math.floor(stats));
-		stats = Math.floor(stats/90 * 100); // best match at time of comment = 84.5
+		stats = Math.floor(stats/105 * 100); // best match at time of comment = 102.9
 		
 		if(i === 0) {
 			header.innerText = name; // set h element to match's name
@@ -225,8 +224,8 @@ var buttonClick = function() {
 		var header = best_friend_headers[i];
 		var name = friendArr[i][1];
 		var stats = friendArr[i][0];
-		stats = Math.floor(stats/80 * 100); // best at time of comment 74.2
-		console.log(Math.floor(stats));
+		stats = Math.floor(stats/80 * 100); // best at time of comment 78.6
+		
 		
 		if(i <= 4 && funded_ten) {
 			header.innerText = name + " is a " + stats + "% friend";
@@ -245,19 +244,26 @@ var buttonClick = function() {
 		var worst_match_header = $('.worst_match')[0];
 		var worst_friend_header = $('.worst_friend')[0];
 		
-		var worst_match_name = matchArr[matchArr.length - 1][1];
-		var worst_friend_name = friendArr[friendArr.length - 1][1];
-		
-		var worst_match_stats = Math.floor(matchArr[matchArr.length - 1][0]/105 * 100);
-		var worst_friend_stats = Math.floor(friendArr[friendArr.length - 1][0]/105 * 100);
-		
-		worst_match_header.innerText = worst_match_name + " is a " + worst_match_stats + "% match";
-		worst_friend_header.innerText = worst_friend_name + " is a " + worst_friend_stats + "% friend";
+		worst_match_header.innerText = getMatchStatsString(person, matchArr[matchArr.length - 1][2], LOOKING_FOR_A_MATCH);
+		worst_friend_header.innerText = getMatchStatsString(person, friendArr[friendArr.length - 1][2], LOOKING_FOR_A_FRIEND);
 	}
 }
 
 var getMatchStatsString = function(person, other, lookingForFriend) {
-	var max_score = lookingForFriend? 80 : 90;
+	var max_score = lookingForFriend? 80 : 105;
+	/* 
+	// for finding the max score:
+	
+	logging = false;
+	var a = [];
+	for(var i = 0; i < people.length; i++) {
+	 if(people[i])
+	   a.push(people[i].getMatchList(true)[0][0]);
+	}
+	a.sort(function(a, b){return b - a;});
+	console.log(a);
+	*/
+	
 	var stat = person.matchNumber(other, lookingForFriend) / max_score * 100;
 	    stat = Math.round(stat);
 	var other_stat = other.matchNumber(person, lookingForFriend) / max_score * 100;
