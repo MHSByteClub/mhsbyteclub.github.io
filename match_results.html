@@ -259,18 +259,19 @@ var buttonClick = function() {
 }
 
 var getMatchStatsString = function(person, other, lookingForFriend) {
-	var stat = person.matchNumber(other) / (lookingForFriend? 80 : 90);
-	var other_stat = other.matchNumber(person) / (lookingForFriend? 80 : 90);
+	var max_score = lookingForFriend? 80 : 90;
+	var stat = person.matchNumber(other) / max_score;
+	var other_stat = other.matchNumber(person) / max_score;
 	var other_list = other.getMatchList(lookingForFriend);
 	
 	// find this person's position in other person's list
 	var pos = -1;
 	for(var i = 0; i < other_list.length; i++) {
-		if(other_list[i] === undefined) {
+		if(other_list[i][2] === undefined) {
 			continue;
 		}
 		
-		if(other_list[i].username === person.username) {
+		if(other_list[i][2].username === person.username) {
 			pos = i;
 			break;
 		}
@@ -282,7 +283,7 @@ var getMatchStatsString = function(person, other, lookingForFriend) {
 	
 	var type = lookingForFriend ? "friend" : "match";
 	
-	return name + " is a " + stat + "% " + type + ", they matched you " + other_stat + "%. You're their #" + pos + "/" + other_list.length + " match. [" + other_lowest + ", " + other_med + ", " + other_highest + ".";
+	return other.name + " is a " + stat + "% " + type + ", they matched you " + other_stat + "%. You're their #" + pos + "/" + other_list.length + " match. [" + other_lowest + ", " + other_med + ", " + other_highest + ".";
 }
 
 // returns whether a string is an integer > 0
