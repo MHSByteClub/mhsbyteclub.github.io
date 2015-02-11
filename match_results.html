@@ -260,8 +260,10 @@ var buttonClick = function() {
 
 var getMatchStatsString = function(person, other, lookingForFriend) {
 	var max_score = lookingForFriend? 80 : 90;
-	var stat = person.matchNumber(other) / max_score;
-	var other_stat = other.matchNumber(person) / max_score;
+	var stat = person.matchNumber(other) / max_score * 100;
+	    stat = Math.round(stat);
+	var other_stat = other.matchNumber(person) / max_score * 100;
+	    other_stat = Math.round(other_stat);
 	var other_list = other.getMatchList(lookingForFriend);
 	
 	// find this person's position in other person's list
@@ -277,9 +279,12 @@ var getMatchStatsString = function(person, other, lookingForFriend) {
 		}
 	}
 	
-	var other_highest = other_list[0][0];
-	var other_med = other_list[other_list.length/2][0];
-	var other_lowest = other_list[other_list.length - 1][0];
+	var other_highest = other_list[0][0] * 100;
+	    other_highest = Math.round(other_highest);
+	var other_med = other_list[other_list.length/2][0] * 100;
+	    other_med = Math.round(other_med);
+	var other_lowest = other_list[other_list.length - 1][0] * 100;
+	    other_lowest = Math.round(other_lowest);
 	
 	var type = lookingForFriend ? "friend" : "match";
 	
