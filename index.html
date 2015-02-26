@@ -55,6 +55,94 @@
 				-o-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
 				transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
         	}
+        	.clearfix:after {
+    			display:block;
+    			clear:both;
+		}
+ 
+		/*----- Menu Outline -----*/
+		.menu-wrap {
+		    width:100%;
+		    box-shadow:0px 1px 3px rgba(0,0,0,0.2);
+		    background:#3e3436;
+		}
+		 
+		.menu {
+		    width:1000px;
+		    margin:0px auto;
+		}
+		 
+		.menu li {
+		    margin:0px;
+		    list-style:none;
+		    font-family:'Ek Mukta';
+		}
+		 
+		.menu a {
+		    transition:all linear 0.15s;
+		    color:#919191;
+		}
+		 
+		.menu li:hover > a, .menu .current-item > a {
+		    text-decoration:none;
+		    color:#be5b70;
+		}
+		 
+		.menu .arrow {
+		    font-size:11px;
+		    line-height:0%;
+		}
+		 
+		/*----- Top Level -----*/
+		.menu > ul > li {
+		    float:left;
+		    display:inline-block;
+		    position:relative;
+		    font-size:19px;
+		}
+		 
+		.menu > ul > li > a {
+		    padding:10px 40px;
+		    display:inline-block;
+		    text-shadow:0px 1px 0px rgba(0,0,0,0.4);
+		}
+		 
+		.menu > ul > li:hover > a, .menu > ul > .current-item > a {
+		    background:#2e2728;
+		}
+		 
+		/*----- Bottom Level -----*/
+		.menu li:hover .sub-menu {
+		    z-index:1;
+		    opacity:1;
+		}
+		 
+		.sub-menu {
+		    width:160%;
+		    padding:5px 0px;
+		    position:absolute;
+		    top:100%;
+		    left:0px;
+		    z-index:-1;
+		    opacity:0;
+		    transition:opacity linear 0.15s;
+		    box-shadow:0px 2px 3px rgba(0,0,0,0.2);
+		    background:#2e2728;
+		}
+		 
+		.sub-menu li {
+		    display:block;
+		    font-size:16px;
+		}
+		 
+		.sub-menu li a {
+		    padding:10px 30px;
+		    display:block;
+		}
+		 
+		.sub-menu li a:hover, .sub-menu .current-item a {
+		    background:#3e3436;
+		}
         </style>
         <script>
 			var binaryString = "01001001011001100010000001111001011011110111010100100111011100100110010100100000011100100110010101100001011001000110100101101110011001110010000001110100011010000110100101110011001000000100101001001111010010010100111000100000010000100101100101010100010001010010000001000011010011000101010101000010";
@@ -70,14 +158,30 @@
 	        <h1><img src="img/byteclub-banner-teal-low.jpg" alt="Byte Club: Start Right"></h1>
 	        
 	         <!-- Navigation Bar -->
-	        	<div class="navigation">
-			<ul>
-				<li><a href="members.html">Members</a></li>
-				<li><a href="contacts.html">Contacts</a></li>
-				<li><a href="Events.html">Events</a></li>
-				<li><a href="match.html">Match</a></li>
-			</ul>
-		</div>
+	        	<div class="menu-wrap">
+    				<nav class="menu">
+        				<ul class="clearfix">
+            					<li><a href="/members.html">Movies <span class="arrow">&#9660;</span></a>
+ 
+                					<ul class="sub-menu">
+                    						<li><a href="https://mrfarmer777.github.io">Mr Farmer's site</a></li>
+                    						<li><a href="https://raphaelrk.github.io">Raphael Rouvinov's Site</a></li>
+                    						<li><a href="http://rentarosatomi520.github.io/">Kenny Stepney's Site</a></li>
+                    						<li><a href="https://salamanderdan.github.io">Daniel Balogh's Site</a></li>
+                    						<li><a href="http://definitelynottyler.github.io/">Tyler's Site</a></li>
+                    						<li><a href="http://nduncan52.github.io/">Nick Duncan's Site</a></li>
+                    						<li><a href="http://seanbobagins.github.io/">Sean Santore's Site</a></li>
+                    						<li><a href="http://zame012.github.io/">Kyle Koeller's Site</a></li>
+                    						<li><a href="http://bigal65.github.io/">Anuj's Site</a></li>
+                    						<li><a href="http://angelmontheod.github.io">Angel's Site</a></li>
+                					</ul>
+            					</li>
+            					<li><a href="/contacts.html">Contacts</a></li>
+            					<li class="current-item"><a href="/events.html">Events</a></li>
+            					<li><a href="/match.html">Match</a></li>
+        				</ul>
+    				</nav>
+			</div>
 		
         	<br><br>
         	
