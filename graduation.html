@@ -47,7 +47,11 @@
 
             <p>Instructions: enter line-separated names (in lastname, firstname format) in the textbox.<br>Remove people who aren't walking or type NW next to them. Press Try it and the seating will be ready.</p>
             
-            <textarea id="names"></textarea>
+            Rows of Summas: <input id="summarows" type="number">3</input><br>
+            Rows after: <input id="rows" type="number">27</input><br>
+            Columns on each side: <input id="cols" type="number">20</input><br>
+            
+            <textarea id="names" placeholder="Balogh, Dan $"></textarea>
             <br><br>
             
             <button onclick="createTable()">Try it</button>
@@ -63,15 +67,27 @@
 			
 			var txt = "";
 			for(var n = 0; n < Math.random()*200+400; n++) {
+				// first name
 				txt += upper.charAt(Math.floor(Math.random() * upper.length));
 				for(var i=0; i < Math.random()*3+3; i++ ) {
 					txt += lower.charAt(Math.floor(Math.random() * lower.length));
 				}
+				
+				// last name
 				txt += ', ';
 				txt += upper.charAt(Math.floor(Math.random() * upper.length));
 				for(var i=0; i < Math.random()*3+3; i++ ) {
 					txt += lower.charAt(Math.floor(Math.random() * lower.length));
 				}
+				
+				// summa
+				var rand = Math.random();
+				if(rand < 0.05) { // summa
+					txt += " $";
+				} else if(rand < 0.1) { // not walking
+					txt += " NW";
+				}
+				
 				txt += '\n';
 			}
 		
@@ -93,12 +109,13 @@ Lorant, Dan
 */
 	        var textareaText = document.getElementById('names').value;
 	        var nameString = textareaText.split("\n");
+	        var summaNameString = [];
 	        
 	        nameString.sort();
 	    
 	        var i = 0;
 	        while(i < nameString.length) {
-	          if(!nameString[i] || nameString[i].indexOf('NW') !== -1) {
+	          if(!nameString[i] || nameString[i].indexOf(' NW') !== -1) { // not walking
 	            nameString.splice(i, 1);
 	          } else {
 	            var splitName = nameString [i].split(','); //remove commas
@@ -108,13 +125,31 @@ Lorant, Dan
 	            if(nameString[i][nameString[i].length - 1] === ',') {
 	              nameString[i] = nameString[i].substring(0, nameString[i].length);
 	            }
-	            i++;
+	            
+	            if(nameString[i].indexOf(' $') !== -1) { // summa
+	            	summaNameString[i] = nameString[i];
+		        nameString.splice(i, 1);
+	            } else {
+	            	i++;
+	            }
+	            
 	          }
 	        }
 	    
-	        var columnSize = 10; //number of seats per side
-	        var rowAmount = Math.ceil(nameString.length / (columnSize*2));
-	        var resultString = '<table>'; //make table
+	        var columnSize = parseInt(document.getElementById("cols").value); //number of seats per side
+	        var summaRowAmount = parseInt(document.getElementById("summarows").value);
+	        var rowAmount = parseInt(document.getElementById("rows").value);
+	        
+	        
+	        document.getElementById("result").innerHTML = tableFromNamestring(summaNameString, summaRowAmount, columnSize);
+	        document.getElementById("result").innerHTML += "<br><br>";
+	        document.getElementById("result").innerHTML += tableFromNamestring(nameString, rowAmount, columnSize);
+	    } 
+	    
+	    // nameString is an array of strings of names
+	    // returns a string "<table>...</table>"
+	    var tableFromNamestring = function(nameString, rowAmount, columnSize) { 
+	    	var resultString = '<table>'; //make table
 	    
 	        for(var i = 0; i < nameString.length % (columnSize * 2); i++) { // padding
 	          nameString.push("&nbsp;&nbsp;");
@@ -148,9 +183,9 @@ Lorant, Dan
 	        }
 	    
 	        resultString += '</table>';
+	    }
 	    
-	        document.getElementById("result").innerHTML = resultString ;
-	    } 
+	    return resultString;
 	    </script>
     </body>
 </html>
