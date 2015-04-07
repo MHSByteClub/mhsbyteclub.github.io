@@ -127,7 +127,7 @@ Lorant, Dan
 	            }
 	            
 	            if(nameString[i].indexOf(' $') !== -1) { // summa
-	            	summaNameString[i] = nameString[i];
+	            	summaNameString.push(nameString[i]);
 		        nameString.splice(i, 1);
 	            } else {
 	            	i++;
