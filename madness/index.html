@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Login - MHS March Madness</title>
+      <!--Gets the source JQuery from google-->
+      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+      <!--Links this html file to its css file-->
+      <link rel="stylesheet" type="text/css" href="css/login.css"/>
+    </head>
+    
+    <body>
+      <!--Organizes the page via div classes for the css and js files-->
+      <div class="page">
+          <div class="heading">
+              <h2>March Madness(Rock, Paper, Scissors)</h2>
+          </div>
+          <div class="matchtable">
+          <!--Not necessary here -->
+              <table>
+                  <div class="tablehead">
+                      <thead>
+                          <tr>
+                              <th></th>
+                              <th>Current Match</th>
+                          </tr>
+                      </thead>
+                  </div>
+                  <tbody>
+                      <tr>
+                          <td><img src="http://images.clipartpanda.com/purple-cross-clipart-Arrow-clip-art-15.png" height="10"></td>
+                          <td>Your Move:</td>
+                          <div class="playerchoice">
+                              <td></td>
+                          </div>
+                      </tr>
+                      <tr>
+                          <td><img src="http://images.clipartpanda.com/purple-cross-clipart-Arrow-clip-art-15.png" height="10"></td>
+                          <td>Their Move:</td>
+                          <div class="stillplay">
+                              <td></td>
+                          </div>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="inputstuff" id="input">
+            <div class="inputbox">
+                <form action="login.php" method="post">
+                    <fieldset>
+                        <div class="user">
+                            <label for="name">Username: </label><input type="textbox" id="name" name="username"/>
+                            <br>
+                        </div>
+                        <label for="id_num">ID:</label><input type="textbox" id="id_num" name="id"/>
+                        <br>
+                        <input type="submit"/>
+                    </fieldset>
+                </form>
+            </div>
+          </div>
+      </div>
+      <script type="text/javascript" src="js/site.js"></script>
+    </body>
+  </html>
