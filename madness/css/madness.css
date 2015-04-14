@@ -38,6 +38,7 @@ a {
 
 .input_box{
   text-align:center;
-  margin: 0px 600px 600px 0px;
+  width:60%;
+  margin: 0 auto;
 }
 
