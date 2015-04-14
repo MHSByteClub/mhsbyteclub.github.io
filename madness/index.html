@@ -53,6 +53,11 @@
       </div>
       <script>
         var loginBase = new Firebase("https://loginbase.firebaseio.com");
+        var email;
+        $('#btn_email').click(function(){
+          email = $('#btn_email').value;
+          alert(email);
+        });
       </script>
       <!-- madness.js holds the code for the mustang madness -->
       <script type="text/javascript" src="js/madness.js"></script>
