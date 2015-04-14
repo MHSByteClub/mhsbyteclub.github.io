@@ -22,29 +22,33 @@
           <!-- begin login form's  html -->
           <div class="input_box" id="login_form">
             <h3>Login</h3>
-            <form>
-    							<label>Student ID:</label>
-    							<br>
-    			        <input id="username" type="number" onkeydown="if (event.keyCode == 13) document.getElementById('btn_login').click()" placeholder="140123">
-    							<br>
-    							<label>Password:</label>
-    							<br>
-    							<input id="password" type="password"  onkeydown="if (event.keyCode == 13) document.getElementById('btn_login').click()" placeholder="Blank = 1 Match">
-    					    <br>
-    					<button id="btn_login" type="button" onclick="buttonLogin()">Submit</button>
-    				</form>
+            <fieldset>
+              <form>
+      							<label>Student ID:</label>
+      							<br>
+      			        <input id="username" type="number" onkeydown="if (event.keyCode == 13) document.getElementById('btn_login').click()" placeholder="140123">
+      							<br>
+      							<label>Password:</label>
+      							<br>
+      							<input id="password" type="password"  onkeydown="if (event.keyCode == 13) document.getElementById('btn_login').click()" placeholder="Blank = 1 Match">
+      					    <br>
+      					<button id="btn_login" type="button" onclick="buttonLogin()">Submit</button>
+      				</form>
+    				</fieldset>
   				</div>
   				
   				<!-- begin signup form's  html -->
           <div class="input_box" id="signup_form">
             <h3>Signup</h3>
-            <form>
-              <label>Student Email:</label>
-              <br>
-              <input id="email" type="email" onkeydown="if (event.keyCode == 13) document.getElementById('btn_email').click()" placeholder="140123@students.d120.org">
-    					<br>
-    					<button id="btn_email" type="button" onclick="buttonEmail()">Submit</button>
-    				</form>
+            <fieldset>
+              <form>
+                <label>Student Email:</label>
+                <br>
+                <input id="email" type="email" onkeydown="if (event.keyCode == 13) document.getElementById('btn_email').click()" placeholder="140123@students.d120.org">
+      					<br>
+      					<button id="btn_email" type="button" onclick="buttonEmail()">Submit</button>
+      				</form>
+    				</fieldset>
   				</div>
       </div>
       <script>
