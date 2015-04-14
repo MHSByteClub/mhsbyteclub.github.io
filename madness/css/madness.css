@@ -1,20 +1,21 @@
-body {
-  background: #81bb50;
-  font-family: "Tahoma", Helvetica, sans-serif;
-  }
 
-h1 {
-  font-size: 26px;
-  color: #007511;
+
+h3 {
+  font-size: 20px;
+  color:#505050;
   font-variant: small-caps;
-  text-shadow: 1px 1px 3px #050505
+}
+p {
+  color: white;
+  font-size: 14px;
+  margin-left: 14px;
+  margin-right: 14px; 
+  margin-top: 14px
+  
 }
 
-h2 {
-  font-size: 26px;
-  color: #007511;
-  font-variant: small-caps;
-  text-shadow: 1px 1px 3px #050505
+a {
+  color: #e0d000;  
 }
 
 
