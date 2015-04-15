@@ -61,7 +61,18 @@
       <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
       <script>
         var loginBase = new Firebase("https://loginbase.firebaseio-loginbase.com");
-        var auth = loginBase.getAuth();
+        var auth = new FirebaseAuthClient(loginBase, function(error, user) {
+              if (error) {
+                alert(error);
+                return;
+              }
+              if (user) {
+                login_user(user);
+              } else {
+                create_user();
+              }
+        });
+  
         var email_button = $('#btn_email');
         var login_button = $('#btn_login');
         var email, school_id, password;
@@ -77,16 +88,18 @@
           });
         }
         
-        email_button.click(function(){
-          email = document.getElementById('email').value;
-          school_id = email.substring(3, 9);
-          
-          var hash = CryptoJS.MD5(school_id).toString();
-          var password_result = "";
-          password_result = hash.substring(0, 6);
-          
-          newUser(password_result);
-        });
+        function create_user(){
+          email_button.click(function(){
+            email = document.getElementById('email').value;
+            school_id = email.substring(3, 9);
+            
+            var hash = CryptoJS.MD5(school_id).toString();
+            var password_result = "";
+            password_result = hash.substring(0, 6);
+            
+            newUser(password_result);
+          });
+        }
       </script>
       <!-- madness.js holds the code for the mustang madness -->
       <script type="text/javascript" src="js/madness.js"></script>
