@@ -69,6 +69,7 @@
         var hash;
         
         email_button.click(function(){
+          alert("clicking");
           email = document.getElementById('email').value;
           school_id = email.substring(0, 6);
           hash = CrytoJS.MD5("password");
