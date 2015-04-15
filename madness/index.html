@@ -77,16 +77,6 @@
         var login_button = $('#btn_login');
         var email, school_id, password;
         var nickname;
-                
-        function newUser(pass){
-          loginBase.createUser({
-            //toString() probably isn't necessary, but makes me happy - TheExceptionist
-            school_email : email.toString(),
-            school_id_num: school_id.toString(),
-            user_password : pass.toString(),
-            user_nickname : " "
-          });
-        }
         
         function create_user(){
           email_button.click(function(){
@@ -97,7 +87,20 @@
             var password_result = "";
             password_result = hash.substring(0, 6);
             
-            newUser(password_result);
+            loginBase.createUser(email, password_result, function(error,  user) {
+              if (!error) {
+                doLogin(user);
+              } else {
+                alert(error);
+              }
+            });
+          });
+          
+          login_button.click(function(){
+            email = document.getElementById('student_id').value+'@students.d120.org';
+            auth.login({
+              email: 
+            });
           });
         }
       </script>
