@@ -59,7 +59,7 @@
   				</div>
   				
   				<div class="result" id="pass_show">
-  				  <h4 id="password_head"></h4>
+  				  <p id="password_head"></p>
   				</div>
       </div>
       <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
@@ -91,6 +91,7 @@
         loginBase.on('child_added', function(snapshot){
           user = snapshot.val();
           pass_head.innerHTML = "You Password Is: "+user.password;
+          alert(pass_head);
         });
         
         login_button.click(function(){
