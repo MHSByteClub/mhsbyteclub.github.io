@@ -52,17 +52,21 @@
                 <br>
                 <input id="email" type="email" onkeydown="if (event.keyCode == 13) document.getElementById('btn_email').click()" placeholder="140123@students.d120.org">
       					<br>
-      					<button id="btn_email" type="button" onclick="buttonEmail()">Submit</button>
+      					<button id="btn_email" type="button" onkeydown="if (event.keyCode == 13) document.getElementById('btn_email').click()">Submit</button>
       				</form>
     				</fieldset>
   				</div>
       </div>
       <script>
         var loginBase = new Firebase("https://loginbase.firebaseio.com");
+        var email_button = $('#btn_email');
+        var login_button = $('#btn_login');
         var email;
-        function getEmail(){
-          
-        }
+        
+        email_button.click(function(){
+          email = $('#email').value;
+          alert(email);
+        });
       </script>
       <!-- madness.js holds the code for the mustang madness -->
       <script type="text/javascript" src="js/madness.js"></script>
