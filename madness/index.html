@@ -59,7 +59,7 @@
   				</div>
   				
   				<div class="result">
-  				  <p id="pass_show"></p>
+  				  <p id="pass_show">___</p>
   				</div>
       </div>
       <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
@@ -79,7 +79,7 @@
           var password_result = "";
           password_result = hash.substring(3, 9);
 
-          alert("Your Password Is: "+password_result);
+          document.getElementById('pass_show').innerHTML = "Your Password Is: "+password_result;
 
           loginBase.push({
             username: email, 
