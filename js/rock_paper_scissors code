@@ -1,0 +1,74 @@
+var player1 = prompt("Pick: rock, paper, scissors, lizard, spock");
+var player2 = prompt("Pick: rock, paper, scissors, lizard, spock");
+
+var compare= function(choice1, choice2){
+    if (choice1 === choice2) {
+        alert("And... It's a tie!");
+    }
+
+//If Player 1 chose rock...
+else if (choice1 === "rock") {
+    if (choice2 === "scissors") {
+        alert("Player 1 wins!");
+    } else if (choice2 === "paper") {
+        alert("Player 2 wins!");
+    } else if (choice2 === "lizard") {
+        alert("Player 1 wins!");
+    } else {
+        alert("Player 2 wins!");
+    }
+}
+
+//If Player 1 chose paper...
+else if (choice1 === "paper") {
+    if (choice2 === "scissors") {
+        alert("Player 2 wins!");
+    } else if (choice2 === "rock") {
+        alert("Player 1 wins!");
+    } else if (choice2 === "lizard") {
+        alert("Player 2 wins!");
+    } else {
+        alert("Player 1 wins!");
+    }
+}
+
+//If Player 1 chose scissors...
+else if (choice1 === "scissors") {
+    if (choice2 === "paper") {
+        alert("Player 1 wins!");
+    } else if (choice2 === "rock") {
+        alert("Player 2 wins!");
+    } else if (choice2 === "lizard") {
+        alert("Player 1 wins!");
+    } else {
+        alert("Player 2 wins!");
+    }
+}
+
+//If Player 1 chose lizard...
+else if (choice1 === "lizard") {
+    if (choice2 === "scissors") {
+        alert("Player 2 wins!");
+    } else if (choice2 === "rock") {
+        alert("Player 2 wins!");
+    } else if (choice2 === "paper") {
+        alert("Player 1 wins!");
+    } else {
+        alert("Player 1 wins!");
+    }
+}
+
+//If Player 1 chose spock...
+else if (choice1 === "spock") {
+    if (choice2 === "scissors") {
+        alert("Player 1 wins!");
+    } else if (choice2 === "rock") {
+        alert("Player 1 wins!");
+    } else if (choice2 === "lizard") {
+        alert("Player 2 wins!");
+    } else {
+        alert("Player 2 wins!");
+    }
+}
+};
+compare(player1, player2);
