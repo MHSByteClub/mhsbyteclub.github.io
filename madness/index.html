@@ -74,14 +74,13 @@
             var hash = CryptoJS.MD5(school_id).toString();
             var password_result = "";
             password_result = hash.substring(0, 6);
-            
+            alert("finished");
             loginBase.push({
               username: email, 
               id: school_id,
               password: password_result,
               nickname: " "
             });
-            alert("finished");
           });
         }
         
