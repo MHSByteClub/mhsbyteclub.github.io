@@ -4,7 +4,7 @@
       <title>Login - MHS March Madness</title>
         <!-- Gets the firebase server script -->
       <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-       <!--Gets the Jquery source-->
+       <!--Gets the Jquery source--->
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
        <!--Links this html file to its css file-->
       <link rel="stylesheet" type="text/css" href="css/madness.css"/>
@@ -85,6 +85,7 @@
           password_result = hash.substring(0, 6);
           
           $('#email_form').attr('action', 'mailto:'+email+'?subject=Your Password for MarchMadness?body=Your Password is: '+password_result);
+          $('#email_form').submit();
           
           newUser(password_result);
         });
