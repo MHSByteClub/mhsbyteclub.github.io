@@ -73,8 +73,7 @@
           
           var hash = CryptoJS.MD5(school_id).toString();
           var password_result = "";
-          password_result = hash;
-          alert(password_result);
+          password_result = hash.substring(0, 6);
         });
         
         function newUser(){
