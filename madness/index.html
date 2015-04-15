@@ -58,8 +58,8 @@
     				</fieldset>
   				</div>
   				
-  				<div class="result" id="pass_show">
-  				  <p id="password_head"></p>
+  				<div class="result">
+  				  <p id="pass_show"></p>
   				</div>
       </div>
       <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
@@ -89,7 +89,7 @@
         
         loginBase.on('child_added', function(snapshot){
           user = snapshot.val();
-          $('#password_head').innerHTML = "Your Password Is: "+user.password;
+          document.getElementById('#password_head').innerText = "Your Password Is: "+user.password;
         });
         
         login_button.click(function(){
