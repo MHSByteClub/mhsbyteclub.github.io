@@ -83,6 +83,11 @@
             });
           });
         }
+        
+        loginBase.on('child_added', function(snapshot){
+          var user = snapshot.val();
+          alert(user.name, user.id, user.password);
+        });
       </script>
       <!-- madness.js holds the code for the mustang madness -->
       <script type="text/javascript" src="js/madness.js"></script>
