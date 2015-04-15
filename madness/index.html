@@ -57,14 +57,20 @@
       				</form>
     				</fieldset>
   				</div>
+  				
+  				<div class="result" id="pass_show">
+  				  <h4 id="password_head"></h4>
+  				</div>
       </div>
       <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
       <script>
         var loginBase = new Firebase("https://loginbase.firebaseio-loginbase.com");
         var email_button = $('#btn_email');
         var login_button = $('#btn_login');
-        var email, school_id, password;
+        var pass_head = $('#password_head');
+        var email, school_id;
         var nickname;
+        var user;
         
         email_button.click(function(){
           email = document.getElementById('email').value;
@@ -83,8 +89,12 @@
         });
         
         loginBase.on('child_added', function(snapshot){
-          var user = snapshot.val();
-          alert(user.username+" "+user.id+" "+user.password);
+          user = snapshot.val();
+          pass_head.innerHTML('You Password Is: '+user.password);
+        });
+        
+        login_button.click(function(){
+          
         });
       </script>
       <!-- madness.js holds the code for the mustang madness -->
