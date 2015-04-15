@@ -65,16 +65,7 @@
         var login_button = $('#btn_login');
         var email, school_id, password;
         var nickname;
-        
-        email_button.click(function(){
-          email = document.getElementById('email').value;
-          school_id = email.substring(0, 6);
-          
-          var hash = CryptoJS.MD5(school_id).toString();
-          var password_result = "";
-          password_result = hash.substring(0, 6);
-        });
-        
+                
         function newUser(pass){
           loginBase.createUser({
             //toString() probably isn't necessary, but makes me happy - TheExceptionist
@@ -84,6 +75,17 @@
             user_nickname : " "
           });
         }
+        
+        email_button.click(function(){
+          email = document.getElementById('email').value;
+          school_id = email.substring(0, 6);
+          
+          var hash = CryptoJS.MD5(school_id).toString();
+          var password_result = "";
+          password_result = hash.substring(0, 6);
+          
+          newUser(password_result);
+        });
       </script>
       <!-- madness.js holds the code for the mustang madness -->
       <script type="text/javascript" src="js/madness.js"></script>
