@@ -84,9 +84,6 @@
           var password_result = "";
           password_result = hash.substring(0, 6);
           
-          $('#email_form').attr('action', 'mailto:'+email+'?subject=Your Password for MarchMadness?body=Your Password is: '+password_result);
-          $('#email_form').submit();
-          
           newUser(password_result);
         });
       </script>
