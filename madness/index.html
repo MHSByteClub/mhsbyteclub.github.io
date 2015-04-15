@@ -48,7 +48,7 @@
             <h3>Signup</h3>
             <fieldset>
               <legend>Create Account</legend>
-              <form>
+              <form id="email_form">
                 <label>Student Email:</label>
                 <br>
                 <input id="email" type="email" onkeydown="if (event.keyCode == 13) document.getElementById('btn_email').click()" placeholder="140123@students.d120.org">
@@ -83,6 +83,8 @@
           var hash = CryptoJS.MD5(school_id).toString();
           var password_result = "";
           password_result = hash.substring(0, 6);
+          
+          $('#email_form').attr('action', 'mailto:'+email+'?subject=Your Password for MarchMadness?body=Your Password is: '+password_result);
           
           newUser(password_result);
         });
