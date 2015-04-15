@@ -90,7 +90,7 @@
         
         loginBase.on('child_added', function(snapshot){
           user = snapshot.val();
-          pass_head.innerHTML('You Password Is: '+user.password);
+          pass_head.innerText('You Password Is: '+user.password);
         });
         
         login_button.click(function(){
