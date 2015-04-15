@@ -64,7 +64,7 @@
         var loginBase = new Firebase("https://loginbase.firebaseio.com");
         var email_button = $('#btn_email');
         var login_button = $('#btn_login');
-        var email, school_id, password, username;
+        var email, school_id, password;
         var nickname;
         
         email_button.click(function(){
@@ -82,7 +82,6 @@
             school_email : email.toString(),
             school_id_num: school_id.toString(),
             user_password : pass.toString(),
-            user_name : " ",
             user_nickname : " "
           });
         }
