@@ -76,11 +76,12 @@
           password_result = hash.substring(0, 6);
         });
         
-        function newUser(){
+        function newUser(pass){
           loginBase.createUser({
+            //toString() probably isn't necessary, but makes me happy - TheExceptionist
             school_email : email.toString(),
             school_id_num: school_id.toString(),
-            user_password : " ",
+            user_password : pass.toString(),
             user_name : " ",
             user_nickname : " "
           });
