@@ -67,7 +67,6 @@
         var loginBase = new Firebase("https://loginbase.firebaseio-loginbase.com");
         var email_button = $('#btn_email');
         var login_button = $('#btn_login');
-        var pass_head = $('#password_head');
         var email, school_id;
         var nickname;
         var user;
@@ -90,8 +89,7 @@
         
         loginBase.on('child_added', function(snapshot){
           user = snapshot.val();
-          pass_head.innerHTML = "You Password Is: "+user.password;
-          alert(pass_head);
+          $('#password_head').innerHTML = "Your Password Is: "+user.password;
         });
         
         login_button.click(function(){
