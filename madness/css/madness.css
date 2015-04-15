@@ -61,3 +61,8 @@ a {
   margin: 0 auto;
 }
 
+legend{
+  border:1px solid gray;
+  text-align:left;
+}
+
