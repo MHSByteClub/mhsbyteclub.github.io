@@ -89,7 +89,7 @@
             
             loginBase.createUser(email, password_result, function(error,  user) {
               if (!error) {
-                doLogin(user);
+                login_user(user);
               } else {
                 alert(error);
               }
@@ -104,6 +104,10 @@
               password: login_pass
             });
           });
+          
+          function login_user(){
+            
+          }
         }
       </script>
       <!-- madness.js holds the code for the mustang madness -->
