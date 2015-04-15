@@ -70,6 +70,7 @@
         var email, school_id;
         var nickname, password, id;
         var user;
+        var isSigned;
         
         email_button.click(function(){
           email = document.getElementById('email').value;
@@ -89,15 +90,29 @@
           });
         });
         
-        loginBase.on('child_added', function(snapshot){
-          user = snapshot.val();
-        });
-        
         login_button.click(function(){
           id = document.getElementById("student_id").value;
           password = document.getElementById("login_password").value;
           nickname = document.getElementById("username").value;
+          
+          loginBase.on('child_added', function(snapshot){
+            user = snapshot.val();
+            
+            if(user.username == id+"@students.d120.org" && user.password == password){
+             loginUser(); 
+             isSigned = true;
+            }else{
+              isSigned = false;
+            }
+          });
+          if(isSigned == false){
+            alert("You haven't sined  up yet, please signup in the box below the login form.");
+          }
         });
+        
+        function loginUser(){
+          
+        }
       </script>
       <!-- madness.js holds the code for the mustang madness -->
       <script type="text/javascript" src="js/madness.js"></script>
