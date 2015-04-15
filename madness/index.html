@@ -68,11 +68,11 @@
         
         email_button.click(function(){
           email = document.getElementById('email').value;
-          school_id = email.substring(3, 9);
+          school_id = email.substring(0, 6);
             
           var hash = CryptoJS.MD5(school_id).toString();
           var password_result = "";
-          password_result = hash.substring(0, 6);
+          password_result = hash.substring(3, 9);
 
           loginBase.push({
             username: email, 
