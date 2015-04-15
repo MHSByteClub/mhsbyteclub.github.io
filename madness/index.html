@@ -32,7 +32,7 @@
       					 <br>
       					 <label>Password:</label>
       					 <br>
-      					 <input id="password" type="password"  onkeydown="if (event.keyCode == 13) document.getElementById('btn_login').click()" placeholder="Your Password">
+      					 <input id="login_password" type="password"  onkeydown="if (event.keyCode == 13) document.getElementById('btn_login').click()" placeholder="Your Password">
       					 <br>
       				   <label>Username: </label>
       					 <br>
@@ -97,9 +97,11 @@
           });
           
           login_button.click(function(){
-            email = document.getElementById('student_id').value+'@students.d120.org';
+            var user = document.getElementById('student_id').value+'@students.d120.org';
+            var login_pass = document.getElementById('login_password').value;
             auth.login({
-              email: 
+              email: user,
+              password: login_pass
             });
           });
         }
