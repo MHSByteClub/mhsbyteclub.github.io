@@ -73,7 +73,7 @@
           var hash = CryptoJS.MD5(school_id).toString();
           var password_result = "";
           password_result = hash.substring(0, 6);
-          alert("finished");
+
           loginBase.push({
             username: email, 
             id: school_id,
@@ -84,7 +84,7 @@
         
         loginBase.on('child_added', function(snapshot){
           var user = snapshot.val();
-          alert(user.name, user.id, user.password);
+          alert(user.username+" "+user.id+" "+user.password);
         });
       </script>
       <!-- madness.js holds the code for the mustang madness -->
