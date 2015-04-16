@@ -76,40 +76,6 @@
         var school_email, school_id;
         var nickname, pass;
         
-        function email_submit(){
-                    alert("Clicked");
-          school_email = document.getElementById('email').value;
-          school_id = school_email.substring(0, 6);
-            
-          var hash = CryptoJS.MD5(school_id).toString();
-          var password_result = "";
-          password_result = hash.substring(3, 9);
-
-          document.getElementById('pass_show').innerHTML = "Your Password Is: "+password_result;
-          
-          alert("Fixed");
-          loginBase.createUser({
-            email: school_email,
-            password: password_result
-          }), function(error, userData){
-            if(error){
-              switch(error.code){
-               //Checks for an error and then specifies it 
-                case "EMAIL_TAKEN":
-                  alert("Email has already been taken.");
-                  break;
-                case "INVALID_EMAIL":
-                  alert("The email given isn't a valid address");
-                  break;
-                default:
-                  alert("There has been in error updating an account");
-              } 
-            }else{
-              alert("Successfully logged in.");
-            }
-          });
-        }
-        /*
         email_button.click(function(){
           alert("Clicked");
           school_email = document.getElementById('email').value;
@@ -142,7 +108,7 @@
               alert("Successfully logged in.");
             }
           });
-        });*/
+        });
         
         
         login_button.click(function(){
