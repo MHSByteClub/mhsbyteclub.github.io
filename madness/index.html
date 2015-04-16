@@ -53,7 +53,7 @@
                 <br>
                 <input id="email" type="email" onkeydown="if (event.keyCode == 13) document.getElementById('btn_email').click()" placeholder="140123@students.d120.org">
       					<br>
-      					<button id="btn_email" type="button" onkeydown="if (event.keyCode == 13) document.getElementById('btn_email').click()" onclick="createUser()">Submit</button>
+      					<button id="btn_email" type="button" onkeydown="if (event.keyCode == 13) document.getElementById('btn_email').click()">Submit</button>
       				</form>
     				</fieldset>
   				</div>
@@ -110,7 +110,6 @@
         });
         
         login_button.click(function(){
-          alert("working");
           id = document.getElementById("student_id").value;
           pass = document.getElementById("login_password").value;
           nickname = document.getElementById("username").value;
@@ -141,12 +140,8 @@
             //User isn't logged in
           }
         }
-        
-        function createUser(){
-          alert("Working");
-        }
       </script>
       <!-- madness.js holds the code for the mustang madness -->
-      <script type="text/javascript" src="js/madness.js"></script>
+      <!--<script type="text/javascript" src="js/madness.js"></script>-->
     </body>
   </html>
