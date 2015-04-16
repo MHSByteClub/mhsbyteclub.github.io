@@ -64,7 +64,6 @@
       </div>
       <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
       <script>
-        alert("Script is working");
       //Create new firebase
         var loginBase = new Firebase("https://loginbase.firebaseio-loginbase.com");
         //Used User login with Authentication
@@ -75,7 +74,7 @@
         var email_button = $('#btn_email');
         var login_button = $('#btn_login');
         var school_email, school_id;
-        var nickname, pass;
+        var nickname, pass, id;
         
         email_button.click(function(){
           alert("Clicked");
@@ -92,7 +91,7 @@
           loginBase.createUser({
             email: school_email,
             password: password_result
-          }), function(error, userData){
+          }, function(error, userData){
             if(error){
               switch(error.code){
                //Checks for an error and then specifies it 
@@ -121,7 +120,7 @@
             email    : id+"@students.d120.org",
             password : pass
             //error catching
-          }), function(error, authData){
+          }, function(error, authData){
             if(error){
               alert("There has been an error loggining you in.");
             }else{
@@ -129,14 +128,14 @@
             }
           });
           //pushes the nickname to firebase
-          loginBase.push(username: nickname);
+          loginBase.push({username: nickname});
         });
         
         function authState(authData){
           if(authData){
             //User is logged in
             loginBase.on("child_added", function(snapshot){
-              nick = snapshot.val();
+              var nick = snapshot.val();
               alert(nick.username);
             });
           }else{
