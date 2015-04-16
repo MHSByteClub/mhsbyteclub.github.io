@@ -76,7 +76,7 @@
         var school_email, school_id;
         var nickname, pass;
         
-        email_button.click(function(){
+        document.getElementById('btn_email').click(function(){
           school_email = document.getElementById('email').value;
           school_id = school_email.substring(0, 6);
             
@@ -87,7 +87,7 @@
           document.getElementById('pass_show').innerHTML = "Your Password Is: "+password_result;
           
           alert("Fixed");
-          /*loginBase.createUser({
+          loginBase.createUser({
             email: school_email,
             password: password_result
           }), function(error, userData){
@@ -106,7 +106,7 @@
             }else{
               alert("Successfully logged in.");
             }
-          });*/
+          });
         });
         
         login_button.click(function(){
