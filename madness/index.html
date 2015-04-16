@@ -125,12 +125,16 @@
             }
           });
           //pushes the nickname to firebase
-          loginBase.push(nickname);
+          loginBase.push(username: nickname);
         });
         
         function authState(authData){
           if(authData){
             //User is logged in
+            loginBase.on("child_added", function(snapshot){
+              nick = snapshot.val();
+              alert(nick.username);
+            });
           }else{
             //User isn't logged in
           }
