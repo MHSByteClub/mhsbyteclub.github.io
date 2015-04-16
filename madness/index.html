@@ -92,6 +92,7 @@
           }), function(error, userData){
             if(error){
               switch(error.code){
+               //Checks for an error and then specifies it 
                 case "EMAIL_TAKEN":
                   alert("Email has already been taken.");
                   break;
@@ -123,6 +124,7 @@
               alert("Successful login.");
             }
           });
+          //pushes the nickname to firebase
           loginBase.push(nickname);
         });
         
