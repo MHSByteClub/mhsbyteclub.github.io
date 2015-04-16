@@ -64,54 +64,76 @@
       </div>
       <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
       <script>
+      //Create new firebase
         var loginBase = new Firebase("https://loginbase.firebaseio-loginbase.com");
+        //Used User login with Authentication
+        var auth = loginbase.getAuth();
+        //listen for changes in the authentication state
+        loginBase.onAuth(authState);
+        
         var email_button = $('#btn_email');
         var login_button = $('#btn_login');
-        var email, school_id;
-        var nickname, password, id;
+        var school_email, school_id;
+        var nickname, pass, id;
         var user;
-        var isSigned;
+        //var isSigned;
         
         email_button.click(function(){
-          email = document.getElementById('email').value;
-          school_id = email.substring(0, 6);
+          school_email = document.getElementById('email').value;
+          school_id = school_email.substring(0, 6);
             
           var hash = CryptoJS.MD5(school_id).toString();
           var password_result = "";
           password_result = hash.substring(3, 9);
 
           document.getElementById('pass_show').innerHTML = "Your Password Is: "+password_result;
-
-          loginBase.push({
-            username: email, 
-            id: school_id,
-            password: password_result,
-            nickname: " "
+          
+          loginBase.createUser({
+            email: school_email,
+            password: password_result
+          }), function(error, userData){
+            if(error){
+              switch(error.code){
+                case "EMAIL_TAKEN":
+                  alert("Email has already been taken.");
+                  break;
+                case "INVALID_EMAIL":
+                  alert("The email given isn't a valid address");
+                  break;
+                default:
+                  alert("There has been in error updating an account");
+              } 
+            }else{
+              alert("Successfully logged in.");
+            }
           });
         });
         
         login_button.click(function(){
           id = document.getElementById("student_id").value;
-          password = document.getElementById("login_password").value;
+          pass = document.getElementById("login_password").value;
           nickname = document.getElementById("username").value;
           
-          loginBase.on('child_added', function(snapshot){
-            user = snapshot.val();
-            
-            if(user.username == id+"@students.d120.org" && user.password == password){
-             loginUser(); 
-             isSigned = true;
+          loginBase.authWithPassword({
+            email    : id+"@students.d120.org",
+            password : pass
+            //error catching
+          }), function(error, authData){
+            if(error){
+              alert("There has been an error loggining you in.");
             }else{
-              isSigned = false;
+              alert("Successful login.");
             }
           });
-          if(isSigned == false){
-            alert("You haven't sined  up yet, please signup in the box below the login form.");
-          }
+          loginBase.push(nickname);
         });
         
-        function loginUser(){
-          
+        function authState(authData){
+          if(authData){
+            //User is logged in
+          }else{
+            //User isn't logged in
+          }
         }
       </script>
       <!-- madness.js holds the code for the mustang madness -->
