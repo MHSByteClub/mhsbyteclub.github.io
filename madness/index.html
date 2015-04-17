@@ -89,6 +89,8 @@
           loginBase.createUser({
             email: school_email,
             password: password_result
+            //On error the first argument will be an error argument
+            //If successful the first argument is null, and the second argument contains the info for the new User
           }, function(error, userData){
             if(error){
               switch(error.code){
