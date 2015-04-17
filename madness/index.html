@@ -38,7 +38,7 @@
       					 <br>
       					 <input id="username" type="text" onkeydown="if (event.keyCode == 13) document.getElementById('btn_login').click()" placeholder="Ex: MLG rockwrecker"></input>
       					 <br>
-      			     <!--<button id="btn_login" type="button">Submit</button>-->
+      			     <button id="btn_login" type="button" onclick="loginUser()">Submit</button>
       				</form>
     				</fieldset>
   				</div>
@@ -53,7 +53,7 @@
                 <br>
                 <input id="email" type="email" onkeydown="if (event.keyCode == 13) document.getElementById('btn_email').click()" placeholder="140123@students.d120.org">
       					<br>
-      					<!--<button id="btn_email" type="button" onkeydown="if (event.keyCode == 13) document.getElementById('btn_email').click()">Submit</button>-->
+      					<button id="btn_email" type="button" onkeydown="if (event.keyCode == 13) document.getElementById('btn_email').click()" onclick="newUser()">Submit</button>
       				</form>
     				</fieldset>
   				</div>
@@ -76,7 +76,7 @@
         var school_email, school_id;
         var nickname, pass, id;
         
-        email_button.click(function(){
+        function newUser(){
           alert("Clicked");
           school_email = document.getElementById('email').value;
           school_id = school_email.substring(0, 6);
@@ -108,10 +108,10 @@
               alert("Successfully logged in.");
             }
           });
-        });
+        }
         
         
-        login_button.click(function(){
+        function loginUser(){
           id = document.getElementById("student_id").value;
           pass = document.getElementById("login_password").value;
           nickname = document.getElementById("username").value;
@@ -129,7 +129,7 @@
           });
           //pushes the nickname to firebase
           loginBase.push({username: nickname});
-        });
+        }
         
         function authState(authData){
           if(authData){
