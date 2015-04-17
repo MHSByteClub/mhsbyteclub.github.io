@@ -28,7 +28,9 @@
           <!-- begin login form's  html -->
           <div class="input_box" id="login_form">
             <h3>Login</h3>
+            <!--fieldset puts a box around the form-->
             <fieldset>
+              <!--legend puts a legend on the fieldset box-->
               <legend>Login</legend>
               <form>
       					 <label>Student ID:</label>
@@ -67,6 +69,11 @@
   				  <p id="pass_show"></p>
   				</div>
       </div>
+      <!--I don't know how to handle the password
+          should the user create the password or should it be given?
+          The problem with user password creation is that, if firebase is really unsecure, than that password can be stolen,
+          but giving the user a password, will likely cause problems if the user forgets the given password. Any suggestions? -theExceptionist -->  
+      <!--gets the crypto-js source-->
       <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
       <script>
       //Create new firebase
@@ -80,7 +87,9 @@
         var nickname, pass, id;
         
         function newUser(){
+          //gets the value from the email box
           school_email = document.getElementById('email').value;
+          //takes the first 6 letters of the email given
           school_id = school_email.substring(0, 6);
             
           var hash = CryptoJS.MD5(school_id).toString();
@@ -115,7 +124,6 @@
         
         
         function loginUser(){
-          alert("Logging in");
           id = document.getElementById("student_id").value;
           pass = document.getElementById("login_password").value;
           nickname = document.getElementById("username").value;
