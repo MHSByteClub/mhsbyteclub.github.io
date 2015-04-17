@@ -127,7 +127,7 @@
             //error catching
           }, function(error, authData){
             if(error){
-              alert("There has been an error loggining you in.");
+              alert("There has been an error logging you in.");
             }else{
               alert("Successful login.");
             }
@@ -142,6 +142,7 @@
             loginBase.on("child_added", function(snapshot){
               var nick = snapshot.val();
               alert(nick.username);
+              document.getElementById('login_nametag').innerHTML = nick.username;
             });
           }else{
             //User isn't logged in
