@@ -66,3 +66,9 @@ legend{
   text-align:left;
 }
 
+.login_tag{
+  height: 10%;
+  width: 60%;
+  margin:0 auto;
+  text-align:right;
+}
