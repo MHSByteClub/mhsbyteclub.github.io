@@ -33,17 +33,13 @@
               <!--legend puts a legend on the fieldset box-->
               <legend>Login</legend>
               <form>
-      					 <label>Student ID:</label>
+      					 <label>Student Email:</label>
       					 <br>
-      			     <input id="student_id" type="number" onkeydown="if (event.keyCode == 13) document.getElementById('btn_login').click()" placeholder="150123">
+      			     <input id="student_id" type="number" onkeydown="if (event.keyCode == 13) document.getElementById('btn_login').click()" placeholder="150123@students.d120.org">
       					 <br>
       					 <label>Password:</label>
       					 <br>
       					 <input id="login_password" type="password"  onkeydown="if (event.keyCode == 13) document.getElementById('btn_login').click()" placeholder="Your Password">
-      					 <br>
-      				   <label>Username: </label>
-      					 <br>
-      					 <input id="username" type="text" onkeydown="if (event.keyCode == 13) document.getElementById('btn_login').click()" placeholder="Ex: MLG rockwrecker"></input>
       					 <br>
       			     <button id="btn_login" type="button" onclick="loginUser()">Submit</button>
       				</form>
@@ -69,12 +65,6 @@
   				  <p id="pass_show"></p>
   				</div>
       </div>
-      <!--I don't know how to handle the password
-          should the user create the password or should it be given?
-          The problem with user password creation is that, if firebase is really unsecure, than that password can be stolen,
-          but giving the user a password, will likely cause problems if the user forgets the given password. Any suggestions? -theExceptionist -->  
-      <!--gets the crypto-js source-->
-      <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
       <script>
       //Create new firebase
         var loginBase = new Firebase("https://loginbase.firebaseio.com");
@@ -91,13 +81,9 @@
           school_email = document.getElementById('email').value;
           //takes the first 6 letters of the email given
           school_id = school_email.substring(0, 6);
-            
-          var hash = CryptoJS.MD5(school_id).toString();
-          var password_result = "";
-          password_result = hash.substring(3, 9);
-
-          document.getElementById('pass_show').innerHTML = "Your Password Is: "+password_result;
           
+          password_result = " ";
+  
           loginBase.createUser({
             email: school_email,
             password: password_result
@@ -126,10 +112,9 @@
         function loginUser(){
           id = document.getElementById("student_id").value;
           pass = document.getElementById("login_password").value;
-          nickname = document.getElementById("username").value;
           
           loginBase.authWithPassword({
-            email    : id+"@students.d120.org",
+            email    : id,
             password : pass
             //error catching
           }, function(error, authData){
@@ -139,8 +124,6 @@
               alert("Successful login.");
             }
           });
-          //pushes the nickname to firebase.
-          loginBase.push({username: nickname});
         }
         
         function authState(authData){
