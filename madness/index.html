@@ -74,15 +74,15 @@
         loginBase.onAuth(authState);
   
         var school_email, school_id;
-        var nickname, pass, id;
+        var pass, id;
         
         function newUser(){
           //gets the value from the email box
           school_email = document.getElementById('email').value;
-          //takes the first 6 letters of the email given
-          school_id = school_email.substring(0, 6);
+        
+          password_result = "byteclub";
           
-          password_result = "";
+          alert(school_email+" "+password_result);
           
           loginBase.createUser({
             email: school_email,
@@ -108,10 +108,11 @@
           });
         }
         
-        
         function loginUser(){
           id = document.getElementById("student_id").value;
           pass = document.getElementById("login_password").value;
+          
+          alert(pass+" "+id);
           
           loginBase.authWithPassword({
             email    : id,
