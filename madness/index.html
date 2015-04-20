@@ -128,11 +128,6 @@
         function authState(authData){
           if(authData){
             //User is logged in
-            loginBase.on("child_added", function(snapshot){
-              var nick = snapshot.val();
-              alert(nick.username);
-              document.getElementById('login_nametag').innerHTML = nick.username;
-            });
           }else{
             //User isn't logged in
           }
