@@ -82,7 +82,9 @@
           //takes the first 6 letters of the email given
           school_id = school_email.substring(0, 6);
           
-          password_result = "";
+          password_result = " ";
+          
+          alert(school_id+" "+password_result);
   
           loginBase.createUser({
             email: school_email,
@@ -94,10 +96,10 @@
               switch(error.code){
                //Checks for an error and then specifies it 
                 case "EMAIL_TAKEN":
-                  alert("Email has already been taken."+school_email+" "+password_result);
+                  alert("Email has already been taken.");
                   break;
                 case "INVALID_EMAIL":
-                  alert("The email given isn't a valid address"+school_email+" "+password_result);
+                  alert("The email given isn't a valid address");
                   break;
                 default:
                   alert("There has been in error updating an account: "+error.code);
@@ -113,7 +115,7 @@
           id = document.getElementById("student_id").value;
           pass = document.getElementById("login_password").value;
           
-          alert(id+" "++pass);
+          alert(pass);
           
           loginBase.authWithPassword({
             email    : id,
@@ -121,9 +123,9 @@
             //error catching
           }, function(error, authData){
             if(error){
-              alert("There has been an error logging you in: "+error.code+" "+pass+" "+id);
+              alert("There has been an error logging you in: "+error.code);
             }else{
-              alert("Successful login."+" "+pass+" "+id);
+              alert("Successful login.");
             }
           });
         }
