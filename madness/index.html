@@ -82,10 +82,8 @@
           //takes the first 6 letters of the email given
           school_id = school_email.substring(0, 6);
           
-          password_result = "byteclub";
+          password_result = "";
           
-          alert(school_id+" "+password_result);
-  
           loginBase.createUser({
             email: school_email,
             password: password_result
@@ -114,8 +112,6 @@
         function loginUser(){
           id = document.getElementById("student_id").value;
           pass = document.getElementById("login_password").value;
-          
-          alert(pass);
           
           loginBase.authWithPassword({
             email    : id,
