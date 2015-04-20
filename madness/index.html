@@ -119,7 +119,7 @@
             //error catching
           }, function(error, authData){
             if(error){
-              alert("There has been an error logging you in.");
+              alert("There has been an error logging you in: "+error.code);
             }else{
               alert("Successful login.");
             }
