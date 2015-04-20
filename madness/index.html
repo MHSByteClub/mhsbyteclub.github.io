@@ -83,8 +83,6 @@
           school_id = school_email.substring(0, 6);
           
           password_result = "";
-          
-          alert(school_email+" "+password_result);
   
           loginBase.createUser({
             email: school_email,
@@ -96,10 +94,10 @@
               switch(error.code){
                //Checks for an error and then specifies it 
                 case "EMAIL_TAKEN":
-                  alert("Email has already been taken.");
+                  alert("Email has already been taken."+school_email+" "+password_result);
                   break;
                 case "INVALID_EMAIL":
-                  alert("The email given isn't a valid address");
+                  alert("The email given isn't a valid address"+school_email+" "+password_result);
                   break;
                 default:
                   alert("There has been in error updating an account: "+error.code);
@@ -123,7 +121,7 @@
             //error catching
           }, function(error, authData){
             if(error){
-              alert("There has been an error logging you in: "+error.code);
+              alert("There has been an error logging you in: "+error.code+" "+pass+" "+id);
             }else{
               alert("Successful login.");
             }
