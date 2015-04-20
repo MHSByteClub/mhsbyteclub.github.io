@@ -75,8 +75,10 @@
   
         var school_email, school_id;
         var pass, id;
+        var admin;
         
         function newUser(){
+          setAdmin();
           //gets the value from the email box
           school_email = document.getElementById('email').value;
         
@@ -98,7 +100,7 @@
                   alert("The email given isn't a valid address");
                   break;
                 default:
-                  alert("There has been in error updating an account: "+error.code);
+                  alert("There has been in error updating an account: "+error.code+". If the problem presists then email the site admin at: "+admin);
               } 
             }else{
               alert("Successfully signed up in.");
@@ -107,6 +109,8 @@
         }
         
         function loginUser(){
+          setAdmin();
+          
           id = document.getElementById("student_id").value;
           pass = document.getElementById("login_password").value;
           
@@ -118,11 +122,15 @@
             //error catching
           }, function(error, authData){
             if(error){
-              alert("There has been an error logging you in: "+error.code);
+              alert("There has been an error logging you in: "+error.code+". If your problem persists email the site admin at: "+);
             }else{
               alert("Successful login.");
             }
           });
+        }
+        
+        function setAdmin(){
+          admin = "170478@students.d120.org";
         }
         
         function authState(authData){
