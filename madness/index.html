@@ -78,7 +78,7 @@
         var admin;
         
         function newUser(){
-          //setAdmin();
+          setAdmin();
           //gets the value from the email box
           school_email = document.getElementById('email').value;
         
@@ -109,7 +109,7 @@
         }
         
         function loginUser(){
-          //setAdmin();
+          setAdmin();
           
           id = document.getElementById("student_id").value;
           pass = document.getElementById("login_password").value;
@@ -122,7 +122,7 @@
             //error catching
           }, function(error, authData){
             if(error){
-              alert("There has been an error logging you in: "+error.code+". If your problem persists email the site admin at: "+);
+              alert("There has been an error logging you in: "+error.code+". If your problem persists email the site admin at: "+admin);
             }else{
               alert("Successful login.");
             }
