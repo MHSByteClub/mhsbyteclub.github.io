@@ -82,8 +82,6 @@
         
           password_result = "byteclub";
           
-          alert(school_email+" "+password_result);
-          
           loginBase.createUser({
             email: school_email,
             password: password_result
@@ -113,6 +111,10 @@
           pass = document.getElementById("login_password").value;
           
           alert(pass+" "+id);
+          
+          if(id == null || id == ""){
+            return 0;
+          }
           
           loginBase.authWithPassword({
             email    : id,
