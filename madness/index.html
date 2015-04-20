@@ -35,7 +35,7 @@
               <form>
       					 <label>Student Email:</label>
       					 <br>
-      			     <input id="student_id" type="number" onkeydown="if (event.keyCode == 13) document.getElementById('btn_login').click()" placeholder="150123@students.d120.org">
+      			     <input id="student_id" type="email" onkeydown="if (event.keyCode == 13) document.getElementById('btn_login').click()" placeholder="150123@students.d120.org">
       					 <br>
       					 <label>Password:</label>
       					 <br>
@@ -110,11 +110,7 @@
           id = document.getElementById("student_id").value;
           pass = document.getElementById("login_password").value;
           
-          alert(pass+" "+id);
-          
-          if(id == null || id == ""){
-            return 0;
-          }
+          alert(id+" "+pass);
           
           loginBase.authWithPassword({
             email    : id,
