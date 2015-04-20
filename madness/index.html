@@ -83,6 +83,8 @@
           school_id = school_email.substring(0, 6);
           
           password_result = "";
+          
+          alert(school_email+" "+password_result);
   
           loginBase.createUser({
             email: school_email,
@@ -112,6 +114,8 @@
         function loginUser(){
           id = document.getElementById("student_id").value;
           pass = document.getElementById("login_password").value;
+          
+          alert(id+" "++pass);
           
           loginBase.authWithPassword({
             email    : id,
