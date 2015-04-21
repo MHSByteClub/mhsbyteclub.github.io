@@ -12,16 +12,20 @@ function init_madness(){
     letters.push(String.fromCharCode(i));
   }
   
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  
   if(Math.floor(Math.random(0, 2)) == 1){
     use_phrases();
   }else{
     use_letters();
   }
-  function use_phrases(){
   
+  function use_phrases(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
   
   function use_letters(){
-    
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 }
