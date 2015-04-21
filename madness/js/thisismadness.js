@@ -13,16 +13,15 @@ function init_madness(){
   }
   
   if(Math.floor(Math.random(0, 2)) == 1){
-    use_phrases(phrases, Math.floor(Math.random(0, 2)));
+    use_phrases();
   }else{
-    use_letters(letters, Math.floor(Math.random(0, 2)));
+    use_letters();
   }
-}
-
-function use_phrases(text, num){
+  function use_phrases(){
   
-}
-
-function use_letters(text, num){
+  }
   
+  function use_letters(){
+    
+  }
 }
