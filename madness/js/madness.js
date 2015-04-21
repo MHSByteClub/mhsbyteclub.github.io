@@ -5,7 +5,7 @@ $(document).ready(function(){
     $(this).fadeOut('slow');
   });
   $(".pass_by").mouseover(function(){
-    
+    $(".easter_egg").show();
   });
 });
 
