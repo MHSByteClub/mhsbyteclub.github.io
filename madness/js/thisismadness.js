@@ -3,5 +3,5 @@ $(document).ready(function(){
 });
 
 function madness(){
-
+  var mad_text = [];
 }
