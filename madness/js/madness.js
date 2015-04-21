@@ -1,6 +1,5 @@
 $(document).ready(function(){
-  var head = document.getElementById('click_mad');
-  head.click(function(){
+  $("#click_mad").click(function(){
     $(this).fadeOut('slow');
   });
 });
