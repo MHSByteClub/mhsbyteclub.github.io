@@ -1,5 +1,6 @@
 var key_combo = [];
 $(document).ready(function(){
+  $(".easter_egg").hide();
   $("#click_mad").click(function(){
     $(this).fadeOut('slow');
   });
