@@ -63,5 +63,9 @@ The js folder contains the javascript scripts used on our site
 jquery is in /js/vendor and is a prevalent javascript library used today. It makes coding scripts less painful.
 modernizr is also in /js/vendor and is supposed to help browser compatibility.
 
+### /madness
+The madness folder contains the html/css and javascript files for the "March Madness" event. It is basicially used
+to keep the site more organized, as well as prevent naming conflicts.
+
 ### CNAME
 The CNAME file specifies what domain name the code is for.
