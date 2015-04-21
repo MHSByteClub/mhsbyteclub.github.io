@@ -77,7 +77,7 @@
   
         var school_email, school_id;
         var pass, id;
-        var admin;
+        var admin = [];
         
         function newUser(){
           setAdmin();
@@ -102,7 +102,7 @@
                   alert("The email given isn't a valid address");
                   break;
                 default:
-                  alert("There has been in error updating an account: "+error.code+". If the problem presists then email the site admin at: "+admin);
+                  alert("There has been in error updating an account: "+error.code+". If the problem presists then email the site admin at: "+admin[Math.floor(Math.random(0, admin.length))]);
               } 
             }else{
               alert("Successfully signed up in.");
@@ -122,7 +122,7 @@
             //error catching
           }, function(error, authData){
             if(error){
-              alert("There has been an error logging you in: "+error.code+". If your problem persists email the site admin at: "+admin);
+              alert("There has been an error logging you in: "+error.code+". If your problem persists email the site admin at: "+admin[Math.floor(Math.random(0, admin.length))]);
             }else{
               alert("Successful login.");
             }
@@ -131,7 +131,7 @@
         }
         
         function setAdmin(){
-          admin = "170478@students.d120.org";
+          admin.push("170478@students.d120.org");
         }
         
         function authState(authData){
@@ -139,6 +139,7 @@
             location.href="http://mhsbyteclub.github.io/madness/home.html";
           }else{
             //User isn't logged in
+            return;
           }
         }
       </script>
