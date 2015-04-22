@@ -69,3 +69,7 @@ legend{
 .login_tag{
   text-align:right;
 }
+
+fieldset{
+  background:#0A0A0A;
+}
