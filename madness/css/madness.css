@@ -64,6 +64,7 @@ a {
 legend{
   border:1px solid gray;
   text-align:left;
+   background:#404040;
 }
 
 .login_tag{
@@ -71,5 +72,5 @@ legend{
 }
 
 fieldset{
-  background:#0A0A0A;
+  background:#404040;
 }
