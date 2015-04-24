@@ -64,18 +64,14 @@ a {
 legend{
   border:1px solid gray;
   text-align:left;
-   background:#404040;
+   background:#E0E0E0;
 }
 
 .login_tag{
   text-align:right;
 }
 
-.input_box{
-  background:#E0E0E0;
-}
-/*
 fieldset{
   background:#E0E0E0;
 }
-*/
+
