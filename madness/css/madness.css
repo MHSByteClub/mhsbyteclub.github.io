@@ -15,7 +15,7 @@ body {
 h1 {
   font-size: 45px;
   color: #007511;
-  font-variant: small-caps;
+  font-family: 'Ruslan Display', cursive;
   text-shadow: 1px 1px 3px #050505
 }
 
