@@ -7,11 +7,9 @@ Other elements to style:
 */
 
 body {
-background-color: #f4f4f4;
-color: #5a5656;
-font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-font-size: 16px;
-line-height: 1.5em;
+  background: #81bb50;
+  font-family: "Tahoma", Helvetica, sans-serif;
+  text-align:center;
   }
 
 h1 {
