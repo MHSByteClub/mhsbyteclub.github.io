@@ -88,3 +88,15 @@ text-transform: uppercase;
 width: 250px;
 }
 
+#btn_login{
+  background-color: #1bb2e9;
+border: none;
+border-radius: 0px 3px 3px 0px;
+-moz-border-radius: 0px 3px 3px 0px;
+-webkit-border-radius: 0px 3px 3px 0px;
+color: #f4f4f4;
+cursor: pointer;
+height: 50px;
+text-transform: uppercase;
+width: 250px;
+}
