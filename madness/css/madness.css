@@ -25,6 +25,36 @@ h2 {
   font-variant: small-caps;
   text-shadow: 1px 1px 3px #050505
 }
+#student_id{
+  background-color: #e5e5e5;
+border: none;
+border-radius: 3px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+color: #5a5656;
+font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+font-size: 14px;
+height: 50px;
+outline: none;
+padding: 0px 10px;
+width: 280px;
+-webkit-appearance:none;
+}
+#login_password{
+  background-color: #e5e5e5;
+border: none;
+border-radius: 3px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+color: #5a5656;
+font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+font-size: 14px;
+height: 50px;
+outline: none;
+padding: 0px 10px;
+width: 280px;
+-webkit-appearance:none;
+}
 
 h3 {
   font-size: 20px;
@@ -89,7 +119,7 @@ width: 250px;
 }
 
 #btn_login{
-  background-color: #1bb2e9;
+background-color: #1bb2e9;
 border: none;
 border-radius: 0px 3px 3px 0px;
 -moz-border-radius: 0px 3px 3px 0px;
@@ -99,4 +129,20 @@ cursor: pointer;
 height: 50px;
 text-transform: uppercase;
 width: 250px;
+}
+
+#email{
+background-color: #e5e5e5;
+border: none;
+border-radius: 3px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+color: #5a5656;
+font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+font-size: 14px;
+height: 50px;
+outline: none;
+padding: 0px 10px;
+width: 280px;
+-webkit-appearance:none;
 }
