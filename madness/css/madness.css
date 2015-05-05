@@ -75,7 +75,11 @@ legend{
 
 fieldset{
   background:#E9E9E9;
-  border-radius:5px;
+  border-radius:25px;
+}
+
+button{
+  border-radius:25px;
 }
 
 #btn_email{
