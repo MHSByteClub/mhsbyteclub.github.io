@@ -14,7 +14,7 @@ body {
 
 h1 {
   font-size: 55px;
-  color: #007511;
+  color: #FFFFFF;
   font-family: 'Ruslan Display', cursive;
   text-shadow: 1px 1px 3px #050505
 }
@@ -78,7 +78,7 @@ fieldset{
 }
 
 #btn_email{
-background-color: #00FF99;
+background-color: #999966;
 border: none;
 border-radius: 0px 3px 3px 0px;
 -moz-border-radius: 0px 3px 3px 0px;
@@ -91,7 +91,7 @@ width: 250px;
 }
 
 #btn_login{
-background-color: #00FF99;
+background-color: #999966;
 border: none;
 border-radius: 0px 3px 3px 0px;
 -moz-border-radius: 0px 3px 3px 0px;
