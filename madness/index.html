@@ -65,9 +65,9 @@
       				</form>
     				</fieldset>
   				</div>
-  				
-  				<div class="pass_by">
-  				  <p id="pass_show"></p>
+  				<!--Sends notifications in the html rather than alert-->
+  				<div class="notification">
+  				  <p id="noti"></p>
   				</div>
   				
   				<div class="easter_egg">
@@ -84,8 +84,6 @@
   				  <!--<h4>Meanwhile at the tournament...</h4>
   				  <iframe width="854" height="510" src="http://www.mhsbyte.org/madness/home.html" frameborder="0" allowfullscreen></iframe>-->
   				</div>
-  				
-  				<canvas id="mad"></canvas>
       </div>
       <script>
       //Create new firebase
@@ -97,6 +95,7 @@
   
         var school_email, school_id;
         var pass, id;
+        var out_put = document.getElementById("noti");
         var admin = [];
         
         function newUser(){
@@ -116,16 +115,16 @@
               switch(error.code){
                //Checks for an error and then specifies it 
                 case "EMAIL_TAKEN":
-                  alert("Email has already been taken.");
+                  out_put.innerHTML = "Email has already been taken.";
                   break;
                 case "INVALID_EMAIL":
-                  alert("The email given isn't a valid address");
+                  out_put.innerHTML = "The email given isn't a valid address";
                   break;
                 default:
-                  alert("There has been in error updating an account: "+error.code+". If the problem presists then email the site admin at: "+admin[Math.floor(Math.random(0, admin.length))]);
+                  out_put.innerHTML = "There has been in error updating an account: "+error.code+". If the problem presists then email the site admin at: "+admin[Math.floor(Math.random(0, admin.length))];
               } 
             }else{
-              alert("Successfully signed up in.");
+              out_put.innerHTML = "Successfully signed up in.";
             }
           });
         }
@@ -142,9 +141,9 @@
             //error catching
           }, function(error, authData){
             if(error){
-              alert("There has been an error logging you in: "+error.code+". If your problem persists email the site admin at: "+admin[Math.floor(Math.random(0, admin.length))]);
+             out_put.innerHTML = "There has been an error logging you in: "+error.code+". If your problem persists email the site admin at: "+admin[Math.floor(Math.random(0, admin.length))];
             }else{
-              alert("Successful login.");
+              out_put.innerHTML = "Successful login.";
             }
           });
           location.href="http://mhsbyteclub.github.io/madness/home.html";
