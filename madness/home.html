@@ -16,6 +16,9 @@
   
   <body>
     <!-- section for current match -->
+    <div class="online_users">
+      
+    </div>
     <div class="matchtable">
         <table>
             <div class="tablehead">
@@ -45,7 +48,15 @@
         </table>
     </div>
     <script type="text/javascript">
+      var loginBase = new Firebase("https://marchmadness.firebaseio.com");
+      var dataAuth = loginBase.getAuth();
       
+      if(dataAuth){
+        //User is logged in
+      }else{
+        //User is logged out
+      }
     </script>
+    <script text="text/javascript" src="home.js"></script>
   </body>
 </html>
