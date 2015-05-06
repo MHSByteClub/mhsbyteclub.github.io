@@ -98,6 +98,8 @@
         var loginBase = new Firebase("https://marchmadness.firebaseio.com");
         //Used User login with Authentication
         var auth = loginbase.getAuth();
+        
+        var users = [];
         //listen for changes in the authentication state
         loginBase.onAuth(authState);
   
@@ -160,6 +162,7 @@
              out_put.innerHTML = "There has been an error logging you in: "+error.code+". If your problem persists email the site admin at: "+admin[Math.floor(Math.random(0, admin.length))];
             }else{
               out_put.innerHTML = "Successful login.";
+              users.push(id);
             } 
           }, {
             remember: "sessionOnly"
