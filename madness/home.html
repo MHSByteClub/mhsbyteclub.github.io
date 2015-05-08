@@ -52,6 +52,8 @@
     <script type="text/javascript">
       var loginBase = new Firebase("https://marchmadness.firebaseio.com");
       var dataAuth = loginBase.getAuth();
+      var users = [];
+      var userLine = "";
       
       if(dataAuth){
         //User is logged in
@@ -60,7 +62,30 @@
       }
       
       function generateUsers(){
-        var dataTable = $(document.createElement('table'));
+        var dataTable = document.createElement('table');
+        var head = document.createElement('thead');
+        var tr = document.createElement('tr');
+        var th = document.createElement('th');
+        
+        var tBody = document.createElement('tbody');
+        var tr1 = document.createElement('tr');
+        
+        for(var i = 0; i < users.length; i++){
+          var td = document.createElement('td');
+          
+          td.appendChild(document.createTextNode(users[i]));
+          
+          tr1.appendChild(td);
+        }
+        
+        th.appendChild(document.createTextNode("Online Players"));
+        
+        tr.appendChild(th);
+        head.appendChild(tr);
+        dataTable.appendChild(head);
+          
+        tBody.appendChild(tr1);  
+        dataTable.appendChild(tBody);
       }
     </script>
     <script text="text/javascript" src="js/home.js"></script>
