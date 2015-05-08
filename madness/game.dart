@@ -4,5 +4,8 @@ void main(){
   CanvasElement canvas = document.querySelector('#madgame');
   CanvasRenderingContext2D ctx = canvas.context2D;
   
-  ctx.fillRect(0,0,300,150);
+  ctx.beginPath();
+  ctx.arc(75, 75, 10, 0, Math.PI*2, true); 
+  ctx.closePath();
+  ctx.fill();
 }
