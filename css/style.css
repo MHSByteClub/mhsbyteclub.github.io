@@ -153,3 +153,9 @@ iframe {
 .sub-menu li a:hover, .sub-menu .current-item a {
 	background:#3e3436;
 }
+h2 {
+    color:#ff0700;
+}
+h1 {
+    color:#f74300;
+}
