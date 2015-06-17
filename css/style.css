@@ -159,19 +159,19 @@ h2 {
 h1 {
     color:#3207aa;
 }
-h2#Hello {
+#Hello {
     color:#58faf4;
 }
-h2#Goal {
+#Goal {
     color:#ff0000;
 }
-h2#Projects {
+#Projects {
     color:#01a9db;
 }
-h2#Upcoming-Events {
+#Upcoming-Events {
     color:#fa5858;
 }
-h2#Learning {
+#Learning {
     color:#3104b4;
 }
 p {
