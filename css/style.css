@@ -160,20 +160,20 @@ h1 {
     color:#3207aa;
 }
 #Hello {
-    color:#58faf4;
+    color:#ff0700;
 }
 #Goal {
-    color:#ff0000;
+    color:#ff0700;
 }
 #Projects {
-    color:#01a9db;
+    color:#ff0700;
 }
-#Upcoming-Events {
-    color:#fa5858;
+#Events {
+    color:#ff0700;
 }
 #Learning {
-    color:#3104b4;
+    color:#ff0700;
 }
-p {
-    color:#ff0040;
+#ProjectsToWorkOn{
+    color:#ff0700;
 }
