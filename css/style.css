@@ -174,13 +174,13 @@ h1 {
 #Learning {
     color:#3207aa;
 }
-#container {
-    width: 980px;
-    margin: 0 auto;
-}
 #sidebar {
     float: right;
     width: 200px;
+}
+#container {
+    width: 980px;
+    margin: 0 auto;
 }
 #content {
     overflow: hidden;
