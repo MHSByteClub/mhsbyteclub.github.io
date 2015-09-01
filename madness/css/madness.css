@@ -73,6 +73,10 @@ legend{
   text-align:right;
 }
 
+.page{
+    margin: auto;
+}
+
 fieldset{
   background:#696969;
   border-radius:25px;
@@ -154,5 +158,8 @@ outline: none;
 padding: 0px 10px;
 width: 280px;
 -webkit-appearance:none;
-/*Rygar Stop This Madness!!!
+}
+
+#loginLegend{
+
 }
