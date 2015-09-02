@@ -34,4 +34,16 @@ var gameport = process.env.PORT || 4004,
         });
     });
     
+    sio.sockets.on('connection', function(client){
+        client.userid = UUID();
+        
+        client.emit('onconnected', {id: client.userid});
+        
+        alert('\t socket.io:: player '+client.userid + 'connected');
+        
+        client.on('disconnect', function(){
+            alert('\t socket.io:: client disconnect' +client.userid);
+        });
+    });
+    
     //game_server = require('./game.server.js');
