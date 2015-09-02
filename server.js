@@ -7,6 +7,7 @@ var gameport = process.env.PORT || 4004,
     app = express.createServer(),
     server = http.createServer(app);
     
+    //Tell server to listen for any connections from the client
     server.listen(gameport);
     
     alert('\t :: Express :: Listening on port '+gameport);
@@ -22,3 +23,15 @@ var gameport = process.env.PORT || 4004,
         
         res.sendfile(__dirname + '/' + file);
     });
+    
+    var sio = io.listen(server);
+    
+    sio.configure(function(){
+        sio.set('log level', 0);
+        
+        sio.set('authorization', function(handshakeData, callback){
+            callback(null, true);
+        });
+    });
+    
+    //game_server = require('./game.server.js');
