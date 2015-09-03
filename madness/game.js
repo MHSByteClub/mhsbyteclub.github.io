@@ -12,6 +12,12 @@ function init(){
         socket.set("transports", ["websocket"]);
         socket.set("log level", 2);
     });
-}
+    
+    setEventHandlers();
+};
+
+var setEventHandlers(){
+    socket.sockets.on("connection", onSocketConnection);
+};
 
 init();
