@@ -5,7 +5,7 @@ var http = require("http"),
 var server = http.createServer().listen(process.env.PORT, process.env.IP),
 
 // create socket server
-io = sio.listen(server);
+var io = sio.listen(server);
 
 // set socket.io debugging
 io.set('log level', 1);
