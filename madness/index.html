@@ -52,7 +52,12 @@
             <fieldset>
               <legend>Create Account</legend>
               <form id="email_form">
-                <label>Student Email:</label>
+                    <legend id: "Login">Login</legend>
+                    <p><input class="username" type="text" required value="Username" onBlur="if(this.value=='')this.value='Username'" onFocus="if(this.value=='Username')this.value='' "></p>
+                    <!--No password to complex-->
+                    <p><input class="skill" type="password" required value="Password" onBlur="if(this.value=='')this.value='Skill Level (1-10)'" onFocus="if(this.value=='Password')this.value='' "></p>
+                    <p><input type="submit" value="Login"></p>
+                <!--<label>Student Email:</label>
                 <br>
                 <input id="email" type="email" onkeydown="if (event.keyCode == 13) document.getElementById('btn_email').click()" placeholder="140123@students.d120.org">
       					<br>
@@ -61,7 +66,7 @@
       				</form>
     				</fieldset>
   				</div>
-  				<!--Sends notifications in the html rather than alert-->
+  				<!--Sends notifications in the html rather than alert
   				<div class="notification">
   				  <p id="noti"></p>
   				</div>
@@ -73,12 +78,12 @@
   				  <!-- <img src="http://i1.kym-cdn.com/photos/images/original/000/757/280/89f.jpg"> -->
   				  <!-- <img src="http://i0.kym-cdn.com/photos/images/newsfeed/000/858/898/902.png"> -->
   				  <!-- <img src="http://www.myfacewhen.net/uploads/4968-ash-ketchum.jpg"> -->
-  				</div>
+  				<!--</div>
   				
   				<div class="meanwhile">
   				  <!--<h4>Meanwhile at the tournament...</h4>
   				  <iframe width="854" height="510" src="http://www.mhsbyte.org/madness/home.html" frameborder="0" allowfullscreen></iframe>-->
-  				</div>
+  				</div>-->
       </div>
       <script>
       
