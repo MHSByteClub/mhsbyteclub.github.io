@@ -186,8 +186,7 @@ h1 {
     overflow: hidden;
 }
 
-#Officers {
-    font-size: 72px;
+.Officers {font-size: 4;
   background: -webkit-linear-gradient(right, red, blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
