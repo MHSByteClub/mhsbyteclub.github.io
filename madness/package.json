@@ -1,0 +1,14 @@
+{
+  "name": "march madness",
+  "author" : "Byte Club",
+  "description": "A rock, paper, scissors real-make on the web using node.js",
+  "license": "",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "x.x.x",
+    "socket.io": "1.3.6",
+  },
+  "engine": {
+    "node": "0.10.x"
+  }
+}
