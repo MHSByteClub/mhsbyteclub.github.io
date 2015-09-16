@@ -1,19 +1,23 @@
-var http = require("http"),
-    sio  = require("socket.io");
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
-// create http server
-var server = http.createServer().listen(process.env.PORT, process.env.IP),
+app.get('*', function(req, res){
+	res.sendFile(__dirname + '/index.html');
+});
 
-// create socket server
-var io = sio.listen(server);
+io.on('connection', function(socket){
+	console.log('User connected');
+	
+	socket.emit('server_mes', {message: 'Welcome to the site'});
+	
+	socket.on('client_mes', function(data){
+		console.log(data['message']);
+	});
+});
 
-// set socket.io debugging
-io.set('log level', 1);
+http.listen(process.env.PORT, function(){
+	console.log("Server running at: "+process.env.PORT);
+});
 
-io.sockets.on('connection', function (socket) {
 
-  socket.emit('news', { message: 'Hello world!' });
-
-  socket.on('my other event', function (data) {
-    console.log(data.message);
-  });
