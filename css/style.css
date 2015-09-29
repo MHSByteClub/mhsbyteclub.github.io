@@ -186,16 +186,11 @@ h1 {
     overflow: hidden;
 }
 
-#Officers {font-size: 2;
-  background: -webkit-linear-gradient(left
-  rgba(255, 0, 0, 1) 0%,
-  rgba(255, 255, 0, 1) 15%,
-  rgba(0, 255, 0, 1) 30%,
-  rgba(0, 255, 255, 1) 50%,
-  rgba(0, 0, 255, 1) 65%,
-  rgba(255, 0, 255, 1) 80%,
-  rgba(255, 0, 0, 1) 100%);
+.Officers {
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
