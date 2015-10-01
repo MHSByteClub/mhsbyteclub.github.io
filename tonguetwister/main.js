@@ -1,5 +1,7 @@
 var button = document.getElementById("button");
 
+//Note "words" is defined in other javascript file so, this main.js will give off the "words is not defined" 
+
 button.click(function generate() {
     var number = random(0,26);
     var div = document.getElementById('tongue_twister');
