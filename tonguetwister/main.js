@@ -1,4 +1,4 @@
-var generate = function() {
+function generate() {
     var number = random(0,26);
 
     if(number<1){
