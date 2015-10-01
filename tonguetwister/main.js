@@ -1,4 +1,6 @@
-function generate() {
+var button = document.getElementById("button");
+
+button.click(function generate() {
     var number = random(0,26);
     var div = document.getElementById('tongue_twister');
     
@@ -111,4 +113,4 @@ function generate() {
             div.text(words.z[floor(random(0,words.z.length))],10,forZ*50);
         }
     }
-};
+});
