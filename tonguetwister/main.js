@@ -1,11 +1,8 @@
 var button = document.getElementById("button");
 
 button.click(function generate() {
-    alert("hi");
-    /*var number = random(0,26);
+    var number = random(0,26);
     var div = document.getElementById('tongue_twister');
-    
-    alert(div+"Working");
 
     if(number<1){
         for(var forA=1; forA<8; forA++){
