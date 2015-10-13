@@ -201,7 +201,7 @@ h1 {
 }
 
 .Vice {
-    background: -webkit-linear-gradient(red, green, white, green, red);
+    background: linear-gradient(left, red, green, white, green, red);
     -webkit-background-clip: text;
     -wekit-text-fill-color: (transparent);
 }
