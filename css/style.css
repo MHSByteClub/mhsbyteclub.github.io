@@ -197,23 +197,23 @@ h1 {
 .President {
     background: -webkit-linear-gradient(red, orange, yellow, orange, red);
     -webkit-background-clip:text;
-    -wekit-text-fill-color(transparent)
+    -wekit-text-fill-color(transparent);
 }
 
 .Vice {
     background: -webkit-linear-gradient(red, green, white, green, red);
     -webkit-background-clip:text;
-    -wekit-text-fill-color(transparent)
+    -wekit-text-fill-color(transparent);
 }
 
 .Secretary {
     background: -webkit-linear-gradient(red, green, black, green, red);
     -webkit-background-clip:text;
-    -wekit-text-fill-color(transparent)
+    -wekit-text-fill-color(transparent);
 }
 
 .Webmaster {
     background: -webkit-linear-gradient(#00FF00, green, #FF9900, #996600, #FF9900, green, #00FF00);
     -webkit-background-clip:text;
-    -wekit-text-fill-color(transparent)
+    -wekit-text-fill-color(transparent);
 }
