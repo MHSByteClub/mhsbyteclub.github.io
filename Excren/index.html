@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="author" content="Kenny">
+		<meta name="purpose" content="custom, encryption, algorithm">
+		<meta name="">
+		<title>The Excren Algorthim</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+	</head>
+	<body>
+		<div class="page">
+			<div class="contents">
+				<div class="title">
+					<h1>The Excren</h1>
+				</div>
+				<div class="sidebar">
+					<a href="https://cryptography-rentarosatomi5201.c9.io/task.html">Excren Encrytion Tasks</a>
+				</div>
+				<div class="UserInput">
+					<h3>Encrypter</h3>
+					<label>Enter Text:</label>
+					<br>
+					<input id="input_box" type="text" name="userinput" placeholder="Generic Text"/>
+					<br>
+					<button onclick="encrypt()">Submit</button>
+					<br>
+					<div class="response">
+						<p id="res"></p>
+					</div>
+				</div>
+				<div class="dicipher">
+					<h3>Decipher</h3>
+					<label>Enter Text:</label>
+					<br>
+					<input id="code_box" type="text" name="codeinput" placeholder="Generic Text"/>
+					<br>
+					<label>Enter in Key</label>
+					<br>
+					<input id="key_box" type="text" name="keyinput" placeholder="230"/>
+					<br>
+					<button onclick="cipher()">Submit</button>
+					<br>
+					<div class="answer">
+						<p id="ans"></p>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				var date = new Date();
+				var key = date.getMilliseconds();
+				var time = key;
+				key %= 60;
+				
+				function change_char(index, char, string){
+					return string.substring(0, index) + char + string.substring(index + 1, index + string.length);
+				}
+				
+				function validate_letter(char){
+					if(char == " " || null){
+						date = new Date();
+						key = date.getMilliseconds();
+						time = key;
+						key %= 60;
+						
+						encrypt();
+						
+						return true;
+					}else{
+						return false;
+					}
+				}
+				
+				function cipher(){
+					var userinput = document.getElementById('code_box').value;
+					var keycode = parseInt(document.getElementById('key_box').value);
+					var ans = document.getElementById('ans');
+					
+					keycode %= 60;
+					
+					for(var i = 0; i < userinput.length; i++){
+						var str;
+						var code = userinput.charCodeAt(i);
+						
+						code += keycode;
+
+						str = String.fromCharCode(code);
+						
+						userinput = change_char(i, str, userinput);
+						
+						ans.innerHTML = userinput;
+					}
+				}
+				
+				function encrypt(){
+					var userinput = document.getElementById('input_box').value;
+					var res = document.getElementById('res');
+					var restart = false;
+					
+					for(var i = 0; i < userinput.length; i++){
+						var str;
+						var code = userinput.charCodeAt(i);
+						
+						code -= key;
+
+						str = String.fromCharCode(code);
+						
+						if(validate_letter(str)){
+							return;	
+						}
+						
+						userinput = change_char(i, str, userinput);
+						
+						res.innerHTML = time+": "+userinput;
+					}
+				}
+			</script>
+		</div>
+	</body>
+</html>
