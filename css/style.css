@@ -207,7 +207,7 @@ h1 {
 }
 
 .Secretary {
-    background: -webkit-linear-gradient(left, red, green, black);
+    background: -webkit-linear-gradient(left, red, green);
     -webkit-background-clip: text;
     -wekit-text-fill-color: (transparent);
 }
