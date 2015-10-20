@@ -195,25 +195,25 @@ h1 {
 }
 
 .President {
-    background: -webkit-linear-gradient(red, orange, yellow, orange, red);
+    background: -webkit-linear-gradient(left, red, orange, yellow);
     -webkit-background-clip: text;
     -wekit-text-fill-color(transparent);
 }
 
 .Vice {
-    background: linear-gradient(left, red, green, white, green, red);
+    background: linear-gradient(left, red, green, white);
     -webkit-background-clip: text;
     -wekit-text-fill-color: (transparent);
 }
 
 .Secretary {
-    background: -webkit-linear-gradient(red, green, black, green, red);
+    background: -webkit-linear-gradient(left, red, green, black);
     -webkit-background-clip: text;
     -wekit-text-fill-color: (transparent);
 }
 
 .Webmaster {
-    background: -webkit-linear-gradient(#00FF00, green, #FF9900, #996600, #FF9900, green, #00FF00);
+    background: -webkit-linear-gradient(left, #00FF00, green, #FF9900, #996600;
     -webkit-background-clip: text;
     -wekit-text-fill-color: (transparent);
 }
