@@ -40,29 +40,7 @@
 
         <!-- content goes in here -->
         <!-- Border of Binary Code -->
-        <div class="binary">
-        </div>
-        <style>
-        	.binary {
-        		position: fixed;
-        		top: 0px;
-        		left: 0px;
-        		font-size: 8px;
-        		
-				-webkit-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-				-moz-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-				-ms-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-				-o-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-				transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-        	}
-        </style>
-        <script>
-			var binaryString = "01001001011001100010000001111001011011110111010100100111011100100110010100100000011100100110010101100001011001000110100101101110011001110010000001110100011010000110100101110011001000000100101001001111010010010100111000100000010000100101100101010100010001010010000001000011010011000101010101000010";
-			for(var i=0; i<binaryString.length; i++) {
-			    var div = document.getElementsByClassName("binary")[0];
-				div.innerText += binaryString[i];
-			}
-        </script>
+        
 	
         <div id="wrap" class="container">
         
@@ -103,173 +81,54 @@
         	<!-- We can use these later for next year -->
         	
         	<!-- sign in to byte club -->
-        	<div> <a href="https://docs.google.com/a/students.d120.org/forms/d/148Gud7RqMoK6EWLiRpOEE45BPnDWBu7xJIzw3wvLTbQ/viewform">Sign in to Byte Club</a></div>
-        	<div> <a href="http://goo.gl/forms/sXrFVnEv3s">Take This CodeDay Survey</a></div>
+        	
         	<div class="global">
-        	    <h1>Global Project</h1>
-        	    <p>Projects all members of byte club are doing</p>
+        	    <h1>Welcome!</h1>
+        	    <p>You've reached your MHS home for the Hour of Code. 
+        	        The Hour of Code is a national event to help expose new people to computer
+        	        programming and coding throughout the nation and the world. The MHS Byte Club wants to help you to learn to code! </p>
+        	   <ul>
+        	       <li>It's not too hard.</li>
+        	       <li>It's not just for the super smart.</li>
+        	       <li>You don't need to be a math genious.</li>
+        	       <li>If you can use a computer - you can code!</li>
+        	   </ul>
+        	    <h2>Try your hand at today's programming activity</h2>
         	    <ul>
-        	        <li>/^e\`[S^M\Te - Cryptograph (Made using my encryption algorithm <a href="http://www.mhsbyte.org/Excren/index.html">Excren</a>)</li>
-        	        <li>Tiles</li>
-        	        <li>Custom Random Number Generator</li>
+        	        <li>For Monday, November 30th: <a href = "https://studio.code.org/flappy/1">Build Flappy Bird in Scratch</a> on <a href = "https://www.code.org/">Code.org</a></li>
+        	        <ul>
+        	            <li>In this tutorial, you'll use a drag and drop editor to recreate the addictive mobile game Flappy Bird. You don't need any previous experience to be successful here. You can finish this whole project in homeroom!</li>
+        	            <li>Did you finish this tutorial? Brag about it here!</li>
+        	        </ul>
+        	        <li>For Wednesday, December 1st: <a href = "https://www.khanacademy.org/computing/hour-of-code/hour-of-drawing-code/v/welcome-hour-of-code">Learn to Draw </a>with code at <a href= "https://www.khanacademy.org/">Khan Academy</a></li>
+        	        <ul>
+        	            <li>Write your first lines of code to create drawings and animations using the JavaScript programming language</li>
+        	            <li>You can start this tutorial today, but and finish it with Byte Club on Tuesday at Byte Bash!</li>
+        	        </ul>
+        	    </ul>
+        	    
+        	   
+        	</div>
+        	<div id = "bytebashinfo">
+        	    <h1>Byte Bash</h1>
+        	    <h2>Tuesday, December 8th, 3:30-7:00 PM in the District Meeting Room</h2>
+        	    <ul>
+        	        <li>
+        	            Learn the basics of coding in a fun and friendly environment
+        	        </li>
+        	        <li>
+        	            Build something with your friends
+        	       </li>
+        	       <li>
+        	           Eat free food and get smarter in the process
+        	       </li>
+        	       <li>Any student or teacher is invited to participate</li>
         	    </ul>
         	</div>
         	
-        	<div class="Updates">
-        	    <h1>Updates</h1>
-        	    <ul>
-        	       <li>
-                	   Sign up for the Byte Club Java Game Development team <a href="http://goo.gl/forms/7zxqMqMdGk">here</a>
-        	       </li>
-        	       <li>
-        	           Sign up for the Byte Club Website/Game Development team <a href="http://goo.gl/forms/N0cuQhlLNt">here</a>
-        	       </li>
-        	       <li>
-        	           Sign up for the Byte Club Website ONLY Team <a href="http://goo.gl/forms/pTNr7HW6bX">here</a>
-        	       </li>
-        	       <li>
-        	           Submit your BYTE ME SUBMISSIONS 2 projects <a href="https://www.khanacademy.org/computer-programming/byte-me-submissions-2/6420369362780160">here(follow the instructions in the code box)</a>! 
-        	       </li>
-        	    </ul>
-        	</div>
-			<a href="http://goo.gl/forms/t3CdTRKpkS">Submit Project Requests!</a> 
-			<!-- For next year -->
-		    <!--<h2><a href = "https://docs.google.com/a/d120.org/forms/d/17gIW_PjsyR90xUStpoxpaXIJxD2T_n-AeN4G6QhJ4io/viewform">Vote for Your Byte Club Officers 2016-17!</a></h2> -->
         	
         	
-        	<!-- This is to make the headings move from left to right -->
-            <marquee behavior="slide" direction="left" scrollamount="30"><h1>
-                <!--font color=ff00ff>T</font><font color=ff00cc>h</font><font color=ff0099>e</font> <font color=ff0066>N</font><font color=ff0033>e</font><font color=ff0000>w</font> <font color=ff3300>O</font><font color=ff6600>f</font><font color=ff9900>f</font><font color=ffcc00>i</font><font color=ffff00>c</font><font color=ccff00>e</font><font color=99ff00>r</font><font color=66ff00>s</font> <font color=33ff00>o</font><font color=00ff00>f</font> <font color=00ff33>t</font><font color=00ff66>h</font><font color=00ff99>e</font> <font color=00ffcc>M</font><font color=00ffff>H</font><font color=00ccff>S</font> <font color=0099ff>B</font><font color=0066ff>y</font><font color=0033ff>t</font><font color=0000ff>e</font> <font color=3300ff>C</font><font color=6600ff>l</font><font color=9900ff>u</font><font color=cc00ff>b</font> <font color=9900ff>a</font><font color=6600ff>r</font><font color=3300ff>e</font><font color=0000ff>:</font-->
-                <div span class = "Officers">The New Officers of MHS Byte Club are:</span></div>
-                </h1></marquee> 
-            <marquee behavior="slide" direction="left" scrollamount="30"><h2>
-                <!--font color=ff0000 size=1>P</font><font color=ff1100 size=2>r</font><font color=ff2200 size=3>e</font><font color=ff3300 size=4>s</font><font color=ff4400 size=5>i</font><font color=ff5500 size=6>d</font><font color=ff6600 size=7>e</font><font color=ff7700 size=6>n</font><font color=ff8800 size=5>t</font><font color=ff9900 size=4>:</font> <font color=ffaa00 size=3>K</font><font color=ffbb00 size=2>e</font><font color=ffcc00 size=1>n</font><font color=ffdd00 size=2>n</font><font color=ffee00 size=3>y</font> <font color=ffff00 size=4>S</font><font color=ffee00 size=5>t</font><font color=ffdd00 size=6>e</font><font color=ffcc00 size=7>p</font><font color=ffbb00 size=6>n</font><font color=ffaa00 size=5>e</font><font color=ff9900 size=4>y</font--> 
-                <div span class = "President">President: Kenney Stepney</span></div>
-                </h2></marquee>
-            <marquee behavior="slide" direction="left" scrollamount="25"><h2><!--font color=ff0000>V</font><font color=ff3333>i</font><font color=ff6666>c</font><font color=ff9999>e</font> <font color=ffcccc>P</font><font color=ffbcbc>r</font><font color=ccffcc>e</font><font color=99ff99>s</font><font color=66ff66>i</font><font color=33ff33>d</font><font color=00ff00>e</font><font color=33ff33>n</font><font color=66ff66>t</font><font color=99ff99>:</font> <font color=ccffcc>R</font><font color=ffbcbc>y</font><font color=ffcccc>g</font><font color=ff9999>a</font><font color=ff6666>r</font> <font color=ff3333>C</font><font color=ff6666>a</font><font color=ff9999>r</font><font color=ffcccc>v</font><font color=ffbcbc>a</font><font color=ccffcc>j</font><font color=99ff99>a</font><font color=66ff66>l</font-->
-                <div span class = "Vice">Vice President: Rygar Carvajal</span></div>
-            </h2></marquee> 
-            <marquee behavior="slide" direction="left" scrollamount="19"><h2><!--font color=ff0000>S</font><font color=cc0000>e</font><font color=990000>c</font><font color=660000>r</font><font color=330000>e</font><font color=000000>t</font><font color=003300>a</font><font color=006600>r</font><font color=009900>y</font><font color=00cc00>:</font> <font color=00ff00>N</font><font color=00cc00>a</font><font color=009900>t</font><font color=006600>a</font><font color=003300>l</font><font color=000000>i</font><font color=330000>a</font><font color=660000> </font><font color=990000>O</font><font color=cc0000>z</font><font color=990000>y</font><font color=660000>m</font><font color="330000">k</font><font color="009900">o</font-->
-                <div span class = "Secretary">Secretaries: Natalia Ozymko and Chris Shannon</span></div>
-            </h2></marquee> 
-            <marquee behavior="slide" direction="left" scrollamount="13"><h2><!--font color=CFE900 size=1>W</font><font color=C50700 size=2>e</font><font color=52E500 size=3>b</font><font color=75D900 size=4>m</font><font color=98F400 size=5>a</font><font color=3CE200 size=6>s</font><font color=817800 size=7>t</font><font color=CD8D00 size=6>e</font><font color=104B00 size=5>r</font><font color=CD4A00 size=4>:</font> <font color=CD5C00 size=3>K</font><font color=427200 size=2>y</font><font color=E9CD00 size=1>l</font><font color=7CB200 size=2>e</font> <font color=5C6200 size=3>K</font><font color=BF5500 size=4>o</font><font color=8AA900 size=5>e</font><font color=F2D700 size=6>l</font><font color=847700 size=7>l</font><font color=F7A500 size=6>e</font><font color=C6B300 size=5>r</font-->
-                <div span class = "Webmaster">Webmaster: Kyle Koeller</span></div>
-            </h2></marquee> 
-        	<br>
-
-        	<!--div id="Officers">
-        	    <p>
-        	    The New Officers of the MHS Byte Club Are: 
-        	    </p>
-            </div-->
-        	<!-- First Header -->
-        	<h1 id="slack">The Url for the byte club's slack page is <a href="https://byteclub.slack.com">here</a></h1>
-        	
-        	<h2 id="Hello">Hello, World!</h2>
-        	<p>This is the homepage for the <a href="http://d120.org" target="_blank">Mundelein High School</a> programming club. We provide an environment for MHS students to program and learn to program. We're newly founded so there'll be more to see here later. (^̮^)</p>
-        	
-        	<h2 id="Goal">Goal for this Club</h2>
-        	<p></p>
-        	<ul>
-        		<li>Give people a chance to learn and program with others</li>
-        	</ul>
-
-        	<h2 id="Projects">Projects we are currently doing or will be doing</h2>
-        	<p></p>
-        	<p>Some things we'll definitely be working on:</p>
-        	<ul>
-        		<li>Chrome extensions. MHS issues chromebooks to students which means these extension can have a big impact. For example, the school CIPA filter blocks a lot of relevant sites. Visiting all these sites to find that they're blocked is annoying and time-wasting, so a chrome extension that lets you know whether a link is blocked is bliss.</li>
-        		<li>Processing sketches. For most new members byte club will be their first time coding and <a href="http://processing.org/">processing</a>/<a href="http://processingjs.org/">processing.js</a> is an ideal way to begin, as it allows you to write visual programs easily and immediately. You can make <a href="http://beesandbombs.tumblr.com/">cool art</a>, <a href="http://raphaelrk.com/pjs?sketch=mandelbrot">interactive demonstrations</a>, and much more!</li> There's also a great curriculum and editor for it at <a href="https://www.khanacademy.org/computing/cs/programming">Khanacademy.org</a>
-        		<li>Hackathons. This is when programmers get together and build cool things in a short span of time. Some (unaffiliated) examples of hackathons people could attend are <a href="http://codeday.org/">CodeDay</a> or any of the many listed at <a href="http://mlh.io/">MLH</a></li>
-        		<li>Website building. Even if you don't want to make websites it's ok to understand how they work. In Order to do this you mus tlearn html/css, which are also on <a href="https://www.khanacademy.org/computing/cs/programming">Khanacademy.org</a></li>
-        	</ul>
-        	<p>Things we have worked on:</p>
-        	<ul>
-        		<li><a href="https://www.khanacademy.org/computer-programming/byte-me-submissions/6114950898778112"> Impossible Game Challenge</a> is what we made as a fun club project to put out Khanacademy programming skills to use. The club members made mini-challenges that were put together to make one big game.</li>
-       			<li><a href="members.html">Small personal sites</a></li>
-       			<li><a href="graduation.html">Graduation seating arranger</a></li>
-       			<li><a href="match.html">Mustang Match Maker</a></li>
-       			<li><a href="mhsbyteclub.github.io/madness/index.html">March Madness</a></li>
-        	</ul>
-        	
-        	<!-- Upcoming events -->
-        	<h2 id="Events">Upcoming Events</h2>
-        	<p></p>
-        	<ul>
-        		<li><a href="https://codeday.org/chicago">CodeDay</a></li>
-        			<ul>
-        				<li>Next CodeDay is November 7-8.</li>
-        				<li>We will not be providing transportation to this event. Participation is completely optional.</li>
-        				<li>Each CodeDay typically goes from noon Saturday until noon Sunday.</li>
-        				<li>Food will be provided throughout.</li>
-        				<li>Prizes are typically awarded for the best project, best game, and best app</li>
-        				<li>Sleeping is allowed. Bring a sleeping bag, pillow, tooth brush, tooth paste, and deodorant (save everyone around you).</li>
-        				<li>You will have to buy your own ticket on their website, listed above. The price is only $10 ($20 in the last week).</li>
-        				<li>Location is 1647 Blue Island Ave, Chicago, IL 60608. <a href="http://www.blue1647.com/">Venue Website</a>.</li>
-        				<li>It's a great time and a fantastic opportunity to practice coding and learn what others are doing!</li>
-        			</ul>
-        		</li>
-        	    <!-- <li>Guest Speaker at Byte Club April 28th
-        			<ul>
-        				<li>Mr. Jim Ferro will be joining on April 28th during our regular Byte Club meeting to discuss his experience with software development</li>
-        				<li>The event will take place in Room A102 immediately following school.</li>
-        				<li>Any interested student is invited to attend; no need to be in Byte Club to be part of this event!</li>
-        				<li>Any students thinking about a career in programming, software development, computer sicence or engineering would find great information at this event.</li>
-        				
-        			</ul>
-        		</li> -->
-        		<!-- Got rid of this till next year 
-        		 <li><a href = "/events.html">Byte Club 15-16 Officer Elections next Tuesday, May 5th!</a></li> 
-        	</ul>
-        	<p></p> -->
-		<!-- Coding Websites that are free to visit -->
-		<h2 id="Learning">Learning links</h2>
-		<p></p>
-		<p>Some websites to visit to learn to program:</p>
-		<ul>
-			<li><a href="http://www.codecademy.com/">Codecademy</a> Offers great tutorials on Web development (HTML/CSS/Javascript/JQuery/Ruby/PHP) and Python.</li>
-	        	<li><a href="http://www.khanacademy.org">KhanAcademy</a> Great editor for visual javascript programs. Also includes a full suite of videos to teach you how to program.</li>
-	        	<li><a href="https://www.bento.io/">Bento</a> Includes lots of great links to programming tutorials.</li>
-	        	<li><a href="http://cs50.tv/2014/fall/">CS50</a> Harvard intro programming course. Teaches you computer science, languages used include include C, PHP, and JavaScript plus SQL, CSS, and HTML</li>
-	        	<li><a href="https://www.udacity.com/">Udacity</a> Offers a wide variety of Computer Science courses from beginner intro courses to advanced "holy cow we're making a self-driving car" courses. Includes really great introductory programming course on Python, although all of its courses are great.</li>
-		</ul>
-		<p>Some websites to try programming challenges:</p>
-		<ul>
-			<li><a href="https://projecteuler.net/">Project Euler</a></li>
-			<li><a href="https://www.hackthissite.org/">Hack this site</a></li>
-		</ul>
-		
-		<!-- Comment Box -->
-        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
-        <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=(""+window.location).replace(/'/g,"%27") || hcb_user.PAGE, h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%244MQIeCjUtO6RKnJUHgV1r%2F"+"&opts=16860&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-                
-		<!-- Footer -->
-        <br>
-        <hr>
-        <footer>Site source available on <a href="https://github.com/MHSByteClub/mhsbyteclub.github.io">GitHub</a>.</footer>
-        <footer><a href="contacts.html">Contact Us</a></footer>
-	</div>
-
-        <!-- Commented these out because the site currently does not use javascript or analytics -->
-        <!--
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-    	-->
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <!--
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
-    	-->
+	
 	
     </body>
 </html>
