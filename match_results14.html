@@ -354,17 +354,17 @@ var Person = function(line) {
 	this.enthusiasmQuality = parseInt(line[13]);
 	this.intelligenceQuality = parseInt(line[14]);
 	
-	this.giftAffection = parseInt(line[15]);
-	this.timeAffection = parseInt(line[16]);
+/*  this.giftAffection = parseInt(line[15]);
+    this.timeAffection = parseInt(line[16]);
 	this.wordsAffection = parseInt(line[17]);
 	this.serviceAffection = parseInt(line[18]);
-	this.touchAffection = parseInt(line[19]);
+	this.touchAffection = parseInt(line[19]);*/
 	
 	this.hairColorPreference = line[20];
 	this.eyeColorPreference = line[21];
 	this.heightColorPreference = line[22];
 	
-	this.outgoing = parseInt(line[23]);
+/*  this.outgoing = parseInt(line[23]);
 	this.outdoors = parseInt(line[24]);
 	this.booksOverMovies = parseInt(line[25]);
 	this.collegePlan = parseInt(line[26]);
@@ -372,7 +372,7 @@ var Person = function(line) {
 	this.runningHobby = parseInt(line[27]);
 	this.artHobby = parseInt(line[28]);
 	this.gamingHobby = parseInt(line[29]);
-	this.readingHobby = parseInt(line[30]);
+    this.readingHobby = parseInt(line[30]);
 	this.cookingHobby = parseInt(line[31]);
 	this.dancingHobby = parseInt(line[32]);
 	this.volunteeringHobby = parseInt(line[33]);
@@ -385,7 +385,7 @@ var Person = function(line) {
 	this.kpopMusic = parseInt(line[39]);
 	this.metalMusic = parseInt(line[40]);
 	this.popMusic = parseInt(line[41]);
-	this.spiritualMusic = parseInt(line[42]);
+	this.spiritualMusic = parseInt(line[42]);*/
 	
 	this.mathSubject = parseInt(line[43]);
 	this.englishSubject = parseInt(line[44]);
@@ -396,13 +396,13 @@ var Person = function(line) {
 	this.recessSubject = parseInt(line[49]);
 	this.homeroomSubject = parseInt(line[50]);
 	
-	this.fridayNight = line[51];
+/*	this.fridayNight = line[51];
 	this.afterSchool = line[52];
 	
 	this.cellPhoneUse = parseInt(line[53]);
 	this.cellPhoneOnDate = parseInt(line[54]);
 	
-	this.agreeToTerms = line[55];
+	this.agreeToTerms = line[55];*/
 	
 	this.classTrait = parseInt(line[56]);
 	this.heightTrait = parseInt(line[57]);
@@ -507,7 +507,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		}
 
 
-		// friday night
+	/*	// friday night
 		if (this.fridayNight === other.fridayNight) {
 			hobbyScore += 1;
 		}
@@ -532,7 +532,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		
 		hobbyScore *= this.personalityTrait;			//all multipliers!
 		physicalScore *= this.appearanceTrait;
-		classScore *= this.classTrait;
+		classScore *= this.classTrait;*/
 		
 		if(lookingForFriend) {
 			physicalScore = 0;
