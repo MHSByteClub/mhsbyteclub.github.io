@@ -394,7 +394,7 @@ var Person = function(line) {
 	this.historySubject = parseInt(line[47]);
 	this.peSubject = parseInt(line[48]);
 	this.recessSubject = parseInt(line[49]);
-	this.homeroomSubject = parseInt(line[50]);
+//	this.homeroomSubject = parseInt(line[50]);
 	
 /*	this.fridayNight = line[51];
 	this.afterSchool = line[52];
@@ -538,7 +538,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 			physicalScore = 0;
 		}
 
-		compScore = classScore + physicalScore + hobbyScore;	//total compatibility score
+		compScore = classScore + physicalScore; // + hobbyScore	//total compatibility score
 	}
 
 
