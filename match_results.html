@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<!--
+     ██╗ ██████╗ ██╗███╗   ██╗    ██████╗ ██╗   ██╗████████╗███████╗     ██████╗██╗     ██╗   ██╗██████╗ ██╗
+     ██║██╔═══██╗██║████╗  ██║    ██╔══██╗╚██╗ ██╔╝╚══██╔══╝██╔════╝    ██╔════╝██║     ██║   ██║██╔══██╗██║
+     ██║██║   ██║██║██╔██╗ ██║    ██████╔╝ ╚████╔╝    ██║   █████╗      ██║     ██║     ██║   ██║██████╔╝██║
+██   ██║██║   ██║██║██║╚██╗██║    ██╔══██╗  ╚██╔╝     ██║   ██╔══╝      ██║     ██║     ██║   ██║██╔══██╗╚═╝
+╚█████╔╝╚██████╔╝██║██║ ╚████║    ██████╔╝   ██║      ██║   ███████╗    ╚██████╗███████╗╚██████╔╝██████╔╝██╗
+ ╚════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝    ╚═════╝    ╚═╝      ╚═╝   ╚══════╝     ╚═════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝
+-->
+
+<html>
+	<head>
+		<title>MUSTANG MATCH</title>
+		
+		<meta charset="utf-8">
+    		<meta name="Description" content="The Mundelein High School Valentine's Day Matchmaking Program">
+
+		<link href='http://fonts.googleapis.com/css?family=Qwigley' rel='stylesheet' type='text/css'>
+		<link href='css/match.css' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	</head>
+	
+	<body>
+		<!-- upper heading -->
+		<div class="stitched h1_height">
+			<h1> Mustang Match </h1>
+		</div>
+		
+		<!-- login area -->
+		<div class="stitched margin_twenty">
+			<div class="above_xmas">
+				<p>Login to get your matches!</p>
+				
+				<form>
+					<table>
+						<tr>
+							<td>Student ID:</td>
+							<td><input id="username" type="number" onkeydown="if (event.keyCode == 13) document.getElementById('btn_submit').click()" placeholder="140123"></td>	
+						</tr>
+						<tr>
+							<td>Password:</td>
+							<td><input id="password" type="password"  onkeydown="if (event.keyCode == 13) document.getElementById('btn_submit').click()" placeholder="Blank = 1 Match"></td>
+						</tr>
+					</table>
+					
+					<button id="btn_submit" type="button" onclick="buttonClick()">Submit</button>
+				</form>
+				<br>
+			</div>
+			<br><br><br><br><br><br>
+		</div>
+		
+		<!-- info --> 
+		<div class="stitched info">
+			Swing by our table during lunch for the <b>free </b> <i>Pacchetto Amore</i> package: three matches
+			<br>$1 for the <i>Cupid's Quiver</i> package: ten matches and 5 best friends
+			<br>$5 or come to Byte Club this week (Tuesday afterschool in Mr. Sethna's room) for the <i>Venus Deluxe</i> package: twenty matches, ten best friends, your worst friend, and your worst match PLUS extra statistics.
+			<br>
+			<br>Note: Your best match probably won't have you as their best match. $5 or a stay with the Byte Club will let you know.
+		</div>
+		
+		<!-- result area -->
+		<div class="stitched data">
+			<!-- Best matches -->
+			<h2 class="matches_heading">Your match(es) are...</h2>
+			<h1 class="match_result"></h1>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			<h4 class="match_result"></h4>
+			
+			<!-- Best friends -->
+			<h2 class="friends_heading" style="display: none;">Your best friends are...</h2>
+			<h1 class="friend_result"></h1>
+			<h4 class="friend_result"></h4>
+			<h4 class="friend_result"></h4>
+			<h4 class="friend_result"></h4>
+			<h4 class="friend_result"></h4>
+			<h4 class="friend_result"></h4>
+			<h4 class="friend_result"></h4>
+			<h4 class="friend_result"></h4>
+			<h4 class="friend_result"></h4>
+			<h4 class="friend_result"></h4>
+			
+			<!-- worst match -->
+			<h2 class="worst_heading" style="display: none;">Your worst matches are...</h2>
+			<h4 class="worst_match"></h4>
+			<h4 class="worst_friend"></h4>
+			
+			<br>
+			<p id="whats_next" class="above_xmas" style="display: none;">Got your matches? <a class="underline" href="https://www.khanacademy.org/computer-programming/match-making/6693548083380224">Get a bae pen name</a> or <a class="underline" href="http://www.randomlists.com/random-songs">find your song</a>!</p>
+			<br><br>
+		</div>
+
+		<canvas id="xmas"></canvas>
+		
+		<!-- javascript for matchmaking -->
+		<script type="text/javascript">
+/**** Called when button is clicked ****/
+
+var buttonClick = function() {
+	var user, pass, text, person;
+	
+	// Get the value of the input fields with id="username", id="password"
+	user = document.getElementById("username").value;
+	pass = document.getElementById("password").value;
+	
+	// get username/pass hash
+	var hash = CryptoJS.MD5(user).toString();
+	
+	// if the pass is in the hash, they're funded for seeing extra matches
+	var fund = hash.indexOf(pass);
+	
+	// but passes that aren't 5 chars long throw things off
+	if(pass.length !== 5) {
+		fund = -1;
+	}
+	
+	// check if username is valid
+	if(user.length != 6 || !isNormalInteger(user)) {
+		return;
+	}
+	
+	// gets person's Person object
+	person = getPersonFromID(user);
+	
+	if(person === null) {
+		$('.info')[0].innerHTML = "ID invalid: Did you fill out the survey? If you did, we may not have refreshed survey data since that time. You can reach out to 150003" + "@students.d120.org and/or 150001@students.d120.org<br><br>" + $('.info')[0].innerHTML;
+		return;
+	}
+	
+	if(person.agreeToTerms.indexOf("Yes") === -1) {
+		$('.info')[0].innerHTML = "Did not agree to terms. Email 150001" + "@students.d120.org and/or 150003@students.d120.org if you'd like to change that.<br><br>" + $('.info')[0].innerHTML;
+		return;
+	}
+	
+	// nothing's broken yet? display links to get a pen name and song
+	$('#whats_next').show(200);
+	
+	
+	var matchArr = person.getMatchList(LOOKING_FOR_A_MATCH);
+	var friendArr = person.getMatchList(LOOKING_FOR_A_FRIEND);
+	
+	var came_by = fund === 0 || fund === 5 || fund === 10;
+	var funded_ten = fund === 5 || fund === 10;
+	var funded_all = fund === 10;
+	
+	
+	// change headings based on funds
+	if(came_by) {
+		$('.matches_heading')[0].innerText = "Your matches are...";
+	} else {
+		$('.matches_heading')[0].innerText = "Your #1 match is...";
+	}
+	
+	if(funded_ten) {
+		$('.friends_heading').show(100);
+	}
+	
+	if(funded_all) {
+		$('.matches_heading')[0].innerText = "Your matches are...  stats key: [other person's lowest %, median %, highest %]";
+		
+		$('.worst_heading').show(100);
+	}
+	
+	
+	// display best matches
+	var best_match_headers = $('.match_result');
+	for(var i = 0; i < best_match_headers.length; i++) {
+		var header = best_match_headers[i];
+		var name = matchArr[i][1]; // matchArr[i][1] is the i'ths person's name
+		var stats = matchArr[i][0]; //matchArr[i][1] is the i'ths person's score
+		stats = Math.floor(stats/105 * 100); // best match at time of comment = 102.9
+		
+		if(i === 0) {
+			header.innerText = name; // set h element to match's name
+			if(funded_ten) {
+				header.innerText = name + " is a " + stats + "% match";
+			}
+			if(funded_all) {
+				header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
+			}
+		}
+		else if(i <= 2 && came_by) {
+			header.innerText = name;
+			if(funded_ten){
+				header.innerText = name + " is a " + stats + "% match";
+			}
+			if(funded_all) {
+				header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
+			}
+		}
+		else if(i <= 9 && funded_ten) {
+			header.innerText = name + " is a " + stats + "% match";
+			
+			if(funded_all) {
+				header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
+			}
+		}
+		else if(i <= 19 && funded_all) {
+			header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
+		}
+	}
+	
+	// display best friends
+	var best_friend_headers = $('.friend_result');
+	for(var i = 0; i < best_friend_headers.length; i++) {
+		var header = best_friend_headers[i];
+		var name = friendArr[i][1];
+		var stats = friendArr[i][0];
+		stats = Math.floor(stats/80 * 100); // best at time of comment 78.6
+		
+		
+		if(i <= 4 && funded_ten) {
+			header.innerText = name + " is a " + stats + "% friend";
+			
+			if(funded_all) {
+				header.innerText = getMatchStatsString(person, friendArr[i][2], LOOKING_FOR_A_FRIEND);
+			}
+		}
+		else if(i <= 9 && funded_all) {
+			header.innerText = getMatchStatsString(person, friendArr[i][2], LOOKING_FOR_A_FRIEND);
+		}
+	}
+	
+	// display worst friend/match
+	if(funded_all) {
+		var worst_match_header = $('.worst_match')[0];
+		var worst_friend_header = $('.worst_friend')[0];
+		
+		worst_match_header.innerText = getMatchStatsString(person, matchArr[matchArr.length - 1][2], LOOKING_FOR_A_MATCH);
+		worst_friend_header.innerText = getMatchStatsString(person, friendArr[friendArr.length - 1][2], LOOKING_FOR_A_FRIEND);
+	}
+}
+
+var getMatchStatsString = function(person, other, lookingForFriend) {
+	var max_score = lookingForFriend? 80 : 105;
+	/* 
+	// for finding the max score:
+	
+	logging = false;
+	var a = [];
+	for(var i = 0; i < people.length; i++) {
+	 if(people[i])
+	   a.push(people[i].getMatchList(true)[0][0]);
+	}
+	a.sort(function(a, b){return b - a;});
+	console.log(a);
+	*/
+	
+	var stat = person.matchNumber(other, lookingForFriend) / max_score * 100;
+	    stat = Math.round(stat);
+	var other_stat = other.matchNumber(person, lookingForFriend) / max_score * 100;
+	    other_stat = Math.round(other_stat);
+	var other_list = other.getMatchList(lookingForFriend);
+	
+	// find this person's position in other person's list
+	var pos = -1;
+	for(var i = 0; i < other_list.length; i++) {
+		if(other_list[i][2] === undefined) {
+			continue;
+		}
+		
+		if(other_list[i][2].username === person.username) {
+			pos = i+1;
+			break;
+		}
+	}
+	
+	var other_highest = other_list[0][0] / max_score * 100;
+	    other_highest = Math.round(other_highest);
+	var other_med = other_list[Math.floor(other_list.length/2)][0] / max_score * 100;
+	    other_med = Math.round(other_med);
+	var other_lowest = other_list[other_list.length - 1][0] / max_score * 100;
+	    other_lowest = Math.round(other_lowest);
+	
+	var type = lookingForFriend ? "friend" : "match";
+	
+	return other.name + " is a " + stat + "% " + type + ", they matched you " + other_stat + "%. You're their #" + pos + "/" + other_list.length + " match. [" + other_lowest + ", " + other_med + ", " + other_highest + "]";
+}
+
+// returns whether a string is an integer > 0
+// might not work with 0 or 1 index-long non-integer strings
+var isNormalInteger = function(str) {
+	var n = ~~Number(str);
+	return String(n) === str && n >= 0;
+}
+
+
+/**** Called when document finishes loading ****/
+
+$(document).ready(function(){
+  getPeople();
+  console.log('executed getpeople');
+});
+
+// called when the document is loaded, downloads the match responses list
+// and creates the people array from it
+var getPeople = function() {
+	$.get( "/matchresponses.csv", function( data ) {
+		//$( ".data" ).html( data );
+		
+		lines = data.split("\n");
+		
+		for(var i = 0; i < lines.length; i++) {
+			people.push(new Person(lines[i]));
+		}
+		
+		console.log(people);
+	});
+};
+
+
+/**** Code for Person object/people array ****/
+
+// Person array, holds all survey responses
+var people = [];
+
+// a Person object holds the responses of a single object
+// and provides methods to go along with it (matchNumber and getMatchList)
+var Person = function(line) {
+	line = line.split(',');
+	this.timestamp = line[0];
+	this.username = line[1];
+	this.name = line[2];
+	this.gender = line[3];
+	this.genderInterestedIn = line[4];
+	this.grade = line[5];
+	
+	this.hairColor = line[6];
+	this.eyeColor = line[7];
+	this.height = line[8];
+	
+	this.compassionQuality = parseInt(line[9]);
+	this.honestyQuality = parseInt(line[10]);
+	this.looksQuality = parseInt(line[11]);
+	this.humorQuality = parseInt(line[12]);
+	this.enthusiasmQuality = parseInt(line[13]);
+	this.intelligenceQuality = parseInt(line[14]);
+	
+/*  this.giftAffection = parseInt(line[15]);
+    this.timeAffection = parseInt(line[16]);
+	this.wordsAffection = parseInt(line[17]);
+	this.serviceAffection = parseInt(line[18]);
+	this.touchAffection = parseInt(line[19]);*/
+	
+	this.hairColorPreference = line[20];
+	this.eyeColorPreference = line[21];
+	this.heightColorPreference = line[22];
+	
+/*  this.outgoing = parseInt(line[23]);
+	this.outdoors = parseInt(line[24]);
+	this.booksOverMovies = parseInt(line[25]);
+	this.collegePlan = parseInt(line[26]);
+	
+	this.runningHobby = parseInt(line[27]);
+	this.artHobby = parseInt(line[28]);
+	this.gamingHobby = parseInt(line[29]);
+    this.readingHobby = parseInt(line[30]);
+	this.cookingHobby = parseInt(line[31]);
+	this.dancingHobby = parseInt(line[32]);
+	this.volunteeringHobby = parseInt(line[33]);
+	this.hangingOutHobby = parseInt(line[34]);
+	
+	this.altMusic = parseInt(line[35]);
+	this.electronicMusic = parseInt(line[36]);
+	this.classicalMusic = parseInt(line[37]);
+	this.rockMusic = parseInt(line[38]);
+	this.kpopMusic = parseInt(line[39]);
+	this.metalMusic = parseInt(line[40]);
+	this.popMusic = parseInt(line[41]);
+	this.spiritualMusic = parseInt(line[42]);*/
+	
+	this.mathSubject = parseInt(line[43]);
+	this.englishSubject = parseInt(line[44]);
+	this.musicSubject = parseInt(line[45]);
+	this.scienceSubject = parseInt(line[46]);
+	this.historySubject = parseInt(line[47]);
+	this.peSubject = parseInt(line[48]);
+	this.recessSubject = parseInt(line[49]);
+//	this.homeroomSubject = parseInt(line[50]);
+	
+/*	this.fridayNight = line[51];
+	this.afterSchool = line[52];
+	
+	this.cellPhoneUse = parseInt(line[53]);
+	this.cellPhoneOnDate = parseInt(line[54]);
+	
+	this.agreeToTerms = line[55];*/
+	
+	this.classTrait = parseInt(line[56]);
+	this.heightTrait = parseInt(line[57]);
+	this.hairColorTrait = parseInt(line[58]);
+	this.eyeColorTrait = parseInt(line[59]);
+	this.appearanceTrait = parseInt(line[60]);
+	this.personalityTrait = parseInt(line[61]);
+	
+	/* this.personalityVSAppearance = line[62]; // unused */
+};
+
+// constant signifying that one asked for their responses to not be used
+// TODO: send emails asking if people want to change their agreeToTerms response
+var TERMS_NOT_AGREED_TO = -666;
+
+// constant signifying the response isn't a real one or is really buggy
+// tested for by seeing if name is undefined
+var BUGGY_PERSON = -867;
+
+// constant signifying the people being checked are the same
+var SAME_PERSON = -11;
+
+// returns a number signifying how well someone matches with someone else
+Person.prototype.matchNumber = function(other, lookingForFriend) {
+	if(this.name === undefined || other.name === undefined) {
+		return BUGGY_PERSON;
+	}
+	
+	if (other.agreeToTerms.indexOf("Yes") === -1 || this.agreeToTerms.indexOf("Yes") === -1) {
+		return TERMS_NOT_AGREED_TO;
+	}
+	
+	if(other.username == this.username) {
+		return SAME_PERSON;
+	}
+	
+	if(this.grade === "Senior"){				//changing grade strings to numbers
+		this.grade = 4;
+	}
+	if(this.grade === "Junior"){
+		this.grade = 3;
+	}
+	if(this.grade === "Sophomore"){
+		this.grade = 2;
+	}
+	if(this.grade === "Freshman"){
+		this.grade = 1;
+	}
+	if(other.grade === "Senior"){
+		other.grade = 4;
+	}
+	if(other.grade === "Junior"){
+		other.grade = 3;
+	}
+	if(other.grade === "Sophomore"){
+		other.grade = 2;
+	}
+	if(other.grade === "Freshman"){
+		other.grade = 1;
+	}
+
+	var classScore = 0;
+	var physicalScore = 0;
+	var hobbyScore = 0;
+	var compScore = 0;
+	
+	// gender possibilities = Male, Female
+	// interested in possibilities = Males, Females, Both
+	
+	var genderCompatOther = this.gender === other.genderInterestedIn.split('s')[0] || other.genderInterestedIn === "Both";
+	var genderCompatSelf = this.genderInterestedIn.split('s')[0] === other.gender || this.genderInterestedIn === "Both";
+	var interestedInEachOther = genderCompatOther && genderCompatSelf;
+	
+	if((interestedInEachOther && !lookingForFriend) || (!interestedInEachOther && lookingForFriend)){ // checking for gender preferences		 
+		
+		var abs = Math.abs;
+		
+		// class score
+		classScore = 4-abs(this.grade-other.grade);
+		
+		/** physical Qs **/
+
+		// hair color
+		if (this.hairColorPreference === other.hairColor){
+			physicalScore += 2;
+		} else if (this.hairColorPreference === "I have no preference"){
+			physicalScore += 0.2;
+		}
+
+		// eye color
+		if (this.eyeColorPreference === other.eyeColor){
+			physicalScore += 2;
+		} else if (this.eyeColorPreference === "I have no preference"){
+			physicalScore += 0.2;
+		}
+
+		// height
+		if (this.heightColorPreference === other.height){
+			physicalScore += 2;
+		} else if (this.heightColorPreference === "I have no preference"){
+			physicalScore += 0.2;
+		}
+
+
+	/*	// friday night
+		if (this.fridayNight === other.fridayNight) {
+			hobbyScore += 1;
+		}
+
+		// after school
+		if (this.afterSchool === other.afterSchool) {
+			hobbyScore += 1;
+		}
+		
+		//All other hobby questions
+		hobbyScore += (4-abs(this.outgoing - other.outgoing))/4;
+		hobbyScore += (4-abs(this.outdoors - other.outdoors))/4;
+		hobbyScore += (4-abs(this.booksOverMovies - other.booksOverMovies))/4;
+		hobbyScore += (4-abs(this.collegePlan - other.collegePlan))/4;
+		hobbyScore += (56-abs(this.runningHobby - other.runningHobby)-abs(this.artHobby - other.artHobby) - abs(this.gamingHobby - other.gamingHobby)-abs(this.readingHobby - other.readingHobby)-abs(this.cookingHobby - other.cookingHobby)-abs(this.dancingHobby - other.dancingHobby)-abs(this.volunteeringHobby - other.volunteeringHobby)-abs(this.hangingOutHobby - other.hangingOutHobby))/56;
+		hobbyScore += (56-abs(this.altMusic - other.altMusic)-abs(this.electronicMusic - other.electronicMusic) - abs(this.classicalMusic - other.classicalMusic)-abs(this.rockMusic - other.rockMusic)-abs(this.kpopMusic - other.kpopMusic)-abs(this.metalMusic - other.metalMusic)-abs(this.popMusic - other.popMusic)-abs(this.spiritualMusic - other.spiritualMusic))/56;
+		hobbyScore += (56-abs(this.mathSubject - other.mathSubject)-abs(this.englishSubject - other.englishSubject) - abs(this.scienceSubject - other.scienceSubject)-abs(this.historySubject - other.historySubject)-abs(this.peSubject - other.peSubject)-abs(this.recessSubject - other.recessSubject)-abs(this.homeroomSubject - other.homeroomSubject)-abs(this.musicSubject - other.musicSubject))/56;
+		hobbyScore += (4-abs(this.cellPhoneUse - other.cellPhoneUse))/4;
+		hobbyScore += (4-abs(this.cellPhoneOnDate -other.cellPhoneOnDate))/4;
+		hobbyScore += (30-abs(this.compassionQuality-other.compassionQuality)-abs(this.honestyQuality-other.honestyQuality)-abs(this.looksQuality-other.looksQuality)-abs(this.humorQuality-other.humorQuality)-abs(this.enthusiasmQuality-other.enthusiasmQuality)-abs(this.intelligenceQuality-other.intelligenceQuality))/30;
+		hobbyScore += (20-abs(this.giftAffection - other.giftAffection)-abs(this.timeAffection-other.timeAffection)-abs(this.wordsAffection-other.wordsAffection)-abs(this.serviceAffection-other.serviceAffection)-abs(this.touchAffection-other.touchAffection))/20;
+		
+		hobbyScore *= this.personalityTrait;			//all multipliers!
+		physicalScore *= this.appearanceTrait;
+		classScore *= this.classTrait;*/
+		
+		if(lookingForFriend) {
+			physicalScore = 0;
+		}
+
+		compScore = classScore + physicalScore; // + hobbyScore	//total compatibility score
+	}
+
+
+	return compScore;
+};
+
+// used with getMatchList and matchNumber
+// lets function know if looking for someone that fits your gender preferences (match)
+// or someone that doesn't (friend)
+var LOOKING_FOR_A_FRIEND = true;
+var LOOKING_FOR_A_MATCH = false;
+
+/** Can disable logging if needed **/
+var logging = false;
+
+// returns an list with best matches at the front and worst at the back
+// returns [match, name, person, people[] index] array
+// TODO: lists of more than best match, e.g. best fiend, people who matched best with you
+Person.prototype.getMatchList = function(lookingForFriend) {
+	var scoreArr = [];
+	
+	// get array of match numbers
+	for(var r = 0; r < people.length; r++) {
+	  var other = people[r];
+	  var match_num = this.matchNumber(other, lookingForFriend);
+	  
+	  var arr = [match_num, other.name, other,  "person #" + r];
+	  
+	  if(match_num > 0) {
+	  	scoreArr.push(arr);
+	  }
+	}
+	
+	// this person is buggy
+	if(scoreArr.length === 0) {
+		return [BUGGY_PERSON, "BUGGY PERSON", people[0], "person# " + 0];
+	}
+	
+	// sort the array
+	scoreArr.sort(function(a, b){return b[0]-a[0]});
+	
+	// log the array and best match
+	if(logging) {
+		console.log(scoreArr);
+		console.log("best match: " + scoreArr[0][1]);
+	}
+	
+	return scoreArr;
+}
+
+// gets an ID's Person object
+// assumes properly formatted ID
+var getPersonFromID = function(id) {
+	for(var i = 1; i < people.length - 1; i++) {
+	  	if(people[i].username.split('@')[0] == id) {
+	    		if(logging) {
+	    			console.log('found! response#' + i);
+	    		}
+	    		return people[i];
+	  	}
+	}
+	return null;
+}
+		</script>
+		
+		<!-- for passwords -->
+		<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+		
+		<!-- heart snow code -->
+		<script src="js/letitsnow.js"></script>
+	</body>
+</html>
