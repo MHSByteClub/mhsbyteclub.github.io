@@ -55,7 +55,7 @@
 		<div class="stitched info">
 			Swing by our table during lunch for the <b>free </b> <i>Pacchetto Amore</i> package: three matches
 			<br>$1 for the <i>Cupid's Quiver</i> package: ten matches and 5 best friends
-			<br>$5 or come to Byte Club this week (Tuesday afterschool in Mr. Sethna's room) for the <i>Venus Deluxe</i> package: twenty matches, ten best friends, your worst friend, and your worst match PLUS extra statistics.
+			<br>$5 or come to Byte Club this week (Tuesday after school in Mr. Sethna's room) for the <i>Venus Deluxe</i> package: twenty matches, ten best friends, your worst friend, and your worst match PLUS extra statistics.
 			<br>
 			<br>Note: Your best match probably won't have you as their best match. $5 or a stay with the Byte Club will let you know.
 		</div>
@@ -334,85 +334,142 @@ var people = [];
 
 // a Person object holds the responses of a single object
 // and provides methods to go along with it (matchNumber and getMatchList)
+//Data field assignment - aweseomly contributed by Victoria Ozymko
 var Person = function(line) {
 	line = line.split(',');
-	this.timestamp = line[0];
-	this.username = line[1];
-	this.name = line[2];
-	this.gender = line[3];
-	this.genderInterestedIn = line[4];
-	this.grade = line[5];
 	
-	this.hairColor = line[6];
-	this.eyeColor = line[7];
-	this.height = line[8];
+//Each question separated
 	
-	this.compassionQuality = parseInt(line[9]);
-	this.honestyQuality = parseInt(line[10]);
-	this.looksQuality = parseInt(line[11]);
-	this.humorQuality = parseInt(line[12]);
-	this.enthusiasmQuality = parseInt(line[13]);
-	this.intelligenceQuality = parseInt(line[14]);
+	this.name = line[0];
 	
-/*  this.giftAffection = parseInt(line[15]);
-    this.timeAffection = parseInt(line[16]);
-	this.wordsAffection = parseInt(line[17]);
-	this.serviceAffection = parseInt(line[18]);
-	this.touchAffection = parseInt(line[19]);*/
+	this.ID = line[1];
 	
-	this.hairColorPreference = line[20];
-	this.eyeColorPreference = line[21];
-	this.heightColorPreference = line[22];
+	this.gender = line[2];
 	
-/*  this.outgoing = parseInt(line[23]);
-	this.outdoors = parseInt(line[24]);
-	this.booksOverMovies = parseInt(line[25]);
-	this.collegePlan = parseInt(line[26]);
+	this.grade = line[3];
 	
-	this.runningHobby = parseInt(line[27]);
-	this.artHobby = parseInt(line[28]);
-	this.gamingHobby = parseInt(line[29]);
-    this.readingHobby = parseInt(line[30]);
-	this.cookingHobby = parseInt(line[31]);
-	this.dancingHobby = parseInt(line[32]);
-	this.volunteeringHobby = parseInt(line[33]);
-	this.hangingOutHobby = parseInt(line[34]);
+	this.eyeColor = line[4];
 	
-	this.altMusic = parseInt(line[35]);
-	this.electronicMusic = parseInt(line[36]);
-	this.classicalMusic = parseInt(line[37]);
-	this.rockMusic = parseInt(line[38]);
-	this.kpopMusic = parseInt(line[39]);
-	this.metalMusic = parseInt(line[40]);
-	this.popMusic = parseInt(line[41]);
-	this.spiritualMusic = parseInt(line[42]);*/
+	this.height = line[5];
 	
-	this.mathSubject = parseInt(line[43]);
-	this.englishSubject = parseInt(line[44]);
-	this.musicSubject = parseInt(line[45]);
-	this.scienceSubject = parseInt(line[46]);
-	this.historySubject = parseInt(line[47]);
-	this.peSubject = parseInt(line[48]);
-	this.recessSubject = parseInt(line[49]);
-//	this.homeroomSubject = parseInt(line[50]);
+	//Favorite trait
+	this.face = parseInt(line[6],10);
+	this.eyes = line[7];
+	this.smile = line[8];
+	this.hair = parseInt(line[9],10);
+	this.physique = parseInt(line[10],10);
 	
-/*	this.fridayNight = line[51];
-	this.afterSchool = line[52];
+	this.uniqueFeatures = line[11];
 	
-	this.cellPhoneUse = parseInt(line[53]);
-	this.cellPhoneOnDate = parseInt(line[54]);
+	this.extrovertIntrovert = parseInt(line[12],10);
 	
-	this.agreeToTerms = line[55];*/
+	//Favorite Subject
+	this.math = parseInt(line[13],10);
+	this.science = parseInt(line[14],10);
+	this.gym = parseInt(line[15],10);
+	this.socialStudies = parseInt(line[16],10);
+	this.english = parseInt(line[17],10);
+	this.art = parseInt(line[18],10);
+	this.languages = parseInt(line[19],10);
+	this.other = parseInt(line[20],10);
 	
-	this.classTrait = parseInt(line[56]);
-	this.heightTrait = parseInt(line[57]);
-	this.hairColorTrait = parseInt(line[58]);
-	this.eyeColorTrait = parseInt(line[59]);
-	this.appearanceTrait = parseInt(line[60]);
-	this.personalityTrait = parseInt(line[61]);
+	//Favorite Season
+	this.summer = parseInt(line[21],10);
+	this.spring = parseInt(line[22],10);
+	this.winter = parseInt(line[23],10);
+	this.fall = parseInt(line[24],10);
 	
+	//Favorite Color
+	this.redColor = parseInt(line[25],10);
+	this.orangeColor = parseInt(line[26],10);
+	this.yellowColor = parseInt(line[27],10);
+	this.greenColor = parseInt(line[28],10);
+	this.blueColor = parseInt(line[29],10);
+	this.purpleColor = parseInt(line[30],10);
+	this.pinkColor = parseInt(line[31],10);
+	this.otherColor = parseInt(line[32],10);
+	
+	//Favorite Restaurant
+	this.chipotle = parseInt(line[33],10);
+	this.panera = parseInt(line[34],10);
+	this.luke = parseInt(line[35],10);
+	this.chinaBuffet = parseInt(line[36],10);
+	this.iHOP = parseInt(line[37],10);
+	this.fastFood = parseInt(line[38],10);
+	this.maggiano = parseInt(line[39],10);
+	
+	//Favorite Date
+	this.netflix = parseInt(line[40],10);
+	this.beach = parseInt(line[41],10);
+	this.iceCream = parseInt(line[42],10);
+	this.movies = parseInt(line[43],10);
+	this.rockClimbing = parseInt(line[44],10);
+	this.swim = parseInt(line[45],10);
+	this.walk = parseInt(line[46],10);
+	this.dinner = parseInt(line[47],10);
+	this.picnic = parseInt(line[48],10);
+	this.zipline = parseInt(line[49],10);
+	this.exercise = parseInt(line[50],10);
+	
+	//Your Style
+	this.preppy = parseInt(line[51],10);
+	this.colorBased = parseInt(line[52],10);
+	this.punk = parseInt(line[53],10);
+	this.boho = parseInt(line[54],10);
+	this.chic = parseInt(line[55],10);
+	this.laidBack = parseInt(line[56],10);
+	this.glam = parseInt(line[57],10);
+	this.sophisticated = parseInt(line[58],10);
+	this.sporty = parseInt(line[59],10);
+	
+//paired questions = answerInterest 	
+	
+    //Favorite Traits you look for
+	this.genderInterest = line[60];
+	this.faceInterest = parseInt(line[61],10);
+	this.eyesInterest = parseInt(line[62],10);
+	this.smileInterest = parseInt(line[63],10);
+	this.hairInterest = parseInt(line[64],10);
+	this.physiqueInterest = parseInt(line[65],10);
+
+    //Characteristics you look for
+    this.intelligence = parseInt(line[66],10);
+    this.humor = parseInt(line[67],10);
+	this.honesty = parseInt(line[68],10);
+	this.appearance = parseInt(line[69],10);
+	this.compassion = parseInt(line[70],10);
+	this.enthusiasm = parseInt(line[71],10);
+	
+	//Things in a Relationship you look for
+	this.qualityTime = parseInt(line[72],10);
+	this.physicalAffection = parseInt(line[73],10);
+	this.presents = parseInt(line[74],10);
+	this.talking = parseInt(line[75],10);
+	this.affirmation = parseInt(line[76],10);
+	
+	this.heightInterest = parseInt(line[77],10);
+	
+	//Eye Color you look for
+	this.blue = parseInt(line[78],10);
+	this.green = parseInt(line[79],10);
+	this.hazel = parseInt(line[80],10);
+	this.gray = parseInt(line[81],10);
+	this.brown = parseInt(line[82],10);
+	
+	//Style you look for
+	this.preppyInterest = parseInt(line[83],10);
+	this.colorBasedInterest = parseInt(line[84],10);
+	this.punkInterest = parseInt(line[85],10);
+	this.bohoInterest = parseInt(line[86],10);
+	this.chicInterest = parseInt(line[87],10);
+	this.laidBackInterest = parseInt(line[88],10);
+	this.glamInterest = parseInt(line[89],10);
+	this.sophisticatedInterest = parseInt(line[90],10);
+	this.sportyInterest = parseInt(line[91],10);
+	    
 	/* this.personalityVSAppearance = line[62]; // unused */
 };
+
 
 // constant signifying that one asked for their responses to not be used
 // TODO: send emails asking if people want to change their agreeToTerms response
@@ -476,6 +533,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 	var genderCompatSelf = this.genderInterestedIn.split('s')[0] === other.gender || this.genderInterestedIn === "Both";
 	var interestedInEachOther = genderCompatOther && genderCompatSelf;
 	
+	//checks if people are interested in each other or if this is a friend search (gender unimportant)
 	if((interestedInEachOther && !lookingForFriend) || (!interestedInEachOther && lookingForFriend)){ // checking for gender preferences		 
 		
 		var abs = Math.abs;
