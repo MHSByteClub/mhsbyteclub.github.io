@@ -574,27 +574,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 			hobbyScore += 1;
 		}
 
-		// after school
-		if (this.afterSchool === other.afterSchool) {
-			hobbyScore += 1;
-		}
 		
-		//All other hobby questions
-		hobbyScore += (4-abs(this.outgoing - other.outgoing))/4;
-		hobbyScore += (4-abs(this.outdoors - other.outdoors))/4;
-		hobbyScore += (4-abs(this.booksOverMovies - other.booksOverMovies))/4;
-		hobbyScore += (4-abs(this.collegePlan - other.collegePlan))/4;
-		hobbyScore += (56-abs(this.runningHobby - other.runningHobby)-abs(this.artHobby - other.artHobby) - abs(this.gamingHobby - other.gamingHobby)-abs(this.readingHobby - other.readingHobby)-abs(this.cookingHobby - other.cookingHobby)-abs(this.dancingHobby - other.dancingHobby)-abs(this.volunteeringHobby - other.volunteeringHobby)-abs(this.hangingOutHobby - other.hangingOutHobby))/56;
-		hobbyScore += (56-abs(this.altMusic - other.altMusic)-abs(this.electronicMusic - other.electronicMusic) - abs(this.classicalMusic - other.classicalMusic)-abs(this.rockMusic - other.rockMusic)-abs(this.kpopMusic - other.kpopMusic)-abs(this.metalMusic - other.metalMusic)-abs(this.popMusic - other.popMusic)-abs(this.spiritualMusic - other.spiritualMusic))/56;
-		hobbyScore += (56-abs(this.mathSubject - other.mathSubject)-abs(this.englishSubject - other.englishSubject) - abs(this.scienceSubject - other.scienceSubject)-abs(this.historySubject - other.historySubject)-abs(this.peSubject - other.peSubject)-abs(this.recessSubject - other.recessSubject)-abs(this.homeroomSubject - other.homeroomSubject)-abs(this.musicSubject - other.musicSubject))/56;
-		hobbyScore += (4-abs(this.cellPhoneUse - other.cellPhoneUse))/4;
-		hobbyScore += (4-abs(this.cellPhoneOnDate -other.cellPhoneOnDate))/4;
-		hobbyScore += (30-abs(this.compassionQuality-other.compassionQuality)-abs(this.honestyQuality-other.honestyQuality)-abs(this.looksQuality-other.looksQuality)-abs(this.humorQuality-other.humorQuality)-abs(this.enthusiasmQuality-other.enthusiasmQuality)-abs(this.intelligenceQuality-other.intelligenceQuality))/30;
-		hobbyScore += (20-abs(this.giftAffection - other.giftAffection)-abs(this.timeAffection-other.timeAffection)-abs(this.wordsAffection-other.wordsAffection)-abs(this.serviceAffection-other.serviceAffection)-abs(this.touchAffection-other.touchAffection))/20;
-		
-		hobbyScore *= this.personalityTrait;			//all multipliers!
-		physicalScore *= this.appearanceTrait;
-		classScore *= this.classTrait;*/
 		
 		if(lookingForFriend) {
 			physicalScore = 0;

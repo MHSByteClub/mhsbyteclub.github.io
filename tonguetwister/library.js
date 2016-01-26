@@ -47,4 +47,8 @@ function generateWords() {
 
 
 //want to select any word? Just enter the letter number in the first box below and the word number in the second box and "uncomment" it.
+<<<<<<< HEAD
 //console.log(words[0][2]);
+=======
+//console.log(words[0][2]);
+>>>>>>> 36c8581a101c145b97cff1e21ab4ecacffbafb5d
