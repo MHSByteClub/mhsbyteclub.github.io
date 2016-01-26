@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <!-- gets the javascript -->
-      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
       <title>
         Tongue Twister Generator
       </title>
     </head>
     <body>
+      <script src = "library.1.js"></script>
       <h1>Tongue Twister Generator</h1>
-        <p>click button for random phrase</p>
-      <button id="button" type="button">Im the button ^_^</button>
-      <div id="tongue_twister"></div>
-      <script type="text/javascript" src="main.js"></script>
+      <p>click button for random phrase</p>
+      <button type="button" onclick="generateWords()">Im the button ^_^</button>
+      <p><div id = "output"></div></p>
+      <p id="bottom"> Made by
+      <a href="http://www.mhsbyte.org/" style="color:#ff0000">
+      MHS Byte Club</a>
+    </p>
     </body>
 </html>
