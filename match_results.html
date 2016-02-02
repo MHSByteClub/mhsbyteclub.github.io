@@ -650,7 +650,7 @@ var getPersonFromID = function(id) {
 	for(var i = 1; i < people.length - 1; i++) {
 	  	if(people[i].username.split('@')[1] == id) {
 	    		if(logging) {
-	    			console.log('found! response#' + i);
+	    			console.log('found! response#' + i + ", person: "+people[i].username);
 	    		}
 	    		return people[i];
 	  	}
