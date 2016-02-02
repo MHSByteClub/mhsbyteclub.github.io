@@ -111,7 +111,8 @@
 		</div>
 
 		<canvas id="xmas"></canvas>
-		
+		<!-- for passwords -->		
+		<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
 		<!-- javascript for matchmaking -->
 		<script type="text/javascript">
 /**** Called when button is clicked ****/
@@ -143,12 +144,12 @@ var buttonClick = function() {
 	person = getPersonFromID(user);
 	
 	if(person === null) {
-		$('.info')[0].innerHTML = "ID invalid: Did you fill out the survey? If you did, we may not have refreshed survey data since that time. You can reach out to 150003" + "@students.d120.org and/or 150001@students.d120.org<br><br>" + $('.info')[0].innerHTML;
+		$('.info')[0].innerHTML = "ID invalid: Did you fill out the survey? If you did, we may not have refreshed survey data since that time. You can reach out to 170478" + "@students.d120.org and/or 160092@students.d120.org<br><br>" + $('.info')[0].innerHTML;
 		return;
 	}
 	
 	if(person.agreeToTerms.indexOf("Yes") === -1) {
-		$('.info')[0].innerHTML = "Did not agree to terms. Email 150001" + "@students.d120.org and/or 150003@students.d120.org if you'd like to change that.<br><br>" + $('.info')[0].innerHTML;
+		$('.info')[0].innerHTML = "Did not agree to terms. Email 170478" + "@students.d120.org and/or 190002@students.d120.org if you'd like to change that.<br><br>" + $('.info')[0].innerHTML;
 		return;
 	}
 	
@@ -657,9 +658,6 @@ var getPersonFromID = function(id) {
 };
 
 		</script>
-		
-		<!-- for passwords -->		
-		<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
 		<!-- heart snow code -->
 		<script src="js/letitsnow.js"></script>
 	</body>
