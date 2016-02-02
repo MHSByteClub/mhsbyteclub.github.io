@@ -646,6 +646,7 @@ Person.prototype.getMatchList = function(lookingForFriend) {
 // gets an ID's Person object160095
 // assumes properly formatted ID
 var getPersonFromID = function(id) {
+    alert("working");
 	for(var i = 1; i < people.length - 1; i++) {
 	  	if(people[i].username.split('@')[1] == id) {
 	    		if(logging) {
