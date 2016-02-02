@@ -648,7 +648,7 @@ Person.prototype.getMatchList = function(lookingForFriend) {
 var getPersonFromID = function(id) {
     logging = true;
 	for(var i = 1; i < people.length - 1; i++) {
-	  	if(people[i].username.split('@')[1] == id) {
+	  	if(people[i].username.split('@')[0] == id) {
 	    		if(logging) {
 	    			console.log('found! response#' + i + ", person: "+people[i].username);
 	    		}
