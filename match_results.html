@@ -503,7 +503,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		return BUGGY_PERSON;
 	}
 	
-	if (other.agreeToTerms.indexOf("Yes") === -1 || this.agreeToTerms.indexOf("Yes") === -1) {
+	if (other.agreeTerms.indexOf("Yes") === -1 || this.agreeTerms.indexOf("Yes") === -1) {
 		return TERMS_NOT_AGREED_TO;
 	}
 	
