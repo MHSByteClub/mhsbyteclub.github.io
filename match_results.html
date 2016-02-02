@@ -319,7 +319,7 @@ var getPeople = function() {
 	$.get( "/matchresponses.csv", function( data ) {
 		//$( ".data" ).html( data );
 		
-		lines = data.split("\n");
+		var lines = data.split("\n");
 		
 		for(var i = 0; i < lines.length; i++) {
 			people.push(new Person(lines[i]));
@@ -658,9 +658,8 @@ var getPersonFromID = function(id) {
 
 		</script>
 		
-		<!-- for passwords -->
+		<!-- for passwords -->		
 		<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
-		
 		<!-- heart snow code -->
 		<script src="js/letitsnow.js"></script>
 	</body>
