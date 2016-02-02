@@ -22,7 +22,64 @@
 	</head>
 	<body>
 		<div id="wrap" class="container">
+
+        <!-- Border of Binary Code -->
+        <div class="binary">
+        </div>
+        <style>
+        	.binary {
+        		position: fixed;
+        		top: 0px;
+        		left: 0px;
+        		font-size: 8px;
+        		
+				-webkit-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+				-moz-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+				-ms-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+				-o-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+				transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+        	}
+        </style>
+        <script>
+			var binaryString = "01001001011001100010000001111001011011110111010100100111011100100110010100100000011100100110010101100001011001000110100101101110011001110010000001110100011010000110100101110011001000000100101001001111010010010100111000100000010000100101100101010100010001010010000001000011010011000101010101000010";
+			for(var i=0; i<binaryString.length; i++) {
+			    var div = document.getElementsByClassName("binary")[0];
+				div.innerText += binaryString[i];
+			}
+        </script>
+
+
+			<!-- Banner! -->
 			<h1><a href="/"><img src="img/byteclub-banner-teal-low.jpg" alt="Byte Club: Start Right"></a></h1>
+
+	        <div class="menu-wrap">
+    			<nav class="menu">
+        			<ul class="clearfix">
+            			<li><a href="/members.html">Member Sites<span class="arrow">&#9660;</span></a>
+        					<ul class="sub-menu">
+        						<li><a href="https://mrfarmer777.github.io">Mr Farmer's Site</a></li>
+            						<li><a href="http://rentarosatomi520.github.io/">Kenny Stepney's Site</a></li>
+            						<li><a href="http://zame012.github.io/">Kyle Koeller's Site</a></li>
+            						<li><a href="http://bigal65.github.io/">Anuj's Site</a></li>
+            						<li><a href="http://angelmontheod.github.io">Angel's Site</a></li>
+            						<li><a href="http://nduncan52.github.io/">Nick Duncan's Site</a></li>
+            						<li><a href="http://seanbobagins.github.io/">Sean Santore's Site</a></li>
+            						<li><a href="http://definitelynottyler.github.io/">Tyler's Site</a></li>
+            						<li><a href="http://nyodrax-nyodrax.c9.io/hello-world.html">Nyodrax's Site</a></li>
+            						<li><a href="https://raphaelrk.github.io">Raphael Rouvinov's Site</a></li>
+            						<li><a href="https://salamanderdan.github.io">Daniel Balogh's Site</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="/contacts.html">Contacts</a></li>
+        				<li><a href="/Events.html">Events</a></li>
+        				<li><a href="/15-16Ideas.html">15-16 Ideas</a></li>
+        				<!-- We don't need this till next year -->
+        				<li><a href="/match.html">Match</a></li>
+        			</ul>
+    			</nav>
+			</div>
+
+
 			<p></p>
 			<h2>Hello Members</h2>
 			<div class="row">
