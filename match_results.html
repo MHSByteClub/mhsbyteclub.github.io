@@ -193,6 +193,9 @@ var buttonClick = function() {
 		var header = best_match_headers[i];
 		var name = matchArr[i][1]; // matchArr[i][1] is the i'ths person's name
 		var stats = matchArr[i][0]; //matchArr[i][1] is the i'ths person's score
+		
+		console.log(matchArr[i][1], matchArr[i][0]);
+		
 		stats = Math.floor(stats/105 * 100); // best match at time of comment = 102.9
 		
 		if(i === 0) {
@@ -690,6 +693,8 @@ var logging = false;
 // TODO: lists of more than best match, e.g. best fiend, people who matched best with you
 Person.prototype.getMatchList = function(lookingForFriend) {
 	var scoreArr = [];
+	
+		  //console.log(people);
 	
 	// get array of match numbers
 	for(var r = 0; r < people.length; r++) {
