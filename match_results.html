@@ -687,7 +687,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
     		this.totalScore += this.eyeInterests[i] * (this.eyesInterest/2);
     
     		// height
-    		physicalScore += (5-abs(this.heightInterest - other.height)) * (this.heightInterest/2);
+    	//	physicalScore += (5-abs(this.heightInterest - other.height)) * (this.heightInterest/2);
     		
     		physicalScore += 4-abs(this.faceInterest - other.face);
     		physicalScore += 4-abs(this.hairInterest - other.hair);
@@ -785,7 +785,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		perceptionScore += 4-abs(this.pinkColor - other.pinkColor);
 		
 		//processes raw subscores to create desired weighting.
-		var physSub = (physicalScore/36)*physicalWeight;
+		var physSub = (physicalScore/31)*physicalWeight;
 		var classSub = (classScore/4)*classWeight;
 		var personalitySub = (personalityScore/24)*personalityWeight;
 		var perceptionSub = (perceptionScore/44)*perceptionWeight;
