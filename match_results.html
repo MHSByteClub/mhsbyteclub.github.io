@@ -644,7 +644,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
     		physicalScore += 4-abs(this.sportyInterest - other.sporty);
     		this.totalScore += 4* this.appearance/2;
     		
-    			alert("3 "+totalScore);
+    		//	alert("3 "+totalScore);
 		}
 		
 		personalityScore += 4-abs(this.intelligence - other.intelligence);
@@ -664,7 +664,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		
 		//console.log("Hobby Score 1: "+hobbyScore);
 		
-			alert("2 "+totalScore);
+	//		alert("2 "+totalScore);
 		
 		hobbyScore += 4-abs(this.qualityTime - other.qualityTime)/(this.extrovertIntrovert/2);
 		this.totalScore += 4/(this.extrovertIntrovert/2) * this.qualityTime/2;
@@ -699,7 +699,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		hobbyScore += 4-abs(this.fastFood - other.fastFood);
 		this.totalScore += 4* this.qualityTime/2;
 		
-		alert("1 "+totalScore);
+//		alert("1 "+totalScore);
 		
 		//console.log("Hobby Score 3: "+hobbyScore);
 		
