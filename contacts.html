@@ -22,42 +22,101 @@
 			<!-- Modernizr.js is supposed to make development better by reducing cross-browser compatibility issues-->
 	    <body>
 	    
-	    	<!-- The following comment only runs if your on less than (lt) Internet Explorer (IE) 8 -->
+	    	<!-- The following comment only runs if you're on less than (lt) Internet Explorer (IE) 8 -->
 	        <!--[if lt IE 8]>
 	            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	        <![endif]-->
 	
 	        <!-- content goes in here -->
 	        <div id="wrap" class="container">
+
+        <!-- Border of Binary Code -->
+        <div class="binary">
+        </div>
+        <style>
+        	.binary {
+        		position: fixed;
+        		top: 0px;
+        		left: 0px;
+        		font-size: 8px;
+        		
+				-webkit-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+				-moz-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+				-ms-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+				-o-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+				transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+        	}
+        </style>
+        <script>
+			var binaryString = "01001001011001100010000001111001011011110111010100100111011100100110010100100000011100100110010101100001011001000110100101101110011001110010000001110100011010000110100101110011001000000100101001001111010010010100111000100000010000100101100101010100010001010010000001000011010011000101010101000010";
+			for(var i=0; i<binaryString.length; i++) {
+			    var div = document.getElementsByClassName("binary")[0];
+				div.innerText += binaryString[i];
+			}
+        </script>
+
 	
-	        	<!-- Banner -->
-			<h1><a href="/"><img src="img/byteclub-banner-teal-low.jpg" alt="Byte Club: Start Right"></a></h1>
+		<!-- Banner -->
+	            <h1><a href = "http://www.mhsbyte.org"><img src="img/byteclub-banner-teal-low.jpg" alt="Byte Club: Start Right"></a></h1>
+
+             <!-- Navigation Bar -->
+	        <div class="menu-wrap">
+    			<nav class="menu">
+        			<ul class="clearfix">
+            			<li><a href="/members.html">Member Sites<span class="arrow">&#9660;</span></a>
+        					<ul class="sub-menu">
+        						<li><a href="https://mrfarmer777.github.io">Mr Farmer's Site</a></li>
+            						<li><a href="http://rentarosatomi520.github.io/">Kenny Stepney's Site</a></li>
+            						<li><a href="http://zame012.github.io/">Kyle Koeller's Site</a></li>
+            						<li><a href="http://bigal65.github.io/">Anuj's Site</a></li>
+            						<li><a href="http://angelmontheod.github.io">Angel's Site</a></li>
+            						<li><a href="http://nduncan52.github.io/">Nick Duncan's Site</a></li>
+            						<li><a href="http://seanbobagins.github.io/">Sean Santore's Site</a></li>
+            						<li><a href="http://definitelynottyler.github.io/">Tyler's Site</a></li>
+            						<li><a href="http://nyodrax-nyodrax.c9.io/hello-world.html">Nyodrax's Site</a></li>
+            						<li><a href="https://raphaelrk.github.io">Raphael Rouvinov's Site</a></li>
+            						<li><a href="https://salamanderdan.github.io">Daniel Balogh's Site</a></li>
+        					</ul>
+        				</li>
+        				<li><a href="/contacts.html">Contacts</a></li>
+        				<li><a href="/Events.html">Events</a></li>
+        				<li><a href="/15-16Ideas.html">15-16 Ideas</a></li>
+        				<!-- We don't need this till next year -->
+        				<li><a href="/match.html">Match</a></li>
+        			</ul>
+    			</nav>
+			</div>
+
 	        	
 	     	<h2>Contact Information</h2>
     			<p>For MHS Byte Club</p>
       			<ul>
-	      			<li>Matt Farmer, Advisor. mfarmer@d120.org</li>
-	      				<p>Mr. Farmer is the teacher who watches over the club to get everyone together to plan projects and activities.</p>
-	      			<li>Kenneth Stepney, President.</li>
-	      			<li>Rygar Carvajal, Vice President.</li>
-	      			<li>Natalia Ozymko, Secretary.</li>
-	      			<li>Chris Shannon, Secretary.</li>
-	      			<li>Kyle Koeller, Website Designer. <a href="mailto:kyle.koeller@mhsbyte.org?Subject=Byte%20Club" target="_top">Email</a>.</li>
-      					<p>Kyle Koeller edits the website which includes the main website and contacts page.</p>
+	      			<li><strong>Matt Farmer</strong>, Advisor. mfarmer@d120.org</li>
+	      				<p> - supervises the club and get everyone together to plan projects and activities</p>
+	      			<li><strong>Kenneth Stepney</strong>, President.</li>
+	      			    <p> - oversees meetings, helps select and supervise projects, and communicates about local coding events to club members</p>
+	      			<li><strong>Rygar Carvajal</strong>, Vice President.</li>
+	      			    <p> - helps oversee meetings when Kenny is absent, helps supervise proects, and communicates club information throughout the student body</p>
+	      			<li><strong>Natalia Ozymko</strong>, Secretary.</li>
+	      			    <p> - monitors club membership and keeps records of club events</p>
+	      			<li><strong>Chris Shannon</strong>, Secretary.</li>
+	      			    <p> - monitors club membership and keeps records of club events</p>
+	      			<li><strong>Kyle Koeller</strong>, Website Designer. kyle.koeller@mhsbyte.org</li>
+      					<p> - updates the club webpage and works with Rygar to communicate club information throughout the student body</p>
       				
       			</ul>
       			
       		<h2>In Memoriam</h2>
       		    <p>Notable Graduated Members</p>
       		    <ul>
-	    	 		<li>Raphael Rouvinov-Kats, Founder. raphael@mhsbyte.org <a href="http://raphaelrk.com">Website.</a></li>
-	    	 			<p>Raphael is the founder of this <strong>Awesome</strong> programming club. He helps with activities and projects we do.</p>
-	      			<li>Chris Cygnus, Co-Founder. chris.cygnus@mhsbyte.org</li>
-	      				<p>Chris C. helped Raphael in the beginning of the club and used to help with club projects and activities.</p>
-	      			<li>Chris Palacios, Co-Founder. chris.palacios@mhsbyte.org  <a href="http://chrispalacios.com">Website.</a></li>
-	      				<p>Chris P. also helped Chris C. and Raphael start up this club from the beginning. He also used to help with club projects and activities.</p>
-      				<li>Daniel Balogh, that dude who was always here...but is here no more. dagamerdan@gmail.com <a href="http://dbalogh.com">Website</a></li>
-      					<p>Daniel B. was always here and we don't know how he learned but he is decent, works only on projects others give him.</p>
+	    	 		<li><strong>Raphael Rouvinov-Kats</strong>, Founder. raphael@mhsbyte.org <a href="http://raphaelrk.com">Website.</a></li>
+	    	 			<p> - founder of this <strong><i>Awesome</i></strong> programming club, and helps with activities and projects we do</p>
+	      			<li><strong>Chris Cygnus</strong>, Co-Founder. chris.cygnus@mhsbyte.org</li>
+	      				<p> - helped Raphael in the beginning of the club and used to help with club projects and activities</p>
+	      			<li><strong>Chris Palacios</strong>, Co-Founder. chris.palacios@mhsbyte.org  <a href="http://chrispalacios.com">Website.</a></li>
+	      				<p> - helped Chris C. and Raphael start up this club from the beginning and also used to help with club projects and activities</p>
+      				<li><strong>Daniel Balogh</strong>, that dude who was always here...but is here no more. dagamerdan@gmail.com <a href="http://dbalogh.com">Website</a></li>
+      					<p> - was decent but worked only on projects others gave him</p>
       					
                 </ul>
 
