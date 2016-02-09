@@ -676,10 +676,8 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
     			}
     		}
     		
-    		this.totalScore += this.eyeInterests[i] * (this.eyesInterest/2);
-    
     		// height
-    		physicalScore += (5-abs(this.heightInterest - other.height)) * (this.heightInterest/2);
+    		physicalScore += (5-abs(this.heightInterest - other.height)); //* (this.heightInterest/2);
     		
     		physicalScore += 4-abs(this.faceInterest - other.face);
     		physicalScore += 4-abs(this.hairInterest - other.hair);
@@ -707,24 +705,24 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		personalityScore += 4-abs(this.enthusiasm - other.enthusiasm);
 		personalityScore += 4-abs(this.compassion - other.compassion);
 		
-		personalityScore /= (this.extrovertIntrovert/2);
+		//personalityScore /= (this.extrovertIntrovert/2);
 		
 		//console.log("Hobby Score 1: "+hobbyScore);
 		
 	//		alert("2 "+totalScore);
 		
-		hobbyScore += 4-abs(this.qualityTime - other.qualityTime)/(this.extrovertIntrovert/2);
+		hobbyScore += 4-abs(this.qualityTime - other.qualityTime);///(this.extrovertIntrovert/2);
 		//console.log("Hobby Score 2: "+hobbyScore);
-		hobbyScore += 4-abs(this.physicalAffection - other.physicalAffection)/(this.extrovertIntrovert/2);
+		hobbyScore += 4-abs(this.physicalAffection - other.physicalAffection);///(this.extrovertIntrovert/2);
 		//console.log("Hobby Score 3: "+hobbyScore);
-		hobbyScore += 4-abs(this.presents - other.presents)/(this.extrovertIntrovert/2);
+		hobbyScore += 4-abs(this.presents - other.presents);///(this.extrovertIntrovert/2);
 		//console.log("Hobby Score 4: "+hobbyScore);
-		hobbyScore += 4-abs(this.talking - other.talking)/(this.extrovertIntrovert/2);
+		hobbyScore += 4-abs(this.talking - other.talking);///(this.extrovertIntrovert/2);
 		//console.log("Hobby Score 5: "+hobbyScore);
 		//Volunteering does not exist on ths form
 		//hobbyScore += 4-abs(this.volunteering - other.volunteering)/(this.extrovertIntrovert/2);
 		//console.log("Hobby Score 6: "+hobbyScore);
-		hobbyScore += 4-abs(this.affirmation - other.affirmation)/(this.extrovertIntrovert/2);
+		hobbyScore += 4-abs(this.affirmation - other.affirmation);///(this.extrovertIntrovert/2);
 		
 		hobbyScore += 4-abs(this.panera - other.panera);
 		hobbyScore += 4-abs(this.chipotle - other.chipotle);
@@ -776,9 +774,9 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		perceptionScore += 4-abs(this.purpleColor - other.purpleColor);
 		perceptionScore += 4-abs(this.pinkColor - other.pinkColor);
 		
-		physicalScore *= this.appearance/2;
+		/* *= this.appearance/2;
 		intelligenceScore *= this.intelligence/2;
-		hobbyScore *= this.qualityTime/2;
+		hobbyScore *= this.qualityTime/2;*/
 		
 		//console.log(classScore + " "+ physicalScore+" " + perceptionScore+" " + personalityScore+" " + hobbyScore);
 
