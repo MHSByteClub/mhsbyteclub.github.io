@@ -44,8 +44,8 @@
 						</tr>
 					</table>
 					<button id="btn_submit" type="button" onclick="buttonClick()">Submit</button>
-					<!--<p>Sorry, we were testing out the program, but that is over now. Check again tonight after 6pm. Match Making Equation Is Incorrect And Is Not Ready. <br> For Those Who Have Already Tried To Get Their Match We Are Sorry To Say That They Are Not The Right Matches. <br> We're Sorry For The Delay In The Program And It Will Be Up And Running by 6pm, <br> With The Correct Matches As Soon As We Can</p>
-				--></form>
+					<p>Sorry, we were testing out the program, but that is over now. Check again tonight after 6pm. Match Making Equation Is Incorrect And Is Not Ready. <br> For Those Who Have Already Tried To Get Their Match We Are Sorry To Say That They Are Not The Right Matches. <br> We're Sorry For The Delay In The Program And It Will Be Up And Running by 6pm, <br> With The Correct Matches As Soon As We Can</p>
+				</form>
 				<br>
 			</div>
 			<br><br><br><br><br><br>
@@ -635,13 +635,21 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		other.grade = 1;
 	}
 
-	var classScore = 0;
-	var physicalScore = 0;
-	var personalityScore = 0;
-	var hobbyScore = 0;
-	var intelligenceScore = 0;
+	var classScore = 0;  //maximum raw class score is 4
+	var classWeight = 0.5;
+	var styleScore =0;  //maximum raw style score is 9x4 = 36
+	var styleWeight = 0.05;
+	var physicalScore = 0; //maximum raw physical score is 25 ()
+	var physicalWeight = 0.1;
+	var personalityScore = 0; //maximum raw personality score is 6 x 4 = 24
+	var personalityWeight = 0.15;
+	var hobbyScore = 0; // maximum raw hobby score is 23 x 4 = 94
+	var hobbyWeight = 0.10;
+	var intelligenceScore = 0; //maximum raw intelligence score is 7 x 4 = 28
+	var intelligenceWeight = 0.05;
 	//Seasons and color
-	var perceptionScore = 0;
+	var perceptionScore = 0; // maximum raw perception score is 11 x 4 = 44
+	var perceptionWeight = 0.05;
 	var compScore = 0;
 	
 	// gender possibilities = Male, Female
@@ -676,8 +684,10 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
     			}
     		}
     		
+    		this.totalScore += this.eyeInterests[i] * (this.eyesInterest/2);
+    
     		// height
-    		physicalScore += (5-abs(this.heightInterest - other.height)); //* (this.heightInterest/2);
+    		physicalScore += (5-abs(this.heightInterest - other.height)) * (this.heightInterest/2);
     		
     		physicalScore += 4-abs(this.faceInterest - other.face);
     		physicalScore += 4-abs(this.hairInterest - other.hair);
@@ -685,15 +695,15 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
     		physicalScore += 4-abs(this.physiqueInterest - other.physique);
     		physicalScore += 4-abs(this.smileInterest - other.smile);
     	
-    		physicalScore += 4-abs(this.preppyInterest - other.preppy);
-    		physicalScore += 4-abs(this.colorBasedInterest - other.colorBased);
-    		physicalScore += 4-abs(this.punkInterest - other.punk);
-    		physicalScore += 4-abs(this.bohoInterest - other.boho);
-    		physicalScore += 4-abs(this.chicInterest - other.chic);
-    		physicalScore += 4-abs(this.laidBackInterest - other.laidBack);
-    		physicalScore += 4-abs(this.glamInterest - other.glam);
-    		physicalScore += 4-abs(this.sophisticatedInterest - other.sophisticated);
-    		physicalScore += 4-abs(this.sportyInterest - other.sporty);
+    		styleScore += 4-abs(this.preppyInterest - other.preppy);
+    		styleScore += 4-abs(this.colorBasedInterest - other.colorBased);
+    		styleScore += 4-abs(this.punkInterest - other.punk);
+    		styleScore += 4-abs(this.bohoInterest - other.boho);
+    		styleScore += 4-abs(this.chicInterest - other.chic);
+    		styleScore += 4-abs(this.laidBackInterest - other.laidBack);
+    		styleScore += 4-abs(this.glamInterest - other.glam);
+    		styleScore += 4-abs(this.sophisticatedInterest - other.sophisticated);
+    		styleScore += 4-abs(this.sportyInterest - other.sporty);
     		
     		//	alert("3 "+totalScore);
 		}
@@ -705,13 +715,13 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		personalityScore += 4-abs(this.enthusiasm - other.enthusiasm);
 		personalityScore += 4-abs(this.compassion - other.compassion);
 		
-		//personalityScore /= (this.extrovertIntrovert/2);
+		personalityScore /= (this.extrovertIntrovert/2);
 		
 		//console.log("Hobby Score 1: "+hobbyScore);
 		
 	//		alert("2 "+totalScore);
 		
-		hobbyScore += 4-abs(this.qualityTime - other.qualityTime);///(this.extrovertIntrovert/2);
+		//hobbyScore += 4-abs(this.qualityTime - other.qualityTime)/(this.extrovertIntrovert/2);
 		//console.log("Hobby Score 2: "+hobbyScore);
 		hobbyScore += 4-abs(this.physicalAffection - other.physicalAffection);///(this.extrovertIntrovert/2);
 		//console.log("Hobby Score 3: "+hobbyScore);
@@ -722,7 +732,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		//Volunteering does not exist on ths form
 		//hobbyScore += 4-abs(this.volunteering - other.volunteering)/(this.extrovertIntrovert/2);
 		//console.log("Hobby Score 6: "+hobbyScore);
-		hobbyScore += 4-abs(this.affirmation - other.affirmation);///(this.extrovertIntrovert/2);
+		hobbyScore += 4-abs(this.affirmation - other.affirmation)/(this.extrovertIntrovert/2);
 		
 		hobbyScore += 4-abs(this.panera - other.panera);
 		hobbyScore += 4-abs(this.chipotle - other.chipotle);
@@ -774,13 +784,19 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		perceptionScore += 4-abs(this.purpleColor - other.purpleColor);
 		perceptionScore += 4-abs(this.pinkColor - other.pinkColor);
 		
-		/* *= this.appearance/2;
-		intelligenceScore *= this.intelligence/2;
-		hobbyScore *= this.qualityTime/2;*/
+		//processes raw subscores to create desired weighting.
+		var physSub = (physicalScore/36)*physicalWeight;
+		var classSub = (classScore/4)*classWeight;
+		var personalitySub = (personalityScore/24)*personalityWeight;
+		var perceptionSub = (perceptionScore/44)*perceptionWeight;
+		var intelligenceSub = (intelligenceScore/28)*intelligenceWeight;
+		var styleSub = (styleScore/36)*styleWeight;
+		var hobbySub = (hobbyScore/94)*hobbyWeight*(this.qualityTime/5)*1.1;
+		
 		
 		//console.log(classScore + " "+ physicalScore+" " + perceptionScore+" " + personalityScore+" " + hobbyScore);
 
-		compScore = classScore + physicalScore + (perceptionScore/5) + personalityScore + hobbyScore; // + hobbyScore	//total compatibility score
+		compScore = 100*(classSub + physSub + personalitySub + perceptionSub + intelligenceSub + styleSub + hobbySub);// + hobbyScore	//total compatibility score
 	}
     //console.log(compScore+ " " + typeof compScore);
 
