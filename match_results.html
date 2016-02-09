@@ -622,13 +622,16 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		console.log("Hobby Score 1: "+hobbyScore);
 		
 		hobbyScore += 4-abs(this.qualityTime - other.qualityTime)/(this.extrovertIntrovert/2);
-		hobbyScore += 4-abs(this.physicalAffection - other.physicalAffection)/(this.extrovertIntrovert/2);
-		hobbyScore += 4-abs(this.presents - other.presents)/(this.extrovertIntrovert/2);
-		hobbyScore += 4-abs(this.talking - other.talking)/(this.extrovertIntrovert/2);
-		hobbyScore += 4-abs(this.volunteering - other.volunteering)/(this.extrovertIntrovert/2);
-		hobbyScore += 4-abs(this.affirmation - other.affirmation)/(this.extrovertIntrovert/2);
-		
 		console.log("Hobby Score 2: "+hobbyScore);
+		hobbyScore += 4-abs(this.physicalAffection - other.physicalAffection)/(this.extrovertIntrovert/2);
+		console.log("Hobby Score 3: "+hobbyScore);
+		hobbyScore += 4-abs(this.presents - other.presents)/(this.extrovertIntrovert/2);
+		console.log("Hobby Score 4: "+hobbyScore);
+		hobbyScore += 4-abs(this.talking - other.talking)/(this.extrovertIntrovert/2);
+		console.log("Hobby Score 5: "+hobbyScore);
+		hobbyScore += 4-abs(this.volunteering - other.volunteering)/(this.extrovertIntrovert/2);
+		console.log("Hobby Score 6: "+hobbyScore);
+		hobbyScore += 4-abs(this.affirmation - other.affirmation)/(this.extrovertIntrovert/2);
 		
 		hobbyScore += 4-abs(this.panera - other.panera);
 		hobbyScore += 4-abs(this.chipotle - other.chipotle);
@@ -638,7 +641,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		hobbyScore += 4-abs(this.maggiano - other.maggiano);
 		hobbyScore += 4-abs(this.fastFood - other.fastFood);
 		
-		console.log("Hobby Score 3: "+hobbyScore);
+		//console.log("Hobby Score 3: "+hobbyScore);
 		
 		hobbyScore += 4-abs(this.netflix - other.netflix);
 		hobbyScore += 4-abs(this.beach - other.beach);
@@ -652,7 +655,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		hobbyScore += 4-abs(this.zipline - other.zipline);
 		hobbyScore += 4-abs(this.exercise - other.exercise);
 		
-		console.log("Hobby Score 4: "+hobbyScore);
+		//console.log("Hobby Score 4: "+hobbyScore);
 		
 		hobbyScore += 4-abs(this.math - other.math);
 		hobbyScore += 4-abs(this.science - other.science);
@@ -662,7 +665,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		hobbyScore += 4-abs(this.art - other.art);
 		hobbyScore += 4-abs(this.languages - other.languages);
 		
-		console.log("Hobby Score 5: "+hobbyScore);
+		//console.log("Hobby Score 5: "+hobbyScore);
 		
 		perceptionScore += 4-abs(this.summer - other.summer);
 		perceptionScore += 4-abs(this.spring - other.spring);
