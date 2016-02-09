@@ -198,7 +198,7 @@ var buttonClick = function() {
 		
 		//alert(stats+" "+person.totalScore);
 		
-		stats = Math.floor(stats/person.totalScore * 100); // best match at time of comment = 102.9
+		stats = Math.floor(stats/ person.totalScore * 100); // best match at time of comment = 102.9
 		
 		
 		
@@ -647,7 +647,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
     		//	alert("3 "+totalScore);
 		}
 		
-		console.log(this.totalScore);
+		this.totalScore = 0;
 		
 		personalityScore += 4-abs(this.intelligence - other.intelligence);
 		this.totalScore += 4/ (this.extrovertIntrovert/2);
