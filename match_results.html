@@ -657,62 +657,62 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		//console.log("Hobby Score 1: "+hobbyScore);
 		
 		hobbyScore += 4-abs(this.qualityTime - other.qualityTime)/(this.extrovertIntrovert/2);
-		this.totalScore += 4/(this.extrovertIntrovert/2);
+		this.totalScore += 4/(this.extrovertIntrovert/2) * this.qualityTime/2;
 		//console.log("Hobby Score 2: "+hobbyScore);
 		hobbyScore += 4-abs(this.physicalAffection - other.physicalAffection)/(this.extrovertIntrovert/2);
-		this.totalScore += 4/(this.extrovertIntrovert/2);
+		this.totalScore += 4/(this.extrovertIntrovert/2) * this.qualityTime/2;
 		//console.log("Hobby Score 3: "+hobbyScore);
 		hobbyScore += 4-abs(this.presents - other.presents)/(this.extrovertIntrovert/2);
-		this.totalScore += 4/(this.extrovertIntrovert/2);
+		this.totalScore += 4/(this.extrovertIntrovert/2) * this.qualityTime/2;
 		//console.log("Hobby Score 4: "+hobbyScore);
 		hobbyScore += 4-abs(this.talking - other.talking)/(this.extrovertIntrovert/2);
-		this.totalScore += 4/(this.extrovertIntrovert/2);
+		this.totalScore += 4/(this.extrovertIntrovert/2) * this.qualityTime/2;
 		//console.log("Hobby Score 5: "+hobbyScore);
 		//Volunteering does not exist on ths form
 		//hobbyScore += 4-abs(this.volunteering - other.volunteering)/(this.extrovertIntrovert/2);
 		//console.log("Hobby Score 6: "+hobbyScore);
 		hobbyScore += 4-abs(this.affirmation - other.affirmation)/(this.extrovertIntrovert/2
-		this.totalScore += 4/(this.extrovertIntrovert/2);
+		this.totalScore += 4/(this.extrovertIntrovert/2) * this.qualityTime/2;
 		
 		hobbyScore += 4-abs(this.panera - other.panera);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.chipotle - other.chipotle);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.luke - other.luke);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.iHOP - other.iHOP);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.chinaBuffet - other.chinaBuffet);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.maggiano - other.maggiano);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.fastFood - other.fastFood);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		
 		//console.log("Hobby Score 3: "+hobbyScore);
 		
 		hobbyScore += 4-abs(this.netflix - other.netflix);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.beach - other.beach);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.iceCream - other.iceCream);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.movies - other.movies);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.rockClimbing - other.rockClimbing);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.swim - other.swim);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.walk - other.walk);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.dinner - other.dinner);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.picnic - other.picnic);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.zipline - other.zipline);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.exercise - other.exercise);
-		this.totalScore += 4;
+		this.totalScore += 4* this.qualityTime/2;
 		
 		//console.log("Hobby Score 4: "+hobbyScore);
 		
