@@ -573,8 +573,8 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 	// gender possibilities = Male, Female
 	// interested in possibilities = Males, Females, Both
 	
-	var genderCompatOther = this.gender === other.genderPref.split('s')[0] || other.genderPref === "Both";
-	var genderCompatSelf = this.genderPref.split('s')[0] === other.gender || this.genderPref === "Both";
+	var genderCompatOther = this.gender === other.genderPref.split('s')[0] || other.genderPref === "Either/other";
+	var genderCompatSelf = this.genderPref.split('s')[0] === other.gender || this.genderPref === "Either/other";
 	var interestedInEachOther = genderCompatOther && genderCompatSelf;
 	
 	//checks if people are interested in each other or if this is a friend search (gender unimportant)
@@ -695,7 +695,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 
 		compScore = classScore + physicalScore + (perceptionScore/5) + personalityScore + hobbyScore; // + hobbyScore	//total compatibility score
 	}
-    console.log(compScore+ " " + typeof compScore);
+    //console.log(compScore+ " " + typeof compScore);
 
 	return compScore;
 };
