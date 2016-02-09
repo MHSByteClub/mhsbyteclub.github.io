@@ -196,7 +196,7 @@ var buttonClick = function() {
 		
 		console.log(matchArr[i][1], matchArr[i][0]);
 		
-		alert(stats+" "+person.totalScore);
+		//alert(stats+" "+person.totalScore);
 		
 		stats = Math.floor(stats/person.totalScore * 100); // best match at time of comment = 102.9
 		
@@ -643,6 +643,8 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
     		this.totalScore += 4* this.appearance/2;
     		physicalScore += 4-abs(this.sportyInterest - other.sporty);
     		this.totalScore += 4* this.appearance/2;
+    		
+    			alert("3 "+totalScore);
 		}
 		
 		personalityScore += 4-abs(this.intelligence - other.intelligence);
@@ -661,6 +663,8 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		personalityScore /= (this.extrovertIntrovert/2);
 		
 		//console.log("Hobby Score 1: "+hobbyScore);
+		
+			alert("2 "+totalScore);
 		
 		hobbyScore += 4-abs(this.qualityTime - other.qualityTime)/(this.extrovertIntrovert/2);
 		this.totalScore += 4/(this.extrovertIntrovert/2) * this.qualityTime/2;
@@ -694,6 +698,8 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		this.totalScore += 4* this.qualityTime/2;
 		hobbyScore += 4-abs(this.fastFood - other.fastFood);
 		this.totalScore += 4* this.qualityTime/2;
+		
+		alert("1 "+totalScore);
 		
 		//console.log("Hobby Score 3: "+hobbyScore);
 		
