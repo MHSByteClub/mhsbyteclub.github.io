@@ -210,7 +210,7 @@ var buttonClick = function() {
 				header.innerText = name + " is a " + stats + "% match";
 			}
 			if(funded_all) {
-				header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
+				header.innerText = getMatchStatsString(person, matchArr[i][2]);
 			}
 		}
 		else if(i <= 2 && came_by) {
@@ -219,18 +219,18 @@ var buttonClick = function() {
 				header.innerText = name + " is a " + stats + "% match";
 			}
 			if(funded_all) {
-				header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
+				header.innerText = getMatchStatsString(person, matchArr[i][2]);
 			}
 		}
 		else if(i <= 9 && funded_ten) {
 			header.innerText = name + " is a " + stats + "% match";
 			
 			if(funded_all) {
-				header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
+				header.innerText = getMatchStatsString(person, matchArr[i][2]);
 			}
 		}
 		else if(i <= 19 && funded_all) {
-			header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
+			header.innerText = getMatchStatsString(person, matchArr[i][2]);
 		}
 	}
 	
@@ -247,11 +247,11 @@ var buttonClick = function() {
 			header.innerText = name + " is a " + stats + "% friend";
 			
 			if(funded_all) {
-				header.innerText = getMatchStatsString(person, friendArr[i][2], LOOKING_FOR_A_FRIEND);
+				header.innerText = getMatchStatsString(person, friendArr[i][2]);
 			}
 		}
 		else if(i <= 9 && funded_all) {
-			header.innerText = getMatchStatsString(person, friendArr[i][2], LOOKING_FOR_A_FRIEND);
+			header.innerText = getMatchStatsString(person, friendArr[i][2]);
 		}
 	}
 	
@@ -768,9 +768,6 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		this.totalScore += 4;
 		perceptionScore += 4-abs(this.pinkColor - other.pinkColor);
 		this.totalScore += 4;
-		
-				
-		this.totalScore = 0;
 		
 		physicalScore *= this.appearance/2;
 		intelligenceScore *= this.intelligence/2;
