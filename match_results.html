@@ -189,7 +189,75 @@ var buttonClick = function() {
 	
 	// display best matches
 	var best_match_headers = $('.match_result');
-	for(var i = 0; i < best_match_headers.length; i++) {
+		for(var i = 0; i < best_match_headers.length; i++) {
+		var header = best_match_headers[i];
+		var name = matchArr[i][1]; // matchArr[i][1] is the i'ths person's name
+		var stats = matchArr[i][0]; //matchArr[i][1] is the i'ths person's score
+		stats = Math.floor(stats/105 * 100); // best match at time of comment = 102.9
+		
+		if(i === 0) {
+			header.innerText = name; // set h element to match's name
+			if(funded_ten) {
+				header.innerText = name + " is a " + stats + "% match";
+			}
+			if(funded_all) {
+				header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
+			}
+		}
+		else if(i <= 2 && came_by) {
+			header.innerText = name;
+			if(funded_ten){
+				header.innerText = name + " is a " + stats + "% match";
+			}
+			if(funded_all) {
+				header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
+			}
+		}
+		else if(i <= 9 && funded_ten) {
+			header.innerText = name + " is a " + stats + "% match";
+			
+			if(funded_all) {
+				header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
+			}
+		}
+		else if(i <= 19 && funded_all) {
+			header.innerText = getMatchStatsString(person, matchArr[i][2], LOOKING_FOR_A_MATCH);
+		}
+	}
+	
+	// display best friends
+	var best_friend_headers = $('.friend_result');
+	for(var i = 0; i < best_friend_headers.length; i++) {
+		var header = best_friend_headers[i];
+		var name = friendArr[i][1];
+		var stats = friendArr[i][0];
+		stats = Math.floor(stats/80 * 100); // best at time of comment 78.6
+		
+		
+		if(i <= 4 && funded_ten) {
+			header.innerText = name + " is a " + stats + "% friend";
+			
+			if(funded_all) {
+				header.innerText = getMatchStatsString(person, friendArr[i][2], LOOKING_FOR_A_FRIEND);
+			}
+		}
+		else if(i <= 9 && funded_all) {
+			header.innerText = getMatchStatsString(person, friendArr[i][2], LOOKING_FOR_A_FRIEND);
+		}
+	}
+	
+	// display worst friend/match
+	if(funded_all) {
+		var worst_match_header = $('.worst_match')[0];
+		var worst_friend_header = $('.worst_friend')[0];
+		
+		worst_match_header.innerText = getMatchStatsString(person, matchArr[matchArr.length - 1][2], LOOKING_FOR_A_MATCH);
+		worst_friend_header.innerText = getMatchStatsString(person, friendArr[friendArr.length - 1][2], LOOKING_FOR_A_FRIEND);
+	}
+}
+var getMatchStatsString = function(person, other, lookingForFriend) {
+	var max_score = lookingForFriend? 80 : 105;
+	/*for(var i = 0; i < best_match_headers.length; i++) {
 		var header = best_match_headers[i];
 		var name = matchArr[i][1]; // matchArr[i][1] is the i'ths person's name
 		var stats = matchArr[i][0]; //matchArr[i][1] is the i'ths person's score
@@ -266,7 +334,7 @@ var buttonClick = function() {
 }
 
 var getMatchStatsString = function(person, other) {
-	var max_score = 105;
+	var max_score = 105;*/
 	/* 
 	// for finding the max score:
 	
