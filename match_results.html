@@ -647,8 +647,6 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
     		//	alert("3 "+totalScore);
 		}
 		
-		this.totalScore = 0;
-		
 		personalityScore += 4-abs(this.intelligence - other.intelligence);
 		this.totalScore += 4/ (this.extrovertIntrovert/2);
 		personalityScore += 4-abs(this.humor - other.humor);
@@ -770,6 +768,9 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		this.totalScore += 4;
 		perceptionScore += 4-abs(this.pinkColor - other.pinkColor);
 		this.totalScore += 4;
+		
+				
+		this.totalScore = 0;
 		
 		physicalScore *= this.appearance/2;
 		intelligenceScore *= this.intelligence/2;
