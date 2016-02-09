@@ -198,6 +198,8 @@ var buttonClick = function() {
 		
 		stats = Math.floor(stats/person.totalScore * 100); // best match at time of comment = 102.9
 		
+		alert(name+" "+stats);
+		
 		if(i === 0) {
 			header.innerText = name; // set h element to match's name
 			if(funded_ten) {
@@ -259,8 +261,8 @@ var buttonClick = function() {
 	}
 }
 
-var getMatchStatsString = function(person, other, lookingForFriend) {
-	var max_score = lookingForFriend? 80 : 105;
+var getMatchStatsString = function(person, other) {
+	var max_score = person.totalScore;
 	/* 
 	// for finding the max score:
 	
@@ -273,7 +275,7 @@ var getMatchStatsString = function(person, other, lookingForFriend) {
 	a.sort(function(a, b){return b - a;});
 	console.log(a);
 	*/
-	
+
 	var stat = person.matchNumber(other, lookingForFriend) / max_score * 100;
 	    stat = Math.round(stat);
 	var other_stat = other.matchNumber(person, lookingForFriend) / max_score * 100;
