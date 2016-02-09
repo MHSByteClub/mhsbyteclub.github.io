@@ -149,6 +149,7 @@ var buttonClick = function() {
 	}
 	
 	if(person.agreedTerms.indexOf("Yes") === -1) {
+	    console.log(person.agreedTerms.indexOf("Yes"));
 		$('.info')[0].innerHTML = "Did not agree to terms. Email 170478" + "@students.d120.org and/or 190002@students.d120.org if you'd like to change that.<br><br>" + $('.info')[0].innerHTML;
 		return;
 	}
@@ -159,6 +160,9 @@ var buttonClick = function() {
 	
 	var matchArr = person.getMatchList(LOOKING_FOR_A_MATCH);
 	var friendArr = person.getMatchList(LOOKING_FOR_A_FRIEND);
+	
+	console.log("Match Array: "+matchArr);
+	console.log("Friend Array: "+friendArr);
 	
 	var came_by = fund === 0 || fund === 5 || fund === 10;
 	var funded_ten = fund === 5 || fund === 10;
@@ -185,7 +189,7 @@ var buttonClick = function() {
 	
 	// display best matches
 	var best_match_headers = $('.match_result');
-	for(var i = 0; i < best_match_headers.length; i++) {
+		for(var i = 0; i < best_match_headers.length; i++) {
 		var header = best_match_headers[i];
 		var name = matchArr[i][1]; // matchArr[i][1] is the i'ths person's name
 		var stats = matchArr[i][0]; //matchArr[i][1] is the i'ths person's score
@@ -251,9 +255,86 @@ var buttonClick = function() {
 		worst_friend_header.innerText = getMatchStatsString(person, friendArr[friendArr.length - 1][2], LOOKING_FOR_A_FRIEND);
 	}
 }
-
 var getMatchStatsString = function(person, other, lookingForFriend) {
 	var max_score = lookingForFriend? 80 : 105;
+	/*for(var i = 0; i < best_match_headers.length; i++) {
+		var header = best_match_headers[i];
+		var name = matchArr[i][1]; // matchArr[i][1] is the i'ths person's name
+		var stats = matchArr[i][0]; //matchArr[i][1] is the i'ths person's score
+		
+		console.log(matchArr[i][1], matchArr[i][0]);
+		
+		//alert(stats+" "+person.totalScore);
+		
+		stats = Math.floor(stats/ 105 * 100); // best match at time of comment = 102.9
+		
+		
+		
+		//alert(name+" "+stats);
+		
+		if(i === 0) {
+			header.innerText = name; // set h element to match's name
+			if(funded_ten) {
+				header.innerText = name + " is a " + stats + "% match";
+			}
+			if(funded_all) {
+				header.innerText = getMatchStatsString(person, matchArr[i][2]);
+			}
+		}
+		else if(i <= 2 && came_by) {
+			header.innerText = name;
+			if(funded_ten){
+				header.innerText = name + " is a " + stats + "% match";
+			}
+			if(funded_all) {
+				header.innerText = getMatchStatsString(person, matchArr[i][2]);
+			}
+		}
+		else if(i <= 9 && funded_ten) {
+			header.innerText = name + " is a " + stats + "% match";
+			
+			if(funded_all) {
+				header.innerText = getMatchStatsString(person, matchArr[i][2]);
+			}
+		}
+		else if(i <= 19 && funded_all) {
+			header.innerText = getMatchStatsString(person, matchArr[i][2]);
+		}
+	}
+	
+	// display best friends
+	var best_friend_headers = $('.friend_result');
+	for(var i = 0; i < best_friend_headers.length; i++) {
+		var header = best_friend_headers[i];
+		var name = friendArr[i][1];
+		var stats = friendArr[i][0];
+		stats = Math.floor(stats/80 * 100); // best at time of comment 78.6
+		
+		
+		if(i <= 4 && funded_ten) {
+			header.innerText = name + " is a " + stats + "% friend";
+			
+			if(funded_all) {
+				header.innerText = getMatchStatsString(person, friendArr[i][2]);
+			}
+		}
+		else if(i <= 9 && funded_all) {
+			header.innerText = getMatchStatsString(person, friendArr[i][2]);
+		}
+	}
+	
+	// display worst friend/match
+	if(funded_all) {
+		var worst_match_header = $('.worst_match')[0];
+		var worst_friend_header = $('.worst_friend')[0];
+		
+		worst_match_header.innerText = getMatchStatsString(person, matchArr[matchArr.length - 1][2]);
+		worst_friend_header.innerText = getMatchStatsString(person, friendArr[friendArr.length - 1][2]);
+	}
+}
+
+var getMatchStatsString = function(person, other) {
+	var max_score = 105;*/
 	/* 
 	// for finding the max score:
 	
@@ -266,7 +347,7 @@ var getMatchStatsString = function(person, other, lookingForFriend) {
 	a.sort(function(a, b){return b - a;});
 	console.log(a);
 	*/
-	
+
 	var stat = person.matchNumber(other, lookingForFriend) / max_score * 100;
 	    stat = Math.round(stat);
 	var other_stat = other.matchNumber(person, lookingForFriend) / max_score * 100;
@@ -358,9 +439,23 @@ var Person = function(line) {
 	
 	this.eyeColor = line[7];
 	
+	if(this.eyeColor === "Blue"){
+		this.eyeColorID = 0;
+	}else if(this.eyeColor === "Green"){
+		this.eyeColorID = 1;
+	}else if(this.eyeColor === "Hazel"){
+		this.eyeColorID = 2;
+	}else if(this.eyeColor === "Gray"){
+		this.eyeColorID = 3;
+	}else if (this.eyeColor === "Brown"){
+		this.eyeColorID = 4;
+	}
+	
+	
+	//  (6'0"-6'5") = 0, (5'8"-5'11") = 1, (5'4"-5'7") = 2, (5'0"-5'3") = 3, (under 5'0") = 4 
 	this.height = line[8];
 	
-	//Favorite trait
+	//Favorite trait about yourself
 	this.face = parseInt(line[9],10);
 	this.eyes = parseInt(line[90],10);
 	this.smile = parseInt(line[91],10);
@@ -368,7 +463,9 @@ var Person = function(line) {
 	this.physique = parseInt(line[94],10);
 	
 	//!!! This field is separated by commas which will jack everything up!
-	this.uniqueFeatures = line[93];
+	//Not used at this very moment
+	/*this.uniqueFeature = line[93];
+	this.uniqueFeatures = this.uniqueFeature.split('%');*/
 	
 	//line[38] to [40] unused in the survey, for some reason
 	this.extrovertIntrovert = parseInt(line[37],10);
@@ -390,6 +487,7 @@ var Person = function(line) {
 	this.fall = parseInt(line[88],10);
 	
 	//Favorite Color
+	//Multipier of 0.2
 	this.redColor = parseInt(line[63],10);
 	this.orangeColor = parseInt(line[64],10);
 	this.yellowColor = parseInt(line[65],10);
@@ -397,7 +495,7 @@ var Person = function(line) {
 	this.blueColor = parseInt(line[67],10);
 	this.purpleColor = parseInt(line[68],10);
 	this.pinkColor = parseInt(line[69],10);
-	this.otherColor = parseInt(line[122],10);
+//	this.otherColor = parseInt(line[122],10);
 	
 	
 	//Favorite Restaurant
@@ -463,13 +561,13 @@ var Person = function(line) {
 	this.heightInterest = parseInt(line[50],10);
 	
 	//Eye Color you look for
-	this.blue = parseInt(line[10],10);
-	this.green = parseInt(line[11],10);
-	this.hazel = parseInt(line[12],10);
-	this.gray = parseInt(line[13],10);
-	this.brown = parseInt(line[14],10);
+	// Blue = 0, Green = 1, Hazel = 2, Gray = 3, Brown = 4
+	this.eyeInterests = [parseInt(line[10],10), parseInt(line[11],10), parseInt(line[12],10), parseInt(line[13],10), parseInt(line[14],10)];
 	
 	//Style you look for
+	//0 - preppy, 1 - color, 2 - punk, 3 - boho, 4 - chic, 5 - laid, 6 - glam, 7 - sophis, 8 - sporty 
+	//this.styles = [parseInt(line[123],10), parseInt(line[124],10), parseInt(line[125],10), parseInt(line[126],10), parseInt(line[127],10), parseInt(line[128],10), parseInt(line[129],10), parseInt(line[130],10), parseInt(line[131],10)];
+	
 	this.preppyInterest = parseInt(line[123],10);
 	this.colorBasedInterest = parseInt(line[124],10);
 	this.punkInterest = parseInt(line[125],10);
@@ -481,7 +579,7 @@ var Person = function(line) {
 	this.sportyInterest = parseInt(line[131],10);
 	
 	//Agreed to terms?
-	this.agreedTerms = line[130];
+	this.agreedTerms = line[132];
 	/* this.personalityVSAppearance = line[62]; // unused */
 };
 
@@ -499,6 +597,7 @@ var SAME_PERSON = -11;
 
 // returns a number signifying how well someone matches with someone else
 Person.prototype.matchNumber = function(other, lookingForFriend) {
+    //console.log("Match Data: "+other.name+" "+this.name);
 	if(this.name === undefined || other.name === undefined) {
 		return BUGGY_PERSON;
 	}
@@ -538,15 +637,27 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 
 	var classScore = 0;
 	var physicalScore = 0;
+	var personalityScore = 0;
 	var hobbyScore = 0;
+	var intelligenceScore = 0;
+	//Seasons and color
+	var perceptionScore = 0;
 	var compScore = 0;
 	
 	// gender possibilities = Male, Female
 	// interested in possibilities = Males, Females, Both
 	
-	var genderCompatOther = this.gender === other.genderInterestedIn.split('s')[0] || other.genderInterestedIn === "Both";
-	var genderCompatSelf = this.genderInterestedIn.split('s')[0] === other.gender || this.genderInterestedIn === "Both";
-	var interestedInEachOther = genderCompatOther && genderCompatSelf;
+	var interestedInEachOther;
+	
+	if(this.genderPref == "Either/other" && other.genderPref == "Either/other"){
+	    interestedInEachOther = true;
+	}else if(this.genderPref == other.gender && other.genderPref == this.gender){
+    	//var genderCompatOther = this.gender === other.genderPref.split('s')[0];
+    	//var genderCompatSelf = this.genderPref.split('s')[0] === other.gender;
+    	interestedInEachOther = true;//genderCompatOther && genderCompatSelf;
+	}else{
+	    interestedInEachOther = false;
+	}
 	
 	//checks if people are interested in each other or if this is a friend search (gender unimportant)
 	if((interestedInEachOther && !lookingForFriend) || (!interestedInEachOther && lookingForFriend)){ // checking for gender preferences		 
@@ -554,49 +665,189 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		var abs = Math.abs;
 		
 		// class score
-		classScore = 4-abs(this.grade-other.grade);
-		
+		classScore = 4-abs(this.grade - other.grade);
 		/** physical Qs **/
-
-		// hair color
-		if (this.hairColorPreference === other.hairColor){
-			physicalScore += 2;
-		} else if (this.hairColorPreference === "I have no preference"){
-			physicalScore += 0.2;
+		// eye Color
+		
+		if(!lookingForFriend){
+    		for(var i = 0; i < this.eyeInterests.length; i++){
+    			if (i === other.eyeColorID){
+    				physicalScore += this.eyeInterests[i] * (this.eyesInterest/2);
+    			}
+    		}
+    		
+    		this.totalScore += this.eyeInterests[i] * (this.eyesInterest/2);
+    
+    		// height
+    		physicalScore += (5-abs(this.heightInterest - other.height)) * (this.heightInterest/2);
+    		this.totalScore += 5* this.appearance/2;
+    		
+    		physicalScore += 4-abs(this.faceInterest - other.face);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.hairInterest - other.hair);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.eyesInterest - other.eyes);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.physiqueInterest - other.physique);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.smileInterest - other.smile);
+    		this.totalScore += 4* this.appearance/2;
+    	
+    		physicalScore += 4-abs(this.preppyInterest - other.preppy);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.colorBasedInterest - other.colorBased);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.punkInterest - other.punk);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.bohoInterest - other.boho);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.chicInterest - other.chic);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.laidBackInterest - other.laidBack);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.glamInterest - other.glam);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.sophisticatedInterest - other.sophisticated);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.sportyInterest - other.sporty);
+    		this.totalScore += 4* this.appearance/2;
+    		
+    		//	alert("3 "+totalScore);
 		}
-
-		// eye color
-		if (this.eyeColorPreference === other.eyeColor){
-			physicalScore += 2;
-		} else if (this.eyeColorPreference === "I have no preference"){
-			physicalScore += 0.2;
-		}
-
-		// height
-		if (this.heightColorPreference === other.height){
-			physicalScore += 2;
-		} else if (this.heightColorPreference === "I have no preference"){
-			physicalScore += 0.2;
-		}
-
-
-	/*	// friday night
-		if (this.fridayNight === other.fridayNight) {
-			hobbyScore += 1;
-		}
-
+		
+		personalityScore += 4-abs(this.intelligence - other.intelligence);
+		this.totalScore += 4/ (this.extrovertIntrovert/2);
+		personalityScore += 4-abs(this.humor - other.humor);
+		this.totalScore += 4/ (this.extrovertIntrovert/2);
+		personalityScore += 4-abs(this.honesty - other.honesty);
+		this.totalScore += 4/ (this.extrovertIntrovert/2);
+		personalityScore += 4-abs(this.appearance - other.appearance);
+		this.totalScore += 4/ (this.extrovertIntrovert/2);
+		personalityScore += 4-abs(this.enthusiasm - other.enthusiasm);
+		this.totalScore += 4/ (this.extrovertIntrovert/2);
+		personalityScore += 4-abs(this.compassion - other.compassion);
+		this.totalScore += 4 / (this.extrovertIntrovert/2);
+		
+		personalityScore /= (this.extrovertIntrovert/2);
+		
+		//console.log("Hobby Score 1: "+hobbyScore);
+		
+	//		alert("2 "+totalScore);
+		
+		hobbyScore += 4-abs(this.qualityTime - other.qualityTime)/(this.extrovertIntrovert/2);
+		this.totalScore += 4/(this.extrovertIntrovert/2) * this.qualityTime/2;
+		//console.log("Hobby Score 2: "+hobbyScore);
+		hobbyScore += 4-abs(this.physicalAffection - other.physicalAffection)/(this.extrovertIntrovert/2);
+		this.totalScore += 4/(this.extrovertIntrovert/2) * this.qualityTime/2;
+		//console.log("Hobby Score 3: "+hobbyScore);
+		hobbyScore += 4-abs(this.presents - other.presents)/(this.extrovertIntrovert/2);
+		this.totalScore += 4/(this.extrovertIntrovert/2) * this.qualityTime/2;
+		//console.log("Hobby Score 4: "+hobbyScore);
+		hobbyScore += 4-abs(this.talking - other.talking)/(this.extrovertIntrovert/2);
+		this.totalScore += 4/(this.extrovertIntrovert/2) * this.qualityTime/2;
+		//console.log("Hobby Score 5: "+hobbyScore);
+		//Volunteering does not exist on ths form
+		//hobbyScore += 4-abs(this.volunteering - other.volunteering)/(this.extrovertIntrovert/2);
+		//console.log("Hobby Score 6: "+hobbyScore);
+		hobbyScore += 4-abs(this.affirmation - other.affirmation)/(this.extrovertIntrovert/2);
+		this.totalScore += 4/(this.extrovertIntrovert/2) * this.qualityTime/2;
+		
+		hobbyScore += 4-abs(this.panera - other.panera);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.chipotle - other.chipotle);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.luke - other.luke);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.iHOP - other.iHOP);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.chinaBuffet - other.chinaBuffet);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.maggiano - other.maggiano);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.fastFood - other.fastFood);
+		this.totalScore += 4* this.qualityTime/2;
+		
+//		alert("1 "+totalScore);
+		
+		//console.log("Hobby Score 3: "+hobbyScore);
+		
+		hobbyScore += 4-abs(this.netflix - other.netflix);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.beach - other.beach);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.iceCream - other.iceCream);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.movies - other.movies);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.rockClimbing - other.rockClimbing);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.swim - other.swim);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.walk - other.walk);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.dinner - other.dinner);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.picnic - other.picnic);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.zipline - other.zipline);
+		this.totalScore += 4* this.qualityTime/2;
+		hobbyScore += 4-abs(this.exercise - other.exercise);
+		this.totalScore += 4* this.qualityTime/2;
+		
+		//console.log("Hobby Score 4: "+hobbyScore);
+		
+		intelligenceScore += 4-abs(this.math - other.math);
+		this.totalScore += 4* this.intelligence/2;
+		intelligenceScore += 4-abs(this.science - other.science);
+		this.totalScore += 4* this.intelligence/2;
+		intelligenceScore += 4-abs(this.gym - other.gym);
+		this.totalScore += 4* this.intelligence/2;
+		intelligenceScore += 4-abs(this.socialStudies - other.socialStudies);
+		intelligenceScore += 4-abs(this.english - other.english);
+		this.totalScore += 4* this.intelligence/2;
+		intelligenceScore += 4-abs(this.art - other.art);
+		this.totalScore += 4* this.intelligence/2;
+		intelligenceScore += 4-abs(this.languages - other.languages);
+		this.totalScore += 4* this.intelligence/2;
+		
+		//console.log("Hobby Score 5: "+hobbyScore);
+		
+		perceptionScore += 4-abs(this.summer - other.summer);
+		this.totalScore += 4;
+		perceptionScore += 4-abs(this.spring - other.spring);
+		this.totalScore += 4;
+		perceptionScore += 4-abs(this.winter - other.winter);
+		this.totalScore += 4;
+		perceptionScore += 4-abs(this.fall - other.fall);
+		this.totalScore += 4;
 		
 		
-		if(lookingForFriend) {
-			physicalScore = 0;
-		}
+		perceptionScore += 4-abs(this.redColor - other.redColor);
+		this.totalScore += 4;
+		perceptionScore += 4-abs(this.orangeColor - other.orangeColor);
+		this.totalScore += 4;
+		perceptionScore += 4-abs(this.yellowColor - other.yellowColor);
+		this.totalScore += 4;
+		perceptionScore += 4-abs(this.greenColor - other.greenColor);
+		this.totalScore += 4;
+		perceptionScore += 4-abs(this.blueColor - other.blueColor);
+		this.totalScore += 4;
+		perceptionScore += 4-abs(this.purpleColor - other.purpleColor);
+		this.totalScore += 4;
+		perceptionScore += 4-abs(this.pinkColor - other.pinkColor);
+		this.totalScore += 4;
+		
+		physicalScore *= this.appearance/2;
+		intelligenceScore *= this.intelligence/2;
+		hobbyScore *= this.qualityTime/2;
+		
+		//console.log(classScore + " "+ physicalScore+" " + perceptionScore+" " + personalityScore+" " + hobbyScore);
 
-		compScore = classScore + physicalScore; // + hobbyScore	//total compatibility score
+		compScore = classScore + physicalScore + (perceptionScore/5) + personalityScore + hobbyScore; // + hobbyScore	//total compatibility score
 	}
+    //console.log(compScore+ " " + typeof compScore);
 
-
-	return compScore;*/
-	}
+	return compScore;
 };
 
 // used with getMatchList and matchNumber
@@ -614,12 +865,16 @@ var logging = false;
 Person.prototype.getMatchList = function(lookingForFriend) {
 	var scoreArr = [];
 	
+		  //console.log(people);
+	
 	// get array of match numbers
 	for(var r = 0; r < people.length; r++) {
 	  var other = people[r];
 	  var match_num = this.matchNumber(other, lookingForFriend);
 	  
 	  var arr = [match_num, other.name, other,  "person #" + r];
+	  
+	  //console.log("Match Number: "+match_num+", Array: "+arr);
 	  
 	  if(match_num > 0) {
 	  	scoreArr.push(arr);
