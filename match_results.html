@@ -573,9 +573,17 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 	// gender possibilities = Male, Female
 	// interested in possibilities = Males, Females, Both
 	
-	var genderCompatOther = this.gender === other.genderPref.split('s')[0] || other.genderPref === "Either/other";
-	var genderCompatSelf = this.genderPref.split('s')[0] === other.gender || this.genderPref === "Either/other";
-	var interestedInEachOther = genderCompatOther && genderCompatSelf;
+	var interestedInEachOther;
+	
+	if(this.genderPref == "Either/other" && other.genderPref == "Either/other"){
+	    interestedInEachOther = true;
+	}else if(this.genderPref == other.gender && other.genderPref == this.gender){
+    	//var genderCompatOther = this.gender === other.genderPref.split('s')[0];
+    	//var genderCompatSelf = this.genderPref.split('s')[0] === other.gender;
+    	interestedInEachOther = true;//genderCompatOther && genderCompatSelf;
+	}else{
+	    interestedInEachOther = false;
+	}
 	
 	//checks if people are interested in each other or if this is a friend search (gender unimportant)
 	if((interestedInEachOther && !lookingForFriend) || (!interestedInEachOther && lookingForFriend)){ // checking for gender preferences		 
