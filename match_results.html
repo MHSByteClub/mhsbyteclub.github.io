@@ -671,7 +671,7 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		//Volunteering does not exist on ths form
 		//hobbyScore += 4-abs(this.volunteering - other.volunteering)/(this.extrovertIntrovert/2);
 		//console.log("Hobby Score 6: "+hobbyScore);
-		hobbyScore += 4-abs(this.affirmation - other.affirmation)/(this.extrovertIntrovert/2
+		hobbyScore += 4-abs(this.affirmation - other.affirmation)/(this.extrovertIntrovert/2);
 		this.totalScore += 4/(this.extrovertIntrovert/2) * this.qualityTime/2;
 		
 		hobbyScore += 4-abs(this.panera - other.panera);
