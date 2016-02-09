@@ -196,9 +196,13 @@ var buttonClick = function() {
 		
 		console.log(matchArr[i][1], matchArr[i][0]);
 		
+		alert(stats+" "+person.totalScore);
+		
 		stats = Math.floor(stats/person.totalScore * 100); // best match at time of comment = 102.9
 		
-		alert(name+" "+stats);
+		
+		
+		//alert(name+" "+stats);
 		
 		if(i === 0) {
 			header.innerText = name; // set h element to match's name
