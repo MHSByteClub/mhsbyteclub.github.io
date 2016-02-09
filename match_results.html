@@ -671,10 +671,12 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		if(lookingForFriend) {
 			physicalScore = 0;
 		}
+		
+		console.log(classScore + " "+ physicalScore+" " + perceptionScore+" " + personalityScore+" " + hobbyScore);
 
 		compScore = classScore + physicalScore + perceptionScore + personalityScore + hobbyScore; // + hobbyScore	//total compatibility score
 	}
-    console.log(compScore);
+    console.log(compScore+ " " + typeof compScore);
 
 	return compScore;
 };
@@ -703,7 +705,7 @@ Person.prototype.getMatchList = function(lookingForFriend) {
 	  
 	  var arr = [match_num, other.name, other,  "person #" + r];
 	  
-	  console.log("Match Number: "+match_num+", Array: "+arr);
+	  //console.log("Match Number: "+match_num+", Array: "+arr);
 	  
 	  if(match_num > 0) {
 	  	scoreArr.push(arr);
