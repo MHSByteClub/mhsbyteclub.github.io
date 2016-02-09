@@ -594,106 +594,168 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 		classScore = 4-abs(this.grade - other.grade);
 		/** physical Qs **/
 		// eye Color
-		for(var i = 0; i < this.eyeInterests.length; i++){
-			if (i === other.eyeColorID){
-				physicalScore += this.eyeInterests[i] * (this.eyesInterest/2);
-			}
+		
+		if(!lookingForFriend){
+    		for(var i = 0; i < this.eyeInterests.length; i++){
+    			if (i === other.eyeColorID){
+    				physicalScore += this.eyeInterests[i] * (this.eyesInterest/2);
+    			}
+    		}
+    		
+    		this.totalScore += this.eyeInterests[i] * (this.eyesInterest/2);
+    
+    		// height
+    		physicalScore += (5-abs(this.heightInterest - other.height)) * (this.heightInterest/2);
+    		this.totalScore += 5* this.appearance/2;
+    		
+    		physicalScore += 4-abs(this.faceInterest - other.face);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.hairInterest - other.hair);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.eyesInterest - other.eyes);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.physiqueInterest - other.physique);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.smileInterest - other.smile);
+    		this.totalScore += 4* this.appearance/2;
+    	
+    		physicalScore += 4-abs(this.preppyInterest - other.preppy);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.colorBasedInterest - other.colorBased);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.punkInterest - other.punk);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.bohoInterest - other.boho);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.chicInterest - other.chic);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.laidBackInterest - other.laidBack);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.glamInterest - other.glam);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.sophisticatedInterest - other.sophisticated);
+    		this.totalScore += 4* this.appearance/2;
+    		physicalScore += 4-abs(this.sportyInterest - other.sporty);
+    		this.totalScore += 4* this.appearance/2;
 		}
-
-		// height
-		physicalScore += (5-abs(this.heightInterest - other.height)) * (this.heightInterest/2);
-		
-		physicalScore += 4-abs(this.faceInterest - other.face);
-		physicalScore += 4-abs(this.hairInterest - other.hair);
-		physicalScore += 4-abs(this.eyesInterest - other.eyes);
-		physicalScore += 4-abs(this.physiqueInterest - other.physique);
-		physicalScore += 4-abs(this.smileInterest - other.smile);
-		
-		physicalScore += 4-abs(this.preppyInterest - other.preppy);
-		physicalScore += 4-abs(this.colorBasedInterest - other.colorBased);
-		physicalScore += 4-abs(this.punkInterest - other.punk);
-		physicalScore += 4-abs(this.bohoInterest - other.boho);
-		physicalScore += 4-abs(this.chicInterest - other.chic);
-		physicalScore += 4-abs(this.laidBackInterest - other.laidBack);
-		physicalScore += 4-abs(this.glamInterest - other.glam);
-		physicalScore += 4-abs(this.sophisticatedInterest - other.sophisticated);
-		physicalScore += 4-abs(this.sportyInterest - other.sporty);
 		
 		personalityScore += 4-abs(this.intelligence - other.intelligence);
+		this.totalScore += 4/ (this.extrovertIntrovert/2);
 		personalityScore += 4-abs(this.humor - other.humor);
+		this.totalScore += 4/ (this.extrovertIntrovert/2);
 		personalityScore += 4-abs(this.honesty - other.honesty);
+		this.totalScore += 4/ (this.extrovertIntrovert/2);
 		personalityScore += 4-abs(this.appearance - other.appearance);
+		this.totalScore += 4/ (this.extrovertIntrovert/2);
 		personalityScore += 4-abs(this.enthusiasm - other.enthusiasm);
+		this.totalScore += 4/ (this.extrovertIntrovert/2);
 		personalityScore += 4-abs(this.compassion - other.compassion);
+		this.totalScore += 4 / (this.extrovertIntrovert/2);
 		
 		personalityScore /= (this.extrovertIntrovert/2);
 		
 		//console.log("Hobby Score 1: "+hobbyScore);
 		
 		hobbyScore += 4-abs(this.qualityTime - other.qualityTime)/(this.extrovertIntrovert/2);
+		this.totalScore += 4/(this.extrovertIntrovert/2);
 		//console.log("Hobby Score 2: "+hobbyScore);
 		hobbyScore += 4-abs(this.physicalAffection - other.physicalAffection)/(this.extrovertIntrovert/2);
+		this.totalScore += 4/(this.extrovertIntrovert/2);
 		//console.log("Hobby Score 3: "+hobbyScore);
 		hobbyScore += 4-abs(this.presents - other.presents)/(this.extrovertIntrovert/2);
+		this.totalScore += 4/(this.extrovertIntrovert/2);
 		//console.log("Hobby Score 4: "+hobbyScore);
 		hobbyScore += 4-abs(this.talking - other.talking)/(this.extrovertIntrovert/2);
+		this.totalScore += 4/(this.extrovertIntrovert/2);
 		//console.log("Hobby Score 5: "+hobbyScore);
 		//Volunteering does not exist on ths form
 		//hobbyScore += 4-abs(this.volunteering - other.volunteering)/(this.extrovertIntrovert/2);
 		//console.log("Hobby Score 6: "+hobbyScore);
-		hobbyScore += 4-abs(this.affirmation - other.affirmation)/(this.extrovertIntrovert/2);
+		hobbyScore += 4-abs(this.affirmation - other.affirmation)/(this.extrovertIntrovert/2
+		this.totalScore += 4/(this.extrovertIntrovert/2);
 		
 		hobbyScore += 4-abs(this.panera - other.panera);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.chipotle - other.chipotle);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.luke - other.luke);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.iHOP - other.iHOP);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.chinaBuffet - other.chinaBuffet);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.maggiano - other.maggiano);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.fastFood - other.fastFood);
+		this.totalScore += 4;
 		
 		//console.log("Hobby Score 3: "+hobbyScore);
 		
 		hobbyScore += 4-abs(this.netflix - other.netflix);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.beach - other.beach);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.iceCream - other.iceCream);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.movies - other.movies);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.rockClimbing - other.rockClimbing);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.swim - other.swim);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.walk - other.walk);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.dinner - other.dinner);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.picnic - other.picnic);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.zipline - other.zipline);
+		this.totalScore += 4;
 		hobbyScore += 4-abs(this.exercise - other.exercise);
+		this.totalScore += 4;
 		
 		//console.log("Hobby Score 4: "+hobbyScore);
 		
 		intelligenceScore += 4-abs(this.math - other.math);
+		this.totalScore += 4* this.intelligence/2;
 		intelligenceScore += 4-abs(this.science - other.science);
+		this.totalScore += 4* this.intelligence/2;
 		intelligenceScore += 4-abs(this.gym - other.gym);
+		this.totalScore += 4* this.intelligence/2;
 		intelligenceScore += 4-abs(this.socialStudies - other.socialStudies);
 		intelligenceScore += 4-abs(this.english - other.english);
+		this.totalScore += 4* this.intelligence/2;
 		intelligenceScore += 4-abs(this.art - other.art);
+		this.totalScore += 4* this.intelligence/2;
 		intelligenceScore += 4-abs(this.languages - other.languages);
+		this.totalScore += 4* this.intelligence/2;
 		
 		//console.log("Hobby Score 5: "+hobbyScore);
 		
 		perceptionScore += 4-abs(this.summer - other.summer);
+		this.totalScore += 4;
 		perceptionScore += 4-abs(this.spring - other.spring);
+		this.totalScore += 4;
 		perceptionScore += 4-abs(this.winter - other.winter);
+		this.totalScore += 4;
 		perceptionScore += 4-abs(this.fall - other.fall);
+		this.totalScore += 4;
 		
 		
 		perceptionScore += 4-abs(this.redColor - other.redColor);
+		this.totalScore += 4;
 		perceptionScore += 4-abs(this.orangeColor - other.orangeColor);
+		this.totalScore += 4;
 		perceptionScore += 4-abs(this.yellowColor - other.yellowColor);
+		this.totalScore += 4;
 		perceptionScore += 4-abs(this.greenColor - other.greenColor);
+		this.totalScore += 4;
 		perceptionScore += 4-abs(this.blueColor - other.blueColor);
+		this.totalScore += 4;
 		perceptionScore += 4-abs(this.purpleColor - other.purpleColor);
+		this.totalScore += 4;
 		perceptionScore += 4-abs(this.pinkColor - other.pinkColor);
-		
-		if(lookingForFriend) {
-			physicalScore = 0;
-		}
+		this.totalScore += 4;
 		
 		physicalScore *= this.appearance/2;
 		intelligenceScore *= this.intelligence/2;
