@@ -21,6 +21,7 @@ body {
 
 /** for anything that needs a red background and white dashed border **/
 .stitched {
+    height:200px;
    padding: 20px;
    margin: 10px;
    /*background: #ff0030;*/
