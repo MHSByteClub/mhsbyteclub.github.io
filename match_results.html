@@ -196,7 +196,7 @@ var buttonClick = function() {
 		
 		console.log(matchArr[i][1], matchArr[i][0]);
 		
-		//stats = Math.floor(stats/person.totalScore * 100); // best match at time of comment = 102.9
+		stats = Math.floor(stats/person.totalScore * 100); // best match at time of comment = 102.9
 		
 		if(i === 0) {
 			header.innerText = name; // set h element to match's name
@@ -234,7 +234,7 @@ var buttonClick = function() {
 		var header = best_friend_headers[i];
 		var name = friendArr[i][1];
 		var stats = friendArr[i][0];
-		//stats = Math.floor(stats/person.totalScore * 100); // best at time of comment 78.6
+		stats = Math.floor(stats/person.totalScore * 100); // best at time of comment 78.6
 		
 		
 		if(i <= 4 && funded_ten) {
