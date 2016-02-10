@@ -353,6 +353,18 @@ var Person = function(line) {
 	
 	this.name = line[2];
 	
+	if(name === "Kenny Stepney" || name === "Rygar Carvajal"){
+	    name += " (Creators of Mustang Match 2016)";
+	}
+	
+	if(name === "Kyra Tessman" || name === "Kyle Koeller"){
+	    name += " (Mustang Match Web Editors)";
+	}
+	
+	if(name === "Komol Patel" || name === "Thea Vogt" || name === "Sarah Pechtl" || name === "Victoria Ozymko"){
+	    name += " (Creators of Match Survey)";
+	}
+	
 	this.ID = line[3];
 	
 	this.gender = line[4];
