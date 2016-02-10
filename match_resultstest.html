@@ -590,6 +590,8 @@ var TERMS_NOT_AGREED_TO = -666;
 // tested for by seeing if name is undefined
 var BUGGY_PERSON = -867;
 
+var TEST_PERSON = -222;
+
 // constant signifying the people being checked are the same
 var SAME_PERSON = -11;
 
@@ -598,6 +600,14 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
     //console.log("Match Data: "+other.name+" "+this.name);
 	if(this.name === undefined || other.name === undefined) {
 		return BUGGY_PERSON;
+	}
+	
+	if(this.name === "TestPerson1" || other.name === "TestPerson1"){
+	    return TEST_PERSON;
+	}
+	
+	if(this.name === "TestPerson1" || other.name === "TestPerson1"){
+	    return TEST_PERSON;
 	}
 	
 	if (other.agreedTerms.indexOf("Yes") === -1 || this.agreedTerms.indexOf("Yes") === -1) {
