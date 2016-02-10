@@ -352,6 +352,7 @@ var WEB_EDIT_NAMEPLATE = " (Web Editors of Mustang Match 2016)";
 var MEMBER_NAMEPLATE = "***MEMBER OF BYTE CLUB***";
 var SURVEY_NAMEPLATE = " (Survey Creators of Match 2016)";
 var TESTER_NAMEPLATE = " (Beta Tester of Match 2016)";
+var PREV_MEMBER_NAMEPLATE = " *Previous Member of Byte Club*";
 
 var Person = function(line) {
 	line = line.split(',');
@@ -370,12 +371,16 @@ var Person = function(line) {
 	    this.name += VETERAN_NAMEPLATE+WEB_EDIT_NAMEPLATE;
 	}
 	
-	if(this.name === "Komol Patel" || this.name === "Thea Vogt" || this.name === "Sarah Pechtl" || this.name === "Victoria Ozymko" || this.name === "Danielle Cushing"){
+	if(this.name === "Komol Patel" || this.name === "Thea Vogt" || this.name === "Sarah Pechtl" || this.name === "Victoria Ozymko" || this.name === "Danielle Cushing" || this.name === ""){
 	    this.name += MEMBER_NAMEPLATE+SURVEY_NAMEPLATE;
 	}
 	
 	if(this.name === "Alex Heraty"){
 	    this.name += TESTER_NAMEPLATE;
+	}
+	
+	if(this.name === "Brendan Callas"){
+	    this.name += PREV_MEMBER_NAMEPLATE;
 	}
 
     if(this.name === "Christopher Shannon" || this.name === "Natalia Ozymko" || this.name === "Steven Van Belleghem" || this.name === "Pawel Michalski" || this.name === "Angel Montero" || this.name === "Sean Naughton"){
