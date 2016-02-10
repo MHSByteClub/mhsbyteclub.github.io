@@ -175,18 +175,19 @@ var buttonClick = function() {
 	var funded_ten = fund === 5 || fund === 10;
 	var funded_all = fund === 10;
 	
-	if(rot13('cnamre') === pass){
-	    //funded_all = true;
-	    //funded_ten = true;
+	if(rot13('fght') === pass){
+	    funded_all = true;
+	    funded_ten = true;
 	    came_by = true;
 	}
 	
 	
 	// change headings based on funds
-	$('.matches_heading')[0].innerText = "Category Worth:"+"\n"+"Class: 35%"+"\n"+"Personality: 20%"+"\n"+"Appearance: 17%"+"\n"+"Hobbies: 11%"+"\n"+"Style: 7%"+"\n"+"Intelligence: 5%"+"\n"+"Anything Else: 5%"+"\n"+"\n"+"Your matches are...  stats key: [other person's lowest %, median %, highest %]";
 	if(came_by) {
+	    $('.matches_heading')[0].innerText = "Category Worth:"+"\n"+"Class: 35%"+"\n"+"Personality: 20%"+"\n"+"Appearance: 17%"+"\n"+"Hobbies: 11%"+"\n"+"Style: 7%"+"\n"+"Intelligence: 5%"+"\n"+"Anything Else: 5%"+"\n"+"\n"+"Your matches are...  stats key: [other person's lowest %, median %, highest %]";
 		$('.matches_heading')[0].innerText = "Your matches are...";
 	} else {
+	    $('.matches_heading')[0].innerText = "Category Worth:"+"\n"+"Class: 35%"+"\n"+"Personality: 20%"+"\n"+"Appearance: 17%"+"\n"+"Hobbies: 11%"+"\n"+"Style: 7%"+"\n"+"Intelligence: 5%"+"\n"+"Anything Else: 5%"+"\n"+"\n"+"Your matches are...  stats key: [other person's lowest %, median %, highest %]";
 		$('.matches_heading')[0].innerText = "Your #1 match is...";
 	}
 	
