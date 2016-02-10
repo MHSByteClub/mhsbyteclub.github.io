@@ -351,6 +351,7 @@ var VETERAN_NAMEPLATE = " ***VETERAN OF BYTE CLUB***";
 var WEB_EDIT_NAMEPLATE = " (Web Editors of Mustang Match 2016)";
 var MEMBER_NAMEPLATE = "***MEMBER OF BYTE CLUB***";
 var SURVEY_NAMEPLATE = " (Survey Creators of Match 2016)";
+var TESTER_NAMEPLATE = " (Beta Tester of Match 2016)";
 
 var Person = function(line) {
 	line = line.split(',');
@@ -371,6 +372,10 @@ var Person = function(line) {
 	
 	if(this.name === "Komol Patel" || this.name === "Thea Vogt" || this.name === "Sarah Pechtl" || this.name === "Victoria Ozymko"){
 	    this.name += MEMBER_NAMEPLATE+SURVEY_NAMEPLATE;
+	}
+	
+	if(this.name === "Alex Heraty"){
+	    this.name += TESTER_NAMEPLATE;
 	}
 	
 	this.ID = line[3];
