@@ -176,8 +176,8 @@ var buttonClick = function() {
 	var funded_all = fund === 10;
 	
 	if(rot13('cnamre') === pass){
-	    funded_all = true;
-	    funded_ten = true;
+	    funded_all = false; //changed to lock down results
+	    funded_ten = false; //changed to lock down results
 	    came_by = true;
 	}
 	
