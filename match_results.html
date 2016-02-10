@@ -370,14 +370,22 @@ var Person = function(line) {
 	    this.name += VETERAN_NAMEPLATE+WEB_EDIT_NAMEPLATE;
 	}
 	
-	if(this.name === "Komol Patel" || this.name === "Thea Vogt" || this.name === "Sarah Pechtl" || this.name === "Victoria Ozymko"){
+	if(this.name === "Komol Patel" || this.name === "Thea Vogt" || this.name === "Sarah Pechtl" || this.name === "Victoria Ozymko" || this.name === "Danielle Cushing"){
 	    this.name += MEMBER_NAMEPLATE+SURVEY_NAMEPLATE;
 	}
 	
 	if(this.name === "Alex Heraty"){
 	    this.name += TESTER_NAMEPLATE;
 	}
-	
+
+    if(this.name === "Christopher Shannon" || this.name === "Natalia Ozymko" || this.name === "Steven Van Belleghem" || this.name === "Pawel Michalski" || this.name === "Angel Montero" || this.name === "Sean Naughton"){
+        this.name += VETERAN_NAMEPLATE;
+    }
+    
+    if(this.name === "Colin Geary" || this.name === "William Fitzgerald" || this.name === "Dinyar Kadkhodaian" || this.name === ""){
+        this.name += MEMBER_NAMEPLATE;
+    }
+
 	this.ID = line[3];
 	
 	this.gender = line[4];
