@@ -175,7 +175,7 @@ var buttonClick = function() {
 	var funded_ten = fund === 5 || fund === 10;
 	var funded_all = fund === 10;
 	
-	if(pass === 'panzer'){
+	if(rot13('cnamre') === pass){
 	    funded_all = true;
 	    funded_ten = true;
 	    came_by = true;
@@ -816,6 +816,10 @@ var getPersonFromID = function(id) {
 	}
 	return null;
 };
+
+	function rot13(s) {
+				return s.replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
+	}
 
 		</script>
 		<!-- heart snow code -->
