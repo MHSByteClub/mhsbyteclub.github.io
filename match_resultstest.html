@@ -569,13 +569,13 @@ Person.prototype.matchNumber = function(other, lookingForFriend) {
 	var classScore = 0;  //maximum raw class score is 4
 	var classWeight = 0.35; //Original 0.50
 	var styleScore =0;  //maximum raw style score is 9x4 = 36
-	var styleWeight = 0.07; //Original 0.5
+	var styleWeight = 0.05; //Original 0.5
 	var physicalScore = 0; //maximum raw physical score is 25 ()
-	var physicalWeight = 0.17; //Original 0.10
+	var physicalWeight = 0.15; //Original 0.10
 	var personalityScore = 0; //maximum raw personality score is 6 x 4 = 24
 	var personalityWeight = 0.20;//Original 0.15
 	var hobbyScore = 0; // maximum raw hobby score is 23 x 4 = 94
-	var hobbyWeight = 0.11; //Original 0.1 
+	var hobbyWeight = 0.15; //Original 0.1 
 	var intelligenceScore = 0; //maximum raw intelligence score is 7 x 4 = 28
 	var intelligenceWeight = 0.05; //Original 0.05
 	//Seasons and color
@@ -790,7 +790,7 @@ Person.prototype.getMatchList = function(lookingForFriend) {
 	
 	// sort the array
 	scoreArr.sort(function(a, b){return b[0]-a[0]});
-	
+
 	// log the array and best match
 	if(logging) {
 		console.log(scoreArr);
