@@ -135,6 +135,10 @@ var buttonClick = function() {
 		fund = -1;
 	}
 	
+	if(pass === "password"){
+	    alert("STOP TRYING");
+	}
+	
 	// check if username is valid
 	if(user.length != 6 || !isNormalInteger(user)) {
 		return;
