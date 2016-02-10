@@ -256,18 +256,6 @@ var buttonClick = function() {
 			header.innerText = getMatchStatsString(person, friendArr[i][2], LOOKING_FOR_A_FRIEND);
 		}
 	}
-	var otherTopLength = person.otherTop.length;
-	
-	if(otherTopLength > 10){
-	    otherTopLength = 10;
-	}
-	
-	for(var i = 0; i < otherTopLength; i++){
-	    if(funded_all){
-	        header.innerText = "You are "+person.otherTop[i].name + "'s number 1 match, they matched with you by "+person.matchNumber(person.otherTop[i], lookingForFriend) / 105 * 100+"%.";
-	    }
-	}
-	
 	// display worst friend/match
 	if(funded_all) {
 		var worst_match_header = $('.worst_match')[0];
@@ -299,8 +287,7 @@ var getMatchStatsString = function(person, other, lookingForFriend) {
 		}
 		
 		if(pos === 1){
-		    person.otherTop.push(other);
-		    person.otherTop.sort(function(a, b){return b[0]-a[0]});
+		   console.log(other.name);
 		}
 	}
 	
@@ -517,7 +504,6 @@ var Person = function(line) {
 	
 	//Agreed to terms?
 	this.agreedTerms = line[132];
-	this.otherTop = [];
 	/* this.personalityVSAppearance = line[62]; // unused */
 };
 
