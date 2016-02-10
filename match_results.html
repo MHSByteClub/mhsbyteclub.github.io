@@ -344,6 +344,9 @@ var people = [];
 // a Person object holds each person's responses in a single object
 // and provides methods to go along with it (matchNumber and getMatchList)
 //Data field assignment
+
+var HEAD_NAMEPLATE = " ***HEAD OF BYTE CLUB*** (Creators of Mustang Match 2016)"
+
 var Person = function(line) {
 	line = line.split(',');
 	
@@ -354,7 +357,7 @@ var Person = function(line) {
 	this.name = line[2];
 	
 	if(this.name === "Kenny Stepney" || this.name === "Rygar Carvajal"){
-	    name += " (Creators of Mustang Match 2016)";
+	    name += HEAD_NAMEPLATE;
 	}
 	
 	if(this.name === "Kyra Tessman" || this.name === "Kyle Koeller"){
