@@ -345,7 +345,12 @@ var people = [];
 // and provides methods to go along with it (matchNumber and getMatchList)
 //Data field assignment
 
-var HEAD_NAMEPLATE = " ***HEAD OF BYTE CLUB*** (Creators of Mustang Match 2016)"
+var HEAD_NAMEPLATE = " ***HEAD OF BYTE CLUB***"; 
+var CREATOR_NAMEPLATE = " (Creators of Mustang Match 2016)";
+var VETERAN_NAMEPLATE = " ***VETERAN OF BYTE CLUB***"; 
+var WEB_EDIT_NAMEPLATE = " (Web Editors of Mustang Match 2016)";
+var MEMBER_NAMEPLATE = "***MEMBER OF BYTE CLUB***";
+var SURVEY_NAMEPLATE = " (Survey Creators of Match 2016)";
 
 var Person = function(line) {
 	line = line.split(',');
@@ -357,15 +362,15 @@ var Person = function(line) {
 	this.name = line[2];
 	
 	if(this.name === "Kenneth Stepney" || this.name === "Rygar Carvajal"){
-	    name += HEAD_NAMEPLATE;
+	    this.name += HEAD_NAMEPLATE+CREATOR_NAMEPLATE;
 	}
 	
 	if(this.name === "Kyra Tessman" || this.name === "Kyle Koeller"){
-	    name += " (Mustang Match Web Editors)";
+	    this.name += VETERAN_NAMEPLATE+WEB_EDIT_NAMEPLATE;
 	}
 	
 	if(this.name === "Komol Patel" || this.name === "Thea Vogt" || this.name === "Sarah Pechtl" || this.name === "Victoria Ozymko"){
-	    name += " (Creators of Match Survey)";
+	    this.name += MEMBER_NAMEPLATE+SURVEY_NAMEPLATE;
 	}
 	
 	this.ID = line[3];
