@@ -139,8 +139,8 @@
 	    
 	    // nameString is an array of strings of names
 	    // returns a string "<table>...</table>"
-	    var tableFromNamestring = function(nam/eString, rowAmount, columnSize) { 
-	    	var resultString = '<table>'; //make left table with a title and spacing
+	    var tableFromNamestring = function(nameString, rowAmount, columnSize) { 
+	    	var resultString = '<h2>Left Side</h2><br><table>'; //make left table with a title and spacing
 	    	var resultString2 = '<table>'; //make right table with a title and spacing
 	    	
 	        for(var i = 0; i < nameString.length % (columnSize * 2); i++) { // padding
