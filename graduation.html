@@ -129,8 +129,11 @@
 	    
 	        var columnSize = parseInt(document.getElementById("cols").value); //number of seats per side
 	        var summaRowAmount = parseInt(document.getElementById("summarows").value); //number of summa rows, depricated 4/15/16
-	        var rowAmount = parseInt(document.getElementById("rows").value); //number of non-summa rows
-	        
+	        var rowAmount = nameString.length % (columnSize * 2) //automatically determining number of rows necessary
+	       
+	        /*old way to manually put row numbers 
+	        parseInt(document.getElementById("rows").value); //number of non-summa rows
+	        */
 	        
 	        //document.getElementById("result").innerHTML = tableFromNamestring(summaNameString, summaRowAmount, columnSize); //runs function to create Summa table, depricated 4/15/16
 	        //document.getElementById("result").innerHTML += "<br><br>"; //inserts breaks between the summa and standard block
@@ -170,7 +173,7 @@
 	          
 	          var startCol = endCol;
 	          var endCol = startCol + columnSize;
-	          for(var s = startCol+1; s <= endCol; s++) {
+	          for(var s = startCol+1; s < endCol; s++) {
 	            var student = nameString[s];
 	            resultString2+= '<td style="border:1px solid black;">' + student + "</td>";
 	          }
