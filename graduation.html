@@ -142,8 +142,8 @@
 	    // nameString is an array of strings of names
 	    // returns a string "<table>...</table>"
 	    var tableFromNamestring = function(nameString, autoRowAmount, columnSize) { 
-	    	var resultString = '<h2>Left Side</h2><br><table>'; //make left table with a title and spacing
-	    	var resultString2 = '<br><br><h2>Right Side</h2><br><table>'; //make right table with a title and spacing
+	    	var resultString = '<h2>Left Side</h2><br><table class = "gradtable">'; //make left table with a title and spacing
+	    	var resultString2 = '<br><br><h2>Right Side</h2><br><table class = "gradtable">'; //make right table with a title and spacing
 	    	
 	        for(var i = 0; i < nameString.length % (columnSize * 2); i++) { // padding
 	          nameString.push("&nbsp;&nbsp;");
@@ -174,7 +174,7 @@
 	          var endCol = startCol + columnSize;
 	          for(var s = startCol+1; s < endCol; s++) {
 	            var student = nameString[s];
-	            resultString2+= '<td style="border:1px solid black;">' + student + "</td>";
+	            resultString2+= '<td style="border:1px solid black;padding:2px; text-align:center;">' + student + "</td>";
 	          }
 	    
 	          resultString2+= '</tr>';
