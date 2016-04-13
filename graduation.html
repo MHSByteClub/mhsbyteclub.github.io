@@ -131,8 +131,9 @@
 	        //var summaRowAmount = parseInt(document.getElementById("summarows").value,1); //number of summa rows, deprecated 4/15/16
 	        var rowAmount = parseInt(document.getElementById("rows").value,10); //number of non-summa rows
 	        var autoRowAmount = Math.ceil(nameString.length % (parseFloat(document.getElementById('cols').value,10))*2);
-	        console.log(autoRowAmount);
-	        console.log(nameString.length);
+	        console.log('Column Size: '+ columnSize);
+	        console.log('Auto row amount: ' + autoRowAmount);
+	        console.log('Length of the name string: ' +nameString.length);
 	        //document.getElementById("result").innerHTML = tableFromNamestring(summaNameString, summaRowAmount, columnSize); //runs function to create Summa table, depricated 4/15/16
 	        //document.getElementById("result").innerHTML += "<br><br>"; //inserts breaks between the summa and standard block
 	        document.getElementById("result").innerHTML += tableFromNamestring(nameString, autoRowAmount, columnSize);
