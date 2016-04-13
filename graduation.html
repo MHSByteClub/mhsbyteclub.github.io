@@ -153,7 +153,7 @@
 	          resultString += '<tr>';
 	          resultString2 += '<tr>';
  
-	          // print first half greatest to least
+	          // print first half (left side) of the block
 	          // as of 15-16 school year, graduates are seated alphabetially across each row
 	          var startCol = r*columnSize *2;
 	          var endCol = startCol + columnSize ;
@@ -165,12 +165,12 @@
 	          // aisle
 	          resultString += "<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>";
 	    
-	          // print second half least to greatest
+	          // print second half (right side) of the block as a separate table
 	          
 	          
 	          var startCol = endCol;
 	          var endCol = startCol + columnSize;
-	          for(var s = endCol; s <= startCol; s++) {
+	          for(var s = startCol; s <= endCol; s++) {
 	            var student = nameString[s];
 	            resultString2+= '<td style="border:1px solid black;">' + student + "</td>";
 	          }
