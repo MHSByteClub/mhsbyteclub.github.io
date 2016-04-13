@@ -130,16 +130,16 @@
 	        var columnSize = parseInt(document.getElementById("cols").value,10); //number of seats per side
 	        //var summaRowAmount = parseInt(document.getElementById("summarows").value,1); //number of summa rows, depricated 4/15/16
 	        var rowAmount = parseInt(document.getElementById("rows").value,10); //number of non-summa rows
-	        
-	        
+	        var autoRowAmount = Math.ceil(nameString.length % (parseFloat(document.getElementById('cols').value,10))*2);
+	        console.log(autoRowAmount);
 	        //document.getElementById("result").innerHTML = tableFromNamestring(summaNameString, summaRowAmount, columnSize); //runs function to create Summa table, depricated 4/15/16
 	        //document.getElementById("result").innerHTML += "<br><br>"; //inserts breaks between the summa and standard block
-	        document.getElementById("result").innerHTML += tableFromNamestring(nameString, rowAmount, columnSize);
+	        document.getElementById("result").innerHTML += tableFromNamestring(nameString, autoRowAmount, columnSize);
 	    } 
 	    
 	    // nameString is an array of strings of names
 	    // returns a string "<table>...</table>"
-	    var tableFromNamestring = function(nameString, rowAmount, columnSize) { 
+	    var tableFromNamestring = function(nameString, autoRowAmount, columnSize) { 
 	    	var resultString = '<h2>Left Side</h2><br><table>'; //make left table with a title and spacing
 	    	var resultString2 = '<br><br><h2>Right Side</h2><br><table>'; //make right table with a title and spacing
 	    	
@@ -149,7 +149,7 @@
 
 		console.log(nameString);
 	    
-	        for(var r = 0; r < rowAmount; r++) {
+	        for(var r = 0; r < autoRowAmount; r++) {
 	          resultString += '<tr>';
 	          resultString2 += '<tr>';
  
