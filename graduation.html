@@ -127,10 +127,10 @@
 	          }
 	        }
 	    
-	        var columnSize = parseInt(document.getElementById("cols").value); //number of seats per side
-	        var summaRowAmount = parseInt(document.getElementById("summarows").value); //number of summa rows, depricated 4/15/16
-	        var rowAmount = Math.ceil(nameString.length % (columnSize * 2)) //automatically determining number of rows necessary
-	       
+	        var columnSize = parseInt(document.getElementById("cols").value,1); //number of seats per side
+	        //var summaRowAmount = parseInt(document.getElementById("summarows").value,1); //number of summa rows, depricated 4/15/16
+	        var rowAmount = Math.ceil(nameString.length % (columnSize * 2)); //automatically determining number of rows necessary
+	       console.log('Automatic Row Amount: ' + rowAmount);
 	        /*old way to manually put row numbers 
 	        parseInt(document.getElementById("rows").value); //number of non-summa rows
 	        */
