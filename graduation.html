@@ -130,7 +130,7 @@
 	        var columnSize = parseInt(document.getElementById("cols").value,10); //number of seats per side
 	        //var summaRowAmount = parseInt(document.getElementById("summarows").value,1); //number of summa rows, deprecated 4/15/16
 	        var rowAmount = parseInt(document.getElementById("rows").value,10); //number of non-summa rows
-	        var autoRowAmount = Math.ceil(nameString.length % (parseFloat(document.getElementById('cols').value,10))*2);
+	        var autoRowAmount = Math.ceil(nameString.length % ((parseFloat(document.getElementById('cols').value,10))*2));
 	        console.log('Column Size: '+ columnSize);
 	        console.log('Auto row amount: ' + autoRowAmount);
 	        console.log('Length of the name string: ' +nameString.length);
