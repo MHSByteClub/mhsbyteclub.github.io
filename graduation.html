@@ -117,7 +117,7 @@
 	              nameString[i] = nameString[i].substring(0, nameString[i].length);
 	            }
 	            
-	            if(nameString[i].indexOf(' $') !== -1) { // denotes a summa graduate, depricated 4/15/16
+	            if(nameString[i].indexOf(' $') !== -1) { // denotes a summa graduate, deprecated 4/15/16
 	            	summaNameString.push(nameString[i]);
 		        nameString.splice(i, 1);
 	            } else {
@@ -128,10 +128,11 @@
 	        }
 	    
 	        var columnSize = parseInt(document.getElementById("cols").value,10); //number of seats per side
-	        //var summaRowAmount = parseInt(document.getElementById("summarows").value,1); //number of summa rows, depricated 4/15/16
+	        //var summaRowAmount = parseInt(document.getElementById("summarows").value,1); //number of summa rows, deprecated 4/15/16
 	        var rowAmount = parseInt(document.getElementById("rows").value,10); //number of non-summa rows
-	        var autoRowAmount = Math.ceil(nameString.length/2 % (parseFloat(document.getElementById('cols').value,10))*2);
+	        var autoRowAmount = Math.ceil(nameString.length % (parseFloat(document.getElementById('cols').value,10))*2);
 	        console.log(autoRowAmount);
+	        console.log(nameString.length);
 	        //document.getElementById("result").innerHTML = tableFromNamestring(summaNameString, summaRowAmount, columnSize); //runs function to create Summa table, depricated 4/15/16
 	        //document.getElementById("result").innerHTML += "<br><br>"; //inserts breaks between the summa and standard block
 	        document.getElementById("result").innerHTML += tableFromNamestring(nameString, autoRowAmount, columnSize);
