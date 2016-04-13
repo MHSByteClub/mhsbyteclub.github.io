@@ -140,8 +140,9 @@
 	    // nameString is an array of strings of names
 	    // returns a string "<table>...</table>"
 	    var tableFromNamestring = function(nameString, rowAmount, columnSize) { 
-	    	var resultString = '<table>'; //make table
-	    
+	    	var resultString = '<table>'; //make left table
+	    	var resultString2 = '<table>'; //make right table
+	    	
 	        for(var i = 0; i < nameString.length % (columnSize * 2); i++) { // padding
 	          nameString.push("&nbsp;&nbsp;");
 	        }
@@ -150,11 +151,12 @@
 	    
 	        for(var r = 0; r < rowAmount; r++) {
 	          resultString += '<tr>';
-    		
+	          resultString2 += '<tr>';
+ 
 	          // print first half greatest to least
 	          // as of 15-16 school year, graduates are seated alphabetially across each row
 	          var startCol = r*columnSize *2;
-	          var endCol = startCol + columnSize*2 ;
+	          var endCol = startCol + columnSize ;
 	          for(var s = startCol; s < endCol; s++) {
 	            var student = nameString[s];
 	            resultString += '<td style="border:1px solid black;">' + student + "</td>";
@@ -165,20 +167,24 @@
 	    
 	          // print second half least to greatest
 	          
-	          /*Depricated 4/15/16
+	          
 	          var startCol = endCol;
 	          var endCol = startCol + columnSize;
-	          for(var s = endCol - 1; s >= startCol; s--) {
+	          for(var s = endCol; s <= startCol; s++) {
 	            var student = nameString[s];
-	            resultString += '<td style="border:1px solid black;">' + student + "</td>";
-	          }*/
+	            resultString2+= '<td style="border:1px solid black;">' + student + "</td>";
+	          }
 	    
-	          resultString += '</tr>';
+	          resultString2+= '</tr>';
 	        }
 	    
-	        resultString += '</table>';
+	        resultString2+= '</table>';
 	        
 	        return resultString;
+	        return resultString2;
+	        
+	        //make a second table that is the "left" side of the graduation seating.
+	       
 	    }
 	    </script>
     </body>
