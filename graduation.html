@@ -127,15 +127,10 @@
 	          }
 	        }
 	    
-	        var columnSize = parseInt(document.getElementById("cols").value,1); //number of seats per side
+	        var columnSize = parseInt(document.getElementById("cols").value,10); //number of seats per side
 	        //var summaRowAmount = parseInt(document.getElementById("summarows").value,1); //number of summa rows, depricated 4/15/16
-	        var rowAmount = Math.ceil(nameString.length % (columnSize * 2)); //automatically determining number of rows necessary
-	       console.log(nameString.length);
-	       console.log(columnSize*2);
-	       console.log('Automatic Row Amount: ' + rowAmount);
-	        /*old way to manually put row numbers 
-	        parseInt(document.getElementById("rows").value); //number of non-summa rows
-	        */
+	        var rowAmount = parseInt(document.getElementById("rows").value,10); //number of non-summa rows
+	        
 	        
 	        //document.getElementById("result").innerHTML = tableFromNamestring(summaNameString, summaRowAmount, columnSize); //runs function to create Summa table, depricated 4/15/16
 	        //document.getElementById("result").innerHTML += "<br><br>"; //inserts breaks between the summa and standard block
@@ -186,12 +181,13 @@
 	    	resultString+= '</table>'; //closes the table tag for first table
 	        resultString2+= '</table>'; //closes the table tag for second table
 	        
+	        //concatenates the two tables as a single string
 	        var totalString = resultString.concat(resultString2);
 	        
 	        return totalString;
 	        
 	        
-	        //make a second table that is the "left" side of the graduation seating.
+	        
 	       
 	    }
 	    </script>
