@@ -47,7 +47,7 @@
 
             <p>Instructions: enter line-separated names (in lastname, firstname format) in the textbox.<br>Remove people who aren't walking or type NW next to them. Press Try it and the seating will be ready.</p>
             
-            Rows of Summas: <br><input id="summarows" type="number" value="3" length="4"><br><br>
+            Rows of Summas: <br><input id="summarows" type="number" value="0" length="4"><br><br>
             Rows after: <br><input id="rows" type="number" value="27"><br><br>
             Columns on each side: <br><input id="cols" type="number" value="20"><br><br><br>
             
@@ -95,30 +95,21 @@
 		}
 	    
 		function createTable() {
-/** Example names
-Balogh, Dan
-Rouvinov, Raphael
-Palacios, Chris
-Cisek, Martin NW
-Biesterfeld, Alec
-Cushing, Ricky
-Farmer, Matt
-Farmer, Wes
-Farmer, Wes
-Lorant, Dan
-*/
+			/*Gets value of 'names' element, splits at line break and stores it to nameString */
 	        var textareaText = document.getElementById('names').value;
 	        var nameString = textareaText.split("\n");
 	        var summaNameString = [];
 	        
+	        /*Sorts name string alphabetically I assume */
 	        nameString.sort();
 	    
 	        var i = 0;
 	        while(i < nameString.length) {
+	        	/*checks each nameString entry to see if they're not walking by checking if NW is written before their name*/
 	          if(!nameString[i] || nameString[i].indexOf(' NW') !== -1) { // not walking
 	            nameString.splice(i, 1);
 	          } else {
-	            var splitName = nameString [i].split(','); //remove commas
+	            var splitName = nameString[i].split(','); //remove commas
 	            var first = splitName[1];
 	            var last = splitName[0];
 	            nameString[i] = first + " " + last; //flip so it is first name last name
@@ -126,7 +117,7 @@ Lorant, Dan
 	              nameString[i] = nameString[i].substring(0, nameString[i].length);
 	            }
 	            
-	            if(nameString[i].indexOf(' $') !== -1) { // summa
+	            if(nameString[i].indexOf(' $') !== -1) { // denotes a summa graduate, depricated 4/15/16
 	            	summaNameString.push(nameString[i]);
 		        nameString.splice(i, 1);
 	            } else {
@@ -137,12 +128,12 @@ Lorant, Dan
 	        }
 	    
 	        var columnSize = parseInt(document.getElementById("cols").value); //number of seats per side
-	        var summaRowAmount = parseInt(document.getElementById("summarows").value);
-	        var rowAmount = parseInt(document.getElementById("rows").value);
+	        var summaRowAmount = parseInt(document.getElementById("summarows").value); //number of summa rows, depricated 4/15/16
+	        var rowAmount = parseInt(document.getElementById("rows").value); //number of non-summa rows
 	        
 	        
-	        document.getElementById("result").innerHTML = tableFromNamestring(summaNameString, summaRowAmount, columnSize);
-	        document.getElementById("result").innerHTML += "<br><br>";
+	        //document.getElementById("result").innerHTML = tableFromNamestring(summaNameString, summaRowAmount, columnSize); //runs function to create Summa table, depricated 4/15/16
+	        //document.getElementById("result").innerHTML += "<br><br>"; //inserts breaks between the summa and standard block
 	        document.getElementById("result").innerHTML += tableFromNamestring(nameString, rowAmount, columnSize);
 	    } 
 	    
@@ -159,10 +150,11 @@ Lorant, Dan
 	    
 	        for(var r = 0; r < rowAmount; r++) {
 	          resultString += '<tr>';
-	    
+    		
 	          // print first half greatest to least
+	          // as of 15-16 school year, graduates are seated alphabetially across each row
 	          var startCol = r*columnSize *2;
-	          var endCol = startCol + columnSize ;
+	          var endCol = startCol + columnSize*2 ;
 	          for(var s = startCol; s < endCol; s++) {
 	            var student = nameString[s];
 	            resultString += '<td style="border:1px solid black;">' + student + "</td>";
@@ -172,12 +164,14 @@ Lorant, Dan
 	          resultString += "<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>";
 	    
 	          // print second half least to greatest
+	          
+	          /*Depricated 4/15/16
 	          var startCol = endCol;
 	          var endCol = startCol + columnSize;
 	          for(var s = endCol - 1; s >= startCol; s--) {
 	            var student = nameString[s];
 	            resultString += '<td style="border:1px solid black;">' + student + "</td>";
-	          }
+	          }*/
 	    
 	          resultString += '</tr>';
 	        }
