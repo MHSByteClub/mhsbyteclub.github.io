@@ -141,7 +141,7 @@
 	    // returns a string "<table>...</table>"
 	    var tableFromNamestring = function(nameString, rowAmount, columnSize) { 
 	    	var resultString = '<h2>Left Side</h2><br><table>'; //make left table with a title and spacing
-	    	var resultString2 = '<table>'; //make right table with a title and spacing
+	    	var resultString2 = '<br><br><h2>Right Side</h2><br><table>'; //make right table with a title and spacing
 	    	
 	        for(var i = 0; i < nameString.length % (columnSize * 2); i++) { // padding
 	          nameString.push("&nbsp;&nbsp;");
@@ -170,7 +170,7 @@
 	          
 	          var startCol = endCol;
 	          var endCol = startCol + columnSize;
-	          for(var s = startCol; s <= endCol; s++) {
+	          for(var s = startCol+1; s <= endCol; s++) {
 	            var student = nameString[s];
 	            resultString2+= '<td style="border:1px solid black;">' + student + "</td>";
 	          }
