@@ -129,7 +129,7 @@
 	    
 	        var columnSize = parseInt(document.getElementById("cols").value); //number of seats per side
 	        var summaRowAmount = parseInt(document.getElementById("summarows").value); //number of summa rows, depricated 4/15/16
-	        var rowAmount = nameString.length % (columnSize * 2) //automatically determining number of rows necessary
+	        var rowAmount = Math.ceil(nameString.length % (columnSize * 2)) //automatically determining number of rows necessary
 	       
 	        /*old way to manually put row numbers 
 	        parseInt(document.getElementById("rows").value); //number of non-summa rows
