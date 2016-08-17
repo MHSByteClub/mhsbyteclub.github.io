@@ -91,6 +91,24 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/* Styling for kick-off meeting elements */
+
+#code_on {
+    color:blue;
+    -webkit-transition: color 2s, text-shadow 2s;
+    -moz-transition:color 2s, text-shadow 2s;
+    -o-transition:color 2s, text-shadow 2s;
+    transition:color 2s, text-shadow 2s;
+}
+
+#code_on:hover {
+    color:red;
+    text-shadow: 2px 2px 5px black;
+    -webkit-transition: color 2s, text-shadow 2s;
+    -moz-transition:color 2s, text-shadow 2s;
+    -o-transition:color 2s, text-shadow 2s;
+    transition:color 2s, text-shadow 2s;
+}
 
 
 
