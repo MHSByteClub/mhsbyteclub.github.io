@@ -95,19 +95,19 @@ textarea {
 
 #code_on {
     color:blue;
-    -webkit-transition: color 2s, text-shadow 2s;
-    -moz-transition:color 2s, text-shadow 2s;
-    -o-transition:color 2s, text-shadow 2s;
-    transition:color 2s, text-shadow 2s;
+    -webkit-transition: color 1s;
+    -moz-transition:color 1s;
+    -o-transition:color 1s;
+    transition:color 1s;
 }
 
 #code_on:hover {
     color:red;
-    text-shadow: 2px 2px 5px black;
-    -webkit-transition: color 2s, text-shadow 2s;
-    -moz-transition:color 2s, text-shadow 2s;
-    -o-transition:color 2s, text-shadow 2s;
-    transition:color 2s, text-shadow 2s;
+    
+    -webkit-transition: color 1s;
+    -moz-transition:color 1s;
+    -o-transition:color 1s;
+    transition:color 1s;
 }
 
 
