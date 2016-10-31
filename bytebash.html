@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <!--
@@ -9,7 +10,7 @@
  ╚════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝    ╚═════╝    ╚═╝      ╚═╝   ╚══════╝     ╚═════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝
 -->
 
-<html class="no-js" lang="">
+<html class="" lang="en">
     <head>
     	<!-- Meta tags. Specify text-encoding, site info, site size -->
         <meta charset="utf-8">
@@ -20,153 +21,421 @@
         
 
         <!-- Site title. Shows up on tab. -->
-        <title>Byte Bash, 12/8/15</title>
+        <title>Byte Bash</title>
+        
+        
+        <!-- JQuery 3.1.1 Minified! -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
         <!-- Stylesheets. hi Specify how the content of the site should look and feel, e.g. { color: red; font-family: Comic Sans MS; } -->
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/style.css">
+		<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    
+    
+		
+		<!-- Pulls in Abode Font -->
+		<style>
+		  @font-face {
+		    font-family: 'JK Abode';
+		    src: url('JKAbode-Demo.ttf');
+	      src: local('JK Abode'), local('JK Abode'), url('JKAbode-Demo.ttf') format('truetype');
+		  }
+		  
+		</style>
+	
+		
+		
     <!-- Add a sign in when we can use javascript -->
         <script src="js/vendor/modernizr-2.8.0.min.js"></script>
     </head>
-		<!-- Javascript. -->
-		<!-- Modernizr.js is supposed to make development better by reducing cross-browser compatibility issues-->
     <body>
-    
-    	<!-- The following comment only runs if your on less than (lt) Internet Explorer (IE) 8 -->
-        <!--[if lt IE 8]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- content goes in here -->
         <!-- Border of Binary Code -->
         
-	
-        <div id="wrap" class="container">
-        
-		<!-- Banner -->
-	        <marquee behavior="slide" direction="left" scrolldelay="20" scrollamount = "100">
-	            <h1><img src="img/byteclub-banner-teal-low.jpg" alt="Byte Club: Start Right"></h1>
-            </marquee>
-             <!-- Navigation Bar -->
-	        <div class="menu-wrap">
-    			<nav class="menu">
-        			<ul class="clearfix">
-            			<li><a href="/members.html">Member Sites<span class="arrow">&#9660;</span></a>
-        					<ul class="sub-menu">
-        						<li><a href="https://mrfarmer777.github.io">Mr Farmer's Site</a></li>
-            						<li><a href="http://rentarosatomi520.github.io/">Kenny Stepney's Site</a></li>
-            						<li><a href="http://zame012.github.io/">Kyle Koeller's Site</a></li>
-            						<li><a href="http://bigal65.github.io/">Anuj's Site</a></li>
-            						<li><a href="http://angelmontheod.github.io">Angel's Site</a></li>
-            						<li><a href="http://nduncan52.github.io/">Nick Duncan's Site</a></li>
-            						<li><a href="http://seanbobagins.github.io/">Sean Santore's Site</a></li>
-            						<li><a href="http://definitelynottyler.github.io/">Tyler's Site</a></li>
-            						<li><a href="http://nyodrax-nyodrax.c9.io/hello-world.html">Nyodrax's Site</a></li>
-            						<li><a href="https://raphaelrk.github.io">Raphael Rouvinov's Site</a></li>
-            						<li><a href="https://salamanderdan.github.io">Daniel Balogh's Site</a></li>
-
-        					</ul>
-        				</li>
-        				<li><a href="/contacts.html">Contacts</a></li>
-        				<li><a href="/Events.html">Events</a></li>
-        				<li><a href="/15-16Ideas.html">15-16 Ideas</a></li>
-        				<!-- We don't need this till next year -->
-        				<!-- <li><a href="/match.html">Match</a></li> -->
-        			</ul>
+	  
+        <!-- Navigation Bar -->
+    			<nav class="navbar navbar-inverse">
+    			  <div class = "container-fluid">
+    			    <div class = "navbar-header">
+    			      <button type = "button" class = "navbar-toggle" data-toggle = "collapse" data-target = "#mainNavbar">
+    			        <span class = "icon-bar"></span>
+    			        <span class = "icon-bar"></span>
+    			        <span class = "icon-bar"></span>
+    			      </button>
+    			      <div class = "navbar-brand" style = "font-family:'JK Abode'; font-size: 20px">
+    			        <a href = "https://www.mhsbyte.org">Byte Club</a>
+    			      </div>
+    			    </div>
+    			    <div class="collapse navbar-collapse" id="mainNavbar">
+            			<ul class="nav navbar-nav">
+                			<li class = "dropdown"><a href="" data-toggle = "dropdown">Member Sites<span class="arrow">&#9660;</span></a>
+            					<ul class="dropdown-menu">
+            						<li><a href="https://mrfarmer777.github.io">Mr Farmer's Site</a></li>
+                						<li><a href="http://rentarosatomi520.github.io/">Kenny Stepney's Site</a></li>
+                						<li><a href="http://zame012.github.io/">Kyle Koeller's Site</a></li>
+                						<li><a href="http://bigal65.github.io/">Anuj's Site</a></li>
+                						<li><a href="http://angelmontheod.github.io">Angel's Site</a></li>
+                						<li><a href="http://nduncan52.github.io/">Nick Duncan's Site</a></li>
+                						<li><a href="http://seanbobagins.github.io/">Sean Santore's Site</a></li>
+                						<li><a href="http://definitelynottyler.github.io/">Tyler's Site</a></li>
+                						<li><a href="http://nyodrax-nyodrax.c9.io/hello-world.html">Nyodrax's Site</a></li>
+                						<li><a href="https://raphaelrk.github.io">Raphael Rouvinov's Site</a></li>
+                						<li><a href="https://salamanderdan.github.io">Daniel Balogh's Site</a></li>
+            					</ul>
+          				</li>
+          				<li><a href="/contacts.html">Contacts</a></li>
+          				<li><a href="/Events.html">Events</a></li>
+          				<li><a href="/15-16Ideas.html">15-16 Ideas</a></li>
+          				<li class = "active"><a href = "/bytebash.html">Byte Bash</a></li>
+          				<!-- We don't need this till next year -->
+          				<!-- <li><a href="/match.html">Match</a></li> -->
+          			</ul>
+          		</div>
+        		</div>
     			</nav>
-			</div>
-		
-        	<br><br>
-        	
-        	
-        	
+		  <!-- holds the jumbotron -->
+        <div class = "jumbotron">
+          <h1>Byte Bash_v3.1</h1>
+          <p>Learn. Code. Eat. Repeat.</p>
+          <div class="btn-group">
+          <a href = "" type = "button" class = "btn btn-primary" id = "Sign-up" >Sign Up!</a>
+          <a href = "#instructional-sessions" type = "button" class = "btn btn-primary" id = "sessions" >Sessions</a>
+          <a href = "#contests-challenges" type = "button" class = "btn btn-primary" id = "contests" >Contests</a>
+          <a href = "#about-byte-bash" data-toggle="collapse" data-target="#about-byte-bash" type = "button" class = "btn btn-primary" id = "Sign-up" >Event Info</a>
+          </div>
+        </div>
+      
+      <!-- holds the countdown and rsvp information -->
+      <div class = "container">
+        <div class = "" id = "maininfo">
+          <div id = "date">
+            <h1>Wednesday, November 16th</h1>
+            <h4>3:30-7:00 PM in C104</h4>
+          </div>
+          <div id = "countdown">
+            <h2>The Bash begins in:</h2>
+              <div id="clockdiv">
+              	<div><span class="days"></span><div class="smalltext">Days</div></div>
+              	<div><span class="hours"></span><div class="smalltext">Hours</div></div>
+              	<div><span class="minutes"></span><div class="smalltext">Minutes</div></div>
+              	<div><span class="seconds"></span><div class="smalltext">Seconds</div></div>
+              </div>
+              
+              <!--<div class="link">
+                Brought to you by:<br><br>
+              <a href="http://simplestepscode.com/" target="_blank">Simple Steps Code</a>
+              </div>-->
         
-        	<iframe width="560" height="315" style = "display:block; margin:auto" src="https://www.youtube.com/embed/FC5FbmsH4fw" frameborder="0" allowfullscreen></iframe>
-        	<img id="bytebashlogo" style="float: left; margin: 0 25px;" src="http://www.trbimg.com/img-565f43fe/turbine/chi-ugc-ugc-relatedphoto-mhs-byte-club-to-host-hour-of-code-dec-8-2015-12-02/450/450x450" alt="" height="200px" />
-<div class="intro" style="float: top;">
-<h1>Byte Bash is Here!</h1>
-Get psyched, for today, we code!
-
-When: December 8th, 2015, 3:30 PM
-
-Where: District Meeting Room (next to the library)
-
-Who: Any MHS student or staff member, or sender school student or staff member
-
-</div>
-Why: To learn to code, create something with friends or have fun with computers and logic
-<ul>
-	<li>Guest wi-fi access for personal machines</li>
-	<li>refreshments, pizza, and snacks provided</li>
-	<li>tutorials, contests, and prizes (oh, my!)</li>
-	<li>Be part of the international <a href="http://hourofcode.com" target="_blank">Hour of Code</a></li>
-</ul>
-Follow us: @MHSByte on Twitter
-
-Share the action from today's events using #ByteBash and/or #MundyPride
-
-<!---the daily activities for homeroom and junk -->
-<div id="bytebashinfo" style="float: left;">
-<h1>Today's Events</h1>
-<ul>
-	<li>3:30 - Welcome and Introductions</li>
-	<li>3:45 - Tutorial Sessions
-<ul>
-	<li><a href="https://code.org/learn" target="_blank">Code.org HOC Activities</a>: Try these fun and easy coding tutorials. Get your feet wet and complete the hour of code!</li>
-	<li><a href="https://www.khanacademy.org/computing/computer-programming/programming/drawing-basics/p/intro-to-drawing" target="_blank">Intro to Drawing with Khan Academy and ProcessingJS</a>: Want to get in on the Character Contest? Learn to draw with code at Khan Academy's ProcessingJS module.</li>
-	<li><a href="https://www.codecademy.com/" target="_blank">Codecademy tutorials</a>: Looking to kick-start a serious study of coding? Codecademy has a fantastic series of tutorials for virtually any modern scripting or coding language. This is the place to start. Use this module to practice for the Web Page Contest as well</li>
-	<li>Kenny's Java circus!: Byte Club's President takes you through a basic project using the Java programming language.</li>
-	<li><a href="http://fightcodegame.com/" target="_blank">Intro to FightCode:</a> Start prepping for our FightCode competition! Learn to code a fighting robot that will take on your enemies!</li>
-</ul>
-</li>
-	<li>4:20 - Tutorial Showcase
-<ul>
-	<li>How did you spend your first (almost) hour of code!?</li>
-	<li>Hello World Prizes</li>
-</ul>
-</li>
-	<li>4:30 - Coding Contests
-<ul>
-	<li><a href="https://www.khanacademy.org/computer-programming/new/pjs" target="_blank">Character Contest:</a> Use Khan Academy and the drawing tools to create the best character possible</li>
-	<li>< href="https://docs.google.com/a/d120.org/document/d/1OJFsfFiDdL66Zxs3CacUcSmK5wk2cJfK381sjIhO4Kw/edit?usp=sharing">The Byte Club 5</a>: Use any programming language you want to complete the Byte Club 5 Coding Challenges!</li>
-	<li>Web Site Contest: Code a website from scratch that has all the bells and whistles. Best site wins a prizes</li>
-	<li>
-<ul>
-	<li><a href="https://www.khanacademy.org/computer-programming/html-editor/4942151691796480" target="_blank">Khan Academy's HTML Builder</a></li>
-	<li><a href="http://codepen.io/" target="_blank">CodePen.io</a></li>
-</ul>
-</li>
-	<li><a href="http://fightcodegame.com/" target="_blank">FightCode Duels</a>: See how you rank at FightCode</li>
-	<li><a href="https://projecteuler.net/archives" target="_blank">Project Euler Battle:</a> Form teams and take on the programming challenges at Project Euler. See who can complete the most in the time allotted</li>
-</ul>
-</li>
-	<li>5:30 - Contest Awards</li>
-	<li>5:40 - Code with Byte Club
-<ul>
-	<li>Take some time to explore programming and coding a little bit more. Talk with new and experienced members of Byte Club, show off your own projects and view those of others. See what we're all about.</li>
-</ul>
-</li>
-</ul>
-<h2>Resources</h2>
-<ul>
-	<li>Documentation and reference materials
-<ul>
-	<li><a href="http://stackoverflow.com/" target="_blank">Stackoverflow</a></li>
-	<li><a href="http://www.w3schools.com/" target="_blank">W3Schools</a></li>
-</ul>
-</li>
-	<li><a href="http://www.mhsbyte.org" target="_blank">MHS Byte Club</a></li>
-</ul>
-</div>
-<div id="webpageabout" style="float: left;">
-<h2>You're Byte Club! Why doesn't this webpage look amazing!?!?</h2>
-First, thanks for noticing. Second, as part of Byte Club we try to work as closely to the actual code as we can. Though there are many editors out there that would let us build a fantastic, multi-media, interactive webpage, we chose to keep it simple. Nearly all of the code on this page was created or adapted by Byte Club members or sponsors. No WYSIWYG editors are used.
-
-By the way, if you think you can make it look prettier - <a href="http://www.mhsbyte.org">COME TO BYTE CLUB!</a> We meet every Tuesday in A102.
-
-</div>
+          </div>
+        </div>
+          <div class = "panel-group">
+            <div class = "panel panel-default">
+              <div class = "panel-heading"><a data-toggle = "collapse" href = "#about-byte-bash">What is Byte Bash?</a>
+              </div>
+              <div class = "panel-collapse collapse" id = "about-byte-bash">
+                  <p>Byte Bashes are free events hosted by the <a href="https://www.mhsbyte.org">MHS Byte Club</a> to promote computer science, programming, coding, and development. Each event is a combination of fun tutorials, contests, and challenges designed to increase understanding and interest in coding and computer science. <br><br>Byte Bash is a non-competitive event and no prior experience is necessary. The event is open to all current or future MHS students (and faculty!). Your are welcome to attend the tutorials and events even if you cannot stay for the entire time.</p>
+              </div>
+            </div>
+            <div class = "panel panel-default">
+              <div class = "panel-heading"><a data-toggle = "collapse" href = "#faq">Frequently-Asked Questions</a>
+              </div>
+              <div class = "panel-collapse collapse" id = "faq">
+                  <ul>
+                    <li><b>What if I don't know how to code?</b></li>
+                    <li>Don't worry! We're all in some stage of the learning process. Though the first step can seem like the toughest, we want you to take it with us!</li>
+                    <li><b>What if I don't have a computer?</b></li>
+                    <li>No problem. We've got 2 state-of-the-art labs full of desktops waiting for you to use. We've also got Chromebooks and Android tablets to check out for the event.</li>
+                    <li><b>I'm a student at an area sender school, can I attend the event!?</b></li>
+                    <li>Absolutely! The MHS Byte club would love to hear from you. One of our primary goals is to spread computer science and coding to the entire Mundelein community. <a href = "/contacts.html">Contact us for more information.</a> </li>
+                    <li><b>Is guest wi-fi available if I want to bring my own laptop?</b></li>
+                    <li>Yes! Guest wi-fi is available and you are encouraged to bring your own machine to use for the event, complete with any IDEs or other programs you like to use. <b>Please note:</b> Any machine using the guest wi-fi is subject to the <a href = "http://www.d120.org/assets/1/technology/accepatable_use_policy.pdf">D120 Acceptable Use Policy.</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+        <!--<div id = "social">
+              Like the event on Facebook<br>
+              Tweet
+            </div>-->
+        <div id = "instructional-sessions" class = "container well">
+          <h2>Instructional Sessions</h2>
+          <div class = "row">
+            <div class = "sessioninfo col-lg-3 panel panel-default" id = "session1">
+              <div class = "sessionheading">
+                <h2>Create an 'Impossible Game' Screen</h2>
+              </div>
+              <div class = "sessioncontent">
+                <p>Contribute to the Byte Me game by learning JavaScript and Processing.js. Create a graphical game screen that requires users to perform some simple task to get to the next screen. Work with mentors to make your ideas come to life.  </p>
+                <p>Skill level: Beginner</p>
+              </div>
+            </div>
+            <div class = "sessioninfo col-lg-3 panel panel-default" id = "session2">
+              <div class = "sessionheading">
+                <h2>Introductory Web Development</h2>
+              </div>
+              <div class = "sessioncontent">
+                <p>A little goes a long way with this introductory session on HTML/CSS/JS. The three languages of the web work together to create dynamic web pages. Go beyond the limits of Google Sites or other page builders and code a beautiful webpage for yourself!  </p>
+                <p>Skill level: Beginner</p>
+              </div>
+            </div>
+            <div class = "sessioninfo col-lg-3 panel panel-default" id = "session3">
+              <div class = "sessionheading">
+                <h2>Android Apps with App Inventor</h2>
+              </div>
+              <div class = "sessioncontent">
+                <p>Create your first mobile app using free cloud-based development tools like MIT App Inventor. Leave with a basic app that can be downloaded and installed on any Android device!</p>
+              </div>
+            </div>
+            <div class = "sessioninfo col-lg-3 panel panel-default" id = "session4">
+              <div class = "sessionheading">
+                <h2>Basic CS for Teachers!</h2>
+              </div>
+              <div class = "sessioncontent">
+                <p>Do you teach a subject that includes logic? Do you address content that includes mathematics? Do your courses include the use of a language (you know, like, words)? Then you can use computer science to address important concepts! Stop by and learn the basics of computer logic and how CS can help your students can become teachers!</p>
+                <p>Skill Level: Faculty!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id = "contests-challenges" class = "container well">
+          <h2>Contests and Challenges</h2>
+          <div class="row">
+            <div class = "contestinfo col-lg-3 panel panel-default" id = "session4">
+              <div class = "contestheading">
+                <h2>Character Contest</h2>
+              </div>
+              <div class = "sessioncontent">
+                <p>Use Khan Academy's ProcessingJS module to create the most creative, entertaining, or complex character you can. Learn the basics of animating/drawing with Javascript. Check out last year's winner: Ninja Frog by Victoria Ozymko. Anyone can enter, anyone can win!</p>
+                <p>Skill Level: Faculty!</p>
+              </div>
+            </div>
+          <div class = "contestinfo col-lg-3 panel panel-default" id = "session4">
+              <div class = "contestheading">
+                <h2>Webpage Contest</h2>
+              </div>
+              <div class = "contestcontent">
+                <p>Create the best-looking webpage you can with just a little bit of training in HTML, CSS, and Javascript. Build a responsive interactive webpage and learn to make your site intuitive and easy-to-use. Best looking webpage wins!</p>
+              </div>
+            </div>
+          <div class = "contestinfo col-lg-3 panel panel-default" id = "session4">
+            <div class = "contestheading">
+              <h2>Mathing Contest</h2>
+            </div>
+            <div class = "contestcontent" id = "mathing-contest">
+                <p>Out-math your fellow programmers with this logical and mathematical competition. Work with a partner to try and solve a series of mathematical or logical problems using the programming language of your choice! </p>
+            </div>
+                <p><a href = "">See full rules.</a></p>
+          </div>
+           <div class = "contestinfo col-lg-3 panel panel-default" id = "session4">
+            <div class = "contestheading">
+              <h2>The Byte Club 5</h2>
+            </div>
+            <div class = "contestcontent" id = "mathing-contest">
+                <p>Brand new to coding? Try the <a href = "">Byte Club 5</a>. A series of small coding challenges to get the feel for any new computer language. You can use any of the resources listed below to help you with this task. Get started on your CS journey now!</p>
+            </div>
+                <p><a href = "">See full rules.</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default" id="bcfooter">
+          <div class = "panel-body">
+            <h4>You're Byte Club! Why doesn't this webpage look amazing!?!?</h4>
+            <p>First, thanks for noticing. Second, as part of Byte Club we try to work as closely to the actual code as we can. Though there are many editors out there that would let us build a fantastic, multi-media, interactive webpage, we chose to keep it simple. Nearly all of the code on this page was created or adapted by Byte Club members or sponsors. No WYSIWYG editors are used. <br><br>By the way, if you think you can make it look prettier - <a href="http://www.mhsbyte.org">COME TO BYTE CLUB!</a> We meet every Wednesday in C104.</p>
+          </div>
+          <div class="panel-footer"><a href="https://www.mhsbyte.org">Mundelein High School Byte Club 2016</a> | 1350 W. Hawley St. Mundelein, IL<br><b>Club Officers:</b><br> Kenny Stepney, Club President | Natalia Ozymko, Vice President | Victoria Ozymko, Vice President | Komol Patel, Secretary | Angel Montero, Secretary and Webmaster</div>
+        </div>
+      </div>
+      
         	
+
+<!-- Schedule from 2016 -->
+<!--
+<div id="bytebashinfo" style="float:left;">
+  <h1>Today's Events</h1>
+  <ul>
+  	<li>3:30 - Welcome and Introductions</li>
+  	<li>3:45 - Tutorial Sessions
+  <ul>
+  	<li><a href="https://code.org/learn" target="_blank">Code.org HOC Activities</a>: Try these fun and easy coding tutorials. Get your feet wet and complete the hour of code!</li>
+  	<li><a href="https://www.khanacademy.org/computing/computer-programming/programming/drawing-basics/p/intro-to-drawing" target="_blank">Intro to Drawing with Khan Academy and ProcessingJS</a>: Want to get in on the Character Contest? Learn to draw with code at Khan Academy's ProcessingJS module.</li>
+  	<li><a href="https://www.codecademy.com/" target="_blank">Codecademy tutorials</a>: Looking to kick-start a serious study of coding? Codecademy has a fantastic series of tutorials for virtually any modern scripting or coding language. This is the place to start. Use this module to practice for the Web Page Contest as well</li>
+  	<li>Kenny's Java circus!: Byte Club's President takes you through a basic project using the Java programming language.</li>
+  	<li><a href="http://fightcodegame.com/" target="_blank">Intro to FightCode:</a> Start prepping for our FightCode competition! Learn to code a fighting robot that will take on your enemies!</li>
+  </ul>
+  </li>
+  	<li>4:20 - Tutorial Showcase
+  <ul>
+  	<li>How did you spend your first (almost) hour of code!?</li>
+  	<li>Hello World Prizes</li>
+  </ul>
+  </li>
+  	<li>4:30 - Coding Contests
+  <ul>
+  	<li><a href="https://www.khanacademy.org/computer-programming/new/pjs" target="_blank">Character Contest:</a> Use Khan Academy and the drawing tools to create the best character possible</li>
+  	<li><a href="https://docs.google.com/a/d120.org/document/d/1OJFsfFiDdL66Zxs3CacUcSmK5wk2cJfK381sjIhO4Kw/edit?usp=sharing">The Byte Club 5</a>: Use any programming language you want to complete the Byte Club 5 Coding Challenges!</li>
+  	<li>Web Site Contest: Code a website from scratch that has all the bells and whistles. Best site wins a prizes</li>
+  	<li>
+  <ul>
+  	<li><a href="https://www.khanacademy.org/computer-programming/html-editor/4942151691796480" target="_blank">Khan Academy's HTML Builder</a></li>
+  	<li><a href="http://codepen.io/" target="_blank">CodePen.io</a></li>
+  </ul>
+  </li>
+  	<li><a href="http://fightcodegame.com/" target="_blank">FightCode Duels</a>: See how you rank at FightCode</li>
+  	<li><a href="https://projecteuler.net/archives" target="_blank">Project Euler Battle:</a> Form teams and take on the programming challenges at Project Euler. See who can complete the most in the time allotted</li>
+  </ul>
+  </li>
+  	<li>5:30 - Contest Awards</li>
+  	<li>5:40 - Code with Byte Club
+  <ul>
+  	<li>Take some time to explore programming and coding a little bit more. Talk with new and experienced members of Byte Club, show off your own projects and view those of others. See what we're all about.</li>
+  </ul>
+  </li>
+  </ul>
+  <h2>Resources</h2>
+  <ul>
+  	<li>Documentation and reference materials
+  <ul>
+  	<li><a href="http://stackoverflow.com/" target="_blank">Stackoverflow</a></li>
+  	<li><a href="http://www.w3schools.com/" target="_blank">W3Schools</a></li>
+  </ul>
+  </li>
+  	<li><a href="http://www.mhsbyte.org" target="_blank">MHS Byte Club</a></li>
+  </ul>
+</div>
+-->
+
+
+
+<!-- holds js for countdown clock -->
+<script>
+  var deadline = 'Nov 16 2016 16:30:00 GMT-0400';
+  function time_remaining(endtime){
+  	var t = Date.parse(endtime) - Date.parse(new Date());
+  	var seconds = Math.floor( (t/1000) % 60 );
+  	var minutes = Math.floor( (t/1000/60) % 60 );
+  	var hours = Math.floor( (t/(1000*60*60)) % 24 );
+  	var days = Math.floor( t/(1000*60*60*24) );
+  	return {'total':t, 'days':days, 'hours':hours, 'minutes':minutes, 'seconds':seconds};
+  }
+  function run_clock(id,endtime){
+  	var clock = document.getElementById(id);
+  	
+  	// get spans where our clock numbers are held
+  	var days_span = clock.querySelector('.days');
+  	var hours_span = clock.querySelector('.hours');
+  	var minutes_span = clock.querySelector('.minutes');
+  	var seconds_span = clock.querySelector('.seconds');
+  
+  	function update_clock(){
+  		var t = time_remaining(endtime);
+  		
+  		// update the numbers in each part of the clock
+  		days_span.innerHTML = t.days;
+  		hours_span.innerHTML = ('0' + t.hours).slice(-2);
+  		minutes_span.innerHTML = ('0' + t.minutes).slice(-2);
+  		seconds_span.innerHTML = ('0' + t.seconds).slice(-2);
+  		
+  		if(t.total<=0){ clearInterval(timeinterval); }
+  	}
+  	update_clock();
+  	var timeinterval = setInterval(update_clock,1000);
+  }
+  run_clock('clockdiv',deadline);
+</script>
+
+<!--holds styling for countdown clock -->
+<style>
+
+element {
+  --byte-club-teal:#94d1e3;
+}
+
+.jumbotron{
+  text-align:center;
+  color:#eee5e9;
+  background-image: url('https://static.pexels.com/photos/39667/children-win-success-video-game-39667.jpeg');
+  background-size: cover;
+  background-position:0% 20%;
+}
+
+.jumbotron > h1{
+  font-size:75px;
+  font-family: 'JK Abode',sans-serif;
+
+}
+
+h1{
+  color: --byte-club-teal;
+  font-weight: 100;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+}
+
+a{
+  color:--byte-club-teal;
+}
+
+.navbar-brand > a{
+  color:#94d1e3;
+}
+
+.navbar-brand > a:hover{
+  color:#94d1e3;
+  text-decoration:underline;
+}
+
+#maininfo{
+  text-align:center;
+}
+
+#clockdiv{
+	font-family:'JK Abode', sans-serif;
+	color: #94d1e3;
+	display: inline-block;
+	font-weight: 100;
+	text-align: center;
+	font-size: 30px;
+	margin: 5px;
+}
+
+.well {
+  text-align:center;
+}
+
+
+
+
+#clockdiv > div{
+	padding: 10px;
+	border-radius: 3px;
+	background: #7c7c7c;
+	display: inline-block;
+}
+
+#clockdiv div > span{
+	padding: 20px;
+	border-radius: 3px;
+	background: #2b303a;
+	display: inline-block;
+	width:75px;
+}
+
+.smalltext{
+  font-family:sans-serif;
+	padding-top: 5px;
+	font-size: 16px;
+}
+  
+</style>
         	
         	
 	
