@@ -25,21 +25,19 @@
         
         
         <!-- JQuery 3.1.1 Minified! -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
         <!-- Stylesheets. hi Specify how the content of the site should look and feel, e.g. { color: red; font-family: Comic Sans MS; } -->
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/style.css">
 		<!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    	<!-- Optional theme -->
+    	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
     
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    
+	    <!-- Latest compiled and minified JavaScript -->
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	    
     
     
 		
@@ -47,8 +45,8 @@
 		<style>
 		  @font-face {
 		    font-family: 'JK Abode';
-		    src: url('JKAbode-Demo.ttf');
-	      src: local('JK Abode'), local('JK Abode'), url('JKAbode-Demo.ttf') format('truetype');
+		    src: url('fonts/JKAbode-Demo.ttf');
+	      src: local('JK Abode'), local('JK Abode'), url('fonts/JKAbode-Demo.ttf') format('truetype');
 		  }
 		  
 		</style>
@@ -247,8 +245,10 @@
           </div>
         </div>
         <div class="panel panel-default" id="bcfooter">
-          <div class = "panel-body">
-            <h4>You're Byte Club! Why doesn't this webpage look amazing!?!?</h4>
+        	<div class = "panel-header" data-toggle="collapse" data-target="#siteinfo">
+        		<h4><a href = "#siteinfo">You're Byte Club! Why doesn't this webpage look amazing!?!?</a></h4>
+        	</div>
+          <div class = "panel-body collapse" id="siteinfo">
             <p>First, thanks for noticing. Second, as part of Byte Club we try to work as closely to the actual code as we can. Though there are many editors out there that would let us build a fantastic, multi-media, interactive webpage, we chose to keep it simple. Nearly all of the code on this page was created or adapted by Byte Club members or sponsors. No WYSIWYG editors are used. <br><br>By the way, if you think you can make it look prettier - <a href="http://www.mhsbyte.org">COME TO BYTE CLUB!</a> We meet every Wednesday in C104.</p>
           </div>
           <div class="panel-footer"><a href="https://www.mhsbyte.org">Mundelein High School Byte Club 2016</a> | 1350 W. Hawley St. Mundelein, IL<br><b>Club Officers:</b><br> Kenny Stepney, Club President | Natalia Ozymko, Vice President | Victoria Ozymko, Vice President | Komol Patel, Secretary | Angel Montero, Secretary and Webmaster</div>
@@ -411,9 +411,6 @@ a{
   text-align:center;
 }
 
-
-
-
 #clockdiv > div{
 	padding: 10px;
 	border-radius: 3px;
@@ -433,6 +430,13 @@ a{
   font-family:sans-serif;
 	padding-top: 5px;
 	font-size: 16px;
+}
+#siteinfo{
+	text-align:left;
+}
+
+#bcfooter{
+	text-align:center;
 }
   
 </style>
