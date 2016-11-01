@@ -38,6 +38,9 @@
 	    <!-- Latest compiled and minified JavaScript -->
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	    
+	    <!--Pulls other Google Fonts -->
+	    <link href="https://fonts.googleapis.com/css?family=Dosis:300|Exo+2" rel="stylesheet">
+	    
     
     
 		
@@ -103,12 +106,12 @@
 		  <!-- holds the jumbotron -->
         <div class = "jumbotron">
           <h1>Byte Bash_v3.1</h1>
-          <p>Learn. Code. Eat. Repeat.</p>
+          <p style = "color:#ad343e"><b>Learn. Code. Eat. Repeat.</b></p>
           <div class="btn-group">
           <a href = "" type = "button" class = "btn btn-primary" id = "Sign-up" >Sign Up!</a>
           <a href = "#instructional-sessions" type = "button" class = "btn btn-primary" id = "sessions" >Sessions</a>
           <a href = "#contests-challenges" type = "button" class = "btn btn-primary" id = "contests" >Contests</a>
-          <a href = "#about-byte-bash" data-toggle="collapse" data-target="#about-byte-bash" type = "button" class = "btn btn-primary" id = "Sign-up" >Event Info</a>
+          <a href = "#about-byte-bash" data-toggle="collapse" data-target="#bytebashinfo" type = "button" class = "btn btn-primary" id = "Sign-up" >Event Info</a>
           </div>
         </div>
       
@@ -116,11 +119,11 @@
       <div class = "container">
         <div class = "" id = "maininfo">
           <div id = "date">
-            <h1>Wednesday, November 16th</h1>
-            <h4>3:30-7:00 PM in C104</h4>
+            <h2>Wednesday, November 16th, 3:30-7:00 PM</h2>
+            <h4>Mundelein High School Coding Lab (C104)</h4>
           </div>
           <div id = "countdown">
-            <h2>The Bash begins in:</h2>
+            <p>The Bash begins in:</p>
               <div id="clockdiv">
               	<div><span class="days"></span><div class="smalltext">Days</div></div>
               	<div><span class="hours"></span><div class="smalltext">Hours</div></div>
@@ -135,18 +138,20 @@
         
           </div>
         </div>
-          <div class = "panel-group">
-            <div class = "panel panel-default">
-              <div class = "panel-heading"><a data-toggle = "collapse" href = "#about-byte-bash">What is Byte Bash?</a>
+          <div class = "row">
+            <div class = "col-lg-6 panel-primary" id = "bytebashinfo">
+              <div class = "panel-heading">
+                <h3>What is Byte Bash?</h3>
               </div>
-              <div class = "panel-collapse collapse" id = "about-byte-bash">
-                  <p>Byte Bashes are free events hosted by the <a href="https://www.mhsbyte.org">MHS Byte Club</a> to promote computer science, programming, coding, and development. Each event is a combination of fun tutorials, contests, and challenges designed to increase understanding and interest in coding and computer science. <br><br>Byte Bash is a non-competitive event and no prior experience is necessary. The event is open to all current or future MHS students (and faculty!). Your are welcome to attend the tutorials and events even if you cannot stay for the entire time.</p>
+              <div class="panel-content" style = "padding:5px">
+                  <p>Byte Bashes are <b>free events </b> hosted by the <a href="https://www.mhsbyte.org">MHS Byte Club</a> to promote computer science, programming, coding, and development. Each event is a combination of fun tutorials, contests, and challenges designed to increase understanding and interest in coding and computer science. <br><br>Byte Bash is a non-competitive event and no prior experience is necessary. The event is open to all current or future MHS students (and faculty!). Your are welcome to attend the tutorials and events even if you cannot stay for the entire time.</p>
               </div>
             </div>
-            <div class = "panel panel-default">
-              <div class = "panel-heading"><a data-toggle = "collapse" href = "#faq">Frequently-Asked Questions</a>
+            <div class = "col-lg-6 panel-primary">
+              <div class = "panel-heading" id = "bytebashdeets">
+                <h3>Event Details</h3>
               </div>
-              <div class = "panel-collapse collapse" id = "faq">
+              <div class = "panel-content">
                   <ul>
                     <li><b>What if I don't know how to code?</b></li>
                     <li>Don't worry! We're all in some stage of the learning process. Though the first step can seem like the toughest, we want you to take it with us!</li>
@@ -355,8 +360,12 @@
 <!--holds styling for countdown clock -->
 <style>
 
-element {
+* {
   --byte-club-teal:#94d1e3;
+  --light-grey:#7c7c7c;
+  --dark-grey:#2b303a;
+  --byte-club-white:#eee5e9;
+  --byte-club-red:#ad343e;
 }
 
 .jumbotron{
@@ -376,12 +385,31 @@ element {
 h1{
   color: --byte-club-teal;
   font-weight: 100;
-  font-size: 40px;
+  font-size: 50px;
   margin: 40px 0px 20px;
 }
 
-a{
-  color:--byte-club-teal;
+h2{
+  font-family:"Exo 2",sans-serif;
+  font-size:40px;
+}
+
+h3{
+  font-family:"Exo 2",sans-serif;
+  font-size:30px;
+}
+
+h4{
+  font-family:"Exo 2",sans-serif;
+  font-size:25px;
+}
+
+p,li{
+  font-family:'Dosis',sans-serif;
+  font-size:18px;
+}
+a {
+  color:#ad343e;
 }
 
 .navbar-brand > a{
@@ -404,11 +432,24 @@ a{
 	font-weight: 100;
 	text-align: center;
 	font-size: 30px;
-	margin: 5px;
+	margin: 15px;
 }
 
 .well {
   text-align:center;
+  background-color:#7c7c7c;
+}
+
+.panel-header{
+  background-color:#ad343e;
+  
+}
+.btn {
+  background-color:#ad343e;
+}
+
+.btn:hover {
+  background-color:#94d1e3;
 }
 
 #clockdiv > div{
