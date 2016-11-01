@@ -28,7 +28,6 @@
     	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
         <!-- Stylesheets. hi Specify how the content of the site should look and feel, e.g. { color: red; font-family: Comic Sans MS; } -->
-        <link rel="stylesheet" href="css/normalize.css">
 		<!-- Latest compiled and minified CSS -->
    		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
@@ -61,8 +60,19 @@
     </head>
     <body>
         <!-- Border of Binary Code -->
+        <div class="binary">
+        </div>
+        <script>
+			  var binaryString = "01001001011001100010000001111001011011110111010100100111011100100110010100100000011100100110010101100001011001000110100101101110011001110010000001110100011010000110100101110011001000000100101001001111010010010100111000100000010000100101100101010100010001010010000001000011010011000101010101000010";
+			  for(var i=0; i<binaryString.length; i++) {
+			    var div = document.getElementsByClassName("binary")[0];
+				  div.innerText += binaryString[i];
+			  }
+        </script>
+      
+	      
         
-	  
+        
         <!-- Navigation Bar -->
     			<nav class="navbar navbar-inverse">
     			  <div class = "container-fluid">
@@ -106,7 +116,7 @@
 		  <!-- holds the jumbotron -->
         <div class = "jumbotron">
           <h1>Byte Bash_v3.1</h1>
-          <p style = "color:#ad343e"><b>Learn. Code. Eat. Repeat.</b></p>
+          <p style = "color:#eee5e9"><b>Learn. Code. Eat. Repeat.</b></p>
           <div class="btn-group">
           <a href = "" type = "button" class = "btn btn-primary" id = "Sign-up" >Sign Up!</a>
           <a href = "#instructional-sessions" type = "button" class = "btn btn-primary" id = "sessions" >Sessions</a>
@@ -144,24 +154,31 @@
                 <h3>What is Byte Bash?</h3>
               </div>
               <div class="panel-content" style = "padding:5px">
-                  <p>Byte Bashes are <b>free events </b> hosted by the <a href="https://www.mhsbyte.org">MHS Byte Club</a> to promote computer science, programming, coding, and development. Each event is a combination of fun tutorials, contests, and challenges designed to increase understanding and interest in coding and computer science. <br><br>Byte Bash is a non-competitive event and no prior experience is necessary. The event is open to all current or future MHS students (and faculty!). Your are welcome to attend the tutorials and events even if you cannot stay for the entire time.</p>
+                  <p>Byte Bashes are <b>free events </b> hosted 2-3 times a year by the <a href="https://www.mhsbyte.org">MHS Byte Club</a> to promote computer science, programming, coding, and development. Each event is a combination of fun tutorials, contests, and challenges designed to increase understanding and interest in coding and computer science. This one is version 3.1 because it's the first bash of the 3rd year of Byte Club! <br><br>Byte Bash is a non-competitive event and no prior experience is necessary. The event is open to all current or future MHS students (and faculty)! Your are welcome to attend the tutorials and events even if you cannot stay for the entire time. Though we ask that you give it a solid shot by staying at least 90 minutes. If you're brand new to coding, it takes a while to get up and running!</p>
               </div>
             </div>
             <div class = "col-lg-6 panel-primary">
               <div class = "panel-heading" id = "bytebashdeets">
                 <h3>Event Details</h3>
               </div>
-              <div class = "panel-content">
+              <div class = "panel-content pre-scrollable">
                   <ul>
-                    <li><b>What if I don't know how to code?</b></li>
-                    <li>Don't worry! We're all in some stage of the learning process. Though the first step can seem like the toughest, we want you to take it with us!</li>
-                    <li><b>What if I don't have a computer?</b></li>
-                    <li>No problem. We've got 2 state-of-the-art labs full of desktops waiting for you to use. We've also got Chromebooks and Android tablets to check out for the event.</li>
-                    <li><b>I'm a student at an area sender school, can I attend the event!?</b></li>
-                    <li>Absolutely! The MHS Byte club would love to hear from you. One of our primary goals is to spread computer science and coding to the entire Mundelein community. <a href = "/contacts.html">Contact us for more information.</a> </li>
-                    <li><b>Is guest wi-fi available if I want to bring my own laptop?</b></li>
-                    <li>Yes! Guest wi-fi is available and you are encouraged to bring your own machine to use for the event, complete with any IDEs or other programs you like to use. <b>Please note:</b> Any machine using the guest wi-fi is subject to the <a href = "http://www.d120.org/assets/1/technology/accepatable_use_policy.pdf">D120 Acceptable Use Policy.</a></li>
-                  </ul>
+                    <li><b>Date: </b> Wednesday, November 16th, 2016 from 3:30 PM until 7:00 PM</li>
+                    <li><b>Location: </b> Mundelein High School Coding Lab (Room C104)</li>
+                    <li><b>Who's Invited: </b>Any MHS student, faculty, staff member, or sender school students</li>
+                    </li>
+                  </ul>  
+                  <p><b>What if I don't know how to code?</b><br>
+                    Don't worry! We're all in some stage of the learning process. Though the first step can seem like the toughest, we want you to take it with us!<br><br>
+                    <b>What if I don't have a computer?</b><br>
+                    No problem. We've got 2 state-of-the-art labs full of desktops waiting for you to use. We've also got Chromebooks and Android tablets to check out for the event.<br><br>
+                    <b>What if I can't stay the whole time?</b><br>
+                    Coding is fun, but it can take a little while to get up and running. We ask that you give it a shot with us for at least 90 minutes. We promise you'll leave having learned something cool and/or new!<br><br>
+                    <b>I'm a student at an area sender school, can I attend the event!?</b><br>
+                    Absolutely! The MHS Byte club would love to hear from you. One of our primary goals is to spread computer science and coding to the entire Mundelein community. <a href = "/contacts.html">Contact us for more information.</a><br><br>
+                    <b>Is guest wi-fi available if I want to bring my own laptop?</b><br>
+                    Yes! Guest wi-fi is available and you are encouraged to bring your own machine to use for the event, complete with any IDEs or other programs you like to use. <b>Please note:</b> Any machine using the guest wi-fi is subject to the <a href = "http://www.d120.org/assets/1/technology/accepatable_use_policy.pdf">D120 Acceptable Use Policy.</a></li>
+                  </p>
               </div>
             </div>
           </div>
@@ -187,7 +204,7 @@
               </div>
               <div class = "sessioncontent">
                 <p>A little goes a long way with this introductory session on HTML/CSS/JS. The three languages of the web work together to create dynamic web pages. Go beyond the limits of Google Sites or other page builders and code a beautiful webpage for yourself!  </p>
-                <p>Skill level: Beginner</p>
+                <p>Skill level: Beginner/Intermediate</p>
               </div>
             </div>
             <div class = "sessioninfo col-lg-3 panel panel-default" id = "session3">
@@ -196,6 +213,7 @@
               </div>
               <div class = "sessioncontent">
                 <p>Create your first mobile app using free cloud-based development tools like MIT App Inventor. Leave with a basic app that can be downloaded and installed on any Android device!</p>
+                <p>Skill level: Beginner/Intermediate</p>
               </div>
             </div>
             <div class = "sessioninfo col-lg-3 panel panel-default" id = "session4">
@@ -218,8 +236,8 @@
               </div>
               <div class = "sessioncontent">
                 <p>Use Khan Academy's ProcessingJS module to create the most creative, entertaining, or complex character you can. Learn the basics of animating/drawing with Javascript. Check out last year's winner: Ninja Frog by Victoria Ozymko. Anyone can enter, anyone can win!</p>
-                <p>Skill Level: Faculty!</p>
               </div>
+                <p><a href = "">See full rules.</a></p>
             </div>
           <div class = "contestinfo col-lg-3 panel panel-default" id = "session4">
               <div class = "contestheading">
@@ -228,6 +246,7 @@
               <div class = "contestcontent">
                 <p>Create the best-looking webpage you can with just a little bit of training in HTML, CSS, and Javascript. Build a responsive interactive webpage and learn to make your site intuitive and easy-to-use. Best looking webpage wins!</p>
               </div>
+                <p><a href = "">See full rules.</a></p>
             </div>
           <div class = "contestinfo col-lg-3 panel panel-default" id = "session4">
             <div class = "contestheading">
@@ -370,15 +389,17 @@
 
 .jumbotron{
   text-align:center;
-  color:#eee5e9;
+  color:#94d1e3;
   background-image: url('https://static.pexels.com/photos/39667/children-win-success-video-game-39667.jpeg');
   background-size: cover;
   background-position:0% 20%;
+  
 }
 
 .jumbotron > h1{
   font-size:75px;
   font-family: 'JK Abode',sans-serif;
+  text-shadow:3px 3px 3px black;
 
 }
 
@@ -408,8 +429,10 @@ p,li{
   font-family:'Dosis',sans-serif;
   font-size:18px;
 }
+
 a {
   color:#ad343e;
+  font-weight:bold;
 }
 
 .navbar-brand > a{
@@ -437,15 +460,20 @@ a {
 
 .well {
   text-align:center;
-  background-color:#7c7c7c;
+  background-color:#94d1e3;
 }
 
-.panel-header{
+.panel-primary >.panel-heading{
   background-color:#ad343e;
-  
+  border-color:#ad343e;
+}
+
+.panel-default{
+  margin-top:auto;
+  margin-bottom:auto;
 }
 .btn {
-  background-color:#ad343e;
+  background-color:#2b303a;
 }
 
 .btn:hover {
@@ -479,7 +507,19 @@ a {
 #bcfooter{
 	text-align:center;
 }
-  
+
+.binary {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  font-size: 8px;
+        		
+	-webkit-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+	-moz-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+	-ms-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+	-o-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+	transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+}  
 </style>
         	
         	
