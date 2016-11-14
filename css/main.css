@@ -16,6 +16,10 @@ html {
     line-height: 1.4;
 }
 /* Animation Code*/
+body {
+    background:url('../img/pineapple_texture2.jpg');
+}
+
 h {
     background:url('../img/pineapple_texture2.jpg');
     background-repeat:repeat-x;
