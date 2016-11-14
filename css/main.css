@@ -15,6 +15,59 @@ html {
     font-size: 1em;
     line-height: 1.4;
 }
+/* Animation Code*/
+h {
+    background:url('../img/pineapple_texture2.jpg');
+    background-repeat:repeat-x;
+    background-position:0 0;
+    font-size:200px;
+    text-transform:uppercase;
+    text-align:center;
+    font-family:'Luckiest Guy';
+    color:transparent;
+    -webkit-font-smoothing:antialiased;
+    -webkit-background-clip:text;
+    -moz-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin:0;
+        -webkit-animation:BackgroundAnimated 15s linear infinite;
+    -moz-animation:BackgroundAnimated 15s linear infinite;
+    -ms-animation:BackgroundAnimated 15s linear infinite;
+    -o-animation:BackgroundAnimated 15s linear infinite;
+    animation:BackgroundAnimated 15s linear infinite;
+}
+    @keyframes BackgroundAnimated {
+    from {
+        background-position:0 0
+    }
+    to {
+        background-position:100% 0
+    }
+}
+    @-webkit-keyframes BackgroundAnimated {
+    from {
+        background-position:0 0
+    }
+    to {
+        background-position:100% 0
+    }
+}
+    @-ms-keyframes BackgroundAnimated {<     from {
+        background-position:0 0
+    }
+    to {
+        background-position:100% 0
+    }
+}
+    @-moz-keyframes BackgroundAnimated {
+    from {
+        background-position:0 0
+    }
+    to {
+        background-position:100% 0
+    }
+}
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
