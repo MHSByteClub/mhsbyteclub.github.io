@@ -16,7 +16,7 @@ html {
     line-height: 1.4;
 }
 /* Animation Code*/
-/* REmoved for byte bash
+ REmoved for byte bash
 body {
     background:url('../img/pineapple_texture.jpg');
 }
@@ -73,7 +73,7 @@ p {
         background-position:100% 0
     }
 }
-*/
+
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.
