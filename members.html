@@ -15,38 +15,39 @@
 	        <link rel="stylesheet" href="css/normalize.css">
 	        <link rel="stylesheet" href="css/main.css">
 	        
-	        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	        
-		<link rel="stylesheet" href="css/style.css">
+	        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	        <script src = "js/memberinfo.js"></script>
+			<link rel="stylesheet" href="css/style.css">
 	        <script src="js/vendor/modernizr-2.8.0.min.js"></script>
 	</head>
-	<body>
-		<div id="wrap" class="container">
+	<body onload = "populatePinStyle(members)">
+		<div id="" class="container-fluid">
 
         <!-- Border of Binary Code -->
-        <div class="binary">
-        </div>
-        <style>
-        	.binary {
-        		position: fixed;
-        		top: 0px;
-        		left: 0px;
-        		font-size: 8px;
-        		
-				-webkit-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-				-moz-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-				-ms-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-				-o-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-				transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-        	}
-        </style>
-        <script>
-			var binaryString = "01001001011001100010000001111001011011110111010100100111011100100110010100100000011100100110010101100001011001000110100101101110011001110010000001110100011010000110100101110011001000000100101001001111010010010100111000100000010000100101100101010100010001010010000001000011010011000101010101000010";
-			for(var i=0; i<binaryString.length; i++) {
-			    var div = document.getElementsByClassName("binary")[0];
-				div.innerText += binaryString[i];
-			}
-        </script>
+	        <div class="binary">
+	        </div>
+	        
+	        <style>
+	        	.binary {
+	        		position: fixed;
+	        		top: 0px;
+	        		left: 0px;
+	        		font-size: 8px;
+	        		
+					-webkit-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+					-moz-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+					-ms-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+					-o-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+					transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+	        	}
+		    </style>
+	        <script>
+				var binaryString = "01001001011001100010000001111001011011110111010100100111011100100110010100100000011100100110010101100001011001000110100101101110011001110010000001110100011010000110100101110011001000000100101001001111010010010100111000100000010000100101100101010100010001010010000001000011010011000101010101000010";
+				for(var i=0; i<binaryString.length; i++) {
+				    var div = document.getElementsByClassName("binary")[0];
+					div.innerText += binaryString[i];
+				}
+	        </script>
 
 
 			<!-- Banner! -->
@@ -80,9 +81,348 @@
         			</ul>
     			</nav>
 			</div>
+			<div style = "text-align:center"><h2>Byte Club Members</h2></div>
+			<div class = "well" id = 'members-container'>
+					
+					<!-- Miles Davis sample member card 
+					<div class = 'member-card col-lg-4' id = 'milesdavis'>
+            			<div class = "card-picture"><img class = "img-circle" src = "http://a5.files.biography.com/image/upload/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTE1ODA0OTcxNjAxOTg3MDg1.jpg">
+            			</div>
+                		
+	                		<div class = "card-name">
+	                   			 Miles Davis
+	               			</div>
+	               			<div class = "card-role">Active Member
+	               			</div>
+	               			<hr>
+	               			<div class = "card-content">
+		               			<div class = "card-stats">
+		               				<div class = 'stats-meetings'>
+		               					<b>Meetings Attended: </b> 3
+		               				</div>
+		               				<div class = 'stats-streak'>
+		               					<b>Streak:</b> 3
+		               				</div>
+		               				<div class = 'stats-memberlevel'>
+		               					<b>Level:</b> Journeyman
+		               				</div>
+		               			</div>
+		               			<div class = 'card-interests'>
+		                			<b>Interests: </b>Jazz, Coolness, Civil Rights, JavaScript
+		                		</div>
+		               			<br>
+		               			<div class = "card-quote">
+		                    		'Yeah, I bet you didn't know I was in Byte Club. That's cool.'
+		                		</div>
+		                		<br>
+		                		
+				                <div class = "card-footer">
+				                    <a href = "http://www.google.com" class = "btn btn-info" role = "button" target = "_blank">Member Page</a>
+					                <div class = "clear">
+					                
+					                </div>
+	                			</div>
+	                	</div>
+                	</div> -->
+    		</div>
+    		<!-- Member Card Styling -->
+    		<style>
+    			.member-card{
+    				background-color:white;
+    				text-align:center;
+    				padding:25px;
+    				margin-top:20px;
+    				height:100%;
+    				box-shadow: 2px 2px 10px #444444;
+    			}
+    			
+    			.card-picture{
+    				padding:5px;
+    				max-width:100%;
+    			}
+    			
+    			
+    			.card-picture img{
+    				max-width:60%;
+    			}
+    			
+    			.card-content{
+    				text-align:left;
+    				padding:5px;
+    			}
+    			
+    			
+    			.card-role{
+    				text-align:center;
+    			}
+    			
+    			.card-name{
+    				font-size:20px;
+    				text-align:center;
+    			}
+    			
+    			.card-footer{
+    				text-align:right;
+    			}
+    		
+    		</style>
+						
+					
+						
+		</div>
+		
+		
+		<script>
+			
+			
+			
+			
+			
+			
+			
+			
+			//first version, table style
+			function populateMembers(memberslist){
+				var memberHolder = document.getElementById('members-container');
+				var numberOfMembers = memberslist.length+1;
+				var rows = [];
+				
+				//builds enough rows to hold 3 member cards per row
+				for (var j = 0; j<Math.ceil(numberOfMembers/3); j++){
+					var row = document.createElement('div');
+					row.setAttribute('class', 'row is-table-row');
+					//rows.append(row);
+				}
+				
+				
+				for(var i = 0; i < memberslist.length; i ++){
+					
+					var activeMember = memberslist[i];
+					var card = document.createElement('div');   //builds member card
+					if(i===0 || i%3===0){
+						card.setAttribute('class','member-card col-lg-3');  //adds classes
+					} else if (i%3===1){
+						card.setAttribute('class','member-card col-lg-3 col-lg-offset-5'); 
+					} else if (i%3===2){
+						card.setAttribute('class', 'member-card col-lg-3 col-lg-offset-11')
+					}
+						card.setAttribute('id',activeMember.lastName);  //adds the last name as the card id
+					
+					var pictureDiv = document.createElement('div');
+					pictureDiv.setAttribute('class','card-picture');
+					
+					var picture = document.createElement("img");
+					picture.setAttribute('class','img-circle');
+					picture.setAttribute('src',activeMember.pictureURL);
+					
+					
+					var nameDiv = document.createElement('div');
+					nameDiv.setAttribute('class', 'card-name');
+					nameDiv.innerHTML = activeMember.firstName + " " + activeMember.lastName;
+					
+					var roleDiv = document.createElement('div');
+					roleDiv.setAttribute('class', 'card-role');
+					roleDiv.innerHTML = activeMember.role;
+					
+					var spacer = document.createElement('hr');
+					
+					var contentDiv = document.createElement('div');
+					contentDiv.setAttribute('class','card-content')
+					
+					var statsDiv = document.createElement('div');
+					statsDiv.setAttribute('class', 'card-stats');
+					
+					var meetingDiv = document.createElement('div');
+					meetingDiv.setAttribute('class', 'card-meetings');
+					meetingDiv.innerHTML = "<b>Meetings Attended:</b> " + activeMember.meetings;
+					
+					var streakDiv = document.createElement('div');
+					streakDiv.setAttribute('class', 'card-streak');
+					streakDiv.innerHTML = "<b>Meeting Streak:</b> " +activeMember.streak;
+					
+					var levelDiv = document.createElement('div');
+					levelDiv.setAttribute('class', 'card-meetings');
+					levelDiv.innerHTML = "<b>Level:</b> " +activeMember.level;
+					
+					var interestsDiv = document.createElement('div');
+					interestsDiv.setAttribute('class', 'card-interests');
+					interestsDiv.innerHTML = "<b>Interests:</b> " +activeMember.interests;
+					
+					var spacer2 = document.createElement('br');
+					
+					var quoteDiv = document.createElement('div');
+					quoteDiv.setAttribute('class', 'card-quote');
+					quoteDiv.innerHTML = activeMember.quote;
+					
+					var footerDiv = document.createElement('div');
+					footerDiv.setAttribute('class', 'card-footer');
+					
+					var pageButton = document.createElement('a');
+					pageButton.setAttribute('href', activeMember.githubID);
+					pageButton.setAttribute('class', 'btn btn-info');
+					pageButton.setAttribute('role','button');
+					pageButton.setAttribute('target','_blank');
+					pageButton.innerHTML="Member Page";
+					footerDiv.appendChild(pageButton);
+					
+					pictureDiv.appendChild(picture);
+					card.appendChild(pictureDiv);
+					card.appendChild(nameDiv);
+					card.appendChild(roleDiv);
+					card.appendChild(spacer);
+					
+					statsDiv.appendChild(meetingDiv);
+					statsDiv.appendChild(streakDiv);
+					statsDiv.appendChild(interestsDiv);
+					statsDiv.appendChild(spacer2);
+					statsDiv.appendChild(quoteDiv);
+					
+					contentDiv.appendChild(statsDiv);
+					card.appendChild(contentDiv);
+					card.appendChild(footerDiv);
+					row.appendChild(card);
+					memberHolder.appendChild(row);
+					
+				}
+			};
+			
+		
+			
+			function populatePinStyle(memberslist){
+				var memberHolder = document.getElementById('members-container');
+				var numberOfMembers = memberslist.length+1;
+				var mainRow = document.createElement('div');
+				mainRow.setAttribute('class','row');
+				memberHolder.appendChild(mainRow);
+				
+				var columns = []; //list to hold each column
+				
+				//builds 3 columns to hold the member cards
+				for(var c = 1; c < 4; c++){
+					var column = document.createElement('div');
+					column.setAttribute('class', 'member-column col-md-4');
+					var columnID = 'column' + c;
+					column.setAttribute('id',columnID);
+					columns.push(column);
+					mainRow.appendChild(column);
+				};
+				
+				
+				//creates and populates a member card for each member in the list
+				for(var i = 0; i < memberslist.length; i ++){
+					
+					var activeMember = memberslist[i];
+					var card = document.createElement('div');   //builds member card
+					card.setAttribute('class', 'member-card')
+					card.setAttribute('id',activeMember.lastName);  //adds the last name as the card id
+					
+					var pictureDiv = document.createElement('div');
+					pictureDiv.setAttribute('class','card-picture');
+					
+					var picture = document.createElement("img");
+					picture.setAttribute('class','img-circle');
+					picture.setAttribute('src',activeMember.pictureURL);
+					
+					
+					var nameDiv = document.createElement('div');
+					nameDiv.setAttribute('class', 'card-name');
+					nameDiv.innerHTML = activeMember.firstName + " " + activeMember.lastName;
+					
+					var roleDiv = document.createElement('div');
+					roleDiv.setAttribute('class', 'card-role');
+					roleDiv.innerHTML = activeMember.role;
+					
+					var spacer = document.createElement('hr');
+					
+					var contentDiv = document.createElement('div');
+					contentDiv.setAttribute('class','card-content')
+					
+					var statsDiv = document.createElement('div');
+					statsDiv.setAttribute('class', 'card-stats');
+					
+					var meetingDiv = document.createElement('div');
+					meetingDiv.setAttribute('class', 'card-meetings');
+					meetingDiv.innerHTML = "<b>Meetings Attended:</b> " + activeMember.meetings;
+					
+					var streakDiv = document.createElement('div');
+					streakDiv.setAttribute('class', 'card-streak');
+					streakDiv.innerHTML = "<b>Meeting Streak:</b> " +activeMember.streak;
+					
+					var levelDiv = document.createElement('div');
+					levelDiv.setAttribute('class', 'card-meetings');
+					levelDiv.innerHTML = "<b>Level:</b> " +activeMember.level;
+					
+					var interestsDiv = document.createElement('div');
+					interestsDiv.setAttribute('class', 'card-interests');
+					interestsDiv.innerHTML = "<b>Interests:</b> " +activeMember.interests;
+					
+					var spacer2 = document.createElement('br');
+					
+					var quoteDiv = document.createElement('div');
+					quoteDiv.setAttribute('class', 'card-quote');
+					quoteDiv.innerHTML = activeMember.quote;
+					
+					var footerDiv = document.createElement('div');
+					footerDiv.setAttribute('class', 'card-footer');
+					
+					var pageButton = document.createElement('a');
+					pageButton.setAttribute('href', activeMember.githubID);
+					pageButton.setAttribute('class', 'btn btn-info');
+					pageButton.setAttribute('role','button');
+					pageButton.setAttribute('target','_blank');
+					pageButton.innerHTML="Member Page";
+					
+					//builds card footer with button
+					footerDiv.appendChild(pageButton);
+					
+					//builds card heading
+					pictureDiv.appendChild(picture);
+					card.appendChild(pictureDiv);
+					card.appendChild(nameDiv);
+					card.appendChild(roleDiv);
+					card.appendChild(spacer);
+					
+					//builds card stats
+					statsDiv.appendChild(meetingDiv);
+					statsDiv.appendChild(streakDiv);
+					statsDiv.appendChild(interestsDiv);
+					statsDiv.appendChild(spacer2);
+					statsDiv.appendChild(quoteDiv);
+					
+					//adds card stats to card
+					contentDiv.appendChild(statsDiv);
+					
+					//builds complete card
+					card.appendChild(contentDiv);
+					card.appendChild(footerDiv);
+					
+					var activeColumn = columns[i%3];
+					//var columnID = 'column' + ((i%3)+1);
+					//console.log(columnID);
+					//var activeColumn = document.getElementById(columnID);
+					activeColumn.appendChild(card);
+					
+					
+					
+					
+				};
+				
+			};
+			
+		</script>
+					
+					
+				
+				
+				
+				
 
-
-			<p></p>
+			
+			
+			<!-- Old Member Page Content
+			
+			
+			
 			<h2>Hello Members</h2>
 			<div class="row">
 				<div class="col-lg-6"> 
@@ -138,6 +478,9 @@
 					<p><a href="http://angelmontheod.github.io">Angel's Site</a></p>
 				</div>
 			</div>
+			-->
+			
+			
 		</div>
 	</body>
 	<br>
