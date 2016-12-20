@@ -16,11 +16,18 @@
 	        <link rel="stylesheet" href="css/main.css">
 	        
 	        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	        <script src = "js/memberinfo.js"></script>
+	        <!--<script src = "js/memberinfo.js"></script>-->
 			<link rel="stylesheet" href="css/style.css">
+	        
+	        <!-- pulls in modernizer -->
 	        <script src="js/vendor/modernizr-2.8.0.min.js"></script>
+	        
+	        <!-- tasty jquery goodness -->
+	        <script  src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous"></script>
+	        
+	        
 	</head>
-	<body onload = "populatePinStyle(members)">
+	<body>
 		<div id="" class="container-fluid">
 
         <!-- Border of Binary Code -->
@@ -82,6 +89,8 @@
     			</nav>
 			</div>
 			<div style = "text-align:center"><h2>Byte Club Members</h2></div>
+			<button class = "btn btn-info" onclick = "sortMembersByName(rawMembers,'name')">Sort members by Name</button>
+			<button class = "btn btn-info" onclick = "sortMembersByRole(rawMembers,'role')">Sort members by Role</button>
 			<div class = "well" id = 'members-container'>
 					
 					<!-- Miles Davis sample member card 
@@ -136,6 +145,12 @@
     				box-shadow: 2px 2px 10px #444444;
     			}
     			
+    			.stacked{
+    				
+    				top:15%;
+    				width:50%;
+    			}
+    			
     			.card-picture{
     				padding:5px;
     				max-width:100%;
@@ -175,121 +190,112 @@
 		<script>
 			
 			
+			//holding raw member data for now//
+			var rawMembers = [];
 			
 			
+			//Trying to use some jquery here to get the data.
+			/**** Called when document finishes loading ****/
+			$(document).ready(function(){
+			  getMemberData();
+			  console.log('executed getMembers');
+			});
 			
-			
-			
-			
-			//first version, table style
-			function populateMembers(memberslist){
-				var memberHolder = document.getElementById('members-container');
-				var numberOfMembers = memberslist.length+1;
-				var rows = [];
-				
-				//builds enough rows to hold 3 member cards per row
-				for (var j = 0; j<Math.ceil(numberOfMembers/3); j++){
-					var row = document.createElement('div');
-					row.setAttribute('class', 'row is-table-row');
-					//rows.append(row);
-				}
-				
-				
-				for(var i = 0; i < memberslist.length; i ++){
+			// called when the document is loaded, downloads the match responses list
+			// and creates the people array from it
+			var getMemberData = function() {
+				$.get( "/memberinfo.csv", function( data ) {
+					//$( ".data" ).html( data );
 					
-					var activeMember = memberslist[i];
-					var card = document.createElement('div');   //builds member card
-					if(i===0 || i%3===0){
-						card.setAttribute('class','member-card col-lg-3');  //adds classes
-					} else if (i%3===1){
-						card.setAttribute('class','member-card col-lg-3 col-lg-offset-5'); 
-					} else if (i%3===2){
-						card.setAttribute('class', 'member-card col-lg-3 col-lg-offset-11')
+					var lines = data.split("\n");
+					
+					for(var i = 1; i < lines.length; i++) {
+						rawMembers.push(new member(lines[i].split(",")));
 					}
-						card.setAttribute('id',activeMember.lastName);  //adds the last name as the card id
 					
-					var pictureDiv = document.createElement('div');
-					pictureDiv.setAttribute('class','card-picture');
-					
-					var picture = document.createElement("img");
-					picture.setAttribute('class','img-circle');
-					picture.setAttribute('src',activeMember.pictureURL);
-					
-					
-					var nameDiv = document.createElement('div');
-					nameDiv.setAttribute('class', 'card-name');
-					nameDiv.innerHTML = activeMember.firstName + " " + activeMember.lastName;
-					
-					var roleDiv = document.createElement('div');
-					roleDiv.setAttribute('class', 'card-role');
-					roleDiv.innerHTML = activeMember.role;
-					
-					var spacer = document.createElement('hr');
-					
-					var contentDiv = document.createElement('div');
-					contentDiv.setAttribute('class','card-content')
-					
-					var statsDiv = document.createElement('div');
-					statsDiv.setAttribute('class', 'card-stats');
-					
-					var meetingDiv = document.createElement('div');
-					meetingDiv.setAttribute('class', 'card-meetings');
-					meetingDiv.innerHTML = "<b>Meetings Attended:</b> " + activeMember.meetings;
-					
-					var streakDiv = document.createElement('div');
-					streakDiv.setAttribute('class', 'card-streak');
-					streakDiv.innerHTML = "<b>Meeting Streak:</b> " +activeMember.streak;
-					
-					var levelDiv = document.createElement('div');
-					levelDiv.setAttribute('class', 'card-meetings');
-					levelDiv.innerHTML = "<b>Level:</b> " +activeMember.level;
-					
-					var interestsDiv = document.createElement('div');
-					interestsDiv.setAttribute('class', 'card-interests');
-					interestsDiv.innerHTML = "<b>Interests:</b> " +activeMember.interests;
-					
-					var spacer2 = document.createElement('br');
-					
-					var quoteDiv = document.createElement('div');
-					quoteDiv.setAttribute('class', 'card-quote');
-					quoteDiv.innerHTML = activeMember.quote;
-					
-					var footerDiv = document.createElement('div');
-					footerDiv.setAttribute('class', 'card-footer');
-					
-					var pageButton = document.createElement('a');
-					pageButton.setAttribute('href', activeMember.githubID);
-					pageButton.setAttribute('class', 'btn btn-info');
-					pageButton.setAttribute('role','button');
-					pageButton.setAttribute('target','_blank');
-					pageButton.innerHTML="Member Page";
-					footerDiv.appendChild(pageButton);
-					
-					pictureDiv.appendChild(picture);
-					card.appendChild(pictureDiv);
-					card.appendChild(nameDiv);
-					card.appendChild(roleDiv);
-					card.appendChild(spacer);
-					
-					statsDiv.appendChild(meetingDiv);
-					statsDiv.appendChild(streakDiv);
-					statsDiv.appendChild(interestsDiv);
-					statsDiv.appendChild(spacer2);
-					statsDiv.appendChild(quoteDiv);
-					
-					contentDiv.appendChild(statsDiv);
-					card.appendChild(contentDiv);
-					card.appendChild(footerDiv);
-					row.appendChild(card);
-					memberHolder.appendChild(row);
-					
-				}
+					console.log(rawMembers);
+					stackCards(rawMembers);
+				});
 			};
 			
-		
+			function member(datastring){
+				this.name = datastring[3];
+				this.role = datastring[1];
+				this.id = datastring[2];
+				this.streak = 0;
+				this.level = 0;
+				this.meetings = 0;
+				this.interests = "";
+				this.quote = "";
+				this.githubID = datastring[4];
+				this.pictureURL = datastring[25];
+				this.level = '';
+				this.quote = 'This is a quote from this member!';
+				this.interests = 'INTERSTS ARE INTERESTING!';
+				this.memberURL = 'http://'+this.githubID + '.github.io';
+				this.fillIn = function(){
+					if(this.role ===""){
+						this.role = 'Active Member';
+					}
+					if(this.pictureURL === ""){
+						this.pictureURL = 'tile.png';
+					}
+					
+				};
+			}
 			
-			function populatePinStyle(memberslist){
+			
+			
+			//Stacks cards by applying the 'stacked' class
+			function stackCards(memberslist){
 				var memberHolder = document.getElementById('members-container');
+				memberHolder.innerHTML='';
+				var stackholder = document.createElement('div');
+				stackholder.setAttribute('class','row stackholder');
+				var cardList = buildCards(memberslist);
+				for(var i = 0; i < cardList.length; i++){
+					var activeCard = cardList[i];
+					activeCard.setAttribute('class', 'member-card col-md-4 stacked');
+
+					stackholder.appendChild(activeCard);
+				}
+				memberHolder.appendChild(stackholder);
+			}
+			
+		
+			//sorting array by desired method//
+			function sortMembersByName(memberslist,name){
+					memberslist.sort(function(a, b){
+				    var keyA=a.name.toLowerCase(), keyB=b.name.toLowerCase();
+				    if (keyA < keyB) //sort string ascending
+				        return -1; 
+				    if (keyA > keyB)
+				        return 1;
+				    return 0 //default return value (no sorting)
+				})
+				dealCards(memberslist);
+			};
+			
+			function sortMembersByRole(memberslist,role){
+					memberslist.sort(function(a, b){
+				    var keyA=a.role.toLowerCase(), keyB=b.role.toLowerCase();
+				    if (keyA > keyB) //sort string adescending
+				        return -1; 
+				    if (keyA < keyB)
+				        return 1;
+				    return 0 //default return value (no sorting)
+				})
+				dealCards(memberslist);
+			};
+			
+			
+		
+		
+			//builds card holding columns and populates them using the sorted member list
+			function dealCards(memberslist){
+				var cardList = buildCards(memberslist);
+				var memberHolder = document.getElementById('members-container');
+				memberHolder.innerHTML = "";
 				var numberOfMembers = memberslist.length+1;
 				var mainRow = document.createElement('div');
 				mainRow.setAttribute('class','row');
@@ -307,14 +313,29 @@
 					mainRow.appendChild(column);
 				};
 				
+				for (var j = 0; j < cardList.length; j++){
+					var activeCard = cardList[j];
+					//var activeColumn = columns[i%3];
+					var columnGetter = 'column' + ((j%3)+1);
+					//console.log(columnID);
+					var activeColumn = document.getElementById(columnGetter);
+					activeColumn.appendChild(activeCard);
+					activeCard.setAttribute('class', 'member-card col-md-4');
+				};
+			}
+			
 				
 				//creates and populates a member card for each member in the list
+				
+			function buildCards(memberslist){	
+				var memberCards = [];
 				for(var i = 0; i < memberslist.length; i ++){
 					
 					var activeMember = memberslist[i];
+					activeMember.fillIn();    //fills in missing information with place holders
 					var card = document.createElement('div');   //builds member card
-					card.setAttribute('class', 'member-card')
-					card.setAttribute('id',activeMember.lastName);  //adds the last name as the card id
+					card.setAttribute('class', 'member-card');
+					card.setAttribute('id',activeMember.name);  //adds the last name as the card id
 					
 					var pictureDiv = document.createElement('div');
 					pictureDiv.setAttribute('class','card-picture');
@@ -326,7 +347,7 @@
 					
 					var nameDiv = document.createElement('div');
 					nameDiv.setAttribute('class', 'card-name');
-					nameDiv.innerHTML = activeMember.firstName + " " + activeMember.lastName;
+					nameDiv.innerHTML = activeMember.name;
 					
 					var roleDiv = document.createElement('div');
 					roleDiv.setAttribute('class', 'card-role');
@@ -335,7 +356,7 @@
 					var spacer = document.createElement('hr');
 					
 					var contentDiv = document.createElement('div');
-					contentDiv.setAttribute('class','card-content')
+					contentDiv.setAttribute('class','card-content');
 					
 					var statsDiv = document.createElement('div');
 					statsDiv.setAttribute('class', 'card-stats');
@@ -366,7 +387,7 @@
 					footerDiv.setAttribute('class', 'card-footer');
 					
 					var pageButton = document.createElement('a');
-					pageButton.setAttribute('href', activeMember.githubID);
+					pageButton.setAttribute('href', activeMember.memberURL);
 					pageButton.setAttribute('class', 'btn btn-info');
 					pageButton.setAttribute('role','button');
 					pageButton.setAttribute('target','_blank');
@@ -395,19 +416,14 @@
 					//builds complete card
 					card.appendChild(contentDiv);
 					card.appendChild(footerDiv);
-					
-					var activeColumn = columns[i%3];
-					//var columnID = 'column' + ((i%3)+1);
-					//console.log(columnID);
-					//var activeColumn = document.getElementById(columnID);
-					activeColumn.appendChild(card);
-					
-					
-					
-					
-				};
+					memberCards.push(card);
+				}
+				return memberCards;	
+			}
 				
-			};
+
+		
+		
 			
 		</script>
 					
