@@ -12,8 +12,8 @@
         <title>Graduation Seating Arranger</title>
 
         <!-- Stylesheets. Specify how the content of the site should look and feel, e.g. { color: red; font-family: Comic Sans MS; } -->
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <!--<link rel="stylesheet" href="css/normalize.css">-->
+        <!--<link rel="stylesheet" href="css/main.css">-->
     	<!-- Add a sign in when we can use javascript -->
         <script src="js/vendor/modernizr-2.8.0.min.js"></script>
         
@@ -44,18 +44,39 @@
         	<h1><a href="/"><img src="img/byteclub-banner-teal-low.jpg" alt="Byte Club: Start Right"></a></h1>
 
         	<h1>Graduation seating arranger version 1.1</h1>
-        	<p>Updates (4/14/16):</p>
+        	<p>Updates (3/1/17):</p>
         	<ul>
-            	<li>Support for denoting "Summa Cum Laude" graduates as a separate block has been removed</li>
             	<li>Alphabetical order is carried across each row per request.</li>
             	<li>Number of rows is automatically calculated and used to create the tables.</li>
             	<li>To improve readability and flexibility, the two sides of the seating arrangement are now separate tables.</li>
         	</ul>
 
-            <p>Instructions (updated 4/14/16):</p>
+            <p>Instructions (updated 3/1/17):</p>
             <ul>
-            	<li>Enter line-separated names (in lastname, firstname format) in the textbox.</li>
-            	<li>Students with 'NW' (for 'not walking') after their name will be automatically removed.</li>
+            	<li>Copy directly from an Excel workbook with the following format:</li>
+            		<ul>
+            			<table style = "width:300px; border-width:1px">
+            				<tr>
+            					<th>Last Name</th>
+            					<th>First Name</th>
+            					<th>School</th>
+            					<th>Graduate</th>
+            				</tr>
+            				<tr>
+            					<td>Student</td>
+            					<td>Sally</td>
+            					<td>MHS</td>
+            					<td>X</td>
+            				</tr>
+            				<tr>
+            					<td>Sample</td>
+            					<td>Ima</td>
+            					<td>MHS</td>
+            					<td>X</td>
+            				</tr>
+            			</table>
+            		</ul>
+            	<li>Students without an "X" in the "Graduate" column are not included in the arrangement</li>
             	<li>Press 'Try it' to arrange seating. </li>
             	<li>The left and right sides of the seating block will be created as separate tables.</li>
             	<li>Copy and paste to whatever formatting program you like!</li>
@@ -64,7 +85,7 @@
             Rows after: <br><input id="rows" type="number" value="27"><br><br>
             Columns on each side: <br><input id="cols" type="number" value="20"><br><br><br>
             
-            <textarea id="names" placeholder="Balogh, Dan $"></textarea>
+            <textarea id="names" placeholder="Balogh, Dan $" style = "width: 300px; height: 100px"></textarea>
             <br><br>
             
             <button onclick="createTable()">Try it</button>
@@ -87,7 +108,7 @@
 				}
 				
 				// last name
-				txt += ', ';
+				txt += '	';
 				txt += upper.charAt(Math.floor(Math.random() * upper.length));
 				for(var i=0; i < Math.random()*3+3; i++ ) {
 					txt += lower.charAt(Math.floor(Math.random() * lower.length));
@@ -96,9 +117,9 @@
 				// summa
 				var rand = Math.random();
 				if(rand < 0.2) { // summa
-					txt += " $";
-				} else if(rand < 0.25) { // not walking
-					txt += " NW";
+					txt += "";
+				} else if(rand < 0.80) { // not walking
+					txt += "	X";
 				}
 				
 				txt += '\n';
@@ -108,9 +129,12 @@
 		}
 	    
 		function createTable() {
+			/*** Updated for 2017 to allow for easier name entry ***/
 			/*Gets value of 'names' element, splits at line break and stores it to nameString */
 	        var textareaText = document.getElementById('names').value;
+	        //Splits at new line
 	        var nameString = textareaText.split("\n");
+	        //Initializes a list to hold summa students, DEPRICATED 3/1/17
 	        var summaNameString = [];
 	        
 	        /*Sorts name string alphabetically I assume */
@@ -118,15 +142,15 @@
 	    
 	        var i = 0;
 	        while(i < nameString.length) {
-	        	/*checks each nameString entry to see if they're not walking by checking if NW is written before their name*/
-	          if(!nameString[i] || nameString[i].indexOf(' NW') !== -1) { // not walking
+	        	/*checks each nameString entry to see if X is at the end of their string. X indicates they ARE walking*/
+	          if(!nameString[i].includes("	X")) { // checks if nameString includes tabchar+X to indicate walking, if X is removed, not walking
 	            nameString.splice(i, 1);
 	          } else {
-	            var splitName = nameString[i].split(','); //remove commas
+	            var splitName = nameString[i].split('	'); //remove tab characters
 	            var first = splitName[1];
 	            var last = splitName[0];
 	            nameString[i] = first + " " + last; //flip so it is first name last name
-	            if(nameString[i][nameString[i].length - 1] === ',') {
+	            if(nameString[i][nameString[i].length - 1] === '	') {
 	              nameString[i] = nameString[i].substring(0, nameString[i].length);
 	            }
 	            
@@ -142,13 +166,14 @@
 	    
 	        var columnSize = parseInt(document.getElementById("cols").value,10); //number of seats per side
 	        //var summaRowAmount = parseInt(document.getElementById("summarows").value,1); //number of summa rows, deprecated 4/15/16
-	        var rowAmount = parseInt(document.getElementById("rows").value,10); //number of non-summa rows
+	        var rowAmount = parseInt(document.getElementById("rows").value,10); //number of non-summa rows, deprecated 3/1/17
 	        var autoRowAmount = Math.ceil(nameString.length / (columnSize*2));
 	        console.log('Column Size: '+ columnSize);
 	        console.log('Auto row amount: ' + autoRowAmount);
 	        console.log('Length of the name string: ' +nameString.length);
 	        //document.getElementById("result").innerHTML = tableFromNamestring(summaNameString, summaRowAmount, columnSize); //runs function to create Summa table, depricated 4/15/16
 	        //document.getElementById("result").innerHTML += "<br><br>"; //inserts breaks between the summa and standard block
+	        document.getElementById('result').innerHTML = ""; //clears results incase multiple runs are needed.
 	        document.getElementById("result").innerHTML += tableFromNamestring(nameString, autoRowAmount, columnSize);
 	    } 
 	    
@@ -162,7 +187,7 @@
 	          nameString.push("&nbsp;&nbsp;");
 	        }
 
-		console.log(nameString);
+		//console.log(nameString);
 	    
 	        for(var r = 0; r < autoRowAmount; r++) {
 	          resultString += '<tr>';
@@ -207,7 +232,9 @@
 	    }
 	    </script>
 	    <style>
+	    	/* styling the graduation table */
 	    	.gradtable{
+	    		overflow:scroll;
 	    		padding:5px;
 	    		margin:5px;
 	    		
