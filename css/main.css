@@ -16,11 +16,12 @@ html {
     line-height: 1.4;
 }
 /* Animation Code*/
- REmoved for byte bash
+ Removed for byte bash
 body {
     background:url('../img/pineapple_texture.jpg');
 }
 
+/*
 p {
     background:url('../img/pineapple_texture2.jpg');
     background-repeat:repeat-x;
@@ -42,6 +43,8 @@ p {
     -o-animation:BackgroundAnimated 15s linear infinite;
     animation:BackgroundAnimated 15s linear infinite;
 }
+
+*/
     @keyframes BackgroundAnimated {
     from {
         background-position:0 0
