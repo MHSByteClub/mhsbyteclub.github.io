@@ -25,21 +25,21 @@
         
         
         <!-- JQuery 3.1.1 Minified! -->
-    	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
         <!-- Stylesheets. hi Specify how the content of the site should look and feel, e.g. { color: red; font-family: Comic Sans MS; } -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/style.css">
 		<!-- Latest compiled and minified CSS -->
-   		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
-    	<!-- Optional theme -->
-    	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     
-	    <!-- Latest compiled and minified JavaScript -->
-	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	    
-	    <!--Pulls other Google Fonts -->
-	    <link href="https://fonts.googleapis.com/css?family=Dosis:300|Exo+2" rel="stylesheet">
-	    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
     
     
 		
@@ -47,8 +47,8 @@
 		<style>
 		  @font-face {
 		    font-family: 'JK Abode';
-		    src: url('fonts/JKAbode-Demo.ttf');
-	      src: local('JK Abode'), local('JK Abode'), url('fonts/JKAbode-Demo.ttf') format('truetype');
+		    src: url('JKAbode-Demo.ttf');
+	      src: local('JK Abode'), local('JK Abode'), url('JKAbode-Demo.ttf') format('truetype');
 		  }
 		  
 		</style>
@@ -60,19 +60,8 @@
     </head>
     <body>
         <!-- Border of Binary Code -->
-        <div class="binary">
-        </div>
-        <script>
-			  var binaryString = "01001001011001100010000001111001011011110111010100100111011100100110010100100000011100100110010101100001011001000110100101101110011001110010000001110100011010000110100101110011001000000100101001001111010010010100111000100000010000100101100101010100010001010010000001000011010011000101010101000010";
-			  for(var i=0; i<binaryString.length; i++) {
-			    var div = document.getElementsByClassName("binary")[0];
-				  div.innerText += binaryString[i];
-			  }
-        </script>
-      
-	      
         
-        
+	  
         <!-- Navigation Bar -->
     			<nav class="navbar navbar-inverse">
     			  <div class = "container-fluid">
@@ -116,27 +105,24 @@
 		  <!-- holds the jumbotron -->
         <div class = "jumbotron">
           <h1>Byte Bash_v3.1</h1>
-          <p style = "color:#eee5e9"><b>Learn. Code. Eat. Repeat.</b></p>
+          <p>Learn. Code. Eat. Repeat.</p>
           <div class="btn-group">
-          <a href = "https://docs.google.com/forms/d/e/1FAIpQLSeclmtbuEjsd8vzXmAYnAKuWHU_PA0CXI1SdqbqKiW1D3lUzg/viewform" type = "button" class = "btn btn-primary" id = "Sign-up" target="_blank" >Sign Up!</a>
-          <a href = "" type = "button" class = "btn btn-primary" id = "sessions" >Sessions</a>
-          <a href = "" type = "button" class = "btn btn-primary" id = "contests" >Contests</a>
-          <a href = "" data-toggle="collapse" data-target="#bytebashinfo" type = "button" class = "btn btn-primary" id = "Sign-up" >Event Info</a>
+          <a href = "" type = "button" class = "btn btn-primary" id = "Sign-up" >Sign Up!</a>
+          <a href = "#instructional-sessions" type = "button" class = "btn btn-primary" id = "sessions" >Sessions</a>
+          <a href = "#contests-challenges" type = "button" class = "btn btn-primary" id = "contests" >Contests</a>
+          <a href = "#about-byte-bash" data-toggle="collapse" data-target="#about-byte-bash" type = "button" class = "btn btn-primary" id = "Sign-up" >Event Info</a>
           </div>
         </div>
       
       <!-- holds the countdown and rsvp information -->
       <div class = "container">
         <div class = "" id = "maininfo">
-          <h3>Thanks to all students and faculty who came out to Byte Bash 3.1 on Wednesday! We hope you enjoyed yourself and learned something new.</h3>
-          <p>We hope you'll consider joining us again for the next Byte Bash next fall!</p>
-          <!--
           <div id = "date">
-            <h2>Wednesday, November 16th, 3:30-7:00 PM</h2>
-            <h4>Mundelein High School Coding Lab (C104)</h4>
+            <h1>Wednesday, November 16th</h1>
+            <h4>3:30-7:00 PM in C104</h4>
           </div>
           <div id = "countdown">
-            <p>The Bash begins in:</p>
+            <h2>The Bash begins in:</h2>
               <div id="clockdiv">
               	<div><span class="days"></span><div class="smalltext">Days</div></div>
               	<div><span class="hours"></span><div class="smalltext">Hours</div></div>
@@ -147,46 +133,32 @@
               <!--<div class="link">
                 Brought to you by:<br><br>
               <a href="http://simplestepscode.com/" target="_blank">Simple Steps Code</a>
-              </div>
+              </div>-->
         
           </div>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeclmtbuEjsd8vzXmAYnAKuWHU_PA0CXI1SdqbqKiW1D3lUzg/viewform" target="_blank">
-              <div id="bigSignUp">
-            <h2>Sign Up for Byte Bash</h2>
-          </div>
-        </a>
         </div>
-          <div class = "row">
-            <div class = "col-lg-6 panel-primary" id = "bytebashinfo">
-              <div class = "panel-heading">
-                <h3>What is Byte Bash?</h3>
+          <div class = "panel-group">
+            <div class = "panel panel-default">
+              <div class = "panel-heading"><a data-toggle = "collapse" href = "#about-byte-bash">What is Byte Bash?</a>
               </div>
-              <div class="panel-content" style = "padding:5px">
-                  <p>Byte Bashes are <b>free events </b> hosted 2-3 times a year by the <a href="https://www.mhsbyte.org">MHS Byte Club</a> to promote computer science, programming, coding, and development. Each event is a combination of fun tutorials, contests, and challenges designed to increase understanding and interest in coding and computer science. This one is version 3.1 because it's the first bash of the 3rd year of Byte Club! <br><br>Byte Bash is a non-competitive event and no prior experience is necessary. The event is open to all current or future MHS students (and faculty)! Your are welcome to attend the tutorials and events even if you cannot stay for the entire time. Though we ask that you give it a solid shot by staying at least 90 minutes. If you're brand new to coding, it takes a while to get up and running!</p>
+              <div class = "panel-collapse collapse" id = "about-byte-bash">
+                  <p>Byte Bashes are free events hosted by the <a href="https://www.mhsbyte.org">MHS Byte Club</a> to promote computer science, programming, coding, and development. Each event is a combination of fun tutorials, contests, and challenges designed to increase understanding and interest in coding and computer science. <br><br>Byte Bash is a non-competitive event and no prior experience is necessary. The event is open to all current or future MHS students (and faculty!). Your are welcome to attend the tutorials and events even if you cannot stay for the entire time.</p>
               </div>
             </div>
-            <div class = "col-lg-6 panel-primary">
-              <div class = "panel-heading" id = "bytebashdeets">
-                <h3>Event Details</h3>
+            <div class = "panel panel-default">
+              <div class = "panel-heading"><a data-toggle = "collapse" href = "#faq">Frequently-Asked Questions</a>
               </div>
-              <div class = "panel-content pre-scrollable">
+              <div class = "panel-collapse collapse" id = "faq">
                   <ul>
-                    <li><b>Date: </b> Wednesday, November 16th, 2016 from 3:30 PM until 7:00 PM</li>
-                    <li><b>Location: </b> Mundelein High School Coding Lab (Room C104)</li>
-                    <li><b>Who's Invited: </b>Any MHS student, faculty, staff member, or sender school students</li>
-                    </li>
-                  </ul>  
-                  <p><b>What if I don't know how to code?</b><br>
-                    Don't worry! We're all in some stage of the learning process. Though the first step can seem like the toughest, we want you to take it with us!<br><br>
-                    <b>What if I don't have a computer?</b><br>
-                    No problem. We've got 2 state-of-the-art labs full of desktops waiting for you to use. We've also got Chromebooks and Android tablets to check out for the event.<br><br>
-                    <b>What if I can't stay the whole time?</b><br>
-                    Coding is fun, but it can take a little while to get up and running. We ask that you give it a shot with us for at least 90 minutes. We promise you'll leave having learned something cool and/or new!<br><br>
-                    <b>I'm a student at an area sender school, can I attend the event!?</b><br>
-                    Absolutely! The MHS Byte club would love to hear from you. One of our primary goals is to spread computer science and coding to the entire Mundelein community. <a href = "/contacts.html">Contact us for more information.</a><br><br>
-                    <b>Is guest wi-fi available if I want to bring my own laptop?</b><br>
-                    Yes! Guest wi-fi is available and you are encouraged to bring your own machine to use for the event, complete with any IDEs or other programs you like to use. <b>Please note:</b> Any machine using the guest wi-fi is subject to the <a href = "http://www.d120.org/assets/1/technology/accepatable_use_policy.pdf">D120 Acceptable Use Policy.</a></li>
-                  </p>
+                    <li><b>What if I don't know how to code?</b></li>
+                    <li>Don't worry! We're all in some stage of the learning process. Though the first step can seem like the toughest, we want you to take it with us!</li>
+                    <li><b>What if I don't have a computer?</b></li>
+                    <li>No problem. We've got 2 state-of-the-art labs full of desktops waiting for you to use. We've also got Chromebooks and Android tablets to check out for the event.</li>
+                    <li><b>I'm a student at an area sender school, can I attend the event!?</b></li>
+                    <li>Absolutely! The MHS Byte club would love to hear from you. One of our primary goals is to spread computer science and coding to the entire Mundelein community. <a href = "/contacts.html">Contact us for more information.</a> </li>
+                    <li><b>Is guest wi-fi available if I want to bring my own laptop?</b></li>
+                    <li>Yes! Guest wi-fi is available and you are encouraged to bring your own machine to use for the event, complete with any IDEs or other programs you like to use. <b>Please note:</b> Any machine using the guest wi-fi is subject to the <a href = "http://www.d120.org/assets/1/technology/accepatable_use_policy.pdf">D120 Acceptable Use Policy.</a></li>
+                  </ul>
               </div>
             </div>
           </div>
@@ -194,108 +166,89 @@
               Like the event on Facebook<br>
               Tweet
             </div>-->
-        <!--
         <div id = "instructional-sessions" class = "container well">
           <h2>Instructional Sessions</h2>
-            <div class = "sessioninfo panel panel-default" id = "session1">
-              <div class = "sessionheading" data-toggle = "collapse" data-target="#session1content">
-                <h4>Create an 'Impossible Game' Screen</h4>
+          <div class = "row">
+            <div class = "sessioninfo col-lg-3 panel panel-default" id = "session1">
+              <div class = "sessionheading">
+                <h2>Create an 'Impossible Game' Screen</h2>
               </div>
-              <div class = "sessioncontent collapse" id = "session1content">
+              <div class = "sessioncontent">
                 <p>Contribute to the Byte Me game by learning JavaScript and Processing.js. Create a graphical game screen that requires users to perform some simple task to get to the next screen. Work with mentors to make your ideas come to life.  </p>
-                <p>With Chris Shannon in the 'Fishbowl' and STEM Lobby</p>
                 <p>Skill level: Beginner</p>
               </div>
             </div>
-            <div class = "sessioninfo  panel panel-default" id = "session2">
-              <div class = "sessionheading" data-toggle = "collapse" data-target="#session2content">
-                <h4>Introductory Web Development</h4>
+            <div class = "sessioninfo col-lg-3 panel panel-default" id = "session2">
+              <div class = "sessionheading">
+                <h2>Introductory Web Development</h2>
               </div>
-              <div class = "sessioncontent collapse" id = "session2content">
+              <div class = "sessioncontent">
                 <p>A little goes a long way with this introductory session on HTML/CSS/JS. The three languages of the web work together to create dynamic web pages. Go beyond the limits of Google Sites or other page builders and code a beautiful webpage for yourself!  </p>
-                <p>Skill level: Beginner/Intermediate</p>
-                <p>With Victoria Ozymko in C103</p>
-                <p><a style = "color:white" href = "https://docs.google.com/a/d120.org/document/d/1QiwhN1yVamdCLLDGu6fm1JVmaV1QGNCAMI9ExyXoHVk/edit?usp=sharing">Click here for resources to use during the session!</a></p>
+                <p>Skill level: Beginner</p>
               </div>
             </div>
-            <div class = "sessioninfo  panel panel-default" id = "session3">
-              <div class = "sessionheading" data-toggle = "collapse" data-target="#session3content">
-                <h4>Android Apps with App Inventor</h4>
+            <div class = "sessioninfo col-lg-3 panel panel-default" id = "session3">
+              <div class = "sessionheading">
+                <h2>Android Apps with App Inventor</h2>
               </div>
-              <div class = "sessioncontent collapse" id = "session3content">
+              <div class = "sessioncontent">
                 <p>Create your first mobile app using free cloud-based development tools like MIT App Inventor. Leave with a basic app that can be downloaded and installed on any Android device!</p>
-                <p>Skill level: Beginner/Intermediate</p>
-                <p>With Natalia Ozymko in C104</p>
               </div>
             </div>
-            <div class = "sessioninfo panel panel-default" id = "session4">
-              <div class = "sessionheading" data-toggle = "collapse" data-target="#session4content">
-                <h4>Hacking for Non-hackers</h4>
+            <div class = "sessioninfo col-lg-3 panel panel-default" id = "session4">
+              <div class = "sessionheading">
+                <h2>Basic CS for Teachers!</h2>
               </div>
-              <div class = "sessioncontent collapse" id = "session4content">
-                <p>Is your computer vulnerable to hacks and exploits? Do you know how those hacks and exploits work? Check out this cool and informative session to learn the fundamentals behind common hacks and exploits that put your hardware and data at risk. Learn to hack our own test servers and to build up basic protections for yourself. </p>
-                <p>Skill level: Beginner/Intermediate</p>
-                <p>With Trevor Medina in C120</p>
-              </div>
-            </div>
-            <div class = "sessioninfo panel panel-default" id = "session5">
-              <div class = "sessionheading" data-toggle = "collapse" data-target="#session5content">
-                <h4>Object-oriented with C++</h4>
-              </div>
-              <div class = "sessioncontent collapse" id = "session5content">
-                <p>Move to the next level with some big-kid code. Learn the ins and outs of C++ with this informational session intended for more experienced programmers. Learn to leverage the object-oriented nature of C++ (and similar languages) to create powerful programs as close to the data layer as we get.</p>
-                <p>Skill level: Intermediate/Advanced</p>
-                <p>With Kenny Stepney in C104</p>
+              <div class = "sessioncontent">
+                <p>Do you teach a subject that includes logic? Do you address content that includes mathematics? Do your courses include the use of a language (you know, like, words)? Then you can use computer science to address important concepts! Stop by and learn the basics of computer logic and how CS can help your students can become teachers!</p>
+                <p>Skill Level: Faculty!</p>
               </div>
             </div>
+          </div>
         </div>
         <div id = "contests-challenges" class = "container well">
           <h2>Contests and Challenges</h2>
           <div class="row">
-            <div class = "contestinfo panel panel-default" data-toggle = "collapse" data-target = "#contest1content" id = "contest1">
+            <div class = "contestinfo col-lg-3 panel panel-default" id = "session4">
               <div class = "contestheading">
-                <h4>Character Contest</h4>
+                <h2>Character Contest</h2>
               </div>
-              <div class = "sessioncontent collapse" id = "contest1content">
+              <div class = "sessioncontent">
                 <p>Use Khan Academy's ProcessingJS module to create the most creative, entertaining, or complex character you can. Learn the basics of animating/drawing with Javascript. Check out last year's winner: Ninja Frog by Victoria Ozymko. Anyone can enter, anyone can win!</p>
+                <p>Skill Level: Faculty!</p>
               </div>
-                <p><a style = "color:white" href = "https://docs.google.com/a/d120.org/document/d/1DQFK-g5T3wqpa9mWc0aCDdZutnf0rgOYtTibWfa8joA/edit?usp=sharing">Click here for contest rules and guidelines</a></p>
             </div>
-          <div class = "contestinfo panel panel-default" data-toggle = "collapse" data-target = "#contest2content" id = "contest2">
+          <div class = "contestinfo col-lg-3 panel panel-default" id = "session4">
               <div class = "contestheading">
-                <h4>Webpage Beauty Contest</h4>
+                <h2>Webpage Contest</h2>
               </div>
-              <div class = "sessioncontent collapse" id = "contest2content">
+              <div class = "contestcontent">
                 <p>Create the best-looking webpage you can with just a little bit of training in HTML, CSS, and Javascript. Build a responsive interactive webpage and learn to make your site intuitive and easy-to-use. Best looking webpage wins!</p>
               </div>
-                <p><a style = "color:white" href = "https://docs.google.com/a/d120.org/document/d/1DQFK-g5T3wqpa9mWc0aCDdZutnf0rgOYtTibWfa8joA/edit?usp=sharing">Click here for contest rules and guidelines</a></p>
             </div>
-          <div class = "contestinfo panel panel-default" data-toggle = "collapse" data-target = "#contest3content" id = "contest3">
-              <div class = "contestheading">
-                <h4>Mathing Contest</h4>
-              </div>
-              <div class = "sessioncontent collapse" id = "contest3content">
+          <div class = "contestinfo col-lg-3 panel panel-default" id = "session4">
+            <div class = "contestheading">
+              <h2>Mathing Contest</h2>
+            </div>
+            <div class = "contestcontent" id = "mathing-contest">
                 <p>Out-math your fellow programmers with this logical and mathematical competition. Work with a partner to try and solve a series of mathematical or logical problems using the programming language of your choice! </p>
             </div>
-                <p><a style = "color:white" href = "https://docs.google.com/a/d120.org/document/d/1DQFK-g5T3wqpa9mWc0aCDdZutnf0rgOYtTibWfa8joA/edit?usp=sharing">Click here for contest rules and guidelines</a></p>
+                <p><a href = "">See full rules.</a></p>
           </div>
-           <div class = "contestinfo panel panel-default" data-toggle = "collapse" data-target = "#contest4content" id = "contest4">
-              <div class = "contestheading">
-                <h4>The Byte Club 5</h4>
-              </div>
-              <div class = "sessioncontent collapse" id = "contest4content">
-                <p>Brand new to coding? Try the <a style = "color:white" href = "https://docs.google.com/a/d120.org/document/d/1OJFsfFiDdL66Zxs3CacUcSmK5wk2cJfK381sjIhO4Kw/edit?usp=sharing">Byte Club 5</a>. A series of small coding challenges to get the feel for any new computer language. You can use any of the resources listed below to help you with this task. Get started on your CS journey now!</p>
+           <div class = "contestinfo col-lg-3 panel panel-default" id = "session4">
+            <div class = "contestheading">
+              <h2>The Byte Club 5</h2>
             </div>
-                <p><a style = "color:white" href = "https://docs.google.com/a/d120.org/document/d/1OJFsfFiDdL66Zxs3CacUcSmK5wk2cJfK381sjIhO4Kw/edit?usp=sharing">Click here to see the challenges!</a></p>
+            <div class = "contestcontent" id = "mathing-contest">
+                <p>Brand new to coding? Try the <a href = "">Byte Club 5</a>. A series of small coding challenges to get the feel for any new computer language. You can use any of the resources listed below to help you with this task. Get started on your CS journey now!</p>
+            </div>
+                <p><a href = "">See full rules.</a></p>
             </div>
           </div>
         </div>
-        -->
         <div class="panel panel-default" id="bcfooter">
-        	<div class = "panel-header" data-toggle="collapse" data-target="#siteinfo">
-        		<h4><a href = "#siteinfo">You're Byte Club! Why doesn't this webpage look amazing!?!?</a></h4>
-        	</div>
-          <div class = "panel-body collapse" id="siteinfo">
+          <div class = "panel-body">
+            <h4>You're Byte Club! Why doesn't this webpage look amazing!?!?</h4>
             <p>First, thanks for noticing. Second, as part of Byte Club we try to work as closely to the actual code as we can. Though there are many editors out there that would let us build a fantastic, multi-media, interactive webpage, we chose to keep it simple. Nearly all of the code on this page was created or adapted by Byte Club members or sponsors. No WYSIWYG editors are used. <br><br>By the way, if you think you can make it look prettier - <a href="http://www.mhsbyte.org">COME TO BYTE CLUB!</a> We meet every Wednesday in C104.</p>
           </div>
           <div class="panel-footer"><a href="https://www.mhsbyte.org">Mundelein High School Byte Club 2016</a> | 1350 W. Hawley St. Mundelein, IL<br><b>Club Officers:</b><br> Kenny Stepney, Club President | Natalia Ozymko, Vice President | Victoria Ozymko, Vice President | Komol Patel, Secretary | Angel Montero, Secretary and Webmaster</div>
@@ -364,7 +317,7 @@
 
 <!-- holds js for countdown clock -->
 <script>
-  var deadline = 'Nov 16 2016 16:30:00 GMT-0600';
+  var deadline = 'Nov 16 2016 16:30:00 GMT-0400';
   function time_remaining(endtime){
   	var t = Date.parse(endtime) - Date.parse(new Date());
   	var seconds = Math.floor( (t/1000) % 60 );
@@ -402,60 +355,33 @@
 <!--holds styling for countdown clock -->
 <style>
 
-* {
+element {
   --byte-club-teal:#94d1e3;
-  --light-grey:#7c7c7c;
-  --dark-grey:#2b303a;
-  --byte-club-white:#eee5e9;
-  --byte-club-red:#ad343e;
 }
 
 .jumbotron{
   text-align:center;
-  color:#94d1e3;
+  color:#eee5e9;
   background-image: url('https://static.pexels.com/photos/39667/children-win-success-video-game-39667.jpeg');
   background-size: cover;
   background-position:0% 20%;
-  
 }
 
 .jumbotron > h1{
   font-size:75px;
   font-family: 'JK Abode',sans-serif;
-  text-shadow:3px 3px 3px black;
 
 }
 
 h1{
   color: --byte-club-teal;
   font-weight: 100;
-  font-size: 50px;
+  font-size: 40px;
   margin: 40px 0px 20px;
 }
 
-h2{
-  font-family:"Exo 2",sans-serif;
-  font-size:40px;
-}
-
-h3{
-  font-family:"Exo 2",sans-serif;
-  font-size:30px;
-}
-
-h4{
-  font-family:"Exo 2",sans-serif;
-  font-size:25px;
-}
-
-p,li{
-  font-family:'Dosis',sans-serif;
-  font-size:18px;
-}
-
-a {
-  color:#ad343e;
-  font-weight:bold;
+a{
+  color:--byte-club-teal;
 }
 
 .navbar-brand > a{
@@ -478,75 +404,15 @@ a {
 	font-weight: 100;
 	text-align: center;
 	font-size: 30px;
-	margin: 15px;
+	margin: 5px;
 }
-
-#bigSignUp{
-  padding:10px;
-  margin-top:25px;
-  margin-bottom:25px;
-  border-radius:5px;
-  text-decoration:none;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s;
-  
-}
-
-
-
-#bigSignUp:hover {
-  background-color:#94d1e3;
-  color:#eee5e9;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s;
-  text-decoration:none;
-}
-
-
 
 .well {
   text-align:center;
-  background-color:#94d1e3;
 }
 
-.sessioninfo:hover {
-  background-color:#ad343e;
-  color:#eee9e5;
-}
 
-.contestinfo:hover {
-  background-color:#7c7c7c;
-  color:#eee9e5;
-}
 
-.contestinfo:hover > a {
-  color:#eee9e5;
-}
-
-.panel-primary >.panel-heading{
-  background-color:#ad343e;
-  border-color:#ad343e;
-}
-
-.panel-default{
-  height:100%;
-}
-
-.panel-content{
-  padding:12px;
-}
-
-.btn {
-  background-color:#2b303a;
-}
-
-.btn:hover {
-  background-color:#94d1e3;
-}
 
 #clockdiv > div{
 	padding: 10px;
@@ -568,26 +434,7 @@ a {
 	padding-top: 5px;
 	font-size: 16px;
 }
-#siteinfo{
-	text-align:left;
-}
-
-#bcfooter{
-	text-align:center;
-}
-
-.binary {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  font-size: 8px;
-        		
-	-webkit-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-	-moz-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-	-ms-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-	-o-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-	transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-}  
+  
 </style>
         	
         	
