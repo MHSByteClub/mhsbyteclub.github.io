@@ -171,16 +171,28 @@ textarea {
 }
 
 
+.buttonfun {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #ef28b4;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #5f1382;
+}
 
+.buttonfun:hover {background-color: #a31a4a}
 
-
-
-
-
-
-
-
-
+.buttonfun:active {
+  background-color: #61076d;
+  box-shadow: 0 5px #3e0856;
+  transform: translateY(4px);
+}
 
 
 
