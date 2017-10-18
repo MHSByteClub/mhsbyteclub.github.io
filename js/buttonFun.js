@@ -47,15 +47,20 @@ var showRandall = function(){
 };
 
 var shlopified = function(){
-        document.body.style.backgroundImage = "url('https://preview.ibb.co/kcbz5m/shlop.jpg')";
-}
+    document.body.style.backgroundImage = "url('https://preview.ibb.co/kcbz5m/shlop.jpg')";
+};
+
+var kennybunny = function(){
+    document.body.style.backgroundImage = "url('https://preview.ibb.co/krFfzQ/3322.jpg')";
+};
 
 //This array holds all of the possible functions that could randomly be selected when the 'fun' button is pressed.
 //Once your function is ready, place its name in the array below!
 var outputJunk = [
     manyZoos,
     showRandall,
-    shlopified
+    shlopified,
+    kennybunny
     ];
     
 var clearOutput = function(){
