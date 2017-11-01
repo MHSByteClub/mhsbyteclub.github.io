@@ -26,7 +26,22 @@ var example = function(){
 };
 
 
-
+/**      ___
+ * | /  |     |\   |  |\   | \  /
+ * |/   |__   | \  |  | \  |  \/
+ * |\   |     |  \ |  |  \ |  ||
+ * | \  |___  |   \|  |   \|  ||
+ *  __      __          ' ______
+ * |  \    /  \  |\   |     || 
+ * |   |  |    | | \  |     ||
+ * |   |  |    | |  \ |     ||
+ * |__/    \__/  |   \|     ||
+ * ______  __             ____  
+ *   ||   /  \  |    |   /       |    |
+ *   ||  |    | |    |  |        |____|
+ *   ||  |    | |    |  |        |    |
+ *   ||   \__/   \__/    \____   |    |
+ * */
 
 //Here are some examples of the functions you can make to mess with the webpage!
 var manyZoos = function(){
@@ -46,6 +61,13 @@ var showRandall = function(){
     outputEl.appendChild(RandallEl);
 };
 
+var otomatone = function(){
+	var sDiv = document.createElement("script");
+	sDiv.innerHTML = "window.location = 'https://www.youtube.com/embed/x0plnLJ7Dm0?autoplay=1&controls=0'";
+	var outputDiv = document.getElementById('fun-output');
+	outputDiv.appendChild(sDiv);
+};
+
 var shlopified = function(){
     document.body.style.backgroundImage = "url('https://preview.ibb.co/kcbz5m/shlop.jpg')";
 };
@@ -60,7 +82,8 @@ var outputJunk = [
     manyZoos,
     showRandall,
     shlopified,
-    kennybunny
+    kennybunny,
+    otomatone
     ];
     
 var clearOutput = function(){
