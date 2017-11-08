@@ -61,6 +61,14 @@ var showRandall = function(){
     outputEl.appendChild(RandallEl);
 };
 
+var showEvan = function(){
+    var EvanEl = document.createElement('img');
+    EvanEl.setAttribute("src","https://preview.ibb.co/c299Sb/2016_12_05_05_54_32.jpg");
+    EvanEl.setAttribute("title","Pimp Daddy Evaugn, The best Evaugn in town");
+    var outputEl = document.getElementById('fun-output');
+    outputEl.appendChild(EvanEl);
+};
+
 var otomatone = function(){
 	var sDiv = document.createElement("script");
 	sDiv.innerHTML = "window.location = 'https://www.youtube.com/embed/x0plnLJ7Dm0?autoplay=1&controls=0'";
@@ -162,7 +170,8 @@ var outputJunk = [
     shlopified,//by Alex Nickl
     kennybunny,//by Alex Nickl
     solitaire,//by John Lay
-    otomatone//by Ben Grabskiskyskoski
+    otomatone,//by Ben Grabskiskyskoski
+    showEvan//by Sergio Calderon
     ];
     
 var clearOutput = function(){
