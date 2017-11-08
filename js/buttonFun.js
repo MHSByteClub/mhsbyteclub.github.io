@@ -83,7 +83,7 @@ var solitaire = function(){
 			document.body.appendChild(instruct);
 			var canvas = document.createElement( 'canvas' );
 			var outputCan = document.getElementById('fun-output');
-			canvas.style.position = 'absolute';
+			canvas.style.position = 'fixed';
 			canvas.style.zIndex =  "-10";
 			canvas.style.top = String(document.documentElement.scrollTop) +"px";
 			canvas.style.left = "0px";
