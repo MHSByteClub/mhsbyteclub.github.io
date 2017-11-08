@@ -84,6 +84,7 @@ var solitaire = function(){
 			var canvas = document.createElement( 'canvas' );
 			var outputCan = document.getElementById('fun-output');
 			canvas.style.position = 'absolute';
+			canvas.style.zIndex =  "-10";
 			canvas.style.top = String(document.documentElement.scrollTop) +"px";
 			canvas.style.left = "0px";
 			canvas.width = window.innerWidth;
@@ -156,12 +157,12 @@ var solitaire = function(){
 //This array holds all of the possible functions that could randomly be selected when the 'fun' button is pressed.
 //Once your function is ready, place its name in the array below!
 var outputJunk = [
-    manyZoos,
-    showRandall,
-    shlopified,
-    kennybunny,
-    solitaire,
-    otomatone
+    manyZoos,//by Mr.Farmer
+    showRandall,//by Alex Nickl
+    shlopified,//by Alex Nickl
+    kennybunny,//by Alex Nickl
+    solitaire,//by John Lay
+    otomatone//by Ben Grabskiskyskoski
     ];
     
 var clearOutput = function(){
