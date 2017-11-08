@@ -156,10 +156,10 @@ var solitaire = function(){
 //This array holds all of the possible functions that could randomly be selected when the 'fun' button is pressed.
 //Once your function is ready, place its name in the array below!
 var outputJunk = [
-    manyZoos,
+    /*manyZoos,
     showRandall,
     shlopified,
-    kennybunny,
+    kennybunny,*/
     solitaire,
     otomatone
     ];
