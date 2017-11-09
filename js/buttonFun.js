@@ -173,7 +173,22 @@ var outputJunk = [
     otomatone,//by Ben Grabskiskyskoski
     showEvan//by Sergio Calderon
     ];
+
+/**var pictureJunk = [
+    showRandall,
+    showEvan
+    ];
     
+var videoJunk = [
+    manyZoos,
+    otomatone
+    ];
+    
+var backgroundJunk = [
+	shlopified,
+	kennybunny
+	];
+**/
 var clearOutput = function(){
     var outputEl = document.getElementById('fun-output');
     outputEl.innerHTML = "";
@@ -186,3 +201,4 @@ var buttonFun = function (){
     console.log(rndIndex);
     outputJunk[rndIndex]();
 };
+
