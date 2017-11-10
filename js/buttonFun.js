@@ -44,13 +44,15 @@ var example = function(){
  * */
 
 //Here are some examples of the functions you can make to mess with the webpage!
-var manyZoos = function(){
-    //Automatically re-directs the user to a video from Too Many Zoos on YouTube
+var manyZoos = function(){//this could be done with one line of code...
+/**    //Automatically re-directs the user to a video from Too Many Zoos on YouTube
     
     var sDiv = document.createElement("script"); //Creates a new script element
     sDiv.innerHTML = "window.location = 'https://www.youtube.com/embed/IMyqasy2Lco?start=137&autoplay=1&controls=0'"; //Sets the HTML content of the element to re-direct the user
     var outputEl = document.getElementById('fun-output');//gets the output element in the webpage
     outputEl.appendChild(sDiv); //appends the new script into the output.
+    **/
+    window.open("https://www.youtube.com/embed/IMyqasy2Lco?start=137&autoplay=1&controls=0");
 };
 
 var showRandall = function(){
@@ -70,11 +72,27 @@ var showEvan = function(){
 };
 
 var otomatone = function(){
-	var sDiv = document.createElement("script");
-	sDiv.innerHTML = "window.location = 'https://www.youtube.com/embed/x0plnLJ7Dm0?autoplay=1&controls=0'";
-	var outputDiv = document.getElementById('fun-output');
-	outputDiv.appendChild(sDiv);
+	var otoRnd= Math.round(Math.random()*(otomatoneList.length-1));
+	window.open(otomatoneList[otoRnd]);
 };
+
+var otomatoneList = [
+	"https://www.youtube.com/embed/4ROqQ99zVtQ?autoplay=1&controls=0",
+	"https://www.youtube.com/embed/8OQtrmhpIXU?autoplay=1&controls=0",
+	"https://www.youtube.com/embed/9uuwbSUdW8M?autoplay=1&controls=0",
+	"https://www.youtube.com/embed/-FwAQ7BxZQ4?autoplay=1&controls=0",
+	"https://www.youtube.com/embed/KIoIsDXXZp0?autoplay=1&controls=0",
+	"https://www.youtube.com/embed/A2_liowdedI?autoplay=1&controls=0",
+	"https://www.youtube.com/embed/MEianU8A7tY?autoplay=1&controls=0",
+	"https://www.youtube.com/embed/G8iEMVr7GFg?autoplay=1&controls=0",
+	"https://www.youtube.com/embed/x0plnLJ7Dm0?autoplay=1&controls=0",
+	"https://www.youtube.com/embed/uh8s8-LD5io?autoplay=1&controls=0",
+	"https://www.youtube.com/embed/e4zjgUoXU_U?autoplay=1&controls=0",
+	"https://www.youtube.com/embed/VlqA0uq6i6E?autoplay=1&controls=0",
+	"https://www.youtube.com/embed/Oub55g9wog0?autoplay=1&controls=0"
+];
+
+
 
 var shlopified = function(){
     document.body.style.backgroundImage = "url('https://preview.ibb.co/kcbz5m/shlop.jpg')";
@@ -165,30 +183,49 @@ var solitaire = function(){
 //This array holds all of the possible functions that could randomly be selected when the 'fun' button is pressed.
 //Once your function is ready, place its name in the array below!
 var outputJunk = [
-    manyZoos,//by Mr.Farmer
-    showRandall,//by Alex Nickl
-    shlopified,//by Alex Nickl
-    kennybunny,//by Alex Nickl
+    randPicture,
+    randVideo,
+    randBackground,
     solitaire,//by John Lay
-    otomatone,//by Ben Grabskiskyskoski
-    showEvan//by Sergio Calderon
     ];
+    
+    
+var randomChoice = function (funcArray){
+	var num = Math.round(Math.random()*funcArray.length-1);
+	var selectedThingy = funcArray[num];
+	return selectedThingy;
+};
 
-/**var pictureJunk = [
-    showRandall,
-    showEvan
+var randPicture = function(){
+	var picFunction = randomChoice(pictureJunk);
+	return picFunction;
+};
+
+var randBackground = function(){
+	var bgFunction = randomChoice(backgroundJunk);
+	return bgFunction;
+};
+
+var randVideo = function(){
+	var vidFunction = randomChoice(videoJunk);
+	return vidFunction;
+};
+
+var pictureJunk = [
+    showRandall, //by Mr.Farmer
+    showEvan  //by Sergio Calderon
     ];
     
 var videoJunk = [
-    manyZoos,
-    otomatone
+    manyZoos, //by Mr.Farmer
+    otomatone //by Ben Grabskiskyskoski and Alex Nickl
     ];
     
 var backgroundJunk = [
-	shlopified,
-	kennybunny
+	shlopified, //by Alex Nickl
+	kennybunny  //by Alex Nickl
 	];
-**/
+
 var clearOutput = function(){
     var outputEl = document.getElementById('fun-output');
     outputEl.innerHTML = "";
@@ -199,6 +236,8 @@ var buttonFun = function (){
     clearOutput();
     var rndIndex = Math.round(Math.random()*(outputJunk.length-1));
     console.log(rndIndex);
-    outputJunk[rndIndex]();
+    console.log(outputJunk[rndIndex]);
+	var rndIndexToTheMax = Math.round(Math.random()*(outputJunk[rndIndex].length-1));
+	console.log(rndIndexToTheMax);
+	outputJunk[rndIndex][rndIndexToTheMax];
 };
-
