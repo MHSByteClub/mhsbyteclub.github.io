@@ -193,6 +193,7 @@ var outputJunk = [
 var randomChoice = function (funcArray){
 	var num = Math.round(Math.random()*funcArray.length-1);
 	var selectedThingy = funcArray[num];
+	console.log(num);
 	return selectedThingy;
 };
 
@@ -236,8 +237,5 @@ var buttonFun = function (){
     clearOutput();
     var rndIndex = Math.round(Math.random()*(outputJunk.length-1));
     console.log(rndIndex);
-    console.log(outputJunk[rndIndex]);
-	var rndIndexToTheMax = Math.round(Math.random()*(outputJunk[rndIndex].length-1));
-	console.log(rndIndexToTheMax);
-	outputJunk[rndIndex][rndIndexToTheMax];
+	outputJunk[rndIndex]();
 };
