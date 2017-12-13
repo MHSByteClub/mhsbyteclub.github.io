@@ -176,6 +176,7 @@ var solitaire = function(){
 			console.log("Width: "+cwidth+", Height: "+cheight);
 			
 			var particles = [];
+			
 			var ParticleSolitaire = function ( id, x, y, sx, sy ) {
 				if ( sx === 0 ) sx = 2;
 				var cx = ( id % 4 ) * cwidth;
@@ -255,9 +256,9 @@ var randBackground = function(){
 };
 
 var outputJunk = [
-    //randPicture,
-    //randVideo,
-    //randBackground,
+    randPicture,
+    randVideo,
+    randBackground,
     solitaire//by John Lay
     ];
 
