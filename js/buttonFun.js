@@ -68,25 +68,36 @@ var showEvan = function(){
     var outputEl = document.getElementById('fun-output');
     outputEl.appendChild(EvanEl);
 };
+var shlopified = function(){
+    document.body.style.backgroundImage = "url('https://preview.ibb.co/kcbz5m/shlop.jpg')";
+};
+var kennybunny = function(){
+    document.body.style.backgroundImage = "url('https://preview.ibb.co/krFfzQ/3322.jpg')";
+};
+
 **/
 var randPicture = function(){
-	var picRnd = Math.round(Math.random()*(picList.length-1));
+	console.log("Called randPicture");
+	var picRnd = randomChoice(picList);
+	var picTitle = randomChoice(picTitles);
     var picEl = document.createElement('img');
-    picEl.setAttribute("src",picList[picRnd]);
-    picEl.setAttribute("title",picTitle[picRnd]);
+    picEl.setAttribute("src",picRnd);
+    picEl.setAttribute("title",picTitle);
     var outputEl = document.getElementById('fun-output');
     outputEl.appendChild(picEl);
 };
 var picList = [
 	"https://preview.ibb.co/nymVPQ/hedgehogg.png",
-	"https://preview.ibb.co/c299Sb/2016_12_05_05_54_32.jpg",
+	"https://preview.ibb.co/c299Sb/2016_12_05_05_54_32.jpg"
 	];
-var picTitle = [
+	
+var picTitles = [
 	"This is Randall, made by a mix of pure love, math, and malice.",
 	"Pimp Daddy Evaugn, The best Evaugn in town"
 	];
 	
 var randVideo = function(){
+	console.log("Called randVideo");
 	var type = randomChoice(videoList);
 	var video = randomChoice(type);
 	//Math.round(Math.random()*(videoList.length-1));
@@ -119,8 +130,11 @@ var videoList =
 		"https://www.youtube.com/embed/IMyqasy2Lco?start=137&autoplay=1&controls=0",
 		"https://www.youtube.com/embed/jEHOsWTsdkY?autoplay=1&controls=0"
 		],
-		//Indian Thriller.
-		["https://www.youtube.com/embed/x81iip6psks?autoplay=1&controls=0"]
+		//Random Videos
+		[
+		"https://www.youtube.com/embed/x81iip6psks?autoplay=1&controls=0",
+		"https://www.youtube.com/embed/mxhxL1LzKww?start=243&autoplay=1&controls=0"
+		]
 ];
 
 var backgroundList = [
@@ -134,16 +148,10 @@ var rndSolitaire = [
 	"https://cdn.modernfarmer.com/wp-content/uploads/2013/09/saanen.jpg"
 	];
 
-/**	
-var shlopified = function(){
-    document.body.style.backgroundImage = "url('https://preview.ibb.co/kcbz5m/shlop.jpg')";
-};
-var kennybunny = function(){
-    document.body.style.backgroundImage = "url('https://preview.ibb.co/krFfzQ/3322.jpg')";
-};
 
-**/
+
 var solitaire = function(){
+			console.log("Called solitaire");
 			var instruct = document.createElement("P");                      
 			var t = document.createTextNode("Having fun yet?");
 			var outputEl = document.getElementById('fun-output');
@@ -163,11 +171,11 @@ var solitaire = function(){
 			var image = document.createElement( 'img' );
 			image.src = randomChoice(rndSolitaire);
 			var cwidth = image.width, cwidthhalf = cwidth / 2;
-			var cheight =image.height, cheighthalf = cheight / 2; 
+			var cheight =image.height, cheighthalf = cheight / 2;
 			console.log("Width: "+cwidth+", Height: "+cheight);
 			
 			var particles = [];
-			var Particle = function ( id, x, y, sx, sy ) {
+			var ParticleSolitaire = function ( id, x, y, sx, sy ) {
 				if ( sx === 0 ) sx = 2;
 				var cx = ( id % 4 ) * cwidth;
 				var cy = Math.floor( id / 4 ) * cheight;
@@ -191,7 +199,7 @@ var solitaire = function(){
 			}
 			var throwCard = function ( x, y ) {
 				id > 0 ? id -- : id = 1;
-				var particle = new Particle( id, x, y, Math.floor( Math.random() * 6 - 3 ) * 2, - Math.random() * 25 );
+				var particle = new ParticleSolitaire( id, x, y, Math.floor( Math.random() * 6 - 3 ) * 2, - Math.random() * 25 );
 				particles.push( particle );
 			}
 			document.addEventListener( 'mousedown', function ( event ) {
@@ -225,10 +233,10 @@ var solitaire = function(){
 				}
 			}, 1000/60 );
 };
+
 //This array holds all of the possible functions that could randomly be selected when the 'fun' button is pressed.
 //Once your function is ready, place its name in the array below!
 
-    
     
 var randomChoice = function (funcArray){
 	var num = Math.round(Math.random()*(funcArray.length-1));
@@ -240,14 +248,15 @@ var randomChoice = function (funcArray){
 
 
 var randBackground = function(){
+	console.log("Called randBackground");
 	var randBgsource = randomChoice(backgroundList);
 	document.body.style.backgroundImage=randBgsource;
 };
 
 var outputJunk = [
-    //randPicture,
-    //randVideo,
-    //randBackground,
+    randPicture,
+    randVideo,
+    randBackground,
     solitaire//by John Lay
     ];
 
