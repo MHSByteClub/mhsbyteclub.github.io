@@ -123,7 +123,9 @@ var videoList =
 		"https://www.youtube.com/embed/e4zjgUoXU_U?autoplay=1&controls=0",
 		"https://www.youtube.com/embed/VlqA0uq6i6E?autoplay=1&controls=0",
 		"https://www.youtube.com/embed/Oub55g9wog0?autoplay=1&controls=0",
-		"https://www.youtube.com/embed/HmFsmw3ICcI?autoplay=1&controls=0"
+		"https://www.youtube.com/embed/HmFsmw3ICcI?autoplay=1&controls=0",
+		"https://www.youtube.com/embed/R5CcvCRS6uo?autoplay=1&controls=0",
+		"https://www.youtube.com/embed/UOONbcse5B8?autoplay=1&controls=0"
 		],
 		[
 		//too many zooz and that weird saxophone guy
