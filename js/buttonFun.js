@@ -105,6 +105,11 @@ var randVideo = function(){
 	window.open(video);
 };
 
+var hedgehogs = function(){
+	console.log("Called hedgehogs");
+	window.open("https://docs.google.com/document/d/1T6kj8-V8Bn7IafELpgcBdiBT9ucRK9FSVucnAFSPcvA/edit");
+}
+
 var videoList = 
 	[
 		
@@ -261,6 +266,7 @@ var outputJunk = [
     randPicture,
     randVideo,
     randBackground,
+    hedgehogs,
     solitaire//by John Lay
     ];
 
