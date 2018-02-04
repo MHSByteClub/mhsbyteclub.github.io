@@ -41,7 +41,6 @@ hr {
 
 .jumbotron{
     position:relative;
-    z-index:-101;
     background-image:url("https://www.legat.com/wp-content/uploads/2016/10/Mundelein-High-School-Science-Classroom-Expansion.jpg");
     background-size:100%;
     background-position:50% 50%
