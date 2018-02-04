@@ -15,82 +15,6 @@ html {
     font-size: 1em;
     line-height: 1.4;
 }
-/* Animation Code
-body {
-    background:url('../img/pineapple_texture.jpg');
-}
-*/
-/*
-p {
-    background:url('../img/pineapple_texture2.jpg');
-    background-repeat:repeat-x;
-    background-position:0 0;
-    font-size:200px;
-    text-transform:uppercase;
-    text-align:center;
-    font-family:'Luckiest Guy';
-    color:transparent;
-    -webkit-font-smoothing:antialiased;
-    -webkit-background-clip:text;
-    -moz-background-clip:text;
-    background-clip:text;
-    -webkit-text-fill-color:transparent;
-    margin:0;
-        -webkit-animation:BackgroundAnimated 15s linear infinite;
-    -moz-animation:BackgroundAnimated 15s linear infinite;
-    -ms-animation:BackgroundAnimated 15s linear infinite;
-    -o-animation:BackgroundAnimated 15s linear infinite;
-    animation:BackgroundAnimated 15s linear infinite;
-}
-
-*/
-    @keyframes BackgroundAnimated {
-    from {
-        background-position:0 0
-    }
-    to {
-        background-position:100% 0
-    }
-}
-    @-webkit-keyframes BackgroundAnimated {
-    from {
-        background-position:0 0
-    }
-    to {
-        background-position:100% 0
-    }
-}
-    @-ms-keyframes BackgroundAnimated {<     from {
-        background-position:0 0
-    }
-    to {
-        background-position:100% 0
-    }
-}
-    @-moz-keyframes BackgroundAnimated {
-    from {
-        background-position:0 0
-    }
-    to {
-        background-position:100% 0
-    }
-}
-
-/*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
 
 /*
  * A better looking default horizontal rule
@@ -105,69 +29,55 @@ hr {
     padding: 0;
 }
 
-/*
- * Remove the gap between images, videos, audio and canvas and the bottom of
- * their containers: h5bp.com/i/440
- */
-
-audio,
-canvas,
-img,
-svg,
-video {
-    vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-    resize: vertical;
-}
-
-/* ==========================================================================
-   Browse Happy prompt
-   ========================================================================== */
-
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-/* Styling for kick-off meeting elements */
-
-#code_on {
-    color:blue;
-    -webkit-transition: color 1s;
-    -moz-transition:color 1s;
-    -o-transition:color 1s;
-    transition:color 1s;
+.footer {
+    position: absolute;
+    bottom:0;
+    width:100%;
 }
 
-#code_on:hover {
-    color:red;
-    
-    -webkit-transition: color 1s;
-    -moz-transition:color 1s;
-    -o-transition:color 1s;
-    transition:color 1s;
+.jumbotron{
+    position:relative;
+    z-index:-101;
+    background-image:url("https://www.legat.com/wp-content/uploads/2016/10/Mundelein-High-School-Science-Classroom-Expansion.jpg");
+    background-size:100%;
+    background-position:50% 50%
+}
+
+#vid-wrapper {
+	position: relative;
+	top:-25;
+	left:-25px;
+	padding-bottom: 88.25%; /* 16:9 */
+	padding-top: 0px;
+	height: 0;
+}
+#vid-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+
+#jumbotron iframe {
+	position: absolute;
+	top: -25px;
+	left: 0;
+	overflow:hidden;
+	width: 100%;
+	height: 100%;
+}
+
+.container {
+    text-align: CENTER;
 }
 
 
@@ -178,7 +88,6 @@ textarea {
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  outline: none;
   color: #fff;
   background-color: #ef28b4;
   border: none;
@@ -196,184 +105,3 @@ textarea {
 
 
 
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers: h5bp.com/u
- */
-
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
-
-/*
- * Hide only visually, but have it available for screen readers: h5bp.com/v
- */
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-    visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request: h5bp.com/r
-   ========================================================================== */
-
-@media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-}
-.navigation {
-   float: left;
-   font-family: Arial;
-   border: 1px solid #000000;
-}
-.navigation ul {
-   margin: 0px;
-   padding: 0px;
-   list-style-type: none;
-}
-.navigation li {
-   display: inline;
-}
-.navigation li a {
-   float: left;
-   border-right: 2px solid gray;
-   padding: 0px 10px;
-   color: red;
-   text-decoration: none;
-}
-.navigation li a:hover {
-   background-color: black;
-}
