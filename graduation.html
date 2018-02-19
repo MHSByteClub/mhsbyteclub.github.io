@@ -134,22 +134,26 @@
 	        var textareaText = document.getElementById('names').value;
 	        //Splits at new line
 	        var nameString = textareaText.split("\n");
-	        //Initializes a list to hold summa students, DEPRICATED 3/1/17
-	        var summaNameString = [];
+	        
+	        
+	        //Initializes a list to hold summa students, DEPRECATED 3/1/17
+	        //var summaNameString = [];
 	        
 	        /*Sorts name string alphabetically I assume */
 	        nameString.sort();
-	    
+	    	//console.log(nameString);
 	        var i = 0;
 	        while(i < nameString.length) {
 	        	/*checks each nameString entry to see if X is at the end of their string. X indicates they ARE walking*/
-	          if(!nameString[i].includes("	X")) { // checks if nameString includes tabchar+X to indicate walking, if X is removed, not walking
+	          if(nameString[i].toUpperCase().includes("	X")) { // checks if nameString includes tabchar+X to indicate walking, if X is removed, not walking
+	            console.log(nameString[i]+" is not walking");
 	            nameString.splice(i, 1);
 	          } else {
 	            var splitName = nameString[i].split('	'); //remove tab characters
 	            var first = splitName[1];
 	            var last = splitName[0];
 	            nameString[i] = first + " " + last; //flip so it is first name last name
+	            console.log(nameString[i]);
 	            if(nameString[i][nameString[i].length - 1] === '	') {
 	              nameString[i] = nameString[i].substring(0, nameString[i].length);
 	            }
