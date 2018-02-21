@@ -1,0 +1,528 @@
+/** sets background image, text font and weight **/
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Bubbler+One');
+@import url('https://fonts.googleapis.com/css?family=Exo+2:800');
+
+html
+{
+  height: 100%;
+}
+
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   font-weight: 300;
+   background: #fff;
+   height: 100%;
+   color:white;
+}
+
+p{
+  color:white;
+}
+
+h2{
+  color:white;
+}
+
+/** for anything that needs to be centered horizontally **/
+.center_horizontally {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.panel-shadow
+{
+  box-shadow: 5px 5px #c2c2c2 !important;
+}
+
+.vl-mid
+{
+  vertical-align: middle;
+
+}
+
+.dome-portal
+{
+  width: 240px;
+  height: 50px !important;
+}
+
+.in-block
+{
+  display: inline-block !important;
+}
+
+.grey-text
+{
+  color: #444449 !important;
+}
+
+.center-div
+{
+  width: 100%;
+}
+
+.bl-10
+{
+  padding-left: 10px;
+}
+
+.circle
+{
+  border-radius: 25%;
+}
+
+.rigid-corner
+{
+  border-radius: 0px !important;
+}
+
+.right-bord
+{
+  border-right: 2px solid white;
+  padding-right: 10px;
+}
+
+.navbar-default
+{
+  border: 0 !important;
+  margin: 0 !important;
+}
+
+.bg-red
+{
+  background-color: #EE7674 !important;
+}
+
+.bg-turq
+{
+  background-color: #4371AD;
+}
+
+.bg-purple
+{
+  background-color: #694D75;
+}
+
+.bt-red
+{
+  background-color: #D16666 !important;
+}
+
+.bt-turq
+{
+  background-color: #608EEA !important;
+}
+
+.bt-purple
+{
+  background-color: #8366AF !important;
+}
+
+.bg-green
+{
+  background-color: #7AE05E;
+}
+
+.bg-pink
+{
+  background-color: #F29BA5;
+}
+
+.bg-orange
+{
+  background-color: #E0B269;
+}
+
+.text-cen
+{
+  text-align: center;
+}
+
+.banner_text
+{
+  font-family: 'Exo 2', sans-serif;
+  margin-bottom: 50px;
+  color: white;
+}
+
+.start-btn
+{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 135%;
+  font-weight: 400;
+  color: #F5F5F5;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: solid #fff;
+  padding: 10px 20px;
+  border-radius: 9px;
+  transition: all 0.5s;
+}
+
+.start-btn:hover
+{
+  color: #fff !important;
+  outline: none !important;
+  text-decoration: none;
+}
+
+.no-select,
+.no-select:hover
+{
+  color: inherit;
+  outline: none !important;
+  text-decoration: none !important;
+  user-select: none !important;
+  moz-user-select: none !important;
+}
+
+.main_area
+{
+  height: 90%;
+  padding: 0 !important;
+}
+
+.banner_area
+{
+  position: relative;
+  height: 100% !important;
+  background:  url('/match/images/heart_background.png');
+  background-size: cover;
+}
+
+.banner_heading
+{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.banner_button,
+.banner_button:hover
+{
+  color: #888 !important;
+  outline: none !important;
+  user-select: none;
+  moz-user-select: none !important;
+  background: #fff !important;
+  border-radius: 0;
+  border-color: #fff;
+  box-shadow: -3px 4px 3px grey;
+}
+
+.days_up_area,
+.vists_area,
+.mostmatched_area
+{
+  height: 47.5%;
+}
+
+.days_up_area h3,
+.vists_area h3,
+.mostmatched_area h3
+{
+  font-family: 'Bubbler One', sans-serif;
+  color: #888 !important;
+  margin-top: 15%;
+}
+
+.days_up_area h1,
+.vists_area h1,
+.mostmatched_area h1
+{
+  font-family: 'Bubbler One', sans-serif;
+}
+
+
+
+.bg-white
+{
+  background-color: white !important;
+}
+
+#myModal3 
+{
+  margin-top: 50px !important;
+}
+
+
+.color-white
+{
+  color: white !important;
+}
+
+.pd-0
+{
+  padding: 0 !important;
+}
+
+.mt-15
+{
+  margin-top: 15px;
+}
+
+.mt-25
+{
+  margin-top: 25px;
+}
+
+
+.mt-45
+{
+  margin-top: 45px;
+}
+
+.mt-65
+{
+  margin-top: 65px;
+}
+
+.ft-geneva
+{
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.ft-ubuntu
+{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.fs-18
+{
+  font-size: 18px;
+}
+
+.fs-28
+{
+  font-size: 28px;
+}
+
+/** for anything that needs to be centered vertically **/
+.center_vertically {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+/** for anything that needs a red background and white dashed border **/
+.stitched {
+    height:auto;
+   padding: 20px;
+   margin: 10px;
+   /*background: #ff0030;*/
+   color: #fff;
+   font-size: 21px;
+   font-weight: bold;
+   line-height: 1.3em;
+   border: 2px dashed #fff;
+   border-radius: 10px;
+   box-shadow: 0 0 0 4px #b00030, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+   text-shadow: -1px -1px #aa3030;
+   font-weight: normal;
+   background-color: red;
+   background: url(http://responsivedesign.is/__data/assets/image/0006/3768/background-dark-texture.jpg?v=1.0.0) repeat;
+}
+
+/** h1's have padding and big, cursive font**/
+h1 {
+  padding: 10px;
+  text-align: center;
+  line-height: 1em;
+  font-family: 'Qwigley', cursive;
+  font-size: 3em;
+}
+
+h1.match_result, h1.friend_result {
+  text-align: left;
+  padding: 0px;
+  line-height: 1em;
+}
+
+/** Let it snow! **/
+#xmas {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+/** size for Kyra's mustang match gif **/
+.match_gif {
+  width: 25%;
+}
+
+/** for displaying our data results **/
+.data {
+  font-family: monospace;
+  margin: 20px;
+}
+
+/* for h1's with a specific, reasonably high height */
+.h1_height {
+  height: 5em;
+}
+
+/* for things that go above the snowflakes */
+.above_xmas {
+  position: absolute;
+  z-index: 3;
+}
+
+/** keeps coming up so made into a class **/
+.margin_twenty {
+  margin: 20px;
+}
+
+.underline:visited, .underline:link, .underline:active {
+  color: #FFFFFF;
+}
+
+.underline:hover {
+  color: #FF66FF;
+}
+
+.strikethrough, .strikethrough:link, .strikethrough:hover, .strikethrough:active {
+  color: #FFFFFF;
+  text-decoration: line-through;
+}
+
+.strikethrough:hover {
+  color: #FF66FF;
+  text-decoration: line-through;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+
+.option_link
+{
+  text-decoration: none !important;
+  text-decoration-style: none;
+}
+
+.red-hover:hover
+{
+  background-color: red !important;
+}
+
+.li-hover:hover
+{
+  color: black !important;
+}
+
+.banner_section
+{
+  height: 60vh;
+}
+
+.navbar-style-trans .navbar
+{
+  background: transparent;
+  border: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+}
+
+.navbar-default .navbar-nav li a,
+.navbar-default .navbar-brand
+{
+  color: #fff;
+}
+
+.quiz_area
+{
+  height: 100vh;
+  background: url('/Mustang_Match_1718/images/heart_background.png');
+  background-size: cover;
+  background-position: center;
+  padding: 5% 0 0 10%;
+}
+
+#questionArea
+{
+}
+
+.question_text
+{
+  font-family: 'Exo 2', 'sans-serif';
+  font-size: 48px;
+  color: #fff;
+  text-align: center;
+}
+
+.spec_question
+{
+  font-family: 'Exo 2', 'sans-serif';
+  padding-top: 18px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.answer_area
+{
+  padding-top: 2%;
+}
+
+.answer_area .col-md-6
+{
+  height: 15vh;
+}
+
+@media (max-width: 767px)
+{
+  .navbar
+	{
+		background: #fff !important;
+	}
+	
+	.navbar-default .navbar-nav li a,
+  .navbar-default .navbar-brand
+	{
+	  color: #888;
+	}
+	
+	
+  .banner_heading h1
+  {
+    font-size: 24px !important;
+  }
+  
+  .days_up_area,
+  .vists_area,
+  .mostmatched_area
+  {
+    height: 27.5%;
+  }
+  
+  .pack_container
+  {
+    margin-top: 35px;
+  }
+  
+  .status_well
+  {
+    text-align: center;
+  }
+  
+  .status_img
+  {
+    border: 0;
+    padding: 0;
+  }
+  
+  .status_text
+  {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
