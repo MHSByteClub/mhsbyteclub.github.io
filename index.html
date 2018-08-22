@@ -25,6 +25,9 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/style.css">
+		
+		<!--Snazzy fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
         
         <!-- Add a sign in when we can use javascript -->
         <script src="js/vendor/modernizr-2.8.0.min.js"></script>
@@ -39,70 +42,44 @@
 		
     <body>
         
-        <!-- start of Stuff-->
        
-        <!---Ent of Stuff-->
         <div class="binary">
         </div>
-        <style>
-        	.binary {
-        		position: fixed;
-        		top: 0px;
-        		left: 0px;
-        		font-size: 8px;
-        		
-				-webkit-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-				-moz-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-				-ms-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-				-o-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-				transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
-        	}
-        </style>
+        
         <script>
+            //CAN YOU DECODE THE FOLLOWING MESSAGE!?!?? LITTLE ORPHAN ANNIE WOULD LOVE IT.
 			var binaryString = "01001001011001100010000001111001011011110111010100100111011100100110010100100000011100100110010101100001011001000110100101101110011001110010000001110100011010000110100101110011001000000100101001001111010010010100111000100000010000100101100101010100010001010010000001000011010011000101010101000010";
-			for(var i=0; i<binaryString.length; i++) {
-			    var div = document.getElementsByClassName("binary")[0];
-				div.innerText += binaryString[i];
-			}
+			var div = document.getElementsByClassName("binary")[0];
+			div.innerText += binaryString;
         </script>
 	
         <div id="wrap" class="container">
-            <h6><i>Don't Be D.R.Y</i></h6>
-		<!-- Banner -->
+            
+		<!-- Banner, yeah we use a marquee - it's been deprecated since like 1996 --->
 	        <marquee behavior="slide" direction="left" scrollamount="90">
 	            <img src="img/byteclub-banner-teal-low.jpg" alt="Byte Club: Start Right">
-                <img src="img/viking.png" alt="Byte Club: Start Right">
             </marquee>
              <!-- Navigation Bar -->
 	        <div class="menu-wrap">
     			<nav class="menu">
         			<ul class="clearfix">
-            			<li><a href="">Member Sites<span class="arrow">&#9660;</span></a>
-        					<ul class="sub-menu">
-        						<li><a href="https://mrfarmer777.github.io">Mr Farmer's Site</a></li>
-            						<li><a href = "https://djbmo.github.io">Alex N's Site</a></li>
-            						<li></li>
+        						
+            					
             						<!--
+            						<li><a href="https://mrfarmer777.github.io">Mr Farmer's Site</a></li>
+            						<li><a href="https://djbmo.github.io">Alex N's Site</a></li>
             						<li><a href="http://theexceptionist.github.io//">Kenny Stepney's Site</a></li>
                                     <li><a href="http://pinkerfish.github.io/">Natalia Ozymko's Site</a></li>
                                     <li><a href="http://montyfish.github.io/">Victoria Ozymko's Site</a></li>
-            						<!--<li><a href="http://zame012.github.io/">Kyle Koeller's Site</a></li>
-            						<li><a href="http://bigal65.github.io/">Anuj's Site</a></li>
-            						<li><a href="http://angelmontheod.github.io">Angel's Site</a></li>
-            						<li><a href="http://definitelynottyler.github.io/">Tyler's Site</a></li>
-            						<!--<li><a href="http://nduncan52.github.io/">Nick Duncan's Site</a></li>
-            						<li><a href="http://seanbobagins.github.io/">Sean Santore's Site</a></li>
-            						<li><a href="http://definitelynottyler.github.io/">Tyler's Site</a></li>
-            						<li><a href="http://nyodrax-nyodrax.c9.io/hello-world.html">Nyodrax's Site</a></li>
             						<li><a href="https://raphaelrk.github.io">Raphael Rouvinov's Site</a></li>
             						<li><a href="https://salamanderdan.github.io">Daniel Balogh's Site</a></li> -->
-        					</ul>
-        				</li>
+        					
+        				<li><a href="https://goo.gl/forms/bH1CFkqKaf6pSQpc2">Sign-In</a></li>
         				<li><a href="/contacts.html">Contacts</a></li>
         				<li><a href="/Events.html">Events</a></li>
         				<li><a href="/16-17Ideas.html">17-18 Ideas</a></li>
-        				<!-- We don't need this till next year -->
-        				<!--<li><a href="/match.html">Match</a></li>-->
+        				<li></li>
+        				
         			</ul>
     			</nav>
 			</div>
@@ -112,41 +89,28 @@
         	<div style = "text-align:center">
         	    
 
-                <h3 id ="fun-output">Welcome to Byte Club!</h3>
-                <button class = "buttonfun" onclick = "buttonFun()">FUN.</button>
-                <h2>Next Meeting: Wednesday, 04/11 at 3:15 in C104.</h2>
-                <h2><a href="https://script.google.com/a/macros/d120.org/s/AKfycbwzVDm4h8eJM-H0CAzCjsTvUK7vy_MV1Tq0eOB_eT7d5YQvAARWT961TKGKiOyqZgBCrQ/exec">Try the Mustang Match: Spring Fever Beta!</a></h2>
+                <h3 id ="fun-output"></h3>
+                
+                <h1>Kick-off Meeting:</h1>
+                <h3>Wednesday, August 22nd at 3:30 in C104</h3>
 
-                <!--<h3>Welcome to Byte Club!</h3>-->
+             
                 
-
-                
-
-                <!-- p>Wanna know more about that whole "infosec" thing Trevor talked about? <a href = "https://gist.github.com/mubix/5737a066c8845d25721ec4bf3139fd31">Here's something to get you started.</a> <a href = "https://www.hak5.org/">Here's something else. </a></p>-->
-                <p><a href="https://goo.gl/forms/bH1CFkqKaf6pSQpc2">Club Meeting Sign-In</a></p>
-                <p><a href = "https://goo.gl/forms/mvgqqoHNxdKWaQPo1">Fill out this Byte Club Member Info Form</a></p>
-                <p><a href = "https://bunny-hill-mrfarmer7771.c9users.io/Mustang_Match_1718/index.php">Beta Mustang Match Site</a></p>
-                <p><a href = "https://goo.gl/forms/Kd42EvXtdEVzw5SD3">Vote for 2018-2019 Officers!</a></p>
-                
-                
-                    
          
                 <div id = "connect">
                 	    <a href="https://twitter.com/MHSByte" class="twitter-follow-button" data-show-count="false">Follow @MHSByte</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                 	    <p>Text @mhsbyte to 81010 to get signed up for the MHS Byte Club Remind!</p>
                 </div>
             </div>
-        	<div class="global">
-        	  
-        	</div>
+        	
         	
         	<!--pulls in Abode font for Byte Bash announcement -->
             <style>
-        		      @font-face {
-            		    font-family: 'JK Abode';
-            		    src: url('fonts/JKAbode-Demo.ttf');
-            	        src: local('JK Abode'), local('JK Abode'), url('fonts/JKAbode-Demo.ttf') format('truetype');
-            		  }
+    		      @font-face {
+        		    font-family: 'JK Abode';
+        		    src: url('fonts/JKAbode-Demo.ttf');
+        	        src: local('JK Abode'), local('JK Abode'), url('fonts/JKAbode-Demo.ttf') format('truetype');
+        		  }
 		    </style>
         	<div class="Updates" style = "text-align:center">
         	</div>
@@ -160,17 +124,17 @@
                 <div span class = "President">President: Komol Patel</span></div>
                 </h2></marquee>
             <marquee behavior="slide" direction="left" scrollamount="78"><h2>
-                <div span class = "Vice">Vice-President: Alex Nickl</span></div>
+                <div span class = "Vice">Vice-President: John Lay</span></div>
             </h2></marquee> 
             <marquee behavior="slide" direction="left" scrollamount="77"><h2>
-                <div span class = "Secretary">Secretary: Sergio Calderon</span></div>
+                <div span class = "Secretary">Secretary: Kiefer Wald</span></div>
             </h2></marquee> 
             <marquee behavior="slide" direction="left" scrollamount="76"><h2>
-                <div span class = "Webmaster">Webmaster: Trevor Medina</span></div>
+                <div span class = "Webmaster">Webmasters: Matt Campbell and Ronit Patel</span></div>
             </h2></marquee> 
         	<br>
         	
-        	<h2 id="Goal">Goal for this Club</h2>
+        	<h2 id="Goal">Goals for this Club</h2>
         	<p></p>
         	<ul>
         		<li>Give people a chance to learn and program with others</li>
@@ -326,15 +290,11 @@
 		    
 		    
 		
-		<!-- Comment Box -->
-        <!--we don't need no comment box. THX
-        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
-        <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-        <!--<script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=(""+window.location).replace(/'/g,"%27") || hcb_user.PAGE, h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%244MQIeCjUtO6RKnJUHgV1r%2F"+"&opts=16860&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); </script>-->
-                
-		<!-- Footer -->
+		
         <br>
         <hr>
+        <button class = "buttonfun" onclick = "buttonFun()">FUN.</button>
+        <h6><i>Always be D.R.Y. (you can say that again...) </i></h6>
         <footer>Site source available on <a href="https://github.com/MHSByteClub/mhsbyteclub.github.io">GitHub</a>.</footer>
         <footer><a href="contacts.html">Contact Us</a></footer>
 <!--<a href=""></a>-->
@@ -343,9 +303,7 @@
 
         </script>
         
-        <div class="sound">
-       
-      </div>
+        
         <!--
         <script>
             var outputJunk = [

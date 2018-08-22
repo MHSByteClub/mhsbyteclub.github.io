@@ -153,6 +153,22 @@ textarea {
 
 /* Styling for kick-off meeting elements */
 
+h1, h2 {
+    font-family: 'JK Abode', cursive;
+}
+
+.binary {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	font-size: 8px;
+	
+	-webkit-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+	-moz-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+	-ms-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+	-o-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+	transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+}
 #code_on {
     color:blue;
     -webkit-transition: color 1s;
@@ -169,6 +185,8 @@ textarea {
     -o-transition:color 1s;
     transition:color 1s;
 }
+
+
 
 
 .buttonfun {
