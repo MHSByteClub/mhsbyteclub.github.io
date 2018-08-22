@@ -37,9 +37,9 @@ Congratulations, you know how to inspect element! Next step?
 	<?php
 	//Linking to server and database, disabled for now until we can mimic this in C9
 	
-  $servername = "localhost"; // Doesn't change
+  $servername = "bunny-hill-mrfarmer7771.c9users.io:3306"; // Doesn't change
   $username = "matchmaker"; // Doesn't change
-  $password = "";
+  $password = "password";
   $database = "mhsmatch";
 
   $conn = mysqli_connect($servername, $username, $password, $database);
