@@ -130,10 +130,7 @@ dfn {
  * contexts in Firefox 4+, Safari, and Chrome.
  */
 
-h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-}
+
 
 /**
  * Address styling not present in IE 8/9.
@@ -407,19 +404,3 @@ optgroup {
     font-weight: bold;
 }
 
-/* Tables
-========================================================================== */
-
-/**
- * Remove most spacing between table cells.
- */
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-td,
-th {
-    padding: 0;
-}

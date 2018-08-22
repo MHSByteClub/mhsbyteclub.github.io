@@ -13,68 +13,9 @@
 html {
     color: #222;
     font-size: 1em;
-    line-height: 1.4;
-}
-/* Animation Code
-body {
-    background:url('../img/pineapple_texture.jpg');
-}
-*/
-/*
-p {
-    background:url('../img/pineapple_texture2.jpg');
-    background-repeat:repeat-x;
-    background-position:0 0;
-    font-size:200px;
-    text-transform:uppercase;
-    text-align:center;
-    font-family:'Luckiest Guy';
-    color:transparent;
-    -webkit-font-smoothing:antialiased;
-    -webkit-background-clip:text;
-    -moz-background-clip:text;
-    background-clip:text;
-    -webkit-text-fill-color:transparent;
-    margin:0;
-        -webkit-animation:BackgroundAnimated 15s linear infinite;
-    -moz-animation:BackgroundAnimated 15s linear infinite;
-    -ms-animation:BackgroundAnimated 15s linear infinite;
-    -o-animation:BackgroundAnimated 15s linear infinite;
-    animation:BackgroundAnimated 15s linear infinite;
+    line-height: 1;
 }
 
-*/
-    @keyframes BackgroundAnimated {
-    from {
-        background-position:0 0
-    }
-    to {
-        background-position:100% 0
-    }
-}
-    @-webkit-keyframes BackgroundAnimated {
-    from {
-        background-position:0 0
-    }
-    to {
-        background-position:100% 0
-    }
-}
-    @-ms-keyframes BackgroundAnimated {<     from {
-        background-position:0 0
-    }
-    to {
-        background-position:100% 0
-    }
-}
-    @-moz-keyframes BackgroundAnimated {
-    from {
-        background-position:0 0
-    }
-    to {
-        background-position:100% 0
-    }
-}
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -154,8 +95,29 @@ textarea {
 /* Styling for kick-off meeting elements */
 
 h1, h2 {
-    font-family: 'JK Abode', cursive;
+    font-family: 'Audiowide', cursive;
 }
+
+h1{
+    font-size: 3.2em;
+}
+
+#connect{
+    border-color: #888;
+    border: solid 2px;
+    border-radius:10px;
+}
+
+.info-table{
+    margin:10px;
+    
+}
+
+.info-table tr td {
+    padding: 10px;
+}
+
+
 
 .binary {
 	position: fixed;
