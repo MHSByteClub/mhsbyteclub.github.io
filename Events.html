@@ -13,10 +13,56 @@
         <meta name="keywords" content="Mundelein,High,School,Programming,Byte,Club,Farmer,Rouvinov,Cygnus,Palacios">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Border of Binary Code -->
+        
+	
+        <!-- Site title. Shows up on tab. -->
+        <title>Byte Club</title>
+
+        <!-- Stylesheets. Specify how the content of the site should look and feel, e.g. { color: red; font-family: Comic Sans MS; } -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/style.css">
+    	<!-- Add a sign in when we can use javascript -->
+        <script src="js/vendor/modernizr-2.8.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    </head>
+		
+    <body>
+
+     
+		<!--binary message-->
         <div class="binary">
         </div>
-        <style>
+
+        <!-- Navigation Bar -->
+	    <div id="wrap" class="container"></div>
+		<div id="wrap" class="container">
+        	<!-- Upcoming events -->
+        	<h2 id="Events">Upcoming Events</h2>
+        	<ul>
+        		<li><a href="https://codeday.org/chicago">CodeDay</a></li>
+        			<ul>
+        				<li>Events TBA!</li>
+        			</ul>
+    			</li>
+    		</ul>
+    		<!-- Footer -->
+    		<br>
+	        <hr>
+	        <footer>Site source available on <a href="https://github.com/MHSByteClub/mhsbyteclub.github.io">GitHub</a>.</footer>
+	        <footer><a href="contacts.html">Contact Us</a></footer>
+	        <footer>To go back to the <a href="index.html">Home Page</a></footer>
+		</div>
+	
+	
+		<script>
+  		//Loadin' in that tasty navbar
+        $(function(){
+            $("#wrap").load('nav.html');
+        });
+        </script>
+		
+		<style>
         	.binary {
         		position: fixed;
         		top: 0px;
@@ -37,57 +83,5 @@
 				div.innerText += binaryString[i];
 			}
         </script>
-
-        
-        <!-- Banner -->
-	 <h1><a href="/"><img src="img/byteclub-banner-teal-low.jpg" alt="Byte Club: Start Right"></a></h1>
-
-	        <div class="menu-wrap">
-    			<nav class="menu">
-    			    <ul class='clearfix'>
-        				<li><a href="https://goo.gl/forms/bH1CFkqKaf6pSQpc2">Sign-In</a></li>
-        				<li><a href="/contacts.html">Contacts</a></li>
-        				<li><a href="/Events.html">Events</a></li>
-        				<li><a href="/16-17Ideas.html">17-18 Ideas</a></li>
-        				<li><a href="#buttonfun">Have Fun.</a></li>
-        			</ul>	
-        			
-    			</nav>
-			</div>
-
-	
-        <!-- Site title. Shows up on tab. -->
-        <title>Byte Club</title>
-
-        <!-- Stylesheets. Specify how the content of the site should look and feel, e.g. { color: red; font-family: Comic Sans MS; } -->
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/style.css">
-    	<!-- Add a sign in when we can use javascript -->
-        <script src="js/vendor/modernizr-2.8.0.min.js"></script>
-    	</head>
-		<!-- Javascript. -->
-		<!-- Modernizr.js is supposed to make development better by reducing cross-browser compatibility issues-->
-	 <body>
-    		<div id="wrap" class="container">
-        	<!-- Upcoming events -->
-        	<h2 id="Events">Upcoming Events</h2>
-        	<p></p>
-        	<ul>
-        		<li><a href="https://codeday.org/chicago">CodeDay</a></li>
-        			<ul>
-        				<li>Events TBA!</li>
-        			</ul>
-        			</li>
-        	
-        		</ul>
-        		<p></p>
-        		<!-- Footer -->
-        		<br>
-		        <hr>
-		        <footer>Site source available on <a href="https://github.com/MHSByteClub/mhsbyteclub.github.io">GitHub</a>.</footer>
-		        <footer><a href="contacts.html">Contact Us</a></footer>
-		        <footer>To go back to the <a href="index.html">Home Page</a></footer>
-		</div>
-        </body>
+    </body>
 </html>	
