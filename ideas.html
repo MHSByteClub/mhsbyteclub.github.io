@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    <head>
+        
+    	<!-- Meta tags. Specify text-encoding, site info, site size. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Mundelein High School Byte Club Website">
+        <meta name="keywords" content="Mundelein,High,School,Programming,Byte,Club,Farmer,Rouvinov,Cygnus,Palacios,Kenny">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Site title. Shows up on tab. -->
+        
+        <title>MHS Byte Club</title>
+
+        <!-- Stylesheets. hi Specify how the content of the site should look and feel, e.g. { color: red; font-family: Comic Sans MS; } -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/style.css">
+		
+		<!--Snazzy fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+		
+
+        <!-- Add a sign in when we can use javascript -->
+        <script src="js/vendor/modernizr-2.8.0.min.js"></script>
+        <!-- added JQuery --->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        
+        <!-- Let's have some button fun -->
+        <script src="js/buttonFun.js"></script>
+    </head>
+			
+    <body>
+    	<!-- The following comment only runs if your on less than (lt) Internet Explorer (IE) 8 -->
+	        <!--[if lt IE 8]>
+	            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	        <![endif]-->
+
+        <!-- Border of Binary Code -->
+        <div class="binary">
+        </div>
+        
+
+	
+	<!-- content goes in here -->
+	<div class="container">
+	
+		
+	
+		<div id="wrap" class="container">
+			
+		</div>
+
+    	
+    	<h2>Ideas for this school year that could/will be done</h2>
+    	<ul>
+    		<li>Finish Mustang Madness (Rock, Paper, Scissors program)</li>
+    		<li>Finish the “is it blocked?” extension</li>
+    		<li>Lessons taught by different individuals</li>
+    		<ul>
+    			<li>e.g. lessons on node.js, python, Dart, C/C++, Java, cryptography, binary, stacks and heap</li>
+    		</ul>
+    		<li>Play cs50 in the background maybe</li>
+    		<li>Keeping minutes on the website and in emails</li>
+    		<li>Nicholas Cage related projects</li>
+		<li>Shirts</li>
+		<li>projecteuler.net</li>
+		<li>USACO problems</li>
+		<li>Project Requests from students(page on the byte club website)</li>
+		<li>Finish graduation program- Mrs. Billitier should come in if she wants it perfect</li>
+		<li>Get art club to show up and do artsy programs/collaborate with them on graphic design - (show Armani “Bees and Bombs”)</li>
+		<li>3D game design and modeling(yes, it is a job)</li>
+		<li>Byte Me Game 2</li>
+		<li>Partnership with Science club and Robotics(suggested by neela)</li>
+		<li>Certificates for getting past KhanAcademy tutorial things</li>
+		<li>And other projects</li>
+    	</ul>
+    	<br>
+    	<hr>
+    	<footer>Go back to the <a href="index.html">Home Page</a></footer>
+		<footer>Site source available on <a href="https://github.com/MHSByteClub/mhsbyteclub.github.io">GitHub</a>.</footer>
+		 <script>
+            $(function(){
+                $("#wrap").load('nav.html');
+            });
+        </script>
+		<style>
+	    	.binary {
+	    		position: fixed;
+	    		top: 0px;
+	    		left: 0px;
+	    		font-size: 8px;
+	    		
+				-webkit-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+				-moz-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+				-ms-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+				-o-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+				transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
+	    	}
+	    </style>
+	    <script>
+			var binaryString = "01001001011001100010000001111001011011110111010100100111011100100110010100100000011100100110010101100001011001000110100101101110011001110010000001110100011010000110100101110011001000000100101001001111010010010100111000100000010000100101100101010100010001010010000001000011010011000101010101000010";
+			for(var i=0; i<binaryString.length; i++) {
+			    var div = document.getElementsByClassName("binary")[0];
+				div.innerText += binaryString[i];
+			}
+	    </script>
+    </body>
+</html>
