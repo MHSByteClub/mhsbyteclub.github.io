@@ -40,7 +40,8 @@ a:visited {
 
 a:hover {
     text-decoration: none;
-    color: orange;
+    color: #222222;
+    box-shadow: 8px 8px black;
 }
 
 #wrap {

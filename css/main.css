@@ -357,3 +357,17 @@ h1{
 .navigation li a:hover {
    background-color: black;
 }
+
+
+.button {
+  font: bold 18px Arial;
+  text-decoration: none;
+  background-color: #7DB5C2;
+  color: #222222;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  border-radius: 3px;
+}
