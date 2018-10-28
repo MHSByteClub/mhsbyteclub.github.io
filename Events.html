@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
     <head>
-            <!--<style>
-            body {
-                background-color: #EDA0BD;
-           	}
-        	</style>-->
+            
     	<!-- Meta tags. Specify text-encoding, site info, site size -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +12,7 @@
         
 	
         <!-- Site title. Shows up on tab. -->
-        <title>Byte Club</title>
+        <title>Byte Club - Events</title>
 
         <!-- Stylesheets. Specify how the content of the site should look and feel, e.g. { color: red; font-family: Comic Sans MS; } -->
         <link rel="stylesheet" href="css/normalize.css">
@@ -35,25 +31,47 @@
         </div>
 
         <!-- Navigation Bar -->
-	    <div id="wrap" class="container"></div>
-		<div id="wrap" class="container">
+        <div id="wrap" class="container">
+        </div>
+		<div id="events-container" class="container">
         	<!-- Upcoming events -->
-        	<h2 id="Events">Upcoming Events</h2>
-        	<ul>
-        		<li><a href="https://codeday.org/chicago">CodeDay</a></li>
-        			<ul>
-        				<li>Events TBA!</li>
-        			</ul>
-    			</li>
-    		</ul>
-    		<!-- Footer -->
-    		<br>
-	        <hr>
-	        <footer>Site source available on <a href="https://github.com/MHSByteClub/mhsbyteclub.github.io">GitHub</a>.</footer>
-	        <footer><a href="contacts.html">Contact Us</a></footer>
-	        <footer>To go back to the <a href="index.html">Home Page</a></footer>
-		</div>
-	
+        	<h1 align="center">Upcoming Events</h1>
+        	<div class='event-card clearfix'>
+        	    <div class='card-header'>
+        	       <h2>STEAM Night</h2>
+        	    </div>
+        	    <div class="card-content">
+        	        <div class="card-image"><img src="https://www.d120.org/assets/1/14/STEAM_Night_EVENT.png?5028"/></div>
+        	        <div class="card-date"><h4>Monday, October 29th, 6-8 PM</h4></div>
+        	        <div class="card-info">Byte Club members show off their fall projects and guide students and parents through an introductory coding session!</div>
+        	        <a href="https://www.d120.org/events/steam-night-at-mhs/"><button class="card-button">Learn more</button></a>
+        	    </div>
+        	</div>
+        	<div class='event-card clearfix'>
+        	    <div class='card-header'>
+        	       <h2>CodeDay Chicago</h2>
+        	    </div>
+        	    <div class="card-content">
+        	        <div class="card-image"><img src="https://lifeblue.imgix.net/Blog/Imports/codeday_logo.png"/></div>
+        	        <div class="card-date"><h4>Saturday, November 10th to Sunday, November 11th (noon-noon)</h4></div>
+        	        <div class="card-info">
+        	                <p>A 24-hour hackathon for high school coders. Work together to build something amazing!</p>
+        	                <p>Byte Club students will be chaperoned as we take the train to and from the event. More details available below.</p></div>
+        	        <a href="https://www.codeday.org/chicago"><button class="card-button">Code Day</button></a>
+        	        <a href=""><button class="card-button">Student Info</button></a>
+        	        <a href="https://www.google.com/maps/place/200+W+Monroe+St,+Chicago,+IL+60606/@41.8808653,-87.6342933,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipN_W7siDGZpfp91pJgHeJBxQj1DXTQN2ndTEDEE!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipN_W7siDGZpfp91pJgHeJBxQj1DXTQN2ndTEDEE%3Dw152-h86-k-no!7i5312!8i2988!4m5!3m4!1s0x880e2cb94f1419e5:0x54073bfa80879873!8m2!3d41.8808653!4d-87.6342933"><button class="card-button">Event Location</button></a>
+
+        	        
+        	    </div>
+        	</div>
+    	</div>
+		<!-- Footer -->
+		<br>
+        <hr>
+        <footer>Site source available on <a href="https://github.com/MHSByteClub/mhsbyteclub.github.io">GitHub</a>.</footer>
+        <footer><a href="contacts.html">Contact Us</a></footer>
+        <footer>To go back to the <a href="index.html">Home Page</a></footer>
+
 	
 		<script>
   		//Loadin' in that tasty navbar
@@ -75,6 +93,50 @@
 				-o-transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
 				transform: translateX(-50%) rotate(-90deg) translateY(50%) translateX(-50%);
         	}
+        	
+        	.event-card{
+        	    border: solid 2px;
+        	    border-radius: 10px;
+        	    padding:10px;
+        	    margin-bottom:20px;
+        	}
+        	
+        	.card-image{
+        	    width:150px;
+        	    height:auto;
+        	    float:left;
+        	    margin:10px;
+        	}
+        	
+        	.clearfix{
+        	    overflow:auto;
+        	}
+        	
+        	.card-button{
+        	    border:none;
+        	    border-radius:5px;
+        	    background:#75b5ce;
+        	    padding:8px;
+        	    margin:20px
+        	}
+        	
+        	.event-card a {
+        	    box-shadow:none;
+                color:white;        	
+        	}
+        	
+        	.card-button:hover{
+        	    box-shadow:10px 10px black;
+        	    color:black;
+        	}
+        	
+        	.cart-content{
+        	    padding:8px;
+        	    margin:8px;
+        	}
+        	
+        	
+        	
         </style>
         <script>
 			var binaryString = "01001001011001100010000001111001011011110111010100100111011100100110010100100000011100100110010101100001011001000110100101101110011001110010000001110100011010000110100101110011001000000100101001001111010010010100111000100000010000100101100101010100010001010010000001000011010011000101010101000010";
@@ -83,5 +145,7 @@
 				div.innerText += binaryString[i];
 			}
         </script>
+        <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+
     </body>
 </html>	
