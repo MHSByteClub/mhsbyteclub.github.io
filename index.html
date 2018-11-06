@@ -18,16 +18,22 @@
         <meta name="keywords" content="Mundelein,High,School,Programming,Byte,Club,Farmer,Rouvinov,Cygnus,Palacios,Kenny">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Site title. Shows up on tab. -->
-        
         <title>MHS Byte Club</title>
 
         <!-- Stylesheets. hi Specify how the content of the site should look and feel, e.g. { color: red; font-family: Comic Sans MS; } -->
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link id='flexstyle' rel="stylesheet" href="css/style.css">
 		
 		<!--Snazzy fonts-->
 		<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+		<style>
+		      @font-face {
+    		    font-family: 'JK Abode';
+    		    src: url('fonts/JKAbode-Demo.ttf');
+    	        src: local('JK Abode'), local('JK Abode'), url('fonts/JKAbode-Demo.ttf') format('truetype');
+    		  }
+	    </style>
 		
 
         <!-- Add a sign in when we can use javascript -->
@@ -37,21 +43,20 @@
         
         <!-- Let's have some button fun -->
         <script src="js/buttonFun.js"></script>
-        
 
     </head>
 		
     <body>
         
-       
+        <!--Fun binary string easter egg-->
         <div class="binary">
         </div>
         
         <script>
             //CAN YOU DECODE THE FOLLOWING MESSAGE!?!?? Be sure to drink your Ovaltine.
-			var binaryString = "01001001011001100010000001111001011011110111010100100111011100100110010100100000011100100110010101100001011001000110100101101110011001110010000001110100011010000110100101110011001000000100101001001111010010010100111000100000010000100101100101010100010001010010000001000011010011000101010101000010";
-			var div = document.getElementsByClassName("binary")[0];
-			div.innerText += binaryString;
+    		var binaryString = "01001001011001100010000001111001011011110111010100100111011100100110010100100000011100100110010101100001011001000110100101101110011001110010000001110100011010000110100101110011001000000100101001001111010010010100111000100000010000100101100101010100010001010010000001000011010011000101010101000010";
+    		var div = document.getElementsByClassName("binary")[0];
+    		div.innerText += binaryString;
         </script>
 	
 	    <!--This is where the navbar will go when the document is loaded, thanks jQuery -->
@@ -59,26 +64,28 @@
 		</div>
         	
         	
-        	<div style = "text-align:center">
-        	    
-                <h3 id ="fun-output"></h3>
+    	<div class="container" style = "text-align:center">
+    	    
+            <div id ="fun-output"></div>
+            <div id="main-announcements-container" class="container">
+                <!--
+                <h2>MHS STEAM Night</h2>
+                 <a href="https://docs.google.com/document/d/1E5q6t9axGey_7f1lkx-cQTfGOuaxGqs9oV_Yw816Cjs/edit?usp=sharing"><button>Code With Me</button></a>
                 <div>
-                    <!--
-                    <h2>MHS STEAM Night</h2>
-                     <a href="https://docs.google.com/document/d/1E5q6t9axGey_7f1lkx-cQTfGOuaxGqs9oV_Yw816Cjs/edit?usp=sharing"><button>Code With Me</button></a>
-                    <div>
-                        <a href="https://docs.google.com/document/d/1E5q6t9axGey_7f1lkx-cQTfGOuaxGqs9oV_Yw816Cjs/edit?usp=sharing"><iframe src="https://editor.p5js.org/mrfarmer777/embed/BJPUwhPjm" width="750px" height="100px" style="border:none"></iframe></a>
-                    </div>
-                    -->
-                    </div>
-                    
+                    <a href="https://docs.google.com/document/d/1E5q6t9axGey_7f1lkx-cQTfGOuaxGqs9oV_Yw816Cjs/edit?usp=sharing"><iframe src="https://editor.p5js.org/mrfarmer777/embed/BJPUwhPjm" width="750px" height="100px" style="border:none"></iframe></a>
+                </div>
+                -->
+            
+                <div id="meeting-announcment">
                     <h3>Next Meeting</h3>
-                    <h4>Wednesday, October 31st, 3:30 PM in C104</h4>
+                    <h4>Wednesday, November 7th, 3:30 PM in C104</h4>
                     <a href="https://goo.gl/forms/bH1CFkqKaf6pSQpc2" class="button">Sign In to Byte Club</a>
-                    <p>Wanna go to <a href="https://docs.google.com/document/d/1ydG8lBw0nikbKBc8q_mwAlyiHk19qRj_QlzdZPVVCI8/edit?usp=sharing">Code Day Chicago? </a> Get some info and a <a href="https://docs.google.com/document/d/1h_zI58Rm1NrtmkRmbo-FGAvRsqvvLYt-1vcvUn5nKn4/edit?usp=sharing">permission slip</a> here. 
-                    
+                </div>
+                <div class="announcement">
+                    <p>Wanna go to <a href="https://docs.google.com/document/d/1ydG8lBw0nikbKBc8q_mwAlyiHk19qRj_QlzdZPVVCI8/edit?usp=sharing">Code Day Chicago? </a> Get some info and a <a href="https://docs.google.com/document/d/1h_zI58Rm1NrtmkRmbo-FGAvRsqvvLYt-1vcvUn5nKn4/edit?usp=sharing">permission slip</a> here.
                     <h3>HEY!<a href="https://docs.google.com/document/d/1h_zI58Rm1NrtmkRmbo-FGAvRsqvvLYt-1vcvUn5nKn4/edit?usp=sharing"> What are we doing today???</a></h3>
-                    <div>
+                </div>
+                <div class="announcement" align="LEFT">
                     <h2>Selected  Showcase Projects</h2>
                     <ul>
                         <li>M.E.N.A.C.E. - Komol Patel and Erik Costello - Continuing work from our project last year.</li>
@@ -91,166 +98,166 @@
                         <li><a href="https://www.khanacademy.org/computer-programming/tempo-game/4533751674175488">Tempo Game</a> - Mr. Farmer - How steady is your tempo?</li>
                         <li><a href="https://www.khanacademy.org/computer-programming/smart-rock-paper-scissors/6423744100171776">SMART RPS</a> - Raphael Rouvinov (Byte Club Co-Founder) - A Smart Rock Paper Scissor Game!</li>
                     </ul>
-                  </div>   
-                
-                <br><br>
-                <div id = "connect">
+                </div>   
+                <div id = "connect" class="announcement">
                     <h4>Connect with us...</h4>
             	    <a href="https://twitter.com/MHSByte" class="twitter-follow-button" data-show-count="false">Follow @MHSByte</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             	    <p>Text @mhsbyte to 81010 to get signed up for the MHS Byte Club Remind!</p>
             	    <a href="https://github.com/MHSByteClub">Check us out on Github!</a>
                 </div>
-                
-                
-                
-                
             </div>
+        
             
            
         	
         	
-        	<!--pulls in Abode font for Byte Bash announcement -->
-            <style>
-    		      @font-face {
-        		    font-family: 'JK Abode';
-        		    src: url('fonts/JKAbode-Demo.ttf');
-        	        src: local('JK Abode'), local('JK Abode'), url('fonts/JKAbode-Demo.ttf') format('truetype');
-        		  }
-		    </style>
-        	<div class="Updates" style = "text-align:center">
-        	</div>
-			 
-        	<!-- This is to make the headings move from left to right -->
-            <marquee behavior="slide" direction="left" scrollamount="80">
-                <h2>
-                <div span class = "Officers">The Officers of MHS Byte Club 2018-19 :</span></div>
-                </h2></marquee> 
-            <marquee behavior="slide" direction="left" scrollamount="79"><h3>
-                <div span class = "President">President: Komol Patel</span></div>
-                </h3></marquee>
-            <marquee behavior="slide" direction="left" scrollamount="78"><h3>
-                <div span class = "Vice">Vice-President: John Lay</span></div>
-            </h3></marquee> 
-            <marquee behavior="slide" direction="left" scrollamount="77"><h3>
-                <div span class = "Secretary">Secretary: Kiefer Wald</span></div>
-            </h3></marquee> 
-            <marquee behavior="slide" direction="left" scrollamount="76"><h3>
-                <div span class = "Webmaster">Webmasters: Matt Campbell and Ronit Patel</span></div>
-            </h3></marquee> 
-        	<br>
         	
-        
+            <!--Cringey rainbow officer names container-->
+    	    <div class="container" id="officer-container">
+    	        	<!-- This is to make the headings move from left to right -->
+                <marquee behavior="slide" direction="left" scrollamount="80">
+                    <h2>
+                    <div span class = "Officers">The Officers of MHS Byte Club 2018-19 :</span></div>
+                    </h2></marquee> 
+                <marquee behavior="slide" direction="left" scrollamount="79"><h3>
+                    <div span class = "President">President: Komol Patel</span></div>
+                    </h3></marquee>
+                <marquee behavior="slide" direction="left" scrollamount="78"><h3>
+                    <div span class = "Vice">Vice-President: John Lay</span></div>
+                </h3></marquee> 
+                <marquee behavior="slide" direction="left" scrollamount="77"><h3>
+                    <div span class = "Secretary">Secretary: Kiefer Wald</span></div>
+                </h3></marquee> 
+                <marquee behavior="slide" direction="left" scrollamount="76"><h3>
+                    <div span class = "Webmaster">Webmasters: Matt Campbell and Ronit Patel</span></div>
+                </h3></marquee> 
+            	<br>
+    	    </div>
+    	    
+    	    <!--Basic Club info -->
+            <div id="about-us" class="container left-align">
+                <h2 id="goals">What We Do:</h2>
+            	
+            	<ul>
+            		<li>Give people a safe place to ask questions and learn about code and computing.</li>
+            		<li>Build large-scale projects in teams</li>
+            		<li>Spread awareness about the benfits of learning to code throughout MHS.</li>
+            		<li>Support other MHS extra-curriculars with the use of technology and coding</li>
+            		<li>Display exemplary digital citizenship and advocate for digital safety.</li>
+            	</ul>
+            	
+            	<h2 id="donts">What We DON'T Do:</h2>
+            	<p></p>
+            	<ul>
+            		<li>Pwn Newbs (We won't ever make you feel bad for asking questions and wanting to learn! It's the only way to get better.)</li>
+            		<li>Hack others' systems, accounts, or resources without their expressed written consent.</li>
+            		<li>Give out assignments. This isn't a class. However, you'll be expected to progress and build something that interestes you!</li>
+            		<li>Get distracted by other computer-y stuff. <i>I'm looking at you Pokemon crowd.</i></li>
+            	</ul>
+    
+            	<h2 id="projects">Projects we are currently doing or will be doing</h2>
+            	<ul>
+            		<li><strong>Chrome extensions</strong>: MHS issues chromebooks to students, which means our extensions can have a big impact. For example, the school CIPA filter blocks a lot of relevant sites, but visiting a site to find that it's blocked is annoying and time-wasting. The school is like "we are going to build a firewall." We made a chrome extension that lets you know whether a link is blocked or not, and now our lives are bliss.</li>
+            		<li><strong>Processing sketches</strong>: For most new members, byte club will be your first time coding, and <a href="http://processing.org/">processing</a>/<a href="http://processingjs.org/">processing.js</a> is an ideal way to begin as it allows you to write visual programs easily and immediately. You can make <a href="http://beesandbombs.tumblr.com/">cool art</a>, <a href="http://raphaelrk.com/pjs?sketch=mandelbrot">interactive demonstrations</a>, and much more!</li> There's also a great processing curriculum and editor at <a href="https://www.khanacademy.org/computing/cs/programming">Khanacademy.org</a>
+            		<li><strong>Hackathons</strong>: These are events where programmers get together and build insane things in a short span of time (never send a human to do a machine's job). Some (unaffiliated) examples of hackathons you could attend are <a href="http://codeday.org/">CodeDay</a> or any listed at <a href="http://mlh.io/">MLH</a>.</li>
+            		<li><strong>Website building</strong>: Even if you don't want to make websites, it's cool to understand how they work. Learning HTML/CSS is a great way to start! <a href="https://www.khanacademy.org/computing/cs/programming">Khanacademy.org</a> and <a href="https://www.codecademy.com/learn/web">Codecademy.org</a> are good beginner tools.</a> </li>
+            	</ul>
+            	<h2>Past Projects</h2>
+            	<ul>
+            		<li><a href="https://www.khanacademy.org/computer-programming/byte-me-submissions/6114950898778112">Impossible Game Challenge</a>: We made a fun club project to put our Khanacademy programming skills to use. The club members made mini-challenges that were put together to make one big impossible game.</li>
+           			<li><a href="members.html">Small personal sites</a>: Enjoy our member websites in miniature form!</li>
+           			<li><a href="graduation.html">Graduation seating arranger</a>: Mrs. Billitier asked us to help her out when organizing which graduate sits where for graduation. This program is the start of our help.</li>
+           			<li><a href="mhsbyteclub.github.io/madness/index.html">March Madness</a>: We had an idea to make a programming leaderboard game similar to March Madness, but this is as far as we got.</li>
+            	</ul>
+            	
+            	
+            </div>
+            	
+            
+            	
+            	
+            	
+            	<div id="learning-links" class="left-align">
+                	<h2 id="Learning">Learning links</h2>
+            		<!--<p>Some websites to visit to learn to program:</p>-->
+            		<ul>
+            			<li><a href="http://www.codecademy.com/">Codecademy</a> Offers great tutorials on Web development (HTML/CSS/JavaScript/JQuery/Ruby/PHP) and Python.</li>
+                    	<li><a href="http://www.khanacademy.org">KhanAcademy</a> Great editor for visual javascript programs. Also includes a full suite of videos to teach you how to program.</li>
+                    	<li><a href="https://www.bento.io/">Bento</a> Includes lots of great links to programming tutorials.</li>
+                    	<li><a href="http://cs50.tv/2014/fall/">CS50</a> Harvard intro programming course. Teaches you computer science, languages used include include C, PHP, and JavaScript plus SQL, CSS, and HTML</li>
+                    	<li><a href="https://www.udacity.com/">Udacity</a> Offers a wide variety of Computer Science courses from beginner intro courses to advanced "holy cow we're building a time machine out of a DeLorean" courses. Includes really great introductory programming course on Python, although all of its courses are great.</li>
+                    	<li><a href="https://c9.io">Cloud9</a> A cloud-based development environment that integrates with Github. Let's you program on your Chromebook!</li>
+                    	<li><a href="https://www.github.com">Github</a> A code- and version-management platform for your projects.</li>
+            	    </ul>
+            		<!--<p>Some websites to try programming challenges:</p>-->
+            		<ul>
+            			<li><a href="https://projecteuler.net/">Project Euler</a></li>
+            			<li><a href="https://www.hackthissite.org/">Hack this site</a></li>
+            		</ul>
+        		</div>
+            <div class="container" id="membership">
+                <h2>Membership Criteria. . . </h2> <!--Quite important.-->
+            	<ul>
+            	    <li><strong>For Any Member:</strong></li>
+            	    <ul>
+            	        <li>Maintain Regular Attendance, do not miss more than half of the meetings in a given semester.</li>
+            	        <li>Complete or participate in the completion of a project during each quarer. More details to come.</li>
+            	    </ul>
+            	    <li><strong>For Novice Members:</strong></li>
+            	    <ul>
+            	        <li>Attend at least half of the available club meetings per term</li>
+            	        
+            	    </ul>
+            	</ul>
+            </div>
+            <div id="member-list" class="left-align">
+                <!--Active Members List-->
+                <h2 >Active Members of Byte Club</h2>
+            	<p><i>In reverse order of their willingness to figure out the order of this list.</i></p>
+            	<ul>
+            	    <li> WHAT!!!!??? Raphael Rouvinov</li> 
+            	    <li>Ronit</li>
+            	    <li>Chris Hill</li>
+            	    <li>Miguel Valencia</li>
+            	    <li>Mia Arnoux</li>
+            	    <li>Angel Correa</li>
+            	    <li>Christopher Illy</li>
+            	    <li>Claire Kats</li>
+            	    <li>owen bedell</li>
+            	    <li>Tony Bishop</li>
+                    <li>Jesus A. Gonzalez</li>
+                    <li>Steffen Brown</li>
+                    <li>Isaac Fuksman</li>
+                    <li>Peter Zakariya</li>
+                    <li>Xavier Perez</li>
+                    <li>Quentin</li>
+                    <li>August Holsman</li>
+                    <li>Noah</li>
+                    <li>Mira Guiritan</li>
+                    <li>Liam</li>
+                    <li>Samuel Hartman</li>
+                    <li>Joe Dolff</li>
+                    <li>Jacob Leong</li>
+                    <li>Jacob</li>
+                    <li>Alex Dziadkowiec</li>
+                    <li>Matt</li>
+                    <li>Alonso Diaz Martinez</li>
+            	</ul>
+            	<!--Potatoes-->
+            	<h2>Freshly-Harvested Potatoes (Inactive Members)</h2>
+            	<p><i>Remember: To avoid being a <a href="http://del.h-cdn.co/assets/cm/15/10/54f69fa2e633f_-_turkey-kielbasa-warm-potato-salad-3712-200.jpg" title = "we know it's spelled wrong. We likes it.">potatoe</a>, you need to come to more meetings than you miss!</i></p>
+            	<ul>
+            	    <li>People who haven't been to enough meetings to stay a member!</li>
+            	</ul>
+                
+            </div>
         	
-        	
-        	<h2 id="Goal">What We Do:</h2>
-        	<p></p>
-        	<ul>
-        		<li>Give people a safe place to ask questions and learn about code and computing.</li>
-        		<li>Build large-scale projects in teams</li>
-        		<li>Spread awareness about the benfits of learning to code throughout MHS.</li>
-        		<li>Support other MHS extra-curriculars with the use of technology and coding</li>
-        		<li>Display exemplary digital citizenship and advocate for digital safety.</li>
-        	</ul>
-        	
-        	<h2 id="Donts">What We DON'T Do:</h2>
-        	<p></p>
-        	<ul>
-        		<li>Pwn Newbs (We won't ever make you feel bad for asking questions and wanting to learn! It's the only way to get better.)</li>
-        		<li>Hack others' systems, accounts, or resources without their expressed written consent.</li>
-        		<li>Give out assignments. This isn't a class. However, you'll be expected to progress and build something that interestes you!</li>
-        		<li>Get distracted by other computer-y stuff. <i>I'm looking at you Pokemon crowd.</i></li>
-        	</ul>
-
-        	<h2 id="Projects">Projects we are currently doing or will be doing</h2>
-        	<ul>
-        		<li><strong>Chrome extensions</strong>: MHS issues chromebooks to students, which means our extensions can have a big impact. For example, the school CIPA filter blocks a lot of relevant sites, but visiting a site to find that it's blocked is annoying and time-wasting. The school is like "we are going to build a firewall." We made a chrome extension that lets you know whether a link is blocked or not, and now our lives are bliss.</li>
-        		<li><strong>Processing sketches</strong>: For most new members, byte club will be your first time coding, and <a href="http://processing.org/">processing</a>/<a href="http://processingjs.org/">processing.js</a> is an ideal way to begin as it allows you to write visual programs easily and immediately. You can make <a href="http://beesandbombs.tumblr.com/">cool art</a>, <a href="http://raphaelrk.com/pjs?sketch=mandelbrot">interactive demonstrations</a>, and much more!</li> There's also a great processing curriculum and editor at <a href="https://www.khanacademy.org/computing/cs/programming">Khanacademy.org</a>
-        		<li><strong>Hackathons</strong>: These are events where programmers get together and build insane things in a short span of time (never send a human to do a machine's job). Some (unaffiliated) examples of hackathons you could attend are <a href="http://codeday.org/">CodeDay</a> or any listed at <a href="http://mlh.io/">MLH</a>.</li>
-        		<li><strong>Website building</strong>: Even if you don't want to make websites, it's cool to understand how they work. Learning HTML/CSS is a great way to start! <a href="https://www.khanacademy.org/computing/cs/programming">Khanacademy.org</a> and <a href="https://www.codecademy.com/learn/web">Codecademy.org</a> are good beginner tools.</a> </li>
-        	</ul>
-        	<h2>Past Projects</h2>
-        	<ul>
-        		<li><a href="https://www.khanacademy.org/computer-programming/byte-me-submissions/6114950898778112">Impossible Game Challenge</a>: We made a fun club project to put our Khanacademy programming skills to use. The club members made mini-challenges that were put together to make one big impossible game.</li>
-       			<li><a href="members.html">Small personal sites</a>: Enjoy our member websites in miniature form!</li>
-       			<li><a href="graduation.html">Graduation seating arranger</a>: Mrs. Billitier asked us to help her out when organizing which graduate sits where for graduation. This program is the start of our help.</li>
-       			<li><a href="mhsbyteclub.github.io/madness/index.html">March Madness</a>: We had an idea to make a programming leaderboard game similar to March Madness, but this is as far as we got.</li>
-        	</ul>
-        	
-        	<h2 id="Status">Membership Criteria. . . </h2> <!--Quite important.-->
-        	<ul>
-        	    <li><strong>For Any Member:</strong></li>
-        	    <ul>
-        	        <li>Maintain Regular Attendance, do not miss more than half of the meetings in a given semester.</li>
-        	        <li>Complete or participate in the completion of a project during each quarer. More details to come.</li>
-        	    </ul>
-        	    <li><strong>For Novice Members:</strong></li>
-        	    <ul>
-        	        <li>Attend at least half of the available club meetings per term</li>
-        	        
-        	    </ul>
-        	</ul>
-        	<div id="learning-links">
-            	<h2 id="Learning">Learning links</h2>
-        		<!--<p>Some websites to visit to learn to program:</p>-->
-        		<ul>
-        			<li><a href="http://www.codecademy.com/">Codecademy</a> Offers great tutorials on Web development (HTML/CSS/JavaScript/JQuery/Ruby/PHP) and Python.</li>
-                	<li><a href="http://www.khanacademy.org">KhanAcademy</a> Great editor for visual javascript programs. Also includes a full suite of videos to teach you how to program.</li>
-                	<li><a href="https://www.bento.io/">Bento</a> Includes lots of great links to programming tutorials.</li>
-                	<li><a href="http://cs50.tv/2014/fall/">CS50</a> Harvard intro programming course. Teaches you computer science, languages used include include C, PHP, and JavaScript plus SQL, CSS, and HTML</li>
-                	<li><a href="https://www.udacity.com/">Udacity</a> Offers a wide variety of Computer Science courses from beginner intro courses to advanced "holy cow we're building a time machine out of a DeLorean" courses. Includes really great introductory programming course on Python, although all of its courses are great.</li>
-                	<li><a href="https://c9.io">Cloud9</a> A cloud-based development environment that integrates with Github. Let's you program on your Chromebook!</li>
-                	<li><a href="https://www.github.com">Github</a> A code- and version-management platform for your projects.</li>
-        	    </ul>
-        		<!--<p>Some websites to try programming challenges:</p>-->
-        		<ul>
-        			<li><a href="https://projecteuler.net/">Project Euler</a></li>
-        			<li><a href="https://www.hackthissite.org/">Hack this site</a></li>
-        		</ul>
-    		</div>
-        	
-        	<h2 id="Member">Active Members of Byte Club</h2>
-        	<p><i>In reverse order of their willingness to figure out the order of this list.</i></p>
-        	<ul>
-        	    <li> WHAT!!!!??? Raphael Rouvinov</li> 
-        	    <li>Ronit</li>
-        	    <li>Chris Hill</li>
-        	    <li>Miguel Valencia</li>
-        	    <li>Mia Arnoux</li>
-        	    <li>Angel Correa</li>
-        	    <li>Christopher Illy</li>
-        	    <li>Claire Kats</li>
-        	    <li>owen bedell</li>
-        	    <li>Tony Bishop</li>
-                <li>Jesus A. Gonzalez</li>
-                <li>Steffen Brown</li>
-                <li>Isaac Fuksman</li>
-                <li>Peter Zakariya</li>
-                <li>Xavier Perez</li>
-                <li>Quentin</li>
-                <li>August Holsman</li>
-                <li>Noah</li>
-                <li>Mira Guiritan</li>
-                <li>Liam</li>
-                <li>Samuel Hartman</li>
-                <li>Joe Dolff</li>
-                <li>Jacob Leong</li>
-                <li>Jacob</li>
-                <li>Alex Dziadkowiec</li>
-                <li>Matt</li>
-                <li>Alonso Diaz Martinez</li>
-        	</ul>
-        	
-        	<h2>Freshly Harvested Potatoes (Inactive Members)</h2>
-        	<p><i>Remember: To avoid being a <a href="http://del.h-cdn.co/assets/cm/15/10/54f69fa2e633f_-_turkey-kielbasa-warm-potato-salad-3712-200.jpg" title = "we know it's spelled wrong. We likes it.">potatoe</a>, you need to come to more meetings than you miss!</i></p>
-        	<ul>
-        	    <li>People who haven't been to enough meetings to stay a member!</li>
-        	
-            <!--Potatoes-->
+            
         	<!-- Upcoming events -->
         	<h2 id="Events">Upcoming Events</h2>
         	<iframe src="https://calendar.google.com/calendar/embed?src=d120.org_98qk62thg3mhu2betsflktlth8%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
         	
-        	    
+        </div>	    
 		<!-- Coding Websites that are free to visit -->
 		
 		
@@ -260,12 +267,13 @@
 		    <ul>
 		        <li><a href="https://docs.google.com/document/d/1NE3SdOZfEnLgfAeIqQg2DFCWJTlKJS0fmaY5xE-MgD0/edit?usp=sharing">Chiggity Check the minutes</a> before you riggity-wreck the minutes.</li>
 		    </ul>
+	    </div>
 		    
 		    
 		    
 		
 		
-        <br>
+    
         <hr>
         <div>
             <button id="buttonfun" class = "buttonfun" onclick = "buttonFun()">FUN.</button><p>Click me for fun</p>
@@ -274,7 +282,7 @@
         <h6><i>Always be D.R.Y. (you can say that again...) </i></h6>
         <footer>Site source available on <a href="https://github.com/MHSByteClub/mhsbyteclub.github.io">GitHub</a>.</footer>
         <footer><a href="contacts.html">Contact Us</a></footer>
-	</div>
+
         
         <script>
             $(function(){
