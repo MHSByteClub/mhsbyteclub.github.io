@@ -23,7 +23,8 @@
         <!-- Stylesheets. hi Specify how the content of the site should look and feel, e.g. { color: red; font-family: Comic Sans MS; } -->
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-		<link id='flexstyle' rel="stylesheet" href="css/style.css">
+		<link  rel="stylesheet" href="css/style.css">
+		<link id="flexstyle" rel='stylesheet' href="">
 		
 		<!--Snazzy fonts-->
 		<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
@@ -66,7 +67,10 @@
         	
     	<div class="container" style = "text-align:center">
     	    
+    	    <!--don't mess with this, it's where the fun button goes...-->
             <div id ="fun-output"></div>
+            <button onclick="changestyle('css/trial.css')">Pass the 'Sans</button>
+            
             <div id="main-announcements-container" class="container">
                 <!--
                 <h2>MHS STEAM Night</h2>
@@ -76,17 +80,17 @@
                 </div>
                 -->
             
-                <div id="meeting-announcment">
+                <div id="meeting-announcement">
                     <h3>Next Meeting</h3>
                     <h4>Wednesday, November 7th, 3:30 PM in C104</h4>
                     <a href="https://goo.gl/forms/bH1CFkqKaf6pSQpc2" class="button">Sign In to Byte Club</a>
                 </div>
                 <div class="announcement">
                     <p>Wanna go to <a href="https://docs.google.com/document/d/1ydG8lBw0nikbKBc8q_mwAlyiHk19qRj_QlzdZPVVCI8/edit?usp=sharing">Code Day Chicago? </a> Get some info and a <a href="https://docs.google.com/document/d/1h_zI58Rm1NrtmkRmbo-FGAvRsqvvLYt-1vcvUn5nKn4/edit?usp=sharing">permission slip</a> here.
-                    <h3>HEY!<a href="https://docs.google.com/document/d/1h_zI58Rm1NrtmkRmbo-FGAvRsqvvLYt-1vcvUn5nKn4/edit?usp=sharing"> What are we doing today???</a></h3>
+                    <h3>HEY!<a href="https://drive.google.com/file/d/1zDFr67D-i3a1Q79T6ON3sXXI7UhQvBMS/view"> Try this tutorial on setting up a custom stylesheet for our webpage!</a></h3>
                 </div>
                 <div class="announcement" align="LEFT">
-                    <h2>Selected  Showcase Projects</h2>
+                    <h2>Selected Showcase Projects</h2>
                     <ul>
                         <li>M.E.N.A.C.E. - Komol Patel and Erik Costello - Continuing work from our project last year.</li>
                         <li><a href="https://repl.it/@ZakariyaPeter/Uno">UNO - Peter Zakariya - A CLI-based game of UNO against up to 4 bots!</a></li>
@@ -288,6 +292,12 @@
             $(function(){
                 $("#wrap").load('nav.html');
             });
+            
+            
+            function changestyle(location){
+                let styleDiv=document.getElementById("flexstyle")
+                styleDiv.setAttribute("href",location);
+            }
         </script>
         <style>
             button{
