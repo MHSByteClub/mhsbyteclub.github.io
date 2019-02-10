@@ -321,6 +321,8 @@ h1{
     img {
         max-width: 100% !important;
     }
+    
+    
 
     p,
     h2,
@@ -371,6 +373,10 @@ h1{
   border-left: 1px solid;
   border-radius: 3px;
 }
+
+a img:hover{
+        box-shadow: 5px 5px 5px black;
+    }
 
 
  
